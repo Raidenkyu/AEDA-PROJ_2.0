@@ -1,39 +1,60 @@
 #ifndef CRUISE_H_
 #define CRUISE_H_
 
+
+                      /////                                          /////
+                     /////               CRUISE . H                 /////
+                    /////                                          /////
+
+
 #include <vector>
 #include <string>
 
-class oferta{
+using namespace std;
+
+class Oferta{
 private:
-	std::string nome;
-	std::string barco;
-	std::vector<std::string> destinos;
+	string nome;
+	string barco;
+	vector<std::string> destinos;
 	unsigned int distancia;
 	unsigned int lotacao;
-	std::string data;
-	std::string hora;
+	string data;
+	string hora;
+public:
+	string getNome() { return this->nome; }
+	string getBarco() { return this->barco; }
+	unsigned int getLotacao() { return this->lotacao; }
+
 };
 
-class fornecedor{
+class Fornecedor{
 private:
-	std::string nome;
-	unsigned int NIF;
-	std::string morada;
-	std::vector<oferta> ofertas;
+	string nome;
+	unsigned int nif;
+	string morada;
+	vector<Oferta> ofertas;
+public:
+	string getNome() { return this->nome; }
+	unsigned int getNif() { return this->nif; }
+	string getMorada() { return this->morada; }
+
 };
 
-class cliente{
+class Cliente{
 private:
-	std::string nome;
+	string nome;
 	unsigned int pontos;
+public:
+	string getNome() { return this->nome; }
+	unsigned int getPontos() { return this->pontos; }
 };
 
 
-class empresa{
+class Empresa{
 private:
-	std::vector<fornecedor*> _fornecedores;
-	std::vector<cliente*> _clientes;
+	vector<Fornecedor*> _fornecedores;
+	vector<Cliente*> _clientes;
 };
 
 
