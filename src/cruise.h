@@ -32,12 +32,13 @@ private:
 	std::string nome;
 	unsigned int nif;
 	std::string morada;
-	vector<Oferta> ofertas;
+	std::vector<Oferta> ofertas;
 public:
-	Fornecedor(string nome, unsigned int nif, string morada);
+	Fornecedor(std::string nome, unsigned int nif, std::string morada);
 	std::string getNome() { return this->nome; }
 	unsigned int getNif() { return this->nif; }
 	std::string getMorada() { return this->morada; }
+	void addOferta(Oferta & oferta);
 
 
 };
@@ -47,10 +48,10 @@ private:
 	std::string nome;
 	unsigned int pontos;
 public:
-	Cliente(string nome);
-	std::string getNome() { return this->nome; }
-	unsigned int getPontos() { return this->pontos; }
-	addPontos(unsigned int pontos);
+	Cliente(std::string nome);
+	std::string getNome() { return this->nome; };
+	unsigned int getPontos() { return this->pontos; };
+	void addPontos(unsigned int pontos);
 };
 
 
