@@ -4,12 +4,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/cruise.cpp \
+../src/extras.cpp \
 ../src/main.cpp 
 
 OBJS += \
+./src/cruise.o \
+./src/extras.o \
 ./src/main.o 
 
 CPP_DEPS += \
+./src/cruise.d \
+./src/extras.d \
 ./src/main.d 
 
 

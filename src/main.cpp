@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include "cruise.h"
-#include "extras.h"
 
 
 int main(){
