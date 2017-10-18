@@ -10,51 +10,54 @@
 #include <vector>
 #include <string>
 
-using namespace std;
 
 class Oferta{
 private:
-	string nome;
-	string barco;
-	vector<std::string> destinos;
+	std::string nome;
+	std::string barco;
+	std::vector<std::string> destinos;
 	unsigned int distancia;
 	unsigned int lotacao;
-	string data;
-	string hora;
+	std::string data;
+	std::string hora;
 public:
-	string getNome() { return this->nome; }
-	string getBarco() { return this->barco; }
+	std::string getNome() { return this->nome; }
+	std::string getBarco() { return this->barco; }
 	unsigned int getLotacao() { return this->lotacao; }
 
 };
 
 class Fornecedor{
 private:
-	string nome;
+	std::string nome;
 	unsigned int nif;
-	string morada;
-	vector<Oferta> ofertas;
+	std::string morada;
+	std::vector<Oferta> ofertas;
 public:
-	string getNome() { return this->nome; }
+	Fornecedor(std::string nome, unsigned int nif, std::string morada);
+	void addOferta(Oferta & oferta);
+	std::string getNome() { return this->nome; }
 	unsigned int getNif() { return this->nif; }
-	string getMorada() { return this->morada; }
+	std::string getMorada() { return this->morada; }
 
 };
 
 class Cliente{
 private:
-	string nome;
+	std::string nome;
 	unsigned int pontos;
 public:
-	string getNome() { return this->nome; }
+	Cliente(std::string nome);
+	std::string getNome() { return this->nome; }
 	unsigned int getPontos() { return this->pontos; }
+	void addPontos(unsigned int pontos);
 };
 
 
 class Empresa{
 private:
-	vector<Fornecedor*> _fornecedores;
-	vector<Cliente*> _clientes;
+	std::vector<Fornecedor*> _fornecedores;
+	std::vector<Cliente*> _clientes;
 };
 
 
