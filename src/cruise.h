@@ -25,6 +25,7 @@ public:
 	std::string getNome() { return this->nome; }
 	std::string getBarco() { return this->barco; }
 	unsigned int getLotacao() { return this->lotacao; }
+	const std::vector<std::string> & getDestinos();
 };
 
 class Fornecedor{
@@ -39,6 +40,7 @@ public:
 	unsigned int getNif() { return this->nif; }
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
+	const std::vector<Oferta> & getOfertas();
 
 
 };
@@ -61,8 +63,10 @@ private:
 	std::vector<Cliente*> _clientes;
 public:
 	Empresa();
-	Empresa addFornecedores(Fornecedor& f);
-	Empresa addClientes(Cliente& c);
+	Empresa & addFornecedores(Fornecedor& f);
+	Empresa & addClientes(Cliente& c);
+	const std::vector<Fornecedor*> & getFornecedores();
+	const std::vector<Cliente*> & getClientes();
 };
 
 

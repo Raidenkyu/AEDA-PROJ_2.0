@@ -11,7 +11,7 @@
 class Time{
 public:
 	Time(unsigned int h = 0, unsigned int m = 0, unsigned int s = 0);
-	void printTime();
+	void printTime(std::ostream & os);
 	Time operator+(const Time& t);
 
 private:

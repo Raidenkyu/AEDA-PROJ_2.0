@@ -1,4 +1,3 @@
-#include <iostream>
 #include <iomanip>
 #include "extras.h"
 
@@ -21,20 +20,25 @@ Time::Time(unsigned int h , unsigned int m , unsigned int s ): hours(h), minutes
 	}
 }
 
-void Time::printTime(){
+void Time::printTime(std::ostream & os){
 	if (seconds != 0) {
-		cout << setw(2) << setfill('0') << hours;
-		cout << ":";
-		cout << setw(2) << setfill('0') << minutes;
-		cout << ":";
-		cout << setw(2) << setfill('0') << seconds << endl;
+		os << setw(2) << setfill('0') << hours;
+		os << ":";
+		os << setw(2) << setfill('0') << minutes;
+		os << ":";
+		os << setw(2) << setfill('0') << seconds;
 
 	}
 	else {
-		cout << setw(2) << setfill('0') << hours;
-		cout << ":";
-		cout << setw(2) << setfill('0') << minutes << endl;
+		os << setw(2) << setfill('0') << hours;
+		os << ":";
+		os << setw(2) << setfill('0') << minutes << endl;
 	}
+}
+
+std::ostream & operator<<(std::ostream & os, Time & t){
+	t.printTime(os);
+	return os;
 }
 
 Time Time::operator +(const Time& t) {
