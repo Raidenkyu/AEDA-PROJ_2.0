@@ -11,7 +11,6 @@
                      /////               CRUISE . H                 /////
                     /////                                          /////
 
-
 class Oferta{
 private:
 	std::string nome;
@@ -21,6 +20,7 @@ private:
 	unsigned int lotacao;
 	std::string data;
 	Time hora;
+
 public:
 	std::string getNome() { return this->nome; }
 	std::string getBarco() { return this->barco; }
@@ -41,7 +41,6 @@ public:
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
 	const std::vector<Oferta> & getOfertas();
-
 
 };
 

@@ -31,6 +31,8 @@ Empresa & Empresa::addClientes(Cliente& c){
 
 
 //// Métodos da classe Fornecedor ////
+//ola
+
 
 Fornecedor::Fornecedor(string nome, unsigned int nif, string morada):nome(nome), nif(nif), morada(morada){}
 
@@ -44,19 +46,18 @@ const vector<Oferta> & Fornecedor::getOfertas(){
 
 //// Métodos da classe Cliente ////
 
-
 Cliente::Cliente(string nome): nome(nome), pontos(0){}
 
 void Cliente::addPontos(unsigned int pontos){
 	this->pontos += pontos;
 }
 
-
 //// Métodos da classe Oferta ////
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
 }
+
 
 
 

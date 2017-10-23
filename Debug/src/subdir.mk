@@ -5,17 +5,26 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/cruise.cpp \
+<<<<<<< Updated upstream
 ../src/extras.cpp \
+=======
+>>>>>>> Stashed changes
 ../src/main.cpp 
 
 OBJS += \
 ./src/cruise.o \
+<<<<<<< Updated upstream
 ./src/extras.o \
+=======
+>>>>>>> Stashed changes
 ./src/main.o 
 
 CPP_DEPS += \
 ./src/cruise.d \
+<<<<<<< Updated upstream
 ./src/extras.d \
+=======
+>>>>>>> Stashed changes
 ./src/main.d 
 
 
