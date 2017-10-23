@@ -31,7 +31,6 @@ Empresa & Empresa::addClientes(Cliente& c){
 
 
 //// Métodos da classe Fornecedor ////
-//ola
 
 
 Fornecedor::Fornecedor(string nome, unsigned int nif, string morada):nome(nome), nif(nif), morada(morada){}
