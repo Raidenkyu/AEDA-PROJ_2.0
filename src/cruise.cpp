@@ -38,12 +38,7 @@ void Empresa::save(){
 	}
 }
 
-<<<<<<< HEAD
-=======
 //// Metodos da classe Fornecedor ////
->>>>>>> master
-
-//// Métodos da classe Fornecedor ////
 
 Fornecedor::Fornecedor(string nome, unsigned int nif, string morada):nome(nome), nif(nif), morada(morada){}
 
@@ -55,7 +50,7 @@ const vector<Oferta> & Fornecedor::getOfertas(){
 	return this->ofertas;
 }
 
-<<<<<<< HEAD
+
 void Fornecedor::save(){
 	ofstream file("fornecedores.txt", ofstream::app);
 		if(file.is_open()){
@@ -63,18 +58,13 @@ void Fornecedor::save(){
 		}
 }
 
-//// Métodos da classe Reserva ////
+//// Metodos da classe Reserva ////
 
 Reserva::Reserva(std::string nome_oferta, Oferta * oferta, string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada):
 		nome_oferta(nome_oferta), oferta(oferta), nome_cliente(nome_cliente),cliente(cliente),preco(preco), cancelada(cancelada) {}
 
 
-
-//// Métodos da classe Cliente ////
-=======
 //// Metodos da classe Cliente ////
->>>>>>> master
-
 
 Cliente::Cliente(string nome): nome(nome){}
 
@@ -85,7 +75,7 @@ void Cliente::save(){
 }
 
 
-////Métodos da classe ClienteRegistado
+//// Metodos da classe ClienteRegistado ////
 
 ClienteRegistado::ClienteRegistado(string nome, unsigned int pontos): Cliente(nome),pontos(pontos){}
 
@@ -93,18 +83,13 @@ void ClienteRegistado::addPontos(unsigned int pontos){
 	this->pontos += pontos;
 }
 
-<<<<<<< HEAD
 void ClienteRegistado::save(){
 	ofstream file("clientes_registados.txt", ofstream::app);
 	if(file.is_open())
 		file << this->nome << endl << this->pontos << endl;
 }
 
-
-//// Métodos da classe Oferta ////
-=======
 //// Metodos da classe Oferta ////
->>>>>>> master
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
