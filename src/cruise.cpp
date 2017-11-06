@@ -1,16 +1,15 @@
-/*
- * cruise.cpp
- *
- *  Created on: 18/10/2017
- *      Author: joao
- */
 
 #include <fstream>
 #include "cruise.h"
 
 using namespace std;
 
-////  Métodos da classe Empresa ////
+
+                      /////                                            /////
+                     /////               CRUISE . CPP                 /////
+                    /////                                            /////
+
+////  Metodos da classe Empresa ////
 
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
 	return this->_fornecedores;
@@ -39,6 +38,10 @@ void Empresa::save(){
 	}
 }
 
+<<<<<<< HEAD
+=======
+//// Metodos da classe Fornecedor ////
+>>>>>>> master
 
 //// Métodos da classe Fornecedor ////
 
@@ -52,6 +55,7 @@ const vector<Oferta> & Fornecedor::getOfertas(){
 	return this->ofertas;
 }
 
+<<<<<<< HEAD
 void Fornecedor::save(){
 	ofstream file("fornecedores.txt", ofstream::app);
 		if(file.is_open()){
@@ -67,6 +71,9 @@ Reserva::Reserva(std::string nome_oferta, Oferta * oferta, string nome_cliente, 
 
 
 //// Métodos da classe Cliente ////
+=======
+//// Metodos da classe Cliente ////
+>>>>>>> master
 
 
 Cliente::Cliente(string nome): nome(nome){}
@@ -86,6 +93,7 @@ void ClienteRegistado::addPontos(unsigned int pontos){
 	this->pontos += pontos;
 }
 
+<<<<<<< HEAD
 void ClienteRegistado::save(){
 	ofstream file("clientes_registados.txt", ofstream::app);
 	if(file.is_open())
@@ -94,6 +102,9 @@ void ClienteRegistado::save(){
 
 
 //// Métodos da classe Oferta ////
+=======
+//// Metodos da classe Oferta ////
+>>>>>>> master
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
