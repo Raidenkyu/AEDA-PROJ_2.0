@@ -19,7 +19,7 @@ private:
 	unsigned int hours, minutes, seconds;
 };
 
-class Schedule{
+class Schedule: public Time{
 
 };
 

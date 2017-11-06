@@ -11,6 +11,7 @@
                      /////               CRUISE . H                 /////
                     /////                                          /////
 
+
 class Oferta{
 private:
 	std::string nome;
@@ -20,7 +21,6 @@ private:
 	unsigned int lotacao;
 	std::string data;
 	Time hora;
-
 public:
 	std::string getNome() { return this->nome; }
 	std::string getBarco() { return this->barco; }
@@ -41,18 +41,44 @@ public:
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
 	const std::vector<Oferta> & getOfertas();
+	void save();
+
 
 };
 
 class Cliente{
-private:
+protected:
 	std::string nome;
-	unsigned int pontos;
 public:
 	Cliente(std::string nome);
 	std::string getNome() { return this->nome; };
+	virtual unsigned int getPontos() { return 0 ;};
+	virtual void save();
+	virtual void load();
+};
+
+class ClienteRegistado: public Cliente{
+private:
+	unsigned int pontos;
+public:
+	ClienteRegistado(std::string nome, unsigned int pontos = 0);
 	unsigned int getPontos() { return this->pontos; };
 	void addPontos(unsigned int pontos);
+	void save();
+    void load();
+};
+
+
+class Reserva{
+private:
+	std::string nome_oferta;
+	Oferta* oferta;
+	std::string nome_cliente;
+	Cliente * cliente;
+	bool cancelada;
+	unsigned int preco;
+public:
+	Reserva(std::string nome_oferta, Oferta * oferta, std::string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada = false);
 };
 
 
@@ -60,12 +86,16 @@ class Empresa{
 private:
 	std::vector<Fornecedor*> _fornecedores;
 	std::vector<Cliente*> _clientes;
+	std::vector<Reserva*>_reservas;
 public:
 	Empresa();
 	Empresa & addFornecedores(Fornecedor& f);
 	Empresa & addClientes(Cliente& c);
 	const std::vector<Fornecedor*> & getFornecedores();
 	const std::vector<Cliente*> & getClientes();
+	void save();
+	void load();
+
 };
 
 
