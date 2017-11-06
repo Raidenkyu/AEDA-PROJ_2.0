@@ -1,15 +1,14 @@
-/*
- * cruise.cpp
- *
- *  Created on: 18/10/2017
- *      Author: joao
- */
 
 #include "cruise.h"
 
 using namespace std;
 
-////  Métodos da classe Empresa ////
+
+                      /////                                            /////
+                     /////               CRUISE . CPP                 /////
+                    /////                                            /////
+
+////  Metodos da classe Empresa ////
 
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
 	return this->_fornecedores;
@@ -30,7 +29,7 @@ Empresa & Empresa::addClientes(Cliente& c){
 }
 
 
-//// Métodos da classe Fornecedor ////
+//// Metodos da classe Fornecedor ////
 
 
 Fornecedor::Fornecedor(string nome, unsigned int nif, string morada):nome(nome), nif(nif), morada(morada){}
@@ -43,7 +42,7 @@ const vector<Oferta> & Fornecedor::getOfertas(){
 	return this->ofertas;
 }
 
-//// Métodos da classe Cliente ////
+//// Metodos da classe Cliente ////
 
 Cliente::Cliente(string nome): nome(nome), pontos(0){}
 
@@ -51,7 +50,7 @@ void Cliente::addPontos(unsigned int pontos){
 	this->pontos += pontos;
 }
 
-//// Métodos da classe Oferta ////
+//// Metodos da classe Oferta ////
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
