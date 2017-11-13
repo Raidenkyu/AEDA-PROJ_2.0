@@ -55,6 +55,9 @@ void menuTipodeUtilizador()
 		
 		cin >> tipodeutilizador;
 
+		if (cin.fail())
+			menuTipodeUtilizador();
+
 		switch (tipodeutilizador) {
 
 		case 0:
