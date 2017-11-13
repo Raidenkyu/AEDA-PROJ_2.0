@@ -1,6 +1,7 @@
 
 #include <fstream>
 #include "cruise.h"
+#include <iostream>
 
 using namespace std;
 
@@ -30,12 +31,39 @@ Empresa & Empresa::addClientes(Cliente& c){
 }
 
 void Empresa::save(){
-	for(auto &fornecedor: this->_fornecedores){
-		fornecedor->save();
+	ifstream clientes_file("src/clientes_.txt");
+	ifstream registados_file("src/clientes_registados.txt");
+	ifstream fornecedores_file("src/fornecedores.txt");
+	string line;
+	unsigned int pontos;
+	Cliente * c;
+	//Stores the clients who aren't registred in the data base
+	if(clientes_file.is_open())
+		while(getline(clientes_file,line)){
+			c = new Cliente(line);
+			this->addClientes(*c);
+		}
+	else {
+		cout << "The program failed to open the file with the information of the clients" << endl;
 	}
-	for(auto &cliente: this->_clientes){
-		cliente->save();
-	}
+	//Stores the clients who are registred in the data base
+	if(registados_file.is_open())
+			while(getline(clientes_file,line)){
+				c = new Cliente(line);
+				this->addClientes(*c);
+			}
+		else {
+			cout << "The program failed to open the file with the information of the clients" << endl;
+		}
+   //Stores the supplier
+	if(fornecedores_file.is_open())
+			while(getline(clientes_file,line)){
+				c = new Cliente(line);
+				this->addClientes(*c);
+			}
+		else {
+			cout << "The program failed to open the file with the information of the clients" << endl;
+		}
 }
 
 //// Metodos da classe Fornecedor ////
@@ -51,12 +79,6 @@ const vector<Oferta> & Fornecedor::getOfertas(){
 }
 
 
-void Fornecedor::save(){
-	ofstream file("fornecedores.txt", ofstream::app);
-		if(file.is_open()){
-			file << this->nome << endl << this->nif << endl << this->morada;
-		}
-}
 
 //// Metodos da classe Reserva ////
 
@@ -68,12 +90,6 @@ Reserva::Reserva(std::string nome_oferta, Oferta * oferta, string nome_cliente, 
 
 Cliente::Cliente(string nome): nome(nome){}
 
-void Cliente::save(){
-	ofstream file("clientes.txt", ofstream::app);
-	if(file.is_open())
-		file << this->nome << endl;
-}
-
 
 //// Metodos da classe ClienteRegistado ////
 
@@ -83,11 +99,6 @@ void ClienteRegistado::addPontos(unsigned int pontos){
 	this->pontos += pontos;
 }
 
-void ClienteRegistado::save(){
-	ofstream file("clientes_registados.txt", ofstream::app);
-	if(file.is_open())
-		file << this->nome << endl << this->pontos << endl;
-}
 
 //// Metodos da classe Oferta ////
 

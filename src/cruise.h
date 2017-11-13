@@ -41,8 +41,6 @@ public:
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
 	const std::vector<Oferta> & getOfertas();
-	void save();
-
 
 };
 
@@ -53,8 +51,7 @@ public:
 	Cliente(std::string nome);
 	std::string getNome() { return this->nome; };
 	virtual unsigned int getPontos() { return 0 ;};
-	virtual void save();
-	virtual void load();
+	virtual bool isRegistado() { return false;};
 };
 
 class ClienteRegistado: public Cliente{
@@ -64,8 +61,7 @@ public:
 	ClienteRegistado(std::string nome, unsigned int pontos = 0);
 	unsigned int getPontos() { return this->pontos; };
 	void addPontos(unsigned int pontos);
-	void save();
-    void load();
+	bool isRegistado(){return true;};
 };
 
 
