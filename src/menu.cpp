@@ -1,16 +1,7 @@
-/*
- * main.cpp
- *
- *  Created on: 16/10/2017
- *      Author: JCM, CV, JA
- */
-
 #include <iostream>
-#include "cruise.h"
+#include "menu.h"
 
 using namespace std;
-
-
 
 void titulo() {
 
@@ -25,22 +16,16 @@ void titulo() {
 
 }
 
+void menuTipodeCliente();
+{
+	cout << "Selecione o tipo"
+}
+
 void menuInicial()
 {
 	titulo();
 	cout << "\n";
 	cout << "\n";
 	cout << "Seja bem vindo ao gestor da Porto River, aqui poderá controlar todas as vertentes da sua empresa e visualizar toda a informação de que necessita. \n";
-
+	menuTipodeCliente();
 }
-
-int main(){
-
-	menuInicial();
-		cin.get();
-	Empresa Porto_Rivers();
-	return 0;
-}
-
-
-
