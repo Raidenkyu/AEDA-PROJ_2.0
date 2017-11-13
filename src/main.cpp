@@ -13,13 +13,8 @@ using namespace std;
 
 
 int main(){
-<<<<<<< HEAD
-	Empresa Porto_Rivers;
-=======
-
 	menuInicial();
 	Empresa Porto_Rivers();
->>>>>>> master
 	return 0;
 }
 
