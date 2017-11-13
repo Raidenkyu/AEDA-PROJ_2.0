@@ -6,7 +6,7 @@ using namespace std;
 void titulo() {
 
 
-	system("cls");
+	clearScreen();
 
 	cout << "__________              __           __________.__                               \n";
 	cout << "\\______   \\____________/  |_  ____   \\______   \\__|__  __ ___________  ______      \n";
