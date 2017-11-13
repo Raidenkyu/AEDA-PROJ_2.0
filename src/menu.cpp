@@ -5,27 +5,86 @@ using namespace std;
 
 void titulo() {
 
+	system("cls");
 
-	cout << "__________              __           __________.__                               _____                                             \n";
-	cout << "\\______   \\____________/  |_  ____   \\______   \\__|__  __ ___________  ______   /     \\ _____    ____ _____     ____   ___________ \n";
-	cout << " |     ___/  _ \\_  __ \\   __\\/  _ \\   |       _/  \\  \\/ // __ \\_  __ \\/  ___/  /  \\ /  \\\\__  \\  /    \\\\__  \\   / ___\\_/ __ \\_  __ \\ \n";
-	cout << " |    |  (  <_> )  | \\/|  | (  <_> )  |    |   \\  |\\   /\\  ___/|  | \\/\\___ \\  /    Y    \\/ __ \\|   |  \\/ __ \\_/ /_/  >  ___/|  | \\/\n";
-	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\___  >__|  /____  > \\____|__  (____  /___|  (____  /\\___  / \\___  >__|   \n";
-	cout << "                                             \\/              \\/           \\/          \\/     \\/     \\/     \\//_____/      \\/       \n";
+	cout << "__________              __           __________.__                               \n";
+	cout << "\\______   \\____________/  |_  ____   \\______   \\__|__  __ ___________  ______   /   \n";
+	cout << " |     ___/  _ \\_  __ \\   __\\/  _ \\   |       _/  \\  \\/ // __ \\_  __ \\/  ___/  /  \n";
+	cout << " |    |  (  <_> )  | \\/|  | (  <_> )  |    |   \\  |\\   /\\  ___/|  | \\/\\___ \\  / /\n";
+	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\___  >__|  /____  >\n";
+	cout << "                                             \\/              \\/           \\/       \n";
 	cout << "\n";
 
 }
 
-void menuTipodeCliente();
+void menuCliente() {
+	while (true) {
+		titulo();
+		cout << "";
+		
+	}
+}
+
+void menuFornecedor() {
+
+	while (true) {
+		titulo();
+		cout << "Conseguiste forneedor";
+		cin.get();
+	}
+}
+
+void menuTipodeUtilizador()
 {
-	cout << "Selecione o tipo"
+	
+	
+	titulo();
+	int tipodeutilizador;
+	while (true){
+
+		
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Escolha o tipo de utilizador sobre o qual quer trabalhar |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
+		cout << "+----------------------------------------------------------+ \n";
+		cout << "| 1 - Cliente                                              |\n";
+		cout << "| 2 - Fornecedor                                           |\n";
+		cout << "| 0 - Sair                                                 |\n";
+		cout << "+----------------------------------------------------------+\n";
+		
+		cin >> tipodeutilizador;
+
+		switch (tipodeutilizador) {
+
+		case 0:
+			cout << "\n" << "Agradecemos a utilização do nosso serviço, a aplicação irá agora fechar.";
+			break;
+		case 1:
+
+			cout << "\n" << "Está ser redirecionado para o menu do cliente...";
+			menuCliente();
+			break;
+
+		case 2:
+
+			cout << "\n" << "Está ser redirecionado para o menu do fornecedor...";
+			menuFornecedor();
+			break;
+
+		default:
+			cout << "Lamento, mas a opção que inseriu não é válida. Será redirecionado/a para o início do menú. \n";
+		}
+	}
 }
 
 void menuInicial()
 {
+	
 	titulo();
 	cout << "\n";
 	cout << "\n";
 	cout << "Seja bem vindo ao gestor da Porto River, aqui poderá controlar todas as vertentes da sua empresa e visualizar toda a informação de que necessita. \n";
-	menuTipodeCliente();
+	menuTipodeUtilizador();
+
 }
