@@ -14,7 +14,7 @@ using namespace std;
 
 int main(){
 	menuInicial();
-	Empresa Porto_Rivers();
+	Empresa Porto_Rivers;
 	return 0;
 }
 

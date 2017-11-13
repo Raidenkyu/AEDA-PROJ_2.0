@@ -1,0 +1,107 @@
+\hypertarget{classEmpresa}{}\section{Empresa Class Reference}
+\label{classEmpresa}\index{Empresa@{Empresa}}
+
+
+{\ttfamily \#include $<$cruise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEmpresa_aff124b958356c479ab50ddf4cf302193}{Empresa} ()
+\item 
+\hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a0c858479d6e92094adbb2fc085039376}{add\+Fornecedores} (\hyperlink{classFornecedor}{Fornecedor} \&f)
+\item 
+\hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}{add\+Clientes} (\hyperlink{classCliente}{Cliente} \&c)
+\item 
+const std\+::vector$<$ \hyperlink{classFornecedor}{Fornecedor} $\ast$ $>$ \& \hyperlink{classEmpresa_aaf131a375aa70819205744328a4dbc07}{get\+Fornecedores} ()
+\item 
+const std\+::vector$<$ \hyperlink{classCliente}{Cliente} $\ast$ $>$ \& \hyperlink{classEmpresa_a472beae89ee1187e1ec3f70e9d4a99ef}{get\+Clientes} ()
+\item 
+void \hyperlink{classEmpresa_afbde694da902870437443de43dae8071}{save} ()
+\item 
+void \hyperlink{classEmpresa_a3445c3c507b4f45d1d7831908ff4cdf1}{load} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classFornecedor}{Fornecedor} $\ast$ $>$ \hyperlink{classEmpresa_a535f4cd93e7aec4983e1abce799708e7}{\+\_\+fornecedores}
+\item 
+std\+::vector$<$ \hyperlink{classCliente}{Cliente} $\ast$ $>$ \hyperlink{classEmpresa_a82ee7236b9de27ed7192b193cb9f7b1f}{\+\_\+clientes}
+\item 
+std\+::vector$<$ \hyperlink{classReserva}{Reserva} $\ast$ $>$ \hyperlink{classEmpresa_a310a7271e2da4281af00cc5e80baf250}{\+\_\+reservas}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmpresa_aff124b958356c479ab50ddf4cf302193}\label{classEmpresa_aff124b958356c479ab50ddf4cf302193}} 
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Empresa()}{Empresa()}}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}\label{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}} 
+\index{Empresa@{Empresa}!add\+Clientes@{add\+Clientes}}
+\index{add\+Clientes@{add\+Clientes}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{add\+Clientes()}{addClientes()}}
+{\footnotesize\ttfamily \hyperlink{classEmpresa}{Empresa} \& Empresa\+::add\+Clientes (\begin{DoxyParamCaption}\item[{\hyperlink{classCliente}{Cliente} \&}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmpresa_a0c858479d6e92094adbb2fc085039376}\label{classEmpresa_a0c858479d6e92094adbb2fc085039376}} 
+\index{Empresa@{Empresa}!add\+Fornecedores@{add\+Fornecedores}}
+\index{add\+Fornecedores@{add\+Fornecedores}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{add\+Fornecedores()}{addFornecedores()}}
+{\footnotesize\ttfamily \hyperlink{classEmpresa}{Empresa} \& Empresa\+::add\+Fornecedores (\begin{DoxyParamCaption}\item[{\hyperlink{classFornecedor}{Fornecedor} \&}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmpresa_a472beae89ee1187e1ec3f70e9d4a99ef}\label{classEmpresa_a472beae89ee1187e1ec3f70e9d4a99ef}} 
+\index{Empresa@{Empresa}!get\+Clientes@{get\+Clientes}}
+\index{get\+Clientes@{get\+Clientes}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Clientes()}{getClientes()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{classCliente}{Cliente} $\ast$ $>$ \& Empresa\+::get\+Clientes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmpresa_aaf131a375aa70819205744328a4dbc07}\label{classEmpresa_aaf131a375aa70819205744328a4dbc07}} 
+\index{Empresa@{Empresa}!get\+Fornecedores@{get\+Fornecedores}}
+\index{get\+Fornecedores@{get\+Fornecedores}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Fornecedores()}{getFornecedores()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{classFornecedor}{Fornecedor} $\ast$ $>$ \& Empresa\+::get\+Fornecedores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmpresa_a3445c3c507b4f45d1d7831908ff4cdf1}\label{classEmpresa_a3445c3c507b4f45d1d7831908ff4cdf1}} 
+\index{Empresa@{Empresa}!load@{load}}
+\index{load@{load}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Empresa\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmpresa_afbde694da902870437443de43dae8071}\label{classEmpresa_afbde694da902870437443de43dae8071}} 
+\index{Empresa@{Empresa}!save@{save}}
+\index{save@{save}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Empresa\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classEmpresa_a82ee7236b9de27ed7192b193cb9f7b1f}\label{classEmpresa_a82ee7236b9de27ed7192b193cb9f7b1f}} 
+\index{Empresa@{Empresa}!\+\_\+clientes@{\+\_\+clientes}}
+\index{\+\_\+clientes@{\+\_\+clientes}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{\+\_\+clientes}{\_clientes}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classCliente}{Cliente}$\ast$$>$ Empresa\+::\+\_\+clientes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEmpresa_a535f4cd93e7aec4983e1abce799708e7}\label{classEmpresa_a535f4cd93e7aec4983e1abce799708e7}} 
+\index{Empresa@{Empresa}!\+\_\+fornecedores@{\+\_\+fornecedores}}
+\index{\+\_\+fornecedores@{\+\_\+fornecedores}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{\+\_\+fornecedores}{\_fornecedores}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classFornecedor}{Fornecedor}$\ast$$>$ Empresa\+::\+\_\+fornecedores\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEmpresa_a310a7271e2da4281af00cc5e80baf250}\label{classEmpresa_a310a7271e2da4281af00cc5e80baf250}} 
+\index{Empresa@{Empresa}!\+\_\+reservas@{\+\_\+reservas}}
+\index{\+\_\+reservas@{\+\_\+reservas}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{\+\_\+reservas}{\_reservas}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classReserva}{Reserva}$\ast$$>$ Empresa\+::\+\_\+reservas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projectos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8h}{cruise.\+h}\item 
+/home/joao/\+Documentos/\+Projectos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8cpp}{cruise.\+cpp}\end{DoxyCompactItemize}

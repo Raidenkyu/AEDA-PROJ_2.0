@@ -41,7 +41,7 @@ public:
 	unsigned int getNif() { return this->nif; }
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
-	const std::vector<Oferta> & getOfertas();
+	std::vector<Oferta> & getOfertas();
 
 };
 
@@ -88,6 +88,7 @@ public:
 	Empresa();
 	Empresa & addFornecedores(Fornecedor& f);
 	Empresa & addClientes(Cliente& c);
+	Empresa & addReservas(Reserva & r);
 	const std::vector<Fornecedor*> & getFornecedores();
 	const std::vector<Cliente*> & getClientes();
 	void save();

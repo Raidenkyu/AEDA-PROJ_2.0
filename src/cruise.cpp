@@ -25,13 +25,19 @@ const std::vector<Cliente*> & Empresa::getClientes(){
 	return this->_clientes;
 }
 
+
 Empresa & Empresa::addFornecedores(Fornecedor& f){
 	this->_fornecedores.push_back(&f);
 	return *this;
 }
 
 Empresa & Empresa::addClientes(Cliente& c){
+	this->_clientes.push_back(&c);
+	return *this;
+}
 
+Empresa & Empresa::addReservas(Reserva& r){
+	this->_reservas.push_back(&r);
 	return *this;
 }
 
@@ -39,6 +45,7 @@ void Empresa::load(){
 	ifstream clientes_file("src/clientes_.txt");
 	ifstream registados_file("src/clientes_registados.txt");
 	ifstream fornecedores_file("src/fornecedores.txt");
+	ifstream reservas_file("src/fornecedores.txt");
 	string line;
 	string s1;
 	string s2;
@@ -50,6 +57,7 @@ void Empresa::load(){
 	Cliente * c;
 	Fornecedor * f;
 	Oferta * o;
+	Reserva * r;
 	vector<Oferta> ofertas;
 	//Stores the clients who aren't registred in the data base
 	if(clientes_file.is_open())
@@ -116,6 +124,32 @@ void Empresa::load(){
 		else {
 			cout << "The program failed to open the file with the information of the suppliers" << endl;
 		}
+	if(reservas_file.is_open()){
+		while(getline(reservas_file,line)){
+			s1 = line;
+			getline(reservas_file,line);
+			s2 = line;
+			getline(reservas_file,line);
+			num1 = stoi(line);
+			for(unsigned int i = 0; i < this->_clientes.size();i++){
+				if(this->_clientes[i]->getNome() == s2){
+					*c = *this->_clientes[i];
+				}
+			}
+			for(unsigned int i = 0; i < this->_fornecedores.size();i++){
+							for(unsigned int j = 0;j < this->_fornecedores[i]->getOfertas().size();j++){
+								if(this->_fornecedores[i]->getOfertas().at(j).getNome() == s1){
+									*o = this->_fornecedores[i]->getOfertas()[j];
+								}
+							}
+						}
+			r = new Reserva(s1,o,s2,c,num1);
+			this->addReservas(*r);
+		}
+	}
+	else{
+		cout << "Erro: O programa não conseguiu abrir o ficheiro das reservas" << endl;
+	}
 }
 void Empresa::save(){
 
@@ -129,7 +163,7 @@ void Fornecedor::addOferta(Oferta & oferta){
 	this->ofertas.push_back(oferta);
 }
 
-const vector<Oferta> & Fornecedor::getOfertas(){
+vector<Oferta> & Fornecedor::getOfertas(){
 	return this->ofertas;
 }
 
