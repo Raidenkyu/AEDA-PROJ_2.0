@@ -22,6 +22,7 @@ private:
 	std::string data;
 	Time hora;
 public:
+	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, std::string data);
 	std::string getNome() { return this->nome; }
 	std::string getBarco() { return this->barco; }
 	unsigned int getLotacao() { return this->lotacao; }

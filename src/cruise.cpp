@@ -12,6 +12,11 @@ using namespace std;
 
 ////  Metodos da classe Empresa ////
 
+Empresa::Empresa(){
+	this->load();
+	cout << this->_clientes[0]->getNome() << endl;
+}
+
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
 	return this->_fornecedores;
 }
@@ -30,17 +35,27 @@ Empresa & Empresa::addClientes(Cliente& c){
 	return *this;
 }
 
-void Empresa::save(){
+void Empresa::load(){
 	ifstream clientes_file("src/clientes_.txt");
 	ifstream registados_file("src/clientes_registados.txt");
 	ifstream fornecedores_file("src/fornecedores.txt");
 	string line;
-	unsigned int pontos;
+	string s1;
+	string s2;
+	string s3;
+	string morada;
+	unsigned int num1;
+	unsigned int num2;
+	vector<string> destinos;
 	Cliente * c;
+	Fornecedor * f;
+	Oferta * o;
+	vector<Oferta> ofertas;
 	//Stores the clients who aren't registred in the data base
 	if(clientes_file.is_open())
 		while(getline(clientes_file,line)){
-			c = new Cliente(line);
+			s1 = line;
+			c = new Cliente(s1);
 			this->addClientes(*c);
 		}
 	else {
@@ -48,22 +63,62 @@ void Empresa::save(){
 	}
 	//Stores the clients who are registred in the data base
 	if(registados_file.is_open())
-			while(getline(clientes_file,line)){
-				c = new Cliente(line);
+			while(getline(registados_file,line)){
+				s1 = line;
+				getline(registados_file,line);
+				num1 = stoi(line);
+				c = new ClienteRegistado(line,num1);
 				this->addClientes(*c);
 			}
 		else {
-			cout << "The program failed to open the file with the information of the clients" << endl;
+			cout << "The program failed to open the file with the information of the registred clients" << endl;
 		}
    //Stores the supplier
 	if(fornecedores_file.is_open())
-			while(getline(clientes_file,line)){
-				c = new Cliente(line);
-				this->addClientes(*c);
+			while(getline(fornecedores_file,line)){
+				s1 = line;
+				getline(fornecedores_file,line);
+				num1 = stoi(line);
+				getline(fornecedores_file,line);
+				s2 = line;
+				f = new Fornecedor(s1,num1,s2);
+				getline(fornecedores_file,line);
+				while(true){
+					if(line == "fend")
+						break;
+					else{
+						s1 = line;
+						getline(fornecedores_file,line);
+						s2 = line;
+						getline(fornecedores_file,line);
+						num1 = stoi(line);
+						getline(fornecedores_file,line);
+						num2 = stoi(line);
+						getline(fornecedores_file,line);
+						s3 = line;
+						getline(fornecedores_file,line);
+						if(line == "oend"){
+							break;
+						}
+						else{
+							do{
+								destinos.push_back(line);
+								getline(fornecedores_file,line);
+							} while(line != "oend");
+						}
+						o = new Oferta(s1,s2,destinos,num1,num2,s3);
+						f->addOferta(*o);
+
+					}
+				}
+				this->addFornecedores(*f);
 			}
 		else {
-			cout << "The program failed to open the file with the information of the clients" << endl;
+			cout << "The program failed to open the file with the information of the suppliers" << endl;
 		}
+}
+void Empresa::save(){
+
 }
 
 //// Metodos da classe Fornecedor ////
@@ -101,6 +156,8 @@ void ClienteRegistado::addPontos(unsigned int pontos){
 
 
 //// Metodos da classe Oferta ////
+
+Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, string date): nome(name),barco(boat),destinos(dest),distancia(dist),lotacao(lot),data(date){};
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
