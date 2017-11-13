@@ -4,6 +4,7 @@
 void menuInicial();
 void menuCliente();
 void menuFornecedor();
+void menuReservas();
 void menuTipodeUtilizador();
 
 #endif /* SRC_MENU_H_ */
