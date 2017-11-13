@@ -5,6 +5,7 @@ using namespace std;
 
 void titulo() {
 
+
 	system("cls");
 
 	cout << "__________              __           __________.__                               \n";
@@ -17,7 +18,35 @@ void titulo() {
 
 }
 
+void adicionaCliente() {
+
+
+	titulo();
+
+	int opcaoRegisto;
+	bool clientechoice = true;
+	while (clientechoice) {
+
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Pretende tornar-se um cliente registado?                 |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
+		cout << "+----------------------------------------------------------+ \n";
+		cout << "| 1 - Sim (terá conta registada e acumulará pontos)        |\n";
+		cout << "| 2 - Não (continuará como cliente normal)                 |\n";
+		cout << "| 0 - Sair                                                 |";
+		cout << "+----------------------------------------------------------+\n";
+
+
+	}
+	
+
+}
+
 void menuCliente() {
+
+
+	titulo();
 
 	int opcaocliente;
 	while (true) {
@@ -26,7 +55,7 @@ void menuCliente() {
 		cout << "| Escolha o que pretende fazer com os clientes             |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-		cout << "+---------------------------------------------------------+ \n";
+		cout << "+----------------------------------------------------------+ \n";
 		cout << "| 1 - Adicionar Cliente                                    |\n";
 		cout << "| 2 - Modificar Cliente                                    |\n";
 		cout << "| 3 - Apagar Cliente                                       |\n";
@@ -71,6 +100,8 @@ void menuCliente() {
 
 void menuFornecedor() {
 
+	titulo();
+
 	int opcaofornecedor;
 
 	while (true) {
@@ -79,7 +110,7 @@ void menuFornecedor() {
 		cout << "| Escolha o que pretende fazer com os fornecedores         |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-		cout << "+---------------------------------------------------------+ \n";
+		cout << "+----------------------------------------------------------+ \n";
 		cout << "| 1 - Adicionar Fornecedor                                 |\n";
 		cout << "| 2 - Modificar Fornecedor                                 |\n";
 		cout << "| 3 - Apagar Fornecedor                                    |\n";
@@ -124,6 +155,8 @@ void menuFornecedor() {
 
 void menuReservas() {
 
+
+	titulo();
 	int opcaoreservas;
 	while (true) {
 		titulo();
@@ -131,12 +164,11 @@ void menuReservas() {
 		cout << "| Escolha o que pretende fazer com as reservas             |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-		cout << "+---------------------------------------------------------+ \n";
+		cout << "+----------------------------------------------------------+ \n";
 		cout << "| 1 - Adicionar Reserva                                    |\n";
 		cout << "| 2 - Modificar Reserva                                    |\n";
 		cout << "| 3 - Apagar Reserva                                       |\n";
 		cout << "| 4 - Ver Reservas                                         |\n";
-		cout << "| 9 - Voltar para o Menu Inicial                           |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 
@@ -147,10 +179,7 @@ void menuReservas() {
 
 		switch (opcaoreservas) {
 
-		case 0:
-			cout << "\n" << "Agradecemos a utiliza��o do nosso servi�o, a aplica��o ir� agora fechar.";
-			return;
-			break;
+		
 
 		case 1:
 			//AdicionaReservas();
@@ -162,8 +191,8 @@ void menuReservas() {
 			//RemoveReservas();
 			break;
 
-		case 9:
-			menuInicial();
+		case 0:
+			return;
 			break;
 
 		default:
@@ -187,7 +216,7 @@ void menuTipodeUtilizador()
 		cout << "| Escolha o tipo de opção sobre o qual quer trabalhar      |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-		cout << "+---------------------------------------------------------+ \n";
+		cout << "+----------------------------------------------------------+ \n";
 		cout << "| 1 - Gestão de Clientes                                   |\n";
 		cout << "| 2 - Gestão de Fornecedores                               |\n";
 		cout << "| 3 - Gestão de Reservas                                   |\n";
@@ -235,7 +264,7 @@ void menuInicial()
 	titulo();
 	cout << "\n";
 	cout << "\n";
-	cout << "Seja bem vindo ao gestor da Porto River, aqui poder� controlar todas as vertentes da sua empresa e visualizar toda a informa��o de que necessita. \n";
+	cout << "Seja bem vindo ao gestor da Porto Rivers, aqui poder� controlar todas as vertentes da sua empresa e visualizar toda a informa��o de que necessita. \n";
 	menuTipodeUtilizador();
 
 }
