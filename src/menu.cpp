@@ -8,11 +8,11 @@ void titulo() {
 	system("cls");
 
 	cout << "__________              __           __________.__                               \n";
-	cout << "\\______   \\____________/  |_  ____   \\______   \\__|__  __ ___________  ______   /   \n";
-	cout << " |     ___/  _ \\_  __ \\   __\\/  _ \\   |       _/  \\  \\/ // __ \\_  __ \\/  ___/  /  \n";
-	cout << " |    |  (  <_> )  | \\/|  | (  <_> )  |    |   \\  |\\   /\\  ___/|  | \\/\\___ \\  / /\n";
-	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\___  >__|  /____  >\n";
-	cout << "                                             \\/              \\/           \\/       \n";
+	cout << "\\______   \\____________/  |_  ____   \\______   \\__|__  __ ___________  ______      \n";
+	cout << " |     ___/  _ \\_  __ \\   __\\/  _ \\   |       _/  \\  \\/ // __ \\_  __ \\/  ___/    \n";
+	cout << " |    |  (  <_> )  | \\/|  | (  <_> )  |    |   \\  |\\   /\\  ___/|  | \\/\\___ \\   \n";
+	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\_____>__|  /____  >\n";
+	cout << "                                             \\/                            \\/       \n";
 	cout << "\n";
 
 }
@@ -58,22 +58,22 @@ void menuTipodeUtilizador()
 		switch (tipodeutilizador) {
 
 		case 0:
-			cout << "\n" << "Agradecemos a utilização do nosso serviço, a aplicação irá agora fechar.";
+			cout << "\n" << "Agradecemos a utilizaï¿½ï¿½o do nosso serviï¿½o, a aplicaï¿½ï¿½o irï¿½ agora fechar.";
 			break;
 		case 1:
 
-			cout << "\n" << "Está ser redirecionado para o menu do cliente...";
+			cout << "\n" << "Estï¿½ ser redirecionado para o menu do cliente...";
 			menuCliente();
 			break;
 
 		case 2:
 
-			cout << "\n" << "Está ser redirecionado para o menu do fornecedor...";
+			cout << "\n" << "Estï¿½ ser redirecionado para o menu do fornecedor...";
 			menuFornecedor();
 			break;
 
 		default:
-			cout << "Lamento, mas a opção que inseriu não é válida. Será redirecionado/a para o início do menú. \n";
+			cout << "Lamento, mas a opï¿½ï¿½o que inseriu nï¿½o ï¿½ vï¿½lida. Serï¿½ redirecionado/a para o inï¿½cio do menï¿½. \n";
 		}
 	}
 }
@@ -84,7 +84,7 @@ void menuInicial()
 	titulo();
 	cout << "\n";
 	cout << "\n";
-	cout << "Seja bem vindo ao gestor da Porto River, aqui poderá controlar todas as vertentes da sua empresa e visualizar toda a informação de que necessita. \n";
+	cout << "Seja bem vindo ao gestor da Porto River, aqui poderï¿½ controlar todas as vertentes da sua empresa e visualizar toda a informaï¿½ï¿½o de que necessita. \n";
 	menuTipodeUtilizador();
 
 }
