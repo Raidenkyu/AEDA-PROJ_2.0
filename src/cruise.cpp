@@ -14,7 +14,7 @@ using namespace std;
 
 Empresa::Empresa(){
 	this->load();
-	cout << this->_clientes[0]->getNome() << endl;
+	this->menuInicial();
 }
 
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
@@ -49,6 +49,7 @@ Empresa & Empresa::deleteClientes(string name){
 		if (name == this->_clientes.at(i)->getNome())
 			_clientes.erase(_clientes.begin() + i);
 	}
+	return *this;
 }
 
 
@@ -59,6 +60,7 @@ Empresa & Empresa::deleteFornecedores(string name) {
 		if (name == this->_fornecedores.at(i)->getNome())
 			_fornecedores.erase(_fornecedores.begin() + i);
 	}
+	return *this;
 }
 
 
@@ -69,16 +71,18 @@ Empresa & Empresa::deleteReservas(string name) {
 		if (name == this->_reservas.at(i)->getNomeCliente())
 			_reservas.erase(_reservas.begin() + i);
 	}
+	return *this;
 }
 
-Fornecedor & Fornecedor::deleteOfertas(string name) {
-/* Não sei como fazer isto sem alterar as classes que já temos, e isso pode merdar outras coisas portanto vou estar quieto
+/*Fornecedor & Fornecedor::deleteOfertas(string name) {
+ Não sei como fazer isto sem alterar as classes que já temos, e isso pode merdar outras coisas portanto vou estar quieto
 
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
 		if (name == this->ofertas.at(i)->getNome())
 			ofertas.erase(ofertas.begin() + i);
 	}
+	return *this;
 
 }
 */
@@ -249,6 +253,4 @@ Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
 }
-
-
 

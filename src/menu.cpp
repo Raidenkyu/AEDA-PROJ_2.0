@@ -1,6 +1,7 @@
 #include <iostream>
 #include "menu.h"
 #include "cruise.h"
+#include <climits>
 
 using namespace std;
 
@@ -22,8 +23,6 @@ void Empresa::titulo() {
 void Empresa::menuCliente() {
 
 
-	titulo();
-
 	int opcaocliente;
 	while (true) {
 		titulo();
@@ -41,8 +40,11 @@ void Empresa::menuCliente() {
 
 		cin >> opcaocliente;
 
-		if (cin.fail())
-			menuCliente();
+		if (cin.fail()){
+			cin.clear();
+			cin.ignore(INT_MAX,'\n');
+			throw InputInvalido<char>(opcaocliente);
+		}
 
 		switch (opcaocliente) {
 
@@ -95,9 +97,11 @@ void Empresa::adicionaCliente() {
 
 		cin >> opcaoRegisto;
 
-		if (cin.fail())
-			adicionaCliente();
-
+		if (cin.fail()){
+					cin.clear();
+					cin.ignore(INT_MAX,'\n');
+					throw InputInvalido<char>(opcaoRegisto);
+				}
 		switch (opcaoRegisto) {
 		case 0:
 			return;
@@ -126,9 +130,11 @@ void Empresa::adicionaClienteNormal() {
 	cout << "| Qual é o seu nome?                                       |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> nomeCliente;
+	cin.ignore (INT_MAX,'\n');
+	getline(cin,nomeCliente);
 	Cliente * novocliente = new Cliente(nomeCliente);
 	addClientes(*novocliente);
+	return;
 
 }
 
@@ -142,7 +148,7 @@ void Empresa::adicionaClienteRegistado() {
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> nomeClienteRegistado;
-	ClienteRegistado * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado, 0);
+	Cliente * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado, 0);
 	addClientes(*novoClienteRegistado);
 
 }
@@ -159,31 +165,13 @@ void Empresa::removeCliente() {
 
 	cin >> clienteremover;
 	deleteClientes(clienteremover);
-
-
-	cout << "+----------------------------------------------------------+\n";
-	cout << "| O cliente foi removido com sucesso.                      |\n";
-	cout << "| 1 - Menu Inicial                                         |\n";
-	cout << "| 2 - Menu Clientes	                                    |\n";
-	cout << "+----------------------------------------------------------+\n";
-
-	switch (quickmaths) {
-	case 1:
-		menuInicial();
-		break;
-	case 2:
-		menuCliente();
-		break;
-	default:
-		return;
-		break;
-	}
+	cout << endl << "O cliente foi removido com sucesso" << endl;
+	cout << "Pressione qualquer tecla para regressar" << endl;
+	cin.get();
 
 }
 
 void Empresa::menuFornecedor() {
-
-	titulo();
 
 	int opcaofornecedor;
 
@@ -202,9 +190,11 @@ void Empresa::menuFornecedor() {
 
 		cin >> opcaofornecedor;
 
-		if (cin.fail())
-			menuFornecedor();
-
+		if (cin.fail()){
+			cin.clear();
+			cin.ignore(INT_MAX,'\n');
+			throw InputInvalido<char>(opcaofornecedor);
+		}
 		switch (opcaofornecedor) {
 
 		case 0:
@@ -464,8 +454,10 @@ void Empresa::menuOfertas() {
 			break;
 
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Ser� redirecionado/a para o in�cio do men�. \n";
-
+			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Tente outra vez" << endl;
+			cout << "Pressione Enter para repetir" << endl;
+			cin.get();
+			clearScreen();
 
 		}
 
@@ -537,33 +529,15 @@ void Empresa::removeOferta() {
 	titulo();
 
 	string ofertaremover;
-	int quickmaths;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual é a oferta a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
-
-	cin >> ofertaremover;
+	cin.ignore(INT_MAX,'\n');
+	getline(cin,ofertaremover);
 	deleteReservas(ofertaremover);
-
-
-	cout << "+----------------------------------------------------------+\n";
-	cout << "| A oferta foi removida com sucesso.                       |\n";
-	cout << "| 1 - Menu Inicial                                         |\n";
-	cout << "| 2 - Menu Reservas                                        |\n";
-	cout << "+----------------------------------------------------------+\n";
-
-	switch (quickmaths) {
-	case 1:
-		menuInicial();
-		break;
-	case 2:
-		menuOfertas();
-		break;
-	default:
-		return;
-		break;
-	}
+	cout << "Oferta removida com sucesso" << endl;
+	cout << "Pressione qualquer tecla para regressar" << endl;
 
 }
 
@@ -571,10 +545,9 @@ void Empresa::menuTipodeUtilizador()
 {
 	
 	
-	titulo();
 	int tipodeutilizador;
 	while (true){
-
+		titulo();
 		
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Escolha o tipo de opção sobre o qual quer trabalhar      |\n";
@@ -590,8 +563,11 @@ void Empresa::menuTipodeUtilizador()
 		
 		cin >> tipodeutilizador;
 
-		if (cin.fail())
-			menuTipodeUtilizador();
+		if (cin.fail()){
+					cin.clear();
+					cin.ignore(INT_MAX,'\n');
+					throw InputInvalido<char>(tipodeutilizador);
+			}
 
 		switch (tipodeutilizador) {
 
@@ -601,29 +577,64 @@ void Empresa::menuTipodeUtilizador()
 			break;
 		case 1:
 
-			cout << "\n" << "Est� ser redirecionado para o menu do cliente...";
+			try{
 			menuCliente();
+			}
+			catch(InputInvalido<char> & ex){
+					clearScreen();
+					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cin.get();
+					menuCliente();
+				}
 			break;
 
 		case 2:
 
-			cout << "\n" << "Est� ser redirecionado para o menu do fornecedor...";
+
+			try{
 			menuFornecedor();
+			}
+			catch(InputInvalido<char> & ex){
+					clearScreen();
+					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cin.get();
+					menuFornecedor();
+				}
 			break;
 
 		case 3:
 
-			cout << "\n" << "Est� ser redirecionado para o menu das reservas...";
-			menuReservas();
+			try{
+				menuReservas();
+			}
+			catch(InputInvalido<char> & ex){
+					clearScreen();
+					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cin.get();
+					menuReservas();
+				}
 			break;
 
 		case 4:
-
-			cout << "\n" << "Est� ser redirecionado para o menu das reservas...";
+			try{
 			menuOfertas();
+			}
+			catch(InputInvalido<char> & ex){
+					clearScreen();
+					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cin.get();
+					menuOfertas();
+				}
 			break;
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Ser� redirecionado/a para o in�cio do men�. \n";
+			clearScreen();
+			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Tente outra vez. \n";
+			cin.get();
+			clearScreen();
 		}
 	}
 }
@@ -635,6 +646,18 @@ void Empresa::menuInicial()
 	cout << "\n";
 	cout << "\n";
 	cout << "Seja bem vindo ao gestor da Porto Rivers, aqui poder� controlar todas as vertentes da sua empresa e visualizar toda a informa��o de que necessita. \n";
-	menuTipodeUtilizador();
+	try{
+		menuTipodeUtilizador();
+	}
+	catch(InputInvalido<char> & ex){
+		clearScreen();
+		cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: ";
+		cout << ex ;
+		cout << endl;
+		cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+		menuTipodeUtilizador();
+		cin.get();
+	}
+	clearScreen();
 
 }

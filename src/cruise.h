@@ -126,4 +126,54 @@ public:
 
 };
 
+//Exceptions
+
+template <class T>
+class InputInvalido{
+private:
+  T input;
+public:
+  InputInvalido(T input):input(input){};
+  T getInput(){return this->input;};
+
+};
+
+template <class T>
+class ObjetoRepetido{
+private:
+  T obj;
+public:
+  ObjetoRepetido(T obj):obj(obj){};
+  T getObj(){return this->obj;};
+};
+
+template<class T>
+class ObjetoInexistente{
+private:
+  T obj;
+public:
+  ObjetoInexistente(T obj):obj(obj){};
+  T getObj(){return this->obj;};
+};
+
+//Overload do operador << para as exceptions
+
+template <class T>
+std::ostream & operator<<(std::ostream & os,InputInvalido<T> & ex){
+  os << ex.getInput();
+  return os;
+};
+
+template <class T>
+std::ostream & operator<<(std::ostream & os,ObjetoRepetido<T> & ex){
+  os << ex.getObj();
+  return os;
+};
+
+template <class T>
+std::ostream & operator<<(std::ostream & os,ObjetoInexistente<T> & ex){
+  os << ex.getObj();
+  return os;
+}
+
 #endif /* CRUISE_H_ */
