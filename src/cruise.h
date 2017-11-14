@@ -42,6 +42,8 @@ public:
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
 	std::vector<Oferta> & getOfertas();
+	std::vector<Oferta> & getOfertabyName(std::string nome);
+	Fornecedor & deleteOfertas(std::string name);
 
 };
 
@@ -65,7 +67,6 @@ public:
 	bool isRegistado(){return true;};
 };
 
-
 class Reserva{
 private:
 	std::string nome_oferta;
@@ -76,8 +77,10 @@ private:
 	unsigned int preco;
 public:
 	Reserva(std::string nome_oferta, Oferta * oferta, std::string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada = false);
+	std::string getNomeCliente() { return this->nome_cliente; };
+	std::string getNomeOferta() { return this->nome_oferta; };
+	
 };
-
 
 class Empresa{
 private:
@@ -89,6 +92,34 @@ public:
 	Empresa & addFornecedores(Fornecedor& f);
 	Empresa & addClientes(Cliente& c);
 	Empresa & addReservas(Reserva & r);
+	Empresa & deleteFornecedores(std::string name);
+	Empresa & deleteClientes(std::string name);
+	Empresa & deleteReservas(std::string name);
+
+	//menusGerais
+	void titulo();
+	void menuInicial();
+	void menuTipodeUtilizador();
+	//menuCliente
+	void menuCliente();
+	void adicionaClienteNormal();
+	void adicionaClienteRegistado();
+	void adicionaCliente();
+	void removeCliente();
+	//menuFornecedor
+	void menuFornecedor();
+	void adicionaFornecedor();
+	void removeFornecedor();
+	//menuReservas
+	void menuReservas();
+	void adicionaReserva();
+	void removeReservas();
+	//menuOfertas
+	void menuOfertas();
+	void adicionaOferta();
+	void removeOferta();
+
+	//metodos Empresa
 	const std::vector<Fornecedor*> & getFornecedores();
 	const std::vector<Cliente*> & getClientes();
 	void save();
@@ -96,16 +127,54 @@ public:
 
 };
 
+//Exceptions
 
+template <class T>
+class InputInvalido{
+private:
+  T input;
+public:
+  InputInvalido(T input):input(input){};
+  T getInput(){return this->input;};
 
+};
 
+template <class T>
+class ObjetoRepetido{
+private:
+  T obj;
+public:
+  ObjetoRepetido(T obj):obj(obj){};
+  T getObj(){return this->obj;};
+};
 
+template<class T>
+class ObjetoInexistente{
+private:
+  T obj;
+public:
+  ObjetoInexistente(T obj):obj(obj){};
+  T getObj(){return this->obj;};
+};
 
+//Overload do operador << para as exceptions
 
+template <class T>
+std::ostream & operator<<(std::ostream & os,InputInvalido<T> & ex){
+  os << ex.getInput();
+  return os;
+};
 
+template <class T>
+std::ostream & operator<<(std::ostream & os,ObjetoRepetido<T> & ex){
+  os << ex.getObj();
+  return os;
+};
 
-
-
-
+template <class T>
+std::ostream & operator<<(std::ostream & os,ObjetoInexistente<T> & ex){
+  os << ex.getObj();
+  return os;
+}
 
 #endif /* CRUISE_H_ */
