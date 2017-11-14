@@ -42,6 +42,8 @@ public:
 	std::string getMorada() { return this->morada; }
 	void addOferta(Oferta & oferta);
 	std::vector<Oferta> & getOfertas();
+	std::vector<Oferta> & getOfertabyName(std::string nome);
+	Fornecedor & deleteOfertas(std::string name);
 
 };
 
@@ -65,7 +67,6 @@ public:
 	bool isRegistado(){return true;};
 };
 
-
 class Reserva{
 private:
 	std::string nome_oferta;
@@ -76,8 +77,9 @@ private:
 	unsigned int preco;
 public:
 	Reserva(std::string nome_oferta, Oferta * oferta, std::string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada = false);
+	std::string getNomeCliente() { return this->nome_cliente; };
+	
 };
-
 
 class Empresa{
 private:
@@ -89,23 +91,39 @@ public:
 	Empresa & addFornecedores(Fornecedor& f);
 	Empresa & addClientes(Cliente& c);
 	Empresa & addReservas(Reserva & r);
+	Empresa & deleteFornecedores(std::string name);
+	Empresa & deleteClientes(std::string name);
+	Empresa & deleteReservas(std::string name);
+
+	//menusGerais
+	void titulo();
+	void menuInicial();
+	void menuTipodeUtilizador();
+	//menuCliente
+	void menuCliente();
+	void adicionaClienteNormal();
+	void adicionaClienteRegistado();
+	void adicionaCliente();
+	void removeCliente();
+	//menuFornecedor
+	void menuFornecedor();
+	void adicionaFornecedor();
+	void removeFornecedor();
+	//menuReservas
+	void menuReservas();
+	void adicionaReserva();
+	void removeReservas();
+	//menuOfertas
+	void menuOfertas();
+	void adicionaOferta();
+	void removeOferta();
+
+	//metodos Empresa
 	const std::vector<Fornecedor*> & getFornecedores();
 	const std::vector<Cliente*> & getClientes();
 	void save();
 	void load();
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif /* CRUISE_H_ */

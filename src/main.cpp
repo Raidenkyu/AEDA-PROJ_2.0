@@ -14,7 +14,7 @@ using namespace std;
 
 int main(){
 	SetPTchar();
-	menuInicial();
+	Empresa menuInicial();
 	Empresa Porto_Rivers;
 	return 0;
 }

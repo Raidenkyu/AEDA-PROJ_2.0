@@ -41,6 +41,48 @@ Empresa & Empresa::addReservas(Reserva& r){
 	return *this;
 }
 
+
+Empresa & Empresa::deleteClientes(string name){
+
+	for (unsigned int i = 0; i < _clientes.size(); i++)
+	{
+		if (name == this->_clientes.at(i)->getNome())
+			_clientes.erase(_clientes.begin() + i);
+	}
+}
+
+
+Empresa & Empresa::deleteFornecedores(string name) {
+
+	for (unsigned int i = 0; i < _fornecedores.size(); i++)
+	{
+		if (name == this->_fornecedores.at(i)->getNome())
+			_fornecedores.erase(_fornecedores.begin() + i);
+	}
+}
+
+
+Empresa & Empresa::deleteReservas(string name) {
+
+	for (unsigned int i = 0; i < _reservas.size(); i++)
+	{
+		if (name == this->_reservas.at(i)->getNomeCliente())
+			_reservas.erase(_reservas.begin() + i);
+	}
+}
+
+Fornecedor & Fornecedor::deleteOfertas(string name) {
+/* Não sei como fazer isto sem alterar as classes que já temos, e isso pode merdar outras coisas portanto vou estar quieto
+
+	for (unsigned int i = 0; i < ofertas.size(); i++)
+	{
+		if (name == this->ofertas.at(i)->getNome())
+			ofertas.erase(ofertas.begin() + i);
+	}
+
+}
+*/
+
 void Empresa::load(){
 	ifstream clientes_file("src/clientes_.txt");
 	ifstream registados_file("src/clientes_registados.txt");
@@ -167,7 +209,18 @@ vector<Oferta> & Fornecedor::getOfertas(){
 	return this->ofertas;
 }
 
+vector<Oferta> & Fornecedor::getOfertabyName(string nome) {
 
+	vector<Oferta> ofertasfornecedor;
+
+	for (unsigned int i = 0; i < this->ofertas.size(); i++)
+	{
+		if (nome == this->getOfertas().at(i).getNome())
+			ofertasfornecedor.push_back(getOfertas().at(i));
+	}
+
+	return ofertasfornecedor;
+}
 
 //// Metodos da classe Reserva ////
 
