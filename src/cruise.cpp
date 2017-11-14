@@ -10,31 +10,72 @@ using namespace std;
                      /////               CRUISE . CPP                 /////
                     /////                                            /////
 
-////  Metodos da classe Empresa ////
+//------------------------------------------------------------------------------
+/// Metodos da classe Empresa ////
+
+
+/**
+ * @brief      Constructs object of type Empresa
+ */
 Empresa::Empresa(){
 	this->load();
 	this->menuInicial();
 }
 
+
+/**
+ * @brief      Gets the fornecedores.
+ *
+ * @return     The fornecedores.
+ */
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
 	return this->_fornecedores;
 }
 
+
+/**
+ * @brief      Gets the clientes.
+ *
+ * @return     The clientes.
+ */
 const std::vector<Cliente*> & Empresa::getClientes(){
 	return this->_clientes;
 }
 
 
+/**
+ * @brief      Adds Fornecedores.
+ *
+ * @param      f     Fornecedor
+ *
+ * @return     returns the modified Empresa 
+ */
 Empresa & Empresa::addFornecedores(Fornecedor& f){
 	this->_fornecedores.push_back(&f);
 	return *this;
 }
 
+
+/**
+ * @brief      Adds clientes.
+ *
+ * @param      c     Cliente 
+ *
+ * @return     retuns the modified Empresa
+ */
 Empresa & Empresa::addClientes(Cliente& c){
 	this->_clientes.push_back(&c);
 	return *this;
 }
 
+
+/**
+ * @brief      Adds a reservas.
+ *
+ * @param      r     { parameter_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 Empresa & Empresa::addReservas(Reserva& r){
 	this->_reservas.push_back(&r);
 	return *this;

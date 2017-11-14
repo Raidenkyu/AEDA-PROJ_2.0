@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+ * @brief      Displays the company title
+ */
 void Empresa::titulo() {
 
 
@@ -20,6 +23,10 @@ void Empresa::titulo() {
 
 }
 
+
+/**
+ * @brief      displays the client menu
+ */
 void Empresa::menuCliente() {
 
 
