@@ -78,6 +78,7 @@ private:
 public:
 	Reserva(std::string nome_oferta, Oferta * oferta, std::string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada = false);
 	std::string getNomeCliente() { return this->nome_cliente; };
+	std::string getNomeOferta() { return this->nome_oferta; };
 	
 };
 

@@ -11,7 +11,6 @@ using namespace std;
                     /////                                            /////
 
 ////  Metodos da classe Empresa ////
-
 Empresa::Empresa(){
 	this->load();
 	this->menuInicial();
@@ -74,18 +73,16 @@ Empresa & Empresa::deleteReservas(string name) {
 	return *this;
 }
 
-/*Fornecedor & Fornecedor::deleteOfertas(string name) {
- Não sei como fazer isto sem alterar as classes que já temos, e isso pode merdar outras coisas portanto vou estar quieto
-
+Fornecedor & Fornecedor::deleteOfertas(string name) {
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
-		if (name == this->ofertas.at(i)->getNome())
+		if (name == this->ofertas.at(i).getNome())
 			ofertas.erase(ofertas.begin() + i);
 	}
 	return *this;
 
 }
-*/
+
 
 void Empresa::load(){
 	ifstream clientes_file("src/clientes_.txt");
