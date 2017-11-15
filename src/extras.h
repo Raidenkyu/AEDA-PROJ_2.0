@@ -1,7 +1,7 @@
 #ifndef EXTRAS_H_
 #define EXTRAS_H_
 #include <vector>
-
+#include <string>
 
                       /////                                          /////
                      /////               EXTRAS . H                 /////
@@ -11,14 +11,26 @@
 
 class Time{
 public:
-	Time(unsigned int h = 0, unsigned int m = 0, unsigned int s = 0);
+	Time(unsigned int d, unsigned int m,unsigned int y);
+	Time(std::string time);
+	unsigned int getDay();
+	unsigned int getMonth();
+	unsigned int getYear();
 	void printTime(std::ostream & os);
-	Time operator+(const Time& t);
+protected:
+	unsigned int day,month,year;
 
-private:
-    unsigned int timeArrange();
-	unsigned int hours, minutes, seconds;
 };
+
+
+class  RealTime: public Time{
+public:
+	RealTime();
+};
+
+bool operator==(Time & t1, Time & t2);
+bool operator<(Time &t1, Time & t2);
+std::ostream & operator<<(std::ostream & os, Time & t);
 
 
 
@@ -83,11 +95,11 @@ int BinarySearch(const std::vector<T> &v, P x){
 		}else{
 			return middle; // encontrou
 		}
-	return -1; // n�o encontrou
 	}
+	return -1; // n�o encontrou
 }
 
-
+int getRealDay();
 
 
 #endif /* SRC_EXTRAS_H_ */

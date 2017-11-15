@@ -22,8 +22,7 @@ private:
 	std::vector<std::string> destinos;
 	unsigned int distancia;
 	unsigned int lotacao;
-	std::string data;
-	Time hora;
+	Time data;
 public:
 
 	/**
@@ -36,7 +35,7 @@ public:
 	 * @param[in]  lotacao    The lotacao
 	 * @param[in]  data       The data
 	 */
-	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, std::string data);
+	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, Time data);
 	
 	/**
 	 * @brief      Gets the nome.

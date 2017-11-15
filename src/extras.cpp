@@ -1,4 +1,5 @@
 #include <iomanip>
+#include <sstream>
 #include "extras.h"
 
 using namespace std;
@@ -9,45 +10,73 @@ using namespace std;
 
 // Definition of class: Time
 
-Time::Time(unsigned int h , unsigned int m , unsigned int s ): hours(h), minutes(m), seconds(s){
-	if (seconds >= 60){
-		minutes += seconds / 60;
-		seconds = seconds % 60;
-	}
-	if (minutes >= 60){
-		hours += minutes / 60;
-		minutes = minutes % 60;
-	}
+Time::Time(unsigned int d, unsigned int m,unsigned int y): day(d), month(m), year(y){}
+
+Time::Time(string time){
+	stringstream ss;
+	char slash;
+	ss >> time;
+	ss >> this->year >> slash >> this->month >> slash >> this->day;
 }
 
-void Time::printTime(std::ostream & os){
-	if (seconds != 0) {
-		os << setw(2) << setfill('0') << hours;
-		os << ":";
-		os << setw(2) << setfill('0') << minutes;
-		os << ":";
-		os << setw(2) << setfill('0') << seconds;
-
-	}
-	else {
-		os << setw(2) << setfill('0') << hours;
-		os << ":";
-		os << setw(2) << setfill('0') << minutes << endl;
-	}
+RealTime::RealTime():Time(0,0,0){
+	time_t theTime = time(NULL);
+	struct tm *aTime = localtime(&theTime);
+	this->day = aTime->tm_mday;
+	this->month = aTime ->tm_mon;
+	this->year = aTime->tm_year;
 }
 
-std::ostream & operator<<(std::ostream & os, Time & t){
+void Time::printTime(ostream & os){
+	os << year << "/" << month << "/" << day;
+}
+
+ostream & operator<<(ostream & os, Time & t){
 	t.printTime(os);
 	return os;
 }
 
-Time Time::operator +(const Time& t) {
-	Time t2;
-	t2.seconds = this->seconds + t.seconds;
-	t2.minutes = (t2.seconds / 60) + this->minutes + t.minutes;
-	t2.seconds = t2.seconds % 60;
-	t2.hours = (t2.minutes / 60) + this->hours + t.hours;
-	t2.minutes = t2.minutes % 60;
-	return t2;
+unsigned int Time::getDay() {
+	return this->day;
 }
+
+unsigned int Time::getMonth() {
+	return month;
+}
+
+unsigned int Time::getYear() {
+	return year;
+}
+
+bool operator==(Time & t1, Time & t2){
+	if(t1.getDay() == t2.getDay() && t2.getMonth() == t1.getMonth() && t1.getYear() == t2.getYear())
+		return true;
+	else
+		return false;
+}
+
+bool operator<(Time &t1, Time & t2){
+	if(t1.getYear() < t2.getYear())
+		return true;
+	else if(t1.getYear() == t2.getYear()){
+		if(t1.getMonth() < t2. getMonth()){
+			return true;
+		}
+		else if(t1.getMonth() == t2.getMonth()){
+			if(t1.getDay() < t2.getDay()){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+	else{
+	return false;
+	}
+}
+
 

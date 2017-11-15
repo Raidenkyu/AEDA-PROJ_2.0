@@ -1,6 +1,7 @@
 
 #include <fstream>
 #include "cruise.h"
+#include "extras.h"
 #include <iostream>
 
 using namespace std;
@@ -109,6 +110,7 @@ void Empresa::load(){
 	Fornecedor * f;
 	Oferta * o;
 	Reserva * r;
+	Time * t;
 	vector<Oferta> ofertas;
 	//Stores the clients who aren't registred in the data base
 	if(clientes_file.is_open())
@@ -154,7 +156,7 @@ void Empresa::load(){
 						getline(fornecedores_file,line);
 						num2 = stoi(line);
 						getline(fornecedores_file,line);
-						s3 = line;
+						t = new Time(line);
 						getline(fornecedores_file,line);
 						if(line == "oend"){
 							break;
@@ -165,7 +167,7 @@ void Empresa::load(){
 								getline(fornecedores_file,line);
 							} while(line != "oend");
 						}
-						o = new Oferta(s1,s2,destinos,num1,num2,s3);
+						o = new Oferta(s1,s2,destinos,num1,num2,*t);
 						f->addOferta(*o);
 
 					}
@@ -247,7 +249,7 @@ void ClienteRegistado::addPontos(unsigned int pontos){
 
 //// Metodos da classe Oferta ////
 
-Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, string date): nome(name),barco(boat),destinos(dest),distancia(dist),lotacao(lot),data(date){};
+Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time date): nome(name),barco(boat),destinos(dest),distancia(dist),lotacao(lot),data(date){};
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;

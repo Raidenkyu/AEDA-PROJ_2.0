@@ -457,21 +457,29 @@ void Empresa::adicionaOferta() {
 	std::string barco;
 	std::string temp = "";
 	std::vector<std::string> destinos;
+	Oferta * novaOferta;
 	unsigned int distancia;
 	unsigned int lotacao;
 	std::string data;
+	Time * tempo;
+	int index;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual é o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> nome;
+	cin.ignore(INT_MAX,'\n');
+	getline(cin,nome);
+	index = BinarySearch(this->_fornecedores,nome);
+	if(index == -1){
+		throw ObjetoInexistente<string>(nome);
+	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual é o barco escolhido?			                    |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> barco;
+	getline(cin,barco);
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique os destinos (escreva FIM quando terminar):       |\n";
@@ -479,8 +487,10 @@ void Empresa::adicionaOferta() {
 
 	while (temp != "FIM")
 	{
-		destinos.push_back(temp);
-		cin >> temp;
+		getline(cin,temp);
+		if(temp != "FIM"){
+		 destinos.push_back(temp);
+		}
 		cout << "\n";
 	}
 
@@ -500,12 +510,11 @@ void Empresa::adicionaOferta() {
 	cout << "| Indique a data da viagem (YY/MM/DD):				        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> data;
+	getline(cin,data);
+	tempo = new Time(data);
 
-
-	/*
-	Oferta * novaOferta = new Oferta(nome, barco, destinos, distancia, lotacao, data);
-	Fornecedor addOfertas(*novaOferta); */
+	novaOferta = new Oferta(nome, barco, destinos, distancia, lotacao, *tempo);
+	this->_fornecedores[index]->addOferta(*novaOferta);
 
 }
 

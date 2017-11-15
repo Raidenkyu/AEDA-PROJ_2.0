@@ -8,6 +8,7 @@
 #include <iostream>
 #include "cruise.h"
 #include "menu.h"
+#include "extras.h"
 
 using namespace std;
 
