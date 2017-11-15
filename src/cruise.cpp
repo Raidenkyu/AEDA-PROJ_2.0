@@ -22,60 +22,25 @@ Empresa::Empresa(){
 	this->menuInicial();
 }
 
-
-/**
- * @brief      Gets the fornecedores.
- *
- * @return     The fornecedores.
- */
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
 	return this->_fornecedores;
 }
 
-
-/**
- * @brief      Gets the clientes.
- *
- * @return     The clientes.
- */
 const std::vector<Cliente*> & Empresa::getClientes(){
 	return this->_clientes;
 }
 
-
-/**
- * @brief      Adds Fornecedores.
- *
- * @param      f     Fornecedor
- *
- * @return     returns the modified Empresa 
- */
 Empresa & Empresa::addFornecedores(Fornecedor& f){
 	this->_fornecedores.push_back(&f);
 	return *this;
 }
 
-
-/**
- * @brief      Adds clientes.
- *
- * @param      c     Cliente 
- *
- * @return     retuns the modified Empresa
- */
 Empresa & Empresa::addClientes(Cliente& c){
 	this->_clientes.push_back(&c);
 	return *this;
 }
 
 
-/**
- * @brief      Adds a reservas.
- *
- * @param      r     { parameter_description }
- *
- * @return     { description_of_the_return_value }
- */
 Empresa & Empresa::addReservas(Reserva& r){
 	this->_reservas.push_back(&r);
 	return *this;
@@ -83,11 +48,12 @@ Empresa & Empresa::addReservas(Reserva& r){
 
 
 Empresa & Empresa::deleteClientes(string name){
-
-	for (unsigned int i = 0; i < _clientes.size(); i++)
-	{
-		if (name == this->_clientes.at(i)->getNome())
-			_clientes.erase(_clientes.begin() + i);
+	int index = BinarySearch(this->_clientes,name);
+	if(index != -1){
+		_clientes.erase(_clientes.begin() + index);
+	}
+	else{
+		throw ObjetoInexistente<string>(name);
 	}
 	return *this;
 }
@@ -114,7 +80,7 @@ Empresa & Empresa::deleteReservas(string name) {
 	return *this;
 }
 
-Fornecedor & Fornecedor::deleteOfertas(string name) {
+/*Fornecedor & Fornecedor::deleteOfertas(string name) {
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
 		if (name == this->ofertas.at(i).getNome())
@@ -123,6 +89,7 @@ Fornecedor & Fornecedor::deleteOfertas(string name) {
 	return *this;
 
 }
+*/
 
 
 void Empresa::load(){
@@ -234,9 +201,14 @@ void Empresa::load(){
 	else{
 		cout << "Erro: O programa não conseguiu abrir o ficheiro das reservas" << endl;
 	}
+	this->sort();
 }
 void Empresa::save(){
 
+}
+void Empresa::sort(){
+	quickSort(this->_clientes,0,this->_clientes.size()-1);
+	quickSort(this->_fornecedores,0,this->_fornecedores.size()-1);
 }
 
 //// Metodos da classe Fornecedor ////
@@ -251,18 +223,7 @@ vector<Oferta> & Fornecedor::getOfertas(){
 	return this->ofertas;
 }
 
-vector<Oferta> & Fornecedor::getOfertabyName(string nome) {
 
-	vector<Oferta> ofertasfornecedor;
-
-	for (unsigned int i = 0; i < this->ofertas.size(); i++)
-	{
-		if (nome == this->getOfertas().at(i).getNome())
-			ofertasfornecedor.push_back(getOfertas().at(i));
-	}
-
-	return ofertasfornecedor;
-}
 
 //// Metodos da classe Reserva ////
 

@@ -20,21 +20,29 @@ private:
 	unsigned int hours, minutes, seconds;
 };
 
-class Schedule: public Time{
 
-};
 
+
+/**
+ * @brief      implementation of a Quick Sort Algorithm
+ *
+ * @param[in]  arr    The arr
+ * @param[in]  left   The left
+ * @param[in]  right  The right
+ *
+ * @tparam     T      elements of the vector arr
+ */
 template<class T>
 void quickSort(std::vector<T> arr, int left, int right) {
       int i = left, j = right;
-      int tmp;
-      int pivot = arr[(left + right) / 2];
+      T tmp;
+      std::string pivot = arr[(left + right) / 2]->getNome();
 
       /* partition */
       while (i <= j) {
-            while (arr[i] < pivot)
+            while (arr[i]->getNome() < pivot)
                   i++;
-            while (arr[j] > pivot)
+            while (arr[j]->getNome() > pivot)
                   j--;
             if (i <= j) {
                   tmp = arr[i];
@@ -52,19 +60,30 @@ void quickSort(std::vector<T> arr, int left, int right) {
             quickSort(arr, i, right);
 }
 
-template <class T>
-int BinarySearch(const std::vector<T> &v, T x){
+
+/**
+ * @brief      implementation of a Binary Search Algorithm
+ *
+ * @param[in]  v     the vector
+ * @param[in]  x     the element
+ *
+ * @tparam     T     type of the elements of the vector
+ *
+ * @return     the index of the element if found, otherwise -1
+ */
+template <class T,class P>
+int BinarySearch(const std::vector<T> &v, P x){
 	int left = 0, right = v.size() - 1;
 	while (left <= right){
 		int middle = (left + right) / 2;
-		if (v[middle] < x){
+		if (v[middle]->getNome() < x){
 			left = middle + 1;
-		}else if (x < v[middle]){
+		}else if (x < v[middle]->getNome()){
 			right = middle - 1;
 		}else{
 			return middle; // encontrou
 		}
-	return -1; // não encontrou
+	return -1; // nï¿½o encontrou
 	}
 }
 

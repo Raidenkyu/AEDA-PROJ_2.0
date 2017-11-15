@@ -1,5 +1,6 @@
 #include <iostream>
 #include "menu.h"
+#include "extras.h"
 #include "cruise.h"
 #include <climits>
 
@@ -157,6 +158,8 @@ void Empresa::adicionaClienteRegistado() {
 	cin >> nomeClienteRegistado;
 	Cliente * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado, 0);
 	addClientes(*novoClienteRegistado);
+	cout << "Pressione Enter para regressar\n";
+	cin.get();
 
 }
 
@@ -238,7 +241,8 @@ void Empresa::adicionaFornecedor() {
 	cout << "| Qual é o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> nomeFornecedor;
+	cin.ignore(INT_MAX,'\n');
+	getline(cin,nomeFornecedor);
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o NIF:                                           |\n";
@@ -250,7 +254,8 @@ void Empresa::adicionaFornecedor() {
 	cout << "| Indique a morada:                                        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> morada;
+	cin.ignore(INT_MAX,'\n');
+	getline(cin,morada);
 	Fornecedor * novoFornecedor = new Fornecedor(nomeFornecedor, NIF, morada);
 	addFornecedores(*novoFornecedor);
 }
@@ -259,34 +264,21 @@ void Empresa::removeFornecedor() {
 	titulo();
 
 	string fornecedorremover;
-	int quickmaths;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual é o fornecedor a remover?                           |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> fornecedorremover;
+	cin.ignore(INT_MAX,'\n');
+	getline(cin,fornecedorremover);
 	deleteFornecedores(fornecedorremover);
 
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| O fornecedor foi removida com sucesso.                   |\n";
-	cout << "| 1 - Menu Inicial                                         |\n";
-	cout << "| 2 - Menu Fornecedores                                    |\n";
 	cout << "+----------------------------------------------------------+\n";
-
-	switch (quickmaths) {
-	case 1:
-		menuInicial();
-		break;
-	case 2:
-		menuFornecedor();
-		break;
-	default:
-		return;
-		break;
-	}
-
+	cout << "Pressione Enter para regressar\n";
+	cin.get();
 }
 
 void Empresa::menuReservas() {
@@ -347,6 +339,8 @@ void Empresa::adicionaReserva() {
 	int preco;
 	bool cancelada = false;;
 	vector<Oferta> vectorOfertasDisponiveis;
+	Oferta * oferta;
+	Cliente * cliente;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual é o nome do fornecedor?                             |\n";
@@ -380,9 +374,8 @@ void Empresa::adicionaReserva() {
 
 	cin >> preco;
 
-	/*
 	Reserva * novaReserva = new Reserva(nomeFornecedor, oferta, nomeCliente, cliente, preco, cancelada);
-	addReservas(*novaReserva); */
+	addReservas(*novaReserva); 
 
 }
 
@@ -390,34 +383,20 @@ void Empresa::removeReservas() {
 	titulo();
 
 	string reservaremover;
-	int quickmaths;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual é a reserva a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> reservaremover;
-	deleteReservas(reservaremover);
+    cin.ignore(INT_MAX,'\n');
+	getline(cin,reservaremover);
 
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| A reserva foi removida com sucesso.                      |\n";
-	cout << "| 1 - Menu Inicial                                         |\n";
-	cout << "| 2 - Menu Reservas                                        |\n";
 	cout << "+----------------------------------------------------------+\n";
-
-	switch (quickmaths) {
-	case 1:
-		menuInicial();
-		break;
-	case 2:
-		menuReservas();
-		break;
-	default:
-		return;
-		break;
-	}
-
+	cout << "Pressione Enter para regressar\n";
+	cin.get();
 }
 
 void Empresa::menuOfertas() {
