@@ -23,6 +23,7 @@ private:
 	unsigned int distancia;
 	unsigned int lotacao;
 	Time data;
+	unsigned int preco;
 public:
 
 	/**
@@ -35,7 +36,7 @@ public:
 	 * @param[in]  lotacao    The lotacao
 	 * @param[in]  data       The data
 	 */
-	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, Time data);
+	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, Time data, unsigned int preco);
 	
 	/**
 	 * @brief      Gets the nome.
@@ -51,6 +52,10 @@ public:
 	 */
 	std::string getBarco() { return this->barco; }
 
+	std::string getData();
+
+	int getBarcoNumber();
+
 	/**
 	 * @brief      Gets the lotacao.
 	 *
@@ -63,18 +68,25 @@ public:
 	 *
 	 * @return     The destinos.
 	 */
+
+	unsigned int getDistancia() { return this->distancia; }
+
 	const std::vector<std::string> & getDestinos();
+
+	
 };
 
 /**
  * @brief      Class for fornecedor.
  */
-class Fornecedor{
+class Fornecedor {
 private:
 	std::string nome;
 	unsigned int nif;
 	std::string morada;
 	std::vector<Oferta> ofertas;
+	std::vector<int> definicoesfornecedor;  //elementos: 0 - multiplicador lotação; 1 - iate; 2 - barco rebelo; 3 - veleiro;
+
 public:
 
 	/**
@@ -120,16 +132,7 @@ public:
 	 * @return     The ofertas.
 	 */
 	std::vector<Oferta> & getOfertas();
-
-	/**
-	 * @brief      searchs the oferta which name is equal to the argument
-	 *
-	 * @param[in]  nome  The nome
-	 *
-	 * @return     The oferta
-	 */
-	std::vector<Oferta> & getOfertabyName(std::string nome);
-
+	
 	/**
 	 * @brief      remove the oferta of a fornecedor
 	 *
@@ -137,7 +140,13 @@ public:
 	 *
 	 * @return     the modified fornecedor
 	 */
-	Fornecedor & deleteOfertas(std::string name);
+	void setDefinicoesFornecedor();
+
+	std::vector<int> getDefinicoesFornecedor() { return this->definicoesfornecedor; }
+
+	int calculaPreco(int tipodebarco, int lotacao);
+
+	void displayOfertas();
 
 
 };
@@ -224,7 +233,7 @@ public:
  */
 class Reserva{
 private:
-	std::string nome_oferta;
+	std::string nome_fornecedor;
 	Oferta* oferta;
 	std::string nome_cliente;
 	Cliente * cliente;
@@ -235,14 +244,14 @@ public:
 	/**
 	 * @brief      Construct the Reserva Objet
 	 *
-	 * @param[in]  nome_oferta   The name of the offer
-	 * @param      oferta        A pointer to the offer
-	 * @param[in]  nome_cliente  The name of the client
-	 * @param      cliente       A pointer to the client
-	 * @param[in]  preco         The price of the reservation
-	 * @param[in]  cancelada     If the reservation was canceled
+	 * @param[in]  nome_fornecedor	The name of the supplier
+	 * @param      oferta			A pointer to the offer
+	 * @param[in]  nome_cliente		The name of the client
+	 * @param      cliente			A pointer to the client
+	 * @param[in]  preco			The price of the reservation
+	 * @param[in]  cancelada		If the reservation was canceled
 	 */
-	Reserva(std::string nome_oferta, Oferta * oferta, std::string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada = false);
+	Reserva(std::string nome_fornecedor, Oferta * oferta, std::string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada = false);
 	
 	/**
 	 * @brief      Gets the name of the client.
@@ -256,7 +265,9 @@ public:
 	 *
 	 * @return     The nome of oferta.
 	 */
-	std::string getNomeOferta() { return this->nome_oferta; };
+	std::string getNomeFornecedor() { return this->nome_fornecedor; };
+
+	
 	
 };
 

@@ -81,7 +81,7 @@ Empresa & Empresa::deleteReservas(string name) {
 	return *this;
 }
 
-/*Fornecedor & Fornecedor::deleteOfertas(string name) {
+/* Fornecedor & Fornecedor::deleteOfertas(string name) {
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
 		if (name == this->ofertas.at(i).getNome())
@@ -105,6 +105,7 @@ void Empresa::load(){
 	string morada;
 	unsigned int num1;
 	unsigned int num2;
+	unsigned int p;
 	vector<string> destinos;
 	Cliente * c;
 	Fornecedor * f;
@@ -158,6 +159,8 @@ void Empresa::load(){
 						getline(fornecedores_file,line);
 						t = new Time(line);
 						getline(fornecedores_file,line);
+						p = stoi(line);
+						getline(fornecedores_file,line);
 						if(line == "oend"){
 							break;
 						}
@@ -167,7 +170,7 @@ void Empresa::load(){
 								getline(fornecedores_file,line);
 							} while(line != "oend");
 						}
-						o = new Oferta(s1,s2,destinos,num1,num2,*t);
+						o = new Oferta(s1,s2,destinos,num1,num2,*t,p);
 						f->addOferta(*o);
 
 					}
@@ -226,11 +229,41 @@ vector<Oferta> & Fornecedor::getOfertas(){
 }
 
 
+int Fornecedor::calculaPreco(int tipodebarco, int lotacao) {
+
+
+	return definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao; //1 - iate; 2 - barco rebelo; 3 - veleiro;
+
+}
+
+void Fornecedor::displayOfertas() {
+	
+
+	for (unsigned int i = 0; i < ofertas.size(); i++)
+	{
+		cout << "Nome: " << ofertas.at(i).getNome() << endl;
+		cout << "Barco: " << ofertas.at(i).getBarco() << endl;
+
+		for (unsigned int j = 0; j < ofertas.at(i).getDestinos.size(); j++) {
+		cout << "Destinos:" << endl;
+		cout << "	Destino nº" << j << " : "<< ofertas.at(i).getDestinos.at(j) << endl;
+	}
+		cout << "Distancia: " << ofertas.at(i).getDistancia() << "/n";
+		cout << "Lotação: " << ofertas.at(i).getLotacao() << endl;
+		cout << "Data: " << ofertas.at(i).getData << endl;
+		cout << "Preço: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl;
+
+	}
+}
+
+
+
 
 //// Metodos da classe Reserva ////
 
-Reserva::Reserva(std::string nome_oferta, Oferta * oferta, string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada):
-		nome_oferta(nome_oferta), oferta(oferta), nome_cliente(nome_cliente),cliente(cliente),preco(preco), cancelada(cancelada) {}
+Reserva::Reserva(string nome_fornecedor, Oferta * oferta, string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada):
+		nome_fornecedor(nome_fornecedor), oferta(oferta), nome_cliente(nome_cliente),cliente(cliente),preco(preco), cancelada(cancelada) {}
+
 
 
 //// Metodos da classe Cliente ////
@@ -249,9 +282,25 @@ void ClienteRegistado::addPontos(unsigned int pontos){
 
 //// Metodos da classe Oferta ////
 
-Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time date): nome(name),barco(boat),destinos(dest),distancia(dist),lotacao(lot),data(date){};
+Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time date, unsigned int preco): nome(name),barco(boat),destinos(dest),distancia(dist),lotacao(lot),data(date), preco(preco){};
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
 }
 
+int Oferta::getBarcoNumber()
+{
+	if (barco == "iate")
+		return 1;
+	else if (barco == "barco rebelo" || barco == "barco_rebelo")
+		return 2;
+	else if (barco == "veleiro")
+		return 3;
+	else return -1;
+	
+}
+
+string Oferta::getData() {
+	
+	cout << data.getYear() << "/" << data.getMonth << "/" << data.getDay;
+}
