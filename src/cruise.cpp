@@ -21,6 +21,7 @@ using namespace std;
 Empresa::Empresa(){
 	this->load();
 	this->menuInicial();
+	this->save();
 }
 
 const std::vector<Fornecedor*> & Empresa::getFornecedores(){
@@ -94,7 +95,7 @@ Empresa & Empresa::deleteReservas(string name) {
 
 
 void Empresa::load(){
-	ifstream clientes_file("src/clientes_.txt");
+	ifstream clientes_file("src/clientes.txt");
 	ifstream registados_file("src/clientes_registados.txt");
 	ifstream fornecedores_file("src/fornecedores.txt");
 	ifstream reservas_file("src/fornecedores.txt");
@@ -127,7 +128,7 @@ void Empresa::load(){
 	if(registados_file.is_open())
 			while(getline(registados_file,line)){
 				s1 = line;
-				getline(registados_file,line);
+				getline(registados_file,line,'\n');
 				num1 = stoi(line);
 				c = new ClienteRegistado(line,num1);
 				this->addClientes(*c);
@@ -136,10 +137,10 @@ void Empresa::load(){
 			cout << "The program failed to open the file with the information of the registred clients" << endl;
 		}
    //Stores the supplier
-	if(fornecedores_file.is_open())
+	if(fornecedores_file.is_open()){
 			while(getline(fornecedores_file,line)){
 				s1 = line;
-				getline(fornecedores_file,line);
+				getline(fornecedores_file,line,'\n');
 				num1 = stoi(line);
 				getline(fornecedores_file,line);
 				s2 = line;
@@ -152,13 +153,13 @@ void Empresa::load(){
 						s1 = line;
 						getline(fornecedores_file,line);
 						s2 = line;
-						getline(fornecedores_file,line);
+						getline(fornecedores_file,line,'\n');
 						num1 = stoi(line);
-						getline(fornecedores_file,line);
+						getline(fornecedores_file,line,'\n');
 						num2 = stoi(line);
 						getline(fornecedores_file,line);
 						t = new Time(line);
-						getline(fornecedores_file,line);
+						getline(fornecedores_file,line,'\n');
 						p = stoi(line);
 						getline(fornecedores_file,line);
 						if(line == "oend"){
@@ -175,17 +176,23 @@ void Empresa::load(){
 
 					}
 				}
+
+
 				this->addFornecedores(*f);
+
+
 			}
+	}
 		else {
 			cout << "The program failed to open the file with the information of the suppliers" << endl;
 		}
+	cout << "coiso" << endl;
 	if(reservas_file.is_open()){
 		while(getline(reservas_file,line)){
 			s1 = line;
 			getline(reservas_file,line);
 			s2 = line;
-			getline(reservas_file,line);
+			getline(reservas_file,line, '\n');
 			num1 = stoi(line);
 			for(unsigned int i = 0; i < this->_clientes.size();i++){
 				if(this->_clientes[i]->getNome() == s2){
@@ -207,13 +214,38 @@ void Empresa::load(){
 		cout << "Erro: O programa não conseguiu abrir o ficheiro das reservas" << endl;
 	}
 	this->sort();
+	clientes_file.close();
+	registados_file.close();
+	fornecedores_file.close();
+	reservas_file.close();
 }
 void Empresa::save(){
+	ofstream clientes_file("src/clientes_.txt");
+	ofstream registados_file("src/clientes_registados.txt");
+	ofstream fornecedores_file("src/fornecedores.txt");
+	ofstream reservas_file("src/fornecedores.txt");
+	for(unsigned int i = 0; i < this->_clientes.size(); i++){
+		if(this->_clientes[i]->isRegistado())
+			registados_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getPontos() << endl;
+		else
+			clientes_file << this->_clientes[i]->getNome() << endl;
+	}
+	for(unsigned int i = 0; i < this->_fornecedores.size(); i++){
+		fornecedores_file << this->_fornecedores[i]->getNome() << endl;
+		fornecedores_file << this->_fornecedores[i]->getNif() << endl;
+		fornecedores_file << this->_fornecedores[i]->getMorada() << endl;
+		fornecedores_file << this->_fornecedores[i]->getNif() << endl;
+		for(unsigned int j = 0; j < this->_fornecedores.size(); j++){
 
+		}
+	}
 }
 void Empresa::sort(){
-	quickSort(this->_clientes,0,this->_clientes.size()-1);
-	quickSort(this->_fornecedores,0,this->_fornecedores.size()-1);
+	cout << "1" << endl;
+	Sort(this->_clientes);
+	cout << "2" << endl;
+	Sort(this->_fornecedores);
+	cout << "3" << endl;
 }
 
 //// Metodos da classe Fornecedor ////
@@ -244,13 +276,13 @@ void Fornecedor::displayOfertas() {
 		cout << "Nome: " << ofertas.at(i).getNome() << endl;
 		cout << "Barco: " << ofertas.at(i).getBarco() << endl;
 
-		for (unsigned int j = 0; j < ofertas.at(i).getDestinos.size(); j++) {
+		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
 		cout << "Destinos:" << endl;
-		cout << "	Destino nº" << j << " : "<< ofertas.at(i).getDestinos.at(j) << endl;
+		cout << "	Destino nº" << j << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
 	}
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << "/n";
 		cout << "Lotação: " << ofertas.at(i).getLotacao() << endl;
-		cout << "Data: " << ofertas.at(i).getData << endl;
+		cout << "Data: " << ofertas.at(i).getData() << endl;
 		cout << "Preço: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl;
 
 	}
@@ -302,5 +334,5 @@ int Oferta::getBarcoNumber()
 
 string Oferta::getData() {
 	
-	cout << data.getYear() << "/" << data.getMonth << "/" << data.getDay;
+	return to_string(data.getYear()) + "/" + to_string(data.getMonth()) + "/" + to_string(data.getDay());
 }

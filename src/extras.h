@@ -39,37 +39,21 @@ std::ostream & operator<<(std::ostream & os, Time & t);
  * @brief      implementation of a Quick Sort Algorithm
  *
  * @param[in]  arr    The arr
- * @param[in]  left   The left
- * @param[in]  right  The right
  *
  * @tparam     T      elements of the vector arr
  */
 template<class T>
-void quickSort(std::vector<T> arr, int left, int right) {
-      int i = left, j = right;
-      T tmp;
-      std::string pivot = arr[(left + right) / 2]->getNome();
-
-      /* partition */
-      while (i <= j) {
-            while (arr[i]->getNome() < pivot)
-                  i++;
-            while (arr[j]->getNome() > pivot)
-                  j--;
-            if (i <= j) {
-                  tmp = arr[i];
-                  arr[i] = arr[j];
-                  arr[j] = tmp;
-                  i++;
-                  j--;
-            }
-      };
-
-      /* recursion */
-      if (left < j)
-            quickSort(arr, left, j);
-      if (i < right)
-            quickSort(arr, i, right);
+void Sort(std::vector<T> arr){
+	T tmp;
+	for(unsigned int i = 0; i < arr.size();i++){
+		for(unsigned int j = i+1; j < arr.size();j++){
+			if(arr[i]->getNome() > arr[j]->getNome()){
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+			}
+		}
+	}
 }
 
 
