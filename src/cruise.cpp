@@ -187,11 +187,17 @@ void Empresa::load(){
 			cout << "The program failed to open the file with the information of the suppliers" << endl;
 		}
 	cout << "coiso" << endl;
+	bool cancelada;
 	if(reservas_file.is_open()){
 		while(getline(reservas_file,line)){
 			s1 = line;
 			getline(reservas_file,line);
 			s2 = line;
+			getline(reservas_file,line);
+			if(line == "true"){
+				cancelada = true;
+			}
+			else cancelada = false;
 			getline(reservas_file,line, '\n');
 			num1 = stoi(line);
 			for(unsigned int i = 0; i < this->_clientes.size();i++){
@@ -206,7 +212,7 @@ void Empresa::load(){
 								}
 							}
 						}
-			r = new Reserva(s1,o,s2,c,num1);
+			r = new Reserva(s1,o,s2,c,num1,cancelada);
 			this->addReservas(*r);
 		}
 	}
@@ -234,10 +240,31 @@ void Empresa::save(){
 		fornecedores_file << this->_fornecedores[i]->getNome() << endl;
 		fornecedores_file << this->_fornecedores[i]->getNif() << endl;
 		fornecedores_file << this->_fornecedores[i]->getMorada() << endl;
-		fornecedores_file << this->_fornecedores[i]->getNif() << endl;
-		for(unsigned int j = 0; j < this->_fornecedores.size(); j++){
+		for(unsigned int j = 0; j < this->_fornecedores[i]->getOfertas().size(); j++){
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getNome() << endl;
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getBarco() << endl;
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getDistancia() << endl;
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getLotacao() << endl;
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getData() << endl;
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getPreco() << endl;
+			for(unsigned int k = 0; k < this->_fornecedores[i]->getOfertas()[j].getDestinos().size(); k++){
+				cout << this->_fornecedores[i]->getOfertas()[j].getDestinos()[k] << endl;
+			}
+			if(this->_fornecedores[i]->getOfertas().size() != 0){
+			    cout << "oend" << endl;
+			}
+			cout << "fend" << endl;
 
 		}
+	}
+	for(unsigned int i = 0; i < this->_reservas.size(); i++){
+		cout << this->_reservas[i]->getNomeFornecedor() << endl;
+		cout << this->_reservas[i]->getNomeCliente() << endl;
+		if(this->_reservas[i]->isCancelada()){
+			cout << "true" << endl;
+		}
+		else cout << "false" << endl;
+		cout << this->_reservas[i]->getPreco() << endl;
 	}
 }
 void Empresa::sort(){

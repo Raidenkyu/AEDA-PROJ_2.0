@@ -72,6 +72,7 @@ public:
 	unsigned int getDistancia() { return this->distancia; }
 
 	const std::vector<std::string> & getDestinos();
+	unsigned int getPreco(){return this->preco;};
 
 	
 };
@@ -85,7 +86,7 @@ private:
 	unsigned int nif;
 	std::string morada;
 	std::vector<Oferta> ofertas;
-	std::vector<int> definicoesfornecedor;  //elementos: 0 - multiplicador lotação; 1 - iate; 2 - barco rebelo; 3 - veleiro;
+	std::vector<int> definicoesfornecedor;  //elementos: 0 - multiplicador lotaï¿½ï¿½o; 1 - iate; 2 - barco rebelo; 3 - veleiro;
 
 public:
 
@@ -266,6 +267,8 @@ public:
 	 * @return     The nome of oferta.
 	 */
 	std::string getNomeFornecedor() { return this->nome_fornecedor; };
+	bool isCancelada(){return this->cancelada;};
+	unsigned int getPreco(){return this->preco;};
 
 	
 	
