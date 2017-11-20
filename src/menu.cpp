@@ -48,10 +48,19 @@ void Empresa::menuCliente() {
 
 		cin >> opcaocliente;
 
+		try{
 		if (cin.fail()){
 			cin.clear();
 			cin.ignore(INT_MAX,'\n');
 			throw InputInvalido<char>(opcaocliente);
+		}
+		}
+		catch(InputInvalido<char> & ex){
+			clearScreen();
+			cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
+			cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+			cin.get();
+
 		}
 
 		switch (opcaocliente) {
@@ -104,12 +113,20 @@ void Empresa::adicionaCliente() {
 		cout << "+----------------------------------------------------------+\n";
 
 		cin >> opcaoRegisto;
-
+		try{
 		if (cin.fail()){
 					cin.clear();
 					cin.ignore(INT_MAX,'\n');
 					throw InputInvalido<char>(opcaoRegisto);
 				}
+		}
+		catch(InputInvalido<char> & ex){
+					clearScreen();
+					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
+					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cin.get();
+
+		}
 		switch (opcaoRegisto) {
 		case 0:
 			return;
@@ -199,11 +216,18 @@ void Empresa::menuFornecedor() {
 		cout << "+----------------------------------------------------------+\n";
 
 		cin >> opcaofornecedor;
-
+		try{
 		if (cin.fail()){
 			cin.clear();
 			cin.ignore(INT_MAX,'\n');
 			throw InputInvalido<char>(opcaofornecedor);
+		}
+		}
+		catch(InputInvalido<char> & ex){
+		clearScreen();
+		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
+		cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+		cin.get();
 		}
 		switch (opcaofornecedor) {
 
@@ -490,11 +514,22 @@ void Empresa::menuOfertas() {
 		cout << "| 4 - Ver Ofertas                                          |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
-
+		try{
 		cin >> opcaoOfertas;
-
-		if (cin.fail())
+		if (cin.fail()){
 			menuOfertas();
+			cin.clear();
+			cin.ignore(INT_MAX,'\n');
+			throw InputInvalido<char>(opcaoOfertas);
+		}
+		}
+		catch(InputInvalido<char> & ex){
+			clearScreen();
+			cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
+			cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+			cin.get();
+
+		}
 
 		switch (opcaoOfertas) {
 
@@ -651,7 +686,7 @@ void Empresa::menuTipodeUtilizador()
 		cout << "| 4 - Gestao de Ofertas                                    |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
-		
+		try{
 		cin >> tipodeutilizador;
 
 		if (cin.fail()){
@@ -659,6 +694,14 @@ void Empresa::menuTipodeUtilizador()
 					cin.ignore(INT_MAX,'\n');
 					throw InputInvalido<char>(tipodeutilizador);
 			}
+		}
+		catch(InputInvalido<char> & ex){
+					clearScreen();
+					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
+					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cin.get();
+
+		}
 
 		switch (tipodeutilizador) {
 
@@ -667,59 +710,18 @@ void Empresa::menuTipodeUtilizador()
 			return;
 			break;
 		case 1:
-
-			try{
 			menuCliente();
-			}
-			catch(InputInvalido<char> & ex){
-					clearScreen();
-					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
-					cin.get();
-					menuCliente();
-				}
 			break;
-
 		case 2:
-
-
-			try{
 			menuFornecedor();
-			}
-			catch(InputInvalido<char> & ex){
-					clearScreen();
-					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
-					cin.get();
-					menuFornecedor();
-				}
 			break;
 
 		case 3:
-
-			try{
-				menuReservas();
-			}
-			catch(InputInvalido<char> & ex){
-					clearScreen();
-					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
-					cin.get();
-					menuReservas();
-				}
+			menuReservas();
 			break;
 
 		case 4:
-			try{
 			menuOfertas();
-			}
-			catch(InputInvalido<char> & ex){
-					clearScreen();
-					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
-					cin.get();
-					menuOfertas();
-				}
 			break;
 		default:
 			clearScreen();
@@ -737,18 +739,7 @@ void Empresa::menuInicial()
 	cout << "\n";
 	cout << "\n";
 	cout << "Seja bem vindo ao gestor da Porto Rivers, aqui podera controlar todas as vertentes da sua empresa e visualizar toda a informacao de que necessita. \n";
-	try{
-		menuTipodeUtilizador();
-	}
-	catch(InputInvalido<char> & ex){
-		clearScreen();
-		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: ";
-		cout << ex ;
-		cout << endl;
-		cout << "Pressione qualquer tecla para voltar ao menu" << endl;
-		menuTipodeUtilizador();
-		cin.get();
-	}
+	menuTipodeUtilizador();
 	clearScreen();
 
 }

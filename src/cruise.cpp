@@ -185,7 +185,6 @@ void Empresa::load(){
 		else {
 			cout << "O programa falhou a abrir o ficheiro com a informacao de fornecedores" << endl;
 		}
-	cout << "coiso" << endl;
 	bool cancelada;
 	if(reservas_file.is_open()){
 		while(getline(reservas_file,line)){
@@ -267,11 +266,8 @@ void Empresa::save(){
 	}
 }
 void Empresa::sort(){
-	cout << "1" << endl;
 	Sort(this->_clientes);
-	cout << "2" << endl;
 	Sort(this->_fornecedores);
-	cout << "3" << endl;
 }
 
 //// Metodos da classe Fornecedor ////

@@ -71,9 +71,20 @@ public:
 
 	unsigned int getDistancia() { return this->distancia; }
 
+	/**
+	 * @brief      Gets the destinos.
+	 *
+	 * @return     The destinos.
+	 */
 	const std::vector<std::string> & getDestinos();
 
-	unsigned int getPreco(){ return this->preco; }
+	/**
+	 * @brief      Gets the preco.
+	 *
+	 * @return     The preco.
+	 */
+	unsigned int getPreco(){return this->preco;};
+
 
 	
 };
