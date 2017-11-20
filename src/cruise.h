@@ -52,8 +52,18 @@ public:
 	 */
 	std::string getBarco() { return this->barco; }
 
+	/**
+	 * @brief      Gets the data.
+	 *
+	 * @return     The data.
+	 */
 	std::string getData();
 
+	/**
+	 * @brief      Gets the barco number.
+	 *
+	 * @return     The barco number.
+	 */
 	int getBarcoNumber();
 
 	/**
@@ -155,10 +165,26 @@ public:
 	 */
 	void setDefinicoesFornecedor();
 
+	/**
+	 * @brief      Gets the definitions of the fornecedor.
+	 *
+	 * @return     The definitions of the fornecedor.
+	 */
 	std::vector<int> getDefinicoesFornecedor() { return this->definicoesfornecedor; }
 
+	/**
+	 * @brief      Calculates the price of a boat trip
+	 *
+	 * @param[in]  tipodebarco  The tipodebarco
+	 * @param[in]  lotacao      The lotacao
+	 *
+	 * @return     the value of the price
+	 */
 	int calculaPreco(int tipodebarco, int lotacao);
 
+	/**
+	 * @brief      prints all the offers
+	 */
 	void displayOfertas();
 
 
@@ -279,7 +305,19 @@ public:
 	 * @return     The nome of oferta.
 	 */
 	std::string getNomeFornecedor() { return this->nome_fornecedor; };
+
+	/**
+	 * @brief      Determines if the reservation was cancelled.
+	 *
+	 * @return     True if cancelled, False otherwise.
+	 */
 	bool isCancelada(){return this->cancelada;};
+
+	/**
+	 * @brief      Gets the price
+	 *
+	 * @return     The price
+	 */
 	unsigned int getPreco(){return this->preco;};
 
 	

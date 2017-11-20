@@ -9,28 +9,101 @@
 
 // Class: Time
 
+/**
+ * @brief      Class for time.
+ */
 class Time{
 public:
+
+	/**
+	 * @brief      Constructs Time Object
+	 *
+	 * @param[in]  d     day
+	 * @param[in]  m     month
+	 * @param[in]  y     year
+	 */
 	Time(unsigned int d, unsigned int m,unsigned int y);
+
+	/**
+	 * @brief      Constructs Time Object
+	 *
+	 * @param[in]  time  The time in string format
+	 */
 	Time(std::string time);
+
+	/**
+	 * @brief      Gets the day.
+	 *
+	 * @return     The day.
+	 */
 	unsigned int getDay();
+
+	/**
+	 * @brief      Gets the month.
+	 *
+	 * @return     The month.
+	 */
 	unsigned int getMonth();
+
+	/**
+	 * @brief      Gets the year.
+	 *
+	 * @return     The year.
+	 */
 	unsigned int getYear();
+
+	/**
+	 * @brief      prints the time
+	 *
+	 * @param      os    ostream where the time will be printed
+	 */
 	void printTime(std::ostream & os);
+
 protected:
 	unsigned int day,month,year;
 
 };
 
 
+/**
+ * @brief      Class for real time.
+ */
 class  RealTime: public Time{
 public:
 	RealTime();
+
 };
 
+/**
+ * @brief      Checks if two times are equal
+ *
+ * @param      t1    The time 1
+ * @param      t2    The time 2
+ *
+ * @return     if both times are equal return true otherwise return false.
+ */
 bool operator==(Time & t1, Time & t2);
+
+/**
+ * @brief      Checks if one time is more recent than the other
+ *
+ * @param      t1    The time 1
+ * @param      t2    The time 2
+ *
+ * @return     if time 1 is more recent than time 2 return true otherwise return false.
+ */
 bool operator<(Time &t1, Time & t2);
+
+/**
+ * @brief      prints the time in a ostream in string format
+ *
+ * @param      os    The oostream
+ * @param      t     The time
+ *
+ * @return     The ostream where the time will be printed
+ */
 std::ostream & operator<<(std::ostream & os, Time & t);
+
 
 
 

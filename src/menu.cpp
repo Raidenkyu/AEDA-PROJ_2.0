@@ -58,7 +58,7 @@ void Empresa::menuCliente() {
 		catch(InputInvalido<char> & ex){
 			clearScreen();
 			cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-			cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+			cout << "Pressione Enter para voltar ao menu" << endl;
 			cin.get();
 
 		}
@@ -71,13 +71,13 @@ void Empresa::menuCliente() {
 			break;
 
 		case 1:
-			//AdicionaCliente();
+			adicionaCliente();
 			break;
 		case 2:
 			//ModificaCliente();
 			break;
 		case 3:
-			//RemoveCliente();
+			removeCliente();
 			break;
 
 		case 9:
@@ -111,9 +111,8 @@ void Empresa::adicionaCliente() {
 		cout << "| 2 - Nao (continuara como cliente normal)                 |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
-
-		cin >> opcaoRegisto;
 		try{
+		cin >> opcaoRegisto;
 		if (cin.fail()){
 					cin.clear();
 					cin.ignore(INT_MAX,'\n');
@@ -123,7 +122,7 @@ void Empresa::adicionaCliente() {
 		catch(InputInvalido<char> & ex){
 					clearScreen();
 					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cout << "Pressione Enter para voltar ao menu" << endl;
 					cin.get();
 
 		}
@@ -133,9 +132,11 @@ void Empresa::adicionaCliente() {
 			break;
 		case 1:
 			adicionaClienteRegistado();
+			clientechoice = false;
 			break;
 		case 2:
 			adicionaClienteNormal();
+			clientechoice = false;
 			break;
 		default:
 			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
@@ -193,7 +194,7 @@ void Empresa::removeCliente() {
 	cin >> clienteremover;
 	deleteClientes(clienteremover);
 	cout << endl << "O cliente foi removido com sucesso" << endl;
-	cout << "Pressione qualquer tecla para regressar" << endl;
+	cout << "Pressione Enter para regressar" << endl;
 	cin.get();
 
 }
@@ -226,7 +227,7 @@ void Empresa::menuFornecedor() {
 		catch(InputInvalido<char> & ex){
 		clearScreen();
 		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-		cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+		cout << "Pressione Enter para voltar ao menu" << endl;
 		cin.get();
 		}
 		switch (opcaofornecedor) {
@@ -371,12 +372,18 @@ void Empresa::menuReservas() {
 		cout << "| 4 - Ver Reservas                                         |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
-
+		try{
 		cin >> opcaoreservas;
 
 		if (cin.fail())
 			menuReservas();
-
+		}
+		catch(InputInvalido<char> & ex){
+		clearScreen();
+		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
+		cout << "Pressione Enter para voltar ao menu" << endl;
+		cin.get();
+		}
 		switch (opcaoreservas) {
 
 		
@@ -526,7 +533,7 @@ void Empresa::menuOfertas() {
 		catch(InputInvalido<char> & ex){
 			clearScreen();
 			cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-			cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+			cout << "Pressione Enter para voltar ao menu" << endl;
 			cin.get();
 
 		}
@@ -663,7 +670,7 @@ void Empresa::removeOferta() {
 	getline(cin,ofertaremover);
 	deleteReservas(ofertaremover);
 	cout << "Oferta removida com sucesso" << endl;
-	cout << "Pressione qualquer tecla para regressar" << endl;
+	cout << "Pressione Enter para regressar" << endl;
 
 }
 
@@ -698,7 +705,7 @@ void Empresa::menuTipodeUtilizador()
 		catch(InputInvalido<char> & ex){
 					clearScreen();
 					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
-					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
+					cout << "Pressione Enter para voltar ao menu" << endl;
 					cin.get();
 
 		}
