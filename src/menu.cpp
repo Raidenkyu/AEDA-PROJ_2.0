@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include "menu.h"
 #include "extras.h"
 #include "cruise.h"
@@ -57,7 +57,7 @@ void Empresa::menuCliente() {
 		switch (opcaocliente) {
 
 		case 0:
-			cout << "\n" << "Agradecemos a utiliza��o do nosso servi�o, a aplica��o ir� agora fechar.";
+			cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.";
 			return;
 			break;
 
@@ -76,7 +76,7 @@ void Empresa::menuCliente() {
 			break;
 			
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Ser� redirecionado/a para o in�cio do men�. \n";
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
 
 
 		}
@@ -98,8 +98,8 @@ void Empresa::adicionaCliente() {
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
 		cout << "+----------------------------------------------------------+\n";
-		cout << "| 1 - Sim (terá conta registada e acumulará pontos)        |\n";
-		cout << "| 2 - Não (continuará como cliente normal)                 |\n";
+		cout << "| 1 - Sim (tera conta registada e acumulara pontos)        |\n";
+		cout << "| 2 - Nao (continuara como cliente normal)                 |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 
@@ -121,7 +121,7 @@ void Empresa::adicionaCliente() {
 			adicionaClienteNormal();
 			break;
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Ser� redirecionado/a para o in�cio do men�. \n";
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
 		}
 
 	}
@@ -135,7 +135,7 @@ void Empresa::adicionaClienteNormal() {
 	string nomeCliente;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é o seu nome?                                       |\n";
+	cout << "| Qual e o seu nome?                                       |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore (INT_MAX,'\n');
@@ -170,7 +170,7 @@ void Empresa::removeCliente() {
 	int quickmaths;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é o cliente a remover?	                            |\n";
+	cout << "| Qual e o cliente a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> clienteremover;
@@ -208,7 +208,7 @@ void Empresa::menuFornecedor() {
 		switch (opcaofornecedor) {
 
 		case 0:
-			cout << "\n" << "Agradecemos a utiliza��o do nosso servi�o, a aplica��o ir� agora fechar.";
+			cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.";
 			return;
 			break;
 
@@ -223,7 +223,7 @@ void Empresa::menuFornecedor() {
 			break;
 
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Ser� redirecionado/a para o in�cio do men�. \n";
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
 
 
 		}
@@ -238,7 +238,7 @@ void Empresa::adicionaFornecedor() {
 	int NIF;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é o nome do fornecedor?                             |\n";
+	cout << "| Qual e o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX,'\n');
@@ -267,7 +267,7 @@ void Empresa::removeFornecedor() {
 	string fornecedorremover;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é o fornecedor a remover?                           |\n";
+	cout << "| Qual e o fornecedor a remover?                           |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX,'\n');
@@ -298,19 +298,19 @@ void Fornecedor::setDefinicoesFornecedor() {
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o preço base para a reserva de um iate:          |\n";
+	cout << "| Indique o preco base para a reserva de um iate:          |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> iate;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o preço base para a reserva de um barco rebelo:  |\n";
+	cout << "| Indique o preco base para a reserva de um barco rebelo:  |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> barco_rebelo;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o preço base para a reserva de um veleiro:       |\n";
+	cout << "| Indique o preco base para a reserva de um veleiro:       |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> veleiro;
@@ -372,7 +372,7 @@ void Empresa::menuReservas() {
 			break;
 
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Ser� redirecionado/a para o in�cio do men�. \n";
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
 
 
 		}
@@ -392,7 +392,7 @@ void Empresa::adicionaReserva() {
 
 	
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estes são os clientes:                                   |\n";
+	cout << "| Estes sao os clientes:                                   |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	for (unsigned int i = 0; i < _clientes.size(); i++)
@@ -401,7 +401,7 @@ void Empresa::adicionaReserva() {
 	
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o nome do cliente:                                         |\n";
+	cout << "| Indique o nome do cliente:                               |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX, '\n');
@@ -431,13 +431,13 @@ void Empresa::adicionaReserva() {
 
 	if(!(tipodebarco == 1 || tipodebarco == 2 || tipodebarco == 3))
 	{
-		cout << "Resposta não válida, será devolvido ao menu anterior";
+		cout << "Resposta nao valida, sera devolvido ao menu anterior";
 		return;
 	}
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a lotação:                                       |\n";
+	cout << "| Indique a lotacao:                                       |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> lotacao;
@@ -458,7 +458,7 @@ void Empresa::removeReservas() {
 	string reservaremover;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é a reserva a remover?	                            |\n";
+	cout << "| Qual e a reserva a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
 
     cin.ignore(INT_MAX,'\n');
@@ -513,7 +513,7 @@ void Empresa::menuOfertas() {
 			break;
 
 		default:
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Tente outra vez" << endl;
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Tente outra vez" << endl;
 			cout << "Pressione Enter para repetir" << endl;
 			cin.get();
 			clearScreen();
@@ -540,7 +540,7 @@ void Empresa::adicionaOferta() {
 	int index;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é o nome do fornecedor?                             |\n";
+	cout << "| Qual e o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX,'\n');
@@ -568,7 +568,7 @@ void Empresa::adicionaOferta() {
 	else if (barco == "veleiro")
 		numeroBarco = 3;
 	else {
-		cout << "Esse nome não é válido, serás retornado ao menú anterior";
+		cout << "Esse nome nao e valido, seras retornado ao menu anterior";
 		return;
 	}
 
@@ -588,13 +588,13 @@ void Empresa::adicionaOferta() {
 	}
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a distância total percorrida:			        |\n";
+	cout << "| Indique a distancia total percorrida:			        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> distancia;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a lotação total do barco:				        |\n";
+	cout << "| Indique a lotacao total do barco:				        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> lotacao;
@@ -622,7 +622,7 @@ void Empresa::removeOferta() {
 	string ofertaremover;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual é a oferta a remover?	                            |\n";
+	cout << "| Qual e a oferta a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cin.ignore(INT_MAX,'\n');
 	getline(cin,ofertaremover);
@@ -641,14 +641,14 @@ void Empresa::menuTipodeUtilizador()
 		titulo();
 		
 		cout << "+----------------------------------------------------------+\n";
-		cout << "| Escolha o tipo de opção sobre o qual quer trabalhar      |\n";
+		cout << "| Escolha o tipo de opcao sobre o qual quer trabalhar      |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-		cout << "+----------------------------------------------------------+ \n";
-		cout << "| 1 - Gestão de Clientes                                   |\n";
-		cout << "| 2 - Gestão de Fornecedores                               |\n";
-		cout << "| 3 - Gestão de Reservas                                   |\n";
-		cout << "| 4 - Gestão de Ofertas                                    |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| 1 - Gestao de Clientes                                   |\n";
+		cout << "| 2 - Gestao de Fornecedores                               |\n";
+		cout << "| 3 - Gestao de Reservas                                   |\n";
+		cout << "| 4 - Gestao de Ofertas                                    |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 		
@@ -663,7 +663,7 @@ void Empresa::menuTipodeUtilizador()
 		switch (tipodeutilizador) {
 
 		case 0:
-			cout << "\n" << "Agradecemos a utiliza��o do nosso servi�o, a aplica��o ir� agora fechar.";
+			cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.";
 			return;
 			break;
 		case 1:
@@ -673,7 +673,7 @@ void Empresa::menuTipodeUtilizador()
 			}
 			catch(InputInvalido<char> & ex){
 					clearScreen();
-					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
 					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
 					cin.get();
 					menuCliente();
@@ -688,7 +688,7 @@ void Empresa::menuTipodeUtilizador()
 			}
 			catch(InputInvalido<char> & ex){
 					clearScreen();
-					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
 					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
 					cin.get();
 					menuFornecedor();
@@ -702,7 +702,7 @@ void Empresa::menuTipodeUtilizador()
 			}
 			catch(InputInvalido<char> & ex){
 					clearScreen();
-					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
 					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
 					cin.get();
 					menuReservas();
@@ -715,7 +715,7 @@ void Empresa::menuTipodeUtilizador()
 			}
 			catch(InputInvalido<char> & ex){
 					clearScreen();
-					cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: " << ex << endl;
+					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: " << ex << endl;
 					cout << "Pressione qualquer tecla para voltar ao menu" << endl;
 					cin.get();
 					menuOfertas();
@@ -723,7 +723,7 @@ void Empresa::menuTipodeUtilizador()
 			break;
 		default:
 			clearScreen();
-			cout << "Lamento, mas a op��o que inseriu n�o � v�lida. Tente outra vez. \n";
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Tente outra vez. \n";
 			cin.get();
 			clearScreen();
 		}
@@ -736,13 +736,13 @@ void Empresa::menuInicial()
 	titulo();
 	cout << "\n";
 	cout << "\n";
-	cout << "Seja bem vindo ao gestor da Porto Rivers, aqui poder� controlar todas as vertentes da sua empresa e visualizar toda a informa��o de que necessita. \n";
+	cout << "Seja bem vindo ao gestor da Porto Rivers, aqui podera controlar todas as vertentes da sua empresa e visualizar toda a informacao de que necessita. \n";
 	try{
 		menuTipodeUtilizador();
 	}
 	catch(InputInvalido<char> & ex){
 		clearScreen();
-		cout << "Erro:Introduziu um input invalido. Só pode usar números inteiros. O seu input foi: ";
+		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros. O seu input foi: ";
 		cout << ex ;
 		cout << endl;
 		cout << "Pressione qualquer tecla para voltar ao menu" << endl;

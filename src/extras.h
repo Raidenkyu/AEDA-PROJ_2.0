@@ -80,7 +80,7 @@ int BinarySearch(const std::vector<T> &v, P x){
 			return middle; // encontrou
 		}
 	}
-	return -1; // n�o encontrou
+	return -1; // nao encontrou
 }
 
 int getRealDay();

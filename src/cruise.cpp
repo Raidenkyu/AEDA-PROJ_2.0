@@ -11,7 +11,6 @@ using namespace std;
                      /////               CRUISE . CPP                 /////
                     /////                                            /////
 
-//------------------------------------------------------------------------------
 /// Metodos da classe Empresa ////
 
 
@@ -114,7 +113,7 @@ void Empresa::load(){
 	Reserva * r;
 	Time * t;
 	vector<Oferta> ofertas;
-	//Stores the clients who aren't registred in the data base
+	//Stores the clients who aren't registered in the data base
 	if(clientes_file.is_open())
 		while(getline(clientes_file,line)){
 			s1 = line;
@@ -122,9 +121,9 @@ void Empresa::load(){
 			this->addClientes(*c);
 		}
 	else {
-		cout << "The program failed to open the file with the information of the clients" << endl;
+		cout << "O programa falhou a abrir o ficheiro com a informacao de clientes" << endl;
 	}
-	//Stores the clients who are registred in the data base
+	//Stores the clients who are registered in the data base
 	if(registados_file.is_open())
 			while(getline(registados_file,line)){
 				s1 = line;
@@ -134,7 +133,7 @@ void Empresa::load(){
 				this->addClientes(*c);
 			}
 		else {
-			cout << "The program failed to open the file with the information of the registred clients" << endl;
+			cout << "O programa falhou a abrir o ficheiro com a informacao de clientes registados" << endl;
 		}
    //Stores the supplier
 	if(fornecedores_file.is_open()){
@@ -184,7 +183,7 @@ void Empresa::load(){
 			}
 	}
 		else {
-			cout << "The program failed to open the file with the information of the suppliers" << endl;
+			cout << "O programa falhou a abrir o ficheiro com a informacao de fornecedores" << endl;
 		}
 	cout << "coiso" << endl;
 	bool cancelada;
@@ -217,7 +216,7 @@ void Empresa::load(){
 		}
 	}
 	else{
-		cout << "Erro: O programa não conseguiu abrir o ficheiro das reservas" << endl;
+		cout << "Erro: O programa nao conseguiu abrir o ficheiro das reservas" << endl;
 	}
 	this->sort();
 	clientes_file.close();
@@ -291,7 +290,7 @@ vector<Oferta> & Fornecedor::getOfertas(){
 int Fornecedor::calculaPreco(int tipodebarco, int lotacao) {
 
 
-	return definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao; //1 - iate; 2 - barco rebelo; 3 - veleiro;
+	return definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao; //1 - iate; 2 - barco rabelo; 3 - veleiro;
 
 }
 
@@ -308,9 +307,9 @@ void Fornecedor::displayOfertas() {
 		cout << "	Destino nº" << j << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
 	}
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << "/n";
-		cout << "Lotação: " << ofertas.at(i).getLotacao() << endl;
+		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
 		cout << "Data: " << ofertas.at(i).getData() << endl;
-		cout << "Preço: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl;
+		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl;
 
 	}
 }
@@ -351,7 +350,7 @@ int Oferta::getBarcoNumber()
 {
 	if (barco == "iate")
 		return 1;
-	else if (barco == "barco rebelo" || barco == "barco_rebelo")
+	else if (barco == "barco rabelo" || barco == "barco_rabelo")
 		return 2;
 	else if (barco == "veleiro")
 		return 3;
