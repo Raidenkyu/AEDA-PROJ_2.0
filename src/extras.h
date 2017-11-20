@@ -59,6 +59,8 @@ public:
 	 */
 	void printTime(std::ostream & os);
 
+	int diferencaDias();
+
 protected:
 	unsigned int day,month,year;
 

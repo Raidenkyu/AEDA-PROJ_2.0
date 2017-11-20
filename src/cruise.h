@@ -64,6 +64,9 @@ public:
 	 *
 	 * @return     The barco number.
 	 */
+
+	Time getDataMesmo() { return this->data; }
+
 	int getBarcoNumber();
 
 	/**
@@ -94,6 +97,10 @@ public:
 	 * @return     The preco.
 	 */
 	unsigned int getPreco(){return this->preco;};
+
+	void diminuiLotacao(int lotacaoocupada) { lotacao = lotacao - lotacaoocupada; }
+
+	void printOferta();
 
 
 	
@@ -311,7 +318,14 @@ public:
 	 *
 	 * @return     True if cancelled, False otherwise.
 	 */
+
+	Oferta*  getOferta() { return this-> oferta; }
+
+	Cliente*  getCliente() { return this->cliente; }
+
 	bool isCancelada(){return this->cancelada;};
+
+	void cancelamento() { cancelada = true; }
 
 	/**
 	 * @brief      Gets the price
@@ -319,6 +333,9 @@ public:
 	 * @return     The price
 	 */
 	unsigned int getPreco(){return this->preco;};
+
+	void setPreco(int novoPreco) { preco = novoPreco; }
+
 
 	
 	
@@ -440,6 +457,7 @@ public:
 	/**
 	 * @brief      { function_description }
 	 */
+
 	void menuFornecedor();
 
 	/**
@@ -466,12 +484,15 @@ public:
 	/**
 	 * @brief      Removes a reservas.
 	 */
-	void removeReservas();
+	void cancelaReservas();
 
 	//menuOfertas
 	/**
 	 * @brief      { function_description }
 	 */
+
+	void removeReservas();
+
 	void menuOfertas();
 
 	/**
@@ -484,6 +505,10 @@ public:
 	 */
 	void removeOferta();
 
+	void displayClientes();
+	void displayFornecedores();
+	void displayFornecedorescomOfertas();
+	void displayReservas();
 
 	//metodos Empresa
 	/**

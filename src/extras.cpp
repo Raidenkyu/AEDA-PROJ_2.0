@@ -80,4 +80,65 @@ bool operator<(Time &t1, Time & t2){
 	}
 }
 
+int Time::diferencaDias() {
+	RealTime rt;
+	int dias = 0;
 
+	//se ano e mês forem iguais
+	if ((rt.getYear() == getYear()) && (rt.getMonth() == getMonth()))
+		dias = this->getDay() - rt.getDay();
+
+	//se ano for igual mas mês for diferente
+	else if ((rt.getYear() == getYear()) && !(rt.getMonth() == getMonth()))
+	{
+		if (getMonth() - rt.getMonth() == 1)
+		{
+			switch (getMonth()) {
+			case 1: //Janeiro
+				dias = (31 - rt.getDay()) + getDay();
+			case 2: //Fevereiro
+				if (getYear() % 4 == 0 && getYear() % 10 == 0 && getYear() % 400 == 0)
+					dias = (29 - rt.getDay()) + getDay();
+				else
+				dias = (28 - rt.getDay()) + getDay();
+			case 3: //Março
+				dias = (31 - rt.getDay()) + getDay();
+			case 4: //Abril
+				dias = (30 - rt.getDay()) + getDay();
+			case 5: //Maio
+				dias = (31 - rt.getDay()) + getDay();
+			case 6: //Junho
+				dias = (30 - rt.getDay()) + getDay();
+			case 7: //Julho
+				dias = (31 - rt.getDay()) + getDay();
+			case 8: //Agosto
+				dias = (31 - rt.getDay()) + getDay();
+			case 9: //Setembro
+				dias = (30 - rt.getDay()) + getDay();
+			case 10: //Outubro
+				dias = (31 - rt.getDay()) + getDay();
+			case 11: //Novembro (não há dezembro já que, para haver uma diferença de 1 mês positiva para Dezembro, o ano teria de ser diferente)
+				dias = (30 - rt.getDay()) + getDay();
+			default:
+				dias = -1;
+			}
+		}
+		else
+			dias = 50;
+	}
+	else if (!(rt.getYear() == getYear()))
+	{
+		if (getYear() - rt.getYear() == 1)
+		{
+			if (rt.getMonth() == 12 && getYear() == 1)
+				dias = (31 - rt.getDay()) + getDay();
+			else
+				dias = -1;
+		}
+		else
+			dias = -1;
+	}
+	/*
+	return abs(rt.getDay() - this->getDay()) + abs(rt.getMonth - this->getMonth()) * 30 + abs(rt.getYear() - this->getYear()) * 365;*/
+	return dias;
+}

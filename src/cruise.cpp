@@ -64,7 +64,7 @@ Empresa & Empresa::deleteFornecedores(string name) {
 
 	for (unsigned int i = 0; i < _fornecedores.size(); i++)
 	{
-		if (name == this->_fornecedores.at(i)->getNome())
+		if (name == _fornecedores.at(i)->getNome())
 			_fornecedores.erase(_fornecedores.begin() + i);
 	}
 	return *this;
@@ -75,7 +75,7 @@ Empresa & Empresa::deleteReservas(string name) {
 
 	for (unsigned int i = 0; i < _reservas.size(); i++)
 	{
-		if (name == this->_reservas.at(i)->getNomeCliente())
+		if (name == _reservas.at(i)->getNomeCliente())
 			_reservas.erase(_reservas.begin() + i);
 	}
 	return *this;
@@ -92,12 +92,75 @@ Empresa & Empresa::deleteReservas(string name) {
 }
 */
 
+void Empresa::displayClientes()
+{
+	for (unsigned int i = 0; i < _clientes.size(); i++) {
+		cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
+		if (_clientes.at(i)->isRegistado()) {
+			cout << "Registado: Sim" << endl << endl;
+		}
+		else cout << "Registado: Não" << endl << endl;
+	}
+	cout << "Pressione qualquer tecla para voltar ao menu Clientes" << endl;
+	cin.get();
+	cin.get();
+}
+
+
+void Empresa::displayFornecedores()
+{
+	for (unsigned int i = 0; i < _fornecedores.size(); i++)
+	{
+		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
+			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
+			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
+			<< "Definições de Fornecedor: " << endl
+			<< "Preço Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
+			<< "Preço Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
+			<< "Preço Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
+			<< "Preço por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl << endl;
+
+	}
+}
+
+void Empresa::displayFornecedorescomOfertas()
+{
+	for (unsigned int i = 0; i < _fornecedores.size(); i++)
+	{
+		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
+			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
+			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
+			<< "Definições de Fornecedor: " << endl
+			<< "Preço Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
+			<< "Preço Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
+			<< "Preço Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
+			<< "Preço por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl;
+		_fornecedores.at(i)->displayOfertas();
+		cout << endl;
+
+
+	}
+}
+
+void Empresa::displayReservas()
+{
+	for (unsigned int i = 0; i < _reservas.size(); i++)
+	{
+		cout << "Fornecedor: " << _reservas.at(i)->getNomeFornecedor() << endl
+			<< "Oferta: ";  _reservas.at(i)->getOferta()->printOferta();
+		cout << "Cliente: " << _reservas.at(i)->getCliente()->getNome() << endl
+			<< "Pontos do Cliente: " << _reservas.at(i)->getCliente()->getPontos() << endl
+			<< "Preço (a pagar): " << _reservas.at(i)->getPreco() << endl
+			<< "Cancelada: " << _reservas.at(i)->isCancelada() << endl << endl;
+
+	}
+}
 
 void Empresa::load(){
-	ifstream clientes_file("src/clientes.txt");
-	ifstream registados_file("src/clientes_registados.txt");
-	ifstream fornecedores_file("src/fornecedores.txt");
-	ifstream reservas_file("src/fornecedores.txt");
+	ifstream clientes_file("clientes.txt");
+	ifstream registados_file("clientes_registados.txt");
+	ifstream fornecedores_file("fornecedores.txt");
+	ifstream reservas_file("fornecedores.txt");
 	string line;
 	string s1;
 	string s2;
@@ -305,7 +368,7 @@ void Fornecedor::displayOfertas() {
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << "/n";
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
 		cout << "Data: " << ofertas.at(i).getData() << endl;
-		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl;
+		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl << endl;
 
 	}
 }
@@ -357,4 +420,20 @@ int Oferta::getBarcoNumber()
 string Oferta::getData() {
 	
 	return to_string(data.getYear()) + "/" + to_string(data.getMonth()) + "/" + to_string(data.getDay());
+}
+
+void Oferta::printOferta()
+{
+
+	cout << "Nome: " << getNome() << endl;
+	cout << "Barco: " <<getBarco() << endl;
+
+	for (unsigned int j = 0; j < getDestinos().size(); j++) {
+		cout << "Destinos:" << endl;
+		cout << "	Destino nº" << j << " : " << getDestinos().at(j) << endl;
+	}
+	cout << "Distancia: " << getDistancia() << "/n";
+	cout << "Lotacao: " << getLotacao() << endl;
+	cout << "Data: " << getData() << endl;
+	cout << "Preco: " << getPreco() << endl;
 }
