@@ -194,6 +194,7 @@ public:
 	 */
 	void displayOfertas();
 
+	Fornecedor & deleteOfertas(std::string name);
 
 };
 

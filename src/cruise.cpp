@@ -81,7 +81,7 @@ Empresa & Empresa::deleteReservas(string name) {
 	return *this;
 }
 
-/* Fornecedor & Fornecedor::deleteOfertas(string name) {
+Fornecedor & Fornecedor::deleteOfertas(string name) {
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
 		if (name == this->ofertas.at(i).getNome())
@@ -90,7 +90,7 @@ Empresa & Empresa::deleteReservas(string name) {
 	return *this;
 
 }
-*/
+
 
 void Empresa::displayClientes()
 {

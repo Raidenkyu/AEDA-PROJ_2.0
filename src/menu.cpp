@@ -263,7 +263,7 @@ void Empresa::menuFornecedor() {
 		//ModificaFornecedor();
 		break;
 	case 3:
-		//RemoveFornecedor();
+		removeFornecedor();
 		break;
 	case 4:
 		displayFornecedores();
@@ -332,7 +332,7 @@ void Empresa::removeFornecedor() {
 	{
 		if (_fornecedores.at(i)->getNome() == fornecedorremover)
 		{
-			deleteClientes(fornecedorremover);
+			deleteFornecedores(fornecedorremover);
 			cout << endl << "O fornecedor foi removido com sucesso" << endl;
 			cout << "Pressione Enter para regressar" << endl;
 			cin.get();
