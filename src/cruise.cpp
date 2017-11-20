@@ -291,6 +291,22 @@ void Empresa::save(){
 	ofstream registados_file("src/clientes_registados.txt");
 	ofstream fornecedores_file("src/fornecedores.txt");
 	ofstream reservas_file("src/fornecedores.txt");
+	if(!clientes_file.is_open()){
+		cout << "O programa não consegue abrir o ficheiro de clientes" << endl;
+		return;
+	}
+	if(!registados_file.is_open()){
+		cout << "O programa não consegue abrir o ficheiro de clientes registados" << endl;
+		return;
+	}
+	if(!fornecedores_file.is_open()){
+		cout << "O programa não consegue abrir o ficheiro de fornecedores" << endl;
+		return;
+	}
+	if(!reservas_file.is_open()){
+		cout << "O programa não consegue abrir o ficheiro de reservas" << endl;
+		return;
+	}
 	for(unsigned int i = 0; i < this->_clientes.size(); i++){
 		if(this->_clientes[i]->isRegistado())
 			registados_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getPontos() << endl;
