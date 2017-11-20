@@ -107,9 +107,9 @@ void Empresa::load(){
 	unsigned int num2;
 	unsigned int p;
 	vector<string> destinos;
-	Cliente * c;
+	Cliente * c = NULL;
 	Fornecedor * f;
-	Oferta * o;
+	Oferta * o = NULL;
 	Reserva * r;
 	Time * t;
 	vector<Oferta> ofertas;
@@ -224,7 +224,7 @@ void Empresa::load(){
 	reservas_file.close();
 }
 void Empresa::save(){
-	ofstream clientes_file("src/clientes_.txt");
+	ofstream clientes_file("src/clientes.txt");
 	ofstream registados_file("src/clientes_registados.txt");
 	ofstream fornecedores_file("src/fornecedores.txt");
 	ofstream reservas_file("src/fornecedores.txt");

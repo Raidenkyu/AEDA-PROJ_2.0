@@ -470,9 +470,9 @@ void Empresa::adicionaReserva() {
 	if (index = -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
 	preco = _fornecedores.at(index)->calculaPreco(tipodebarco, lotacao);
 
-
+	
 	Reserva * novaReserva = new Reserva(nome_fornecedor, oferta, nomeCliente, _clientes.at(indexCliente), preco, cancelada);
-	addReservas(*novaReserva); 
+	addReservas(*novaReserva);  
 
 }
 
