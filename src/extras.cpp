@@ -16,8 +16,10 @@ Time::Time(unsigned int min, unsigned int h, unsigned int d, unsigned int m, uns
 Time::Time(string time){
 	stringstream ss;
 	char slash;
+	char space;
+	char double_point;
 	ss >> time;
-	ss >> this->year >> slash >> this->month >> slash >> this->day;
+	ss >> this->year >> slash >> this->month >> slash >> this->day >> space >> this->hours >> double_point >> this->minutes;
 }
 
 RealTime::RealTime():Time(0, 0, 0, 0, 0){
@@ -94,11 +96,11 @@ int Time::diferencaDias() {
 	RealTime rt;
 	int dias = 0;
 
-	//se ano e mês forem iguais
+	//se ano e mï¿½s forem iguais
 	if ((rt.getYear() == getYear()) && (rt.getMonth() == getMonth()))
 		dias = this->getDay() - rt.getDay();
 
-	//se ano for igual mas mês for diferente
+	//se ano for igual mas mï¿½s for diferente
 	else if ((rt.getYear() == getYear()) && !(rt.getMonth() == getMonth()))
 	{
 		if (getMonth() - rt.getMonth() == 1)
@@ -111,7 +113,7 @@ int Time::diferencaDias() {
 					dias = (29 - rt.getDay()) + getDay();
 				else
 				dias = (28 - rt.getDay()) + getDay();
-			case 3: //Março
+			case 3: //Marï¿½o
 				dias = (31 - rt.getDay()) + getDay();
 			case 4: //Abril
 				dias = (30 - rt.getDay()) + getDay();
@@ -127,7 +129,7 @@ int Time::diferencaDias() {
 				dias = (30 - rt.getDay()) + getDay();
 			case 10: //Outubro
 				dias = (31 - rt.getDay()) + getDay();
-			case 11: //Novembro (não há dezembro já que, para haver uma diferença de 1 mês positiva para Dezembro, o ano teria de ser diferente)
+			case 11: //Novembro (nï¿½o hï¿½ dezembro jï¿½ que, para haver uma diferenï¿½a de 1 mï¿½s positiva para Dezembro, o ano teria de ser diferente)
 				dias = (30 - rt.getDay()) + getDay();
 			default:
 				dias = -1;
