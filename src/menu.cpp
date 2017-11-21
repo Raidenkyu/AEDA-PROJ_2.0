@@ -1029,7 +1029,7 @@ void Empresa::adicionaOferta() {
 	cin >> lotacao;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a data da viagem (YY/MM/DD):				        |\n";
+	cout << "| Indique a data da viagem (YY/MM/DD H:M):				        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	getline(cin,data);
