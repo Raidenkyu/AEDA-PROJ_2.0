@@ -11,7 +11,7 @@ using namespace std;
 
 // Definition of class: Time
 
-Time::Time(unsigned int d, unsigned int m,unsigned int y): day(d), month(m), year(y){}
+Time::Time(unsigned int min, unsigned int h, unsigned int d, unsigned int m, unsigned int y): minutes(min), hours(h), day(d), month(m), year(y){}
 
 Time::Time(string time){
 	stringstream ss;
@@ -20,21 +20,31 @@ Time::Time(string time){
 	ss >> this->year >> slash >> this->month >> slash >> this->day;
 }
 
-RealTime::RealTime():Time(0,0,0){
+RealTime::RealTime():Time(0, 0, 0, 0, 0){
 	time_t theTime = time(NULL);
 	struct tm *aTime = localtime(&theTime);
+	this->minutes = aTime->tm_min;
+	this->hours = aTime->tm_hour;
 	this->day = aTime->tm_mday;
 	this->month = aTime ->tm_mon;
 	this->year = aTime->tm_year;
 }
 
 void Time::printTime(ostream & os){
-	os << year << "/" << month << "/" << day;
+	os << year << "/" << month << "/" << day << " " << hours << ":" << minutes;
 }
 
 ostream & operator<<(ostream & os, Time & t){
 	t.printTime(os);
 	return os;
+}
+
+unsigned int Time::getMinutes(){
+	return this->minutes;
+}
+
+unsigned int Time::getHours(){
+	return this->hours;
 }
 
 unsigned int Time::getDay() {
@@ -142,3 +152,5 @@ int Time::diferencaDias() {
 	return abs(rt.getDay() - this->getDay()) + abs(rt.getMonth - this->getMonth()) * 30 + abs(rt.getYear() - this->getYear()) * 365;*/
 	return dias;
 }
+
+

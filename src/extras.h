@@ -22,7 +22,7 @@ public:
 	 * @param[in]  m     month
 	 * @param[in]  y     year
 	 */
-	Time(unsigned int d, unsigned int m,unsigned int y);
+	Time(unsigned int min,  unsigned int h, unsigned int d, unsigned int m, unsigned int y);
 
 	/**
 	 * @brief      Constructs Time Object
@@ -30,6 +30,10 @@ public:
 	 * @param[in]  time  The time in string format
 	 */
 	Time(std::string time);
+
+	unsigned int getMinutes();
+
+	unsigned int getHours();
 
 	/**
 	 * @brief      Gets the day.
@@ -62,7 +66,7 @@ public:
 	int diferencaDias();
 
 protected:
-	unsigned int day,month,year;
+	unsigned int minutes, hours, day, month, year;
 
 };
 
@@ -105,7 +109,6 @@ bool operator<(Time &t1, Time & t2);
  * @return     The ostream where the time will be printed
  */
 std::ostream & operator<<(std::ostream & os, Time & t);
-
 
 
 
