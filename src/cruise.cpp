@@ -101,7 +101,7 @@ void Empresa::displayClientes()
 		}
 		else cout << "Registado: Não" << endl << endl;
 	}
-	cout << "Pressione qualquer tecla para voltar ao menu Clientes" << endl;
+
 	cin.get();
 	cin.get();
 }
@@ -121,6 +121,8 @@ void Empresa::displayFornecedores()
 			<< "Preço por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl << endl;
 
 	}
+	cin.get();
+	cin.get();
 }
 
 void Empresa::displayFornecedorescomOfertas()
@@ -140,6 +142,8 @@ void Empresa::displayFornecedorescomOfertas()
 
 
 	}
+	cin.get();
+	cin.get();
 }
 
 void Empresa::displayReservas()
@@ -154,6 +158,8 @@ void Empresa::displayReservas()
 			<< "Cancelada: " << _reservas.at(i)->isCancelada() << endl << endl;
 
 	}
+	cin.get();
+	cin.get();
 }
 
 void Empresa::load(){
@@ -192,7 +198,7 @@ void Empresa::load(){
 				s1 = line;
 				getline(registados_file,line,'\n');
 				num1 = stoi(line);
-				c = new ClienteRegistado(line,num1);
+				c = new ClienteRegistado(s1,num1);
 				this->addClientes(*c);
 			}
 		else {
@@ -287,10 +293,10 @@ void Empresa::load(){
 	reservas_file.close();
 }
 void Empresa::save(){
-	ofstream clientes_file("src/clientes.txt");
-	ofstream registados_file("src/clientes_registados.txt");
-	ofstream fornecedores_file("src/fornecedores.txt");
-	ofstream reservas_file("src/fornecedores.txt");
+	ofstream clientes_file("clientes.txt");
+	ofstream registados_file("clientes_registados.txt");
+	ofstream fornecedores_file("fornecedores.txt");
+	ofstream reservas_file("fornecedores.txt");
 	if(!clientes_file.is_open()){
 		cout << "O programa não consegue abrir o ficheiro de clientes" << endl;
 		return;
@@ -325,23 +331,25 @@ void Empresa::save(){
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getData() << endl;
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getPreco() << endl;
 			for(unsigned int k = 0; k < this->_fornecedores[i]->getOfertas()[j].getDestinos().size(); k++){
-				cout << this->_fornecedores[i]->getOfertas()[j].getDestinos()[k] << endl;
+				fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getDestinos()[k] << endl;
 			}
 			if(this->_fornecedores[i]->getOfertas().size() != 0){
-			    cout << "oend" << endl;
+				fornecedores_file << "oend" << endl;
 			}
-			cout << "fend" << endl;
+			fornecedores_file << "fend" << endl;
 
 		}
 	}
 	for(unsigned int i = 0; i < this->_reservas.size(); i++){
-		cout << this->_reservas[i]->getNomeFornecedor() << endl;
-		cout << this->_reservas[i]->getNomeCliente() << endl;
+		reservas_file << this->_reservas[i]->getNomeFornecedor() << endl;
+		reservas_file << this->_reservas[i]->getNomeCliente() << endl;
 		if(this->_reservas[i]->isCancelada()){
-			cout << "true" << endl;
+			reservas_file << "true" << endl;
 		}
-		else cout << "false" << endl;
-		cout << this->_reservas[i]->getPreco() << endl;
+		else reservas_file << "false" << endl;
+		
+		
+		reservas_file << this->_reservas[i]->getPreco() << endl;
 	}
 }
 void Empresa::sort(){
@@ -387,6 +395,8 @@ void Fornecedor::displayOfertas() {
 		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl << endl;
 
 	}
+	cin.get();
+	cin.get();
 }
 
 
@@ -408,8 +418,8 @@ Cliente::Cliente(string nome): nome(nome){}
 
 ClienteRegistado::ClienteRegistado(string nome, unsigned int pontos): Cliente(nome),pontos(pontos){}
 
-void ClienteRegistado::addPontos(unsigned int pontos){
-	this->pontos += pontos;
+void ClienteRegistado::setPontos(unsigned int pontos){
+	this->pontos = pontos;
 }
 
 

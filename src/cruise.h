@@ -118,6 +118,9 @@ private:
 	std::vector<int> definicoesfornecedor;  //elementos: 0 - multiplicador lotacao; 1 - iate; 2 - barco rebelo; 3 - veleiro;
 
 public:
+	void setNome(std::string novoNome) { nome = novoNome; }
+	void setNIF(unsigned int novoNIF) { nif = novoNIF; }
+	void setMorada(std::string novaMorada) { morada = novaMorada; }
 
 	/**
 	 * @brief      Construct a Fornecedor Object
@@ -220,6 +223,8 @@ public:
 	 */
 	std::string getNome() { return this->nome; };
 
+	void setNome(std::string novoNome) { nome = novoNome; }
+
 	/**
 	 * @brief      Gets the pontos.
 	 *
@@ -233,6 +238,10 @@ public:
 	 * @return     True if registado, False otherwise.
 	 */
 	virtual bool isRegistado() { return false;};
+
+	virtual void setPontos(unsigned int pontos) {};
+
+
 
 };
 
@@ -264,7 +273,7 @@ public:
 	 *
 	 * @param[in]  pontos  The pontos
 	 */
-	void addPontos(unsigned int pontos);
+	void setPontos(unsigned int pontos);
 
 	/**
 	 * @brief      Determines if registado.
@@ -452,6 +461,9 @@ public:
 	/**
 	 * @brief      Removes a cliente.
 	 */
+
+	void modificaCliente();
+
 	void removeCliente();
 
 	// menuFornecedor
@@ -469,6 +481,9 @@ public:
 	/**
 	 * @brief      Removes a fornecedor.
 	 */
+
+	void modificaFornecedor();
+
 	void removeFornecedor();
 
 	//menuReservas
@@ -485,6 +500,9 @@ public:
 	/**
 	 * @brief      Removes a reservas.
 	 */
+
+	void modificaReserva();
+
 	void cancelaReservas();
 
 	//menuOfertas
@@ -501,6 +519,7 @@ public:
 	 */
 	void adicionaOferta();
 
+	void modificaOferta();
 	/**
 	 * @brief      Removes an oferta.
 	 */
