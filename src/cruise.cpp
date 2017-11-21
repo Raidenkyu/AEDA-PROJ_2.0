@@ -163,10 +163,10 @@ void Empresa::displayReservas()
 }
 
 void Empresa::load(){
-	ifstream clientes_file("clientes.txt");
-	ifstream registados_file("clientes_registados.txt");
-	ifstream fornecedores_file("fornecedores.txt");
-	ifstream reservas_file("fornecedores.txt");
+	ifstream clientes_file("src/clientes.txt");
+	ifstream registados_file("src/clientes_registados.txt");
+	ifstream fornecedores_file("src/fornecedores.txt");
+	ifstream reservas_file("src/reservas.txt");
 	string line;
 	string s1;
 	string s2;
@@ -192,6 +192,7 @@ void Empresa::load(){
 	else {
 		cout << "O programa falhou a abrir o ficheiro com a informacao de clientes" << endl;
 	}
+	clientes_file.close();
 	//Stores the clients who are registered in the data base
 	if(registados_file.is_open())
 			while(getline(registados_file,line)){
@@ -204,6 +205,7 @@ void Empresa::load(){
 		else {
 			cout << "O programa falhou a abrir o ficheiro com a informacao de clientes registados" << endl;
 		}
+	registados_file.close();
    //Stores the supplier
 	if(fornecedores_file.is_open()){
 			while(getline(fornecedores_file,line)){
@@ -213,8 +215,9 @@ void Empresa::load(){
 				getline(fornecedores_file,line);
 				s2 = line;
 				f = new Fornecedor(s1,num1,s2);
-				getline(fornecedores_file,line);
+
 				while(true){
+					getline(fornecedores_file,line);
 					if(line == "fend")
 						break;
 					else{
@@ -228,6 +231,7 @@ void Empresa::load(){
 						getline(fornecedores_file,line);
 						t = new Time(line);
 						getline(fornecedores_file,line,'\n');
+
 						p = stoi(line);
 						getline(fornecedores_file,line);
 						if(line == "oend"){
@@ -242,9 +246,9 @@ void Empresa::load(){
 						o = new Oferta(s1,s2,destinos,num1,num2,*t,p);
 						f->addOferta(*o);
 
+
 					}
 				}
-
 
 				this->addFornecedores(*f);
 
@@ -254,6 +258,8 @@ void Empresa::load(){
 		else {
 			cout << "O programa falhou a abrir o ficheiro com a informacao de fornecedores" << endl;
 		}
+	fornecedores_file.close();
+
 	bool cancelada;
 	if(reservas_file.is_open()){
 		while(getline(reservas_file,line)){
@@ -266,6 +272,7 @@ void Empresa::load(){
 			}
 			else cancelada = false;
 			getline(reservas_file,line, '\n');
+
 			num1 = stoi(line);
 			for(unsigned int i = 0; i < this->_clientes.size();i++){
 				if(this->_clientes[i]->getNome() == s2){
@@ -287,16 +294,15 @@ void Empresa::load(){
 		cout << "Erro: O programa nao conseguiu abrir o ficheiro das reservas" << endl;
 	}
 	this->sort();
-	clientes_file.close();
-	registados_file.close();
-	fornecedores_file.close();
+
+
 	reservas_file.close();
 }
 void Empresa::save(){
-	ofstream clientes_file("clientes.txt");
-	ofstream registados_file("clientes_registados.txt");
-	ofstream fornecedores_file("fornecedores.txt");
-	ofstream reservas_file("fornecedores.txt");
+	ofstream clientes_file("src/clientes.txt");
+	ofstream registados_file("src/clientes_registados.txt");
+	ofstream fornecedores_file("src/fornecedores.txt");
+	ofstream reservas_file("src/fornecedores.txt");
 	if(!clientes_file.is_open()){
 		cout << "O programa não consegue abrir o ficheiro de clientes" << endl;
 		return;
