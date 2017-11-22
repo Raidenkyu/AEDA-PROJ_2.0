@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['getbarco',['getBarco',['../classOferta.html#aaed9b5937f9f33d2980fcc13ac02132c',1,'Oferta']]],
+  ['getclientes',['getClientes',['../classEmpresa.html#a472beae89ee1187e1ec3f70e9d4a99ef',1,'Empresa']]],
+  ['getdata',['getData',['../classOferta.html#a2b156b75371ad59af54ad96ad79c9d1e',1,'Oferta']]],
+  ['getdatamesmo',['getDataMesmo',['../classOferta.html#a13ebfcae88d39a90f0c66368534ed335',1,'Oferta']]],
+  ['getday',['getDay',['../classTime.html#abdccc37217b520155a67a1d732014f1a',1,'Time']]],
+  ['getdefinicoesfornecedor',['getDefinicoesFornecedor',['../classFornecedor.html#a94de4f30aa8328ce58dc1a8ec18e24c2',1,'Fornecedor']]],
+  ['getdestinos',['getDestinos',['../classOferta.html#a746c91e5db19098d211a3f6bde2ec8ec',1,'Oferta']]],
+  ['getdistancia',['getDistancia',['../classOferta.html#a0d07f80f25f4fb21c0819c3e25d67fb9',1,'Oferta']]],
+  ['getfornecedores',['getFornecedores',['../classEmpresa.html#aaf131a375aa70819205744328a4dbc07',1,'Empresa']]],
+  ['getinput',['getInput',['../classInputInvalido.html#a2e276c01dd51ca8d2a9adecb66fe921a',1,'InputInvalido']]],
+  ['getlotacao',['getLotacao',['../classOferta.html#a9c8fbec401e54e590828209931bf25b0',1,'Oferta']]],
+  ['getmonth',['getMonth',['../classTime.html#a22fd86b14d3b067cf1447fd9ca5caf6f',1,'Time']]],
+  ['getmorada',['getMorada',['../classFornecedor.html#ae71fba3a196f749f54956fdbb25ede6a',1,'Fornecedor']]],
+  ['getnif',['getNif',['../classFornecedor.html#aec536b071f628fc1aa468071fa5a6067',1,'Fornecedor']]],
+  ['getnome',['getNome',['../classOferta.html#a16da38d9f369b000cb544c34200707b8',1,'Oferta::getNome()'],['../classFornecedor.html#a8d14dd862259e29adef0e283f15cbb16',1,'Fornecedor::getNome()'],['../classCliente.html#a09b99b4140f32bdd3bf486cc2ac5ee27',1,'Cliente::getNome()']]],
+  ['getnomecliente',['getNomeCliente',['../classReserva.html#a87b0465c8e9d2291d5dddd48fce24c38',1,'Reserva']]],
+  ['getnomefornecedor',['getNomeFornecedor',['../classReserva.html#ad54ef5f67fa096e711d2ab526db30bf3',1,'Reserva']]],
+  ['getobj',['getObj',['../classObjetoRepetido.html#a269a9ef9b37152cfb4584a224495c06c',1,'ObjetoRepetido::getObj()'],['../classObjetoInexistente.html#a2ee1f8409fad6c2995e21481ebd4736d',1,'ObjetoInexistente::getObj()']]],
+  ['getoferta',['getOferta',['../classReserva.html#ac7fb69d14f442f58961bd337267bd92d',1,'Reserva']]],
+  ['getofertas',['getOfertas',['../classFornecedor.html#a7ef7f5f79e2c61aaca5d60c06b2a0051',1,'Fornecedor']]],
+  ['getpontos',['getPontos',['../classCliente.html#a4bcd51f0d9a0bfe7d9d47074ac4e65de',1,'Cliente::getPontos()'],['../classClienteRegistado.html#a0118e31f16e4dce542f5e1d124d26c61',1,'ClienteRegistado::getPontos()']]],
+  ['getpreco',['getPreco',['../classOferta.html#a6237afc2e8a33fb55b1ef0decf9d9aaa',1,'Oferta::getPreco()'],['../classReserva.html#a7d6a55cda46a28d62af5870c98cbc3d5',1,'Reserva::getPreco()']]],
+  ['getyear',['getYear',['../classTime.html#ade4d01d38041bb86a2e1ded9fd3cd28e',1,'Time']]]
+];
