@@ -20,20 +20,17 @@ std\+::string \hyperlink{classReserva_ad54ef5f67fa096e711d2ab526db30bf3}{get\+No
 \begin{DoxyCompactList}\small\item\em Gets the name of the offer. \end{DoxyCompactList}\item 
 \hyperlink{classOferta}{Oferta} $\ast$ \hyperlink{classReserva_ac7fb69d14f442f58961bd337267bd92d}{get\+Oferta} ()
 \begin{DoxyCompactList}\small\item\em Determines if the reservation was cancelled. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}\label{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}} 
-\hyperlink{classCliente}{Cliente} $\ast$ {\bfseries get\+Cliente} ()
-\item 
-\mbox{\Hypertarget{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}\label{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}} 
-bool {\bfseries is\+Cancelada} ()
-\item 
+\hyperlink{classCliente}{Cliente} $\ast$ \hyperlink{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}{get\+Cliente} ()
+\begin{DoxyCompactList}\small\item\em Gets the cliente. \end{DoxyCompactList}\item 
+bool \hyperlink{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}{is\+Cancelada} ()
+\begin{DoxyCompactList}\small\item\em Determines if cancelada. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classReserva_a05435b60142460ad2b0ccf61b7ea4531}\label{classReserva_a05435b60142460ad2b0ccf61b7ea4531}} 
-void {\bfseries cancelamento} ()
-\item 
+void \hyperlink{classReserva_a05435b60142460ad2b0ccf61b7ea4531}{cancelamento} ()
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classReserva_a7d6a55cda46a28d62af5870c98cbc3d5}{get\+Preco} ()
 \begin{DoxyCompactList}\small\item\em Gets the price. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}\label{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}} 
-void {\bfseries set\+Preco} (int novo\+Preco)
-\end{DoxyCompactItemize}
+void \hyperlink{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}{set\+Preco} (int novo\+Preco)
+\begin{DoxyCompactList}\small\item\em Sets the preco. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -68,6 +65,19 @@ Construct the \hyperlink{classReserva}{Reserva} Objet.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}\label{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}} 
+\index{Reserva@{Reserva}!get\+Cliente@{get\+Cliente}}
+\index{get\+Cliente@{get\+Cliente}!Reserva@{Reserva}}
+\subsubsection{\texorpdfstring{get\+Cliente()}{getCliente()}}
+{\footnotesize\ttfamily \hyperlink{classCliente}{Cliente}$\ast$ Reserva\+::get\+Cliente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the cliente. 
+
+\begin{DoxyReturn}{Returns}
+The cliente. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classReserva_a87b0465c8e9d2291d5dddd48fce24c38}\label{classReserva_a87b0465c8e9d2291d5dddd48fce24c38}} 
 \index{Reserva@{Reserva}!get\+Nome\+Cliente@{get\+Nome\+Cliente}}
 \index{get\+Nome\+Cliente@{get\+Nome\+Cliente}!Reserva@{Reserva}}
@@ -120,6 +130,34 @@ Gets the price.
 \begin{DoxyReturn}{Returns}
 The price 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}\label{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}} 
+\index{Reserva@{Reserva}!is\+Cancelada@{is\+Cancelada}}
+\index{is\+Cancelada@{is\+Cancelada}!Reserva@{Reserva}}
+\subsubsection{\texorpdfstring{is\+Cancelada()}{isCancelada()}}
+{\footnotesize\ttfamily bool Reserva\+::is\+Cancelada (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines if cancelada. 
+
+\begin{DoxyReturn}{Returns}
+True if cancelada, False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}\label{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}} 
+\index{Reserva@{Reserva}!set\+Preco@{set\+Preco}}
+\index{set\+Preco@{set\+Preco}!Reserva@{Reserva}}
+\subsubsection{\texorpdfstring{set\+Preco()}{setPreco()}}
+{\footnotesize\ttfamily void Reserva\+::set\+Preco (\begin{DoxyParamCaption}\item[{int}]{novo\+Preco }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the preco. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em novo\+Preco} & The novo preco \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

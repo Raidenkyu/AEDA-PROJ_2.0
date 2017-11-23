@@ -20,16 +20,14 @@ Inheritance diagram for Cliente\+:
 \begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classCliente}{Cliente} object. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classCliente_a09b99b4140f32bdd3bf486cc2ac5ee27}{get\+Nome} ()
 \begin{DoxyCompactList}\small\item\em Gets the nome. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classCliente_a008bf4cc277a8ba5f9c58e0f4f622872}\label{classCliente_a008bf4cc277a8ba5f9c58e0f4f622872}} 
-void {\bfseries set\+Nome} (std\+::string novo\+Nome)
-\item 
+void \hyperlink{classCliente_a008bf4cc277a8ba5f9c58e0f4f622872}{set\+Nome} (std\+::string novo\+Nome)
+\begin{DoxyCompactList}\small\item\em Sets the nome. \end{DoxyCompactList}\item 
 virtual unsigned int \hyperlink{classCliente_a4bcd51f0d9a0bfe7d9d47074ac4e65de}{get\+Pontos} ()
 \begin{DoxyCompactList}\small\item\em Gets the pontos. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classCliente_acb60d8bf04134b986ae56a79db8beaaf}{is\+Registado} ()
 \begin{DoxyCompactList}\small\item\em Determines if registado. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classCliente_ac56e5f622d2fc636e204fad0d7c3a36b}\label{classCliente_ac56e5f622d2fc636e204fad0d7c3a36b}} 
-virtual void {\bfseries set\+Pontos} (unsigned int pontos)
-\end{DoxyCompactItemize}
+virtual void \hyperlink{classCliente_ac56e5f622d2fc636e204fad0d7c3a36b}{set\+Pontos} (unsigned int pontos)
+\begin{DoxyCompactList}\small\item\em Sets the pontos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -106,6 +104,40 @@ True if registado, False otherwise.
 
 
 Reimplemented in \hyperlink{classClienteRegistado_a3dade20423acb0e84c9fbe30c75f0e3e}{Cliente\+Registado}.
+
+\mbox{\Hypertarget{classCliente_a008bf4cc277a8ba5f9c58e0f4f622872}\label{classCliente_a008bf4cc277a8ba5f9c58e0f4f622872}} 
+\index{Cliente@{Cliente}!set\+Nome@{set\+Nome}}
+\index{set\+Nome@{set\+Nome}!Cliente@{Cliente}}
+\subsubsection{\texorpdfstring{set\+Nome()}{setNome()}}
+{\footnotesize\ttfamily void Cliente\+::set\+Nome (\begin{DoxyParamCaption}\item[{std\+::string}]{novo\+Nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the nome. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em novo\+Nome} & The novo nome \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCliente_ac56e5f622d2fc636e204fad0d7c3a36b}\label{classCliente_ac56e5f622d2fc636e204fad0d7c3a36b}} 
+\index{Cliente@{Cliente}!set\+Pontos@{set\+Pontos}}
+\index{set\+Pontos@{set\+Pontos}!Cliente@{Cliente}}
+\subsubsection{\texorpdfstring{set\+Pontos()}{setPontos()}}
+{\footnotesize\ttfamily virtual void Cliente\+::set\+Pontos (\begin{DoxyParamCaption}\item[{unsigned int}]{pontos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the pontos. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pontos} & The pontos \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classClienteRegistado_a93d79ba4ecd6716124c832fc2f38ddc5}{Cliente\+Registado}.
 
 
 

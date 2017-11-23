@@ -162,9 +162,7 @@ int BinarySearch(const std::vector<T> &v, P x){
 	return -1; // nao encontrou
 }
 
-int getRealDay();
 
-std::ostream & operator<<(std::ostream & os, Time & t);
-std::ofstream &operator<<(std::ofstream& stream, Time& d);
+int getRealDay();
 
 #endif /* SRC_EXTRAS_H_ */

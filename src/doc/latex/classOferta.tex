@@ -19,12 +19,11 @@ std\+::string \hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{get\+Nom
 std\+::string \hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{get\+Barco} ()
 \begin{DoxyCompactList}\small\item\em Gets the barco. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{get\+Data} ()
-\begin{DoxyCompactList}\small\item\em Gets the data. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the date. \end{DoxyCompactList}\item 
 \hyperlink{classTime}{Time} \hyperlink{classOferta_a13ebfcae88d39a90f0c66368534ed335}{get\+Data\+Mesmo} ()
+\begin{DoxyCompactList}\small\item\em Gets the date. \end{DoxyCompactList}\item 
+int \hyperlink{classOferta_abf0f062fa730edf6d4232926980b106c}{get\+Barco\+Number} ()
 \begin{DoxyCompactList}\small\item\em Gets the barco number. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classOferta_abf0f062fa730edf6d4232926980b106c}\label{classOferta_abf0f062fa730edf6d4232926980b106c}} 
-int {\bfseries get\+Barco\+Number} ()
-\item 
 unsigned int \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{get\+Lotacao} ()
 \begin{DoxyCompactList}\small\item\em Gets the lotacao. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{get\+Distancia} ()
@@ -33,12 +32,11 @@ const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classOferta_a746c91e5db19
 \begin{DoxyCompactList}\small\item\em Gets the destinos. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{get\+Preco} ()
 \begin{DoxyCompactList}\small\item\em Gets the preco. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}\label{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}} 
-void {\bfseries diminui\+Lotacao} (int lotacaoocupada)
-\item 
+void \hyperlink{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}{diminui\+Lotacao} (int lotacaoocupada)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classOferta_a745e9845f3d1a36e8a8712d576f303ba}\label{classOferta_a745e9845f3d1a36e8a8712d576f303ba}} 
-void {\bfseries print\+Oferta} ()
-\end{DoxyCompactItemize}
+void \hyperlink{classOferta_a745e9845f3d1a36e8a8712d576f303ba}{print\+Oferta} ()
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -73,6 +71,21 @@ Construct a \hyperlink{classOferta}{Oferta} object.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}\label{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}} 
+\index{Oferta@{Oferta}!diminui\+Lotacao@{diminui\+Lotacao}}
+\index{diminui\+Lotacao@{diminui\+Lotacao}!Oferta@{Oferta}}
+\subsubsection{\texorpdfstring{diminui\+Lotacao()}{diminuiLotacao()}}
+{\footnotesize\ttfamily void Oferta\+::diminui\+Lotacao (\begin{DoxyParamCaption}\item[{int}]{lotacaoocupada }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lotacaoocupada} & The lotacaoocupada \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}\label{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}} 
 \index{Oferta@{Oferta}!get\+Barco@{get\+Barco}}
 \index{get\+Barco@{get\+Barco}!Oferta@{Oferta}}
@@ -86,6 +99,19 @@ Gets the barco.
 \begin{DoxyReturn}{Returns}
 The barco. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classOferta_abf0f062fa730edf6d4232926980b106c}\label{classOferta_abf0f062fa730edf6d4232926980b106c}} 
+\index{Oferta@{Oferta}!get\+Barco\+Number@{get\+Barco\+Number}}
+\index{get\+Barco\+Number@{get\+Barco\+Number}!Oferta@{Oferta}}
+\subsubsection{\texorpdfstring{get\+Barco\+Number()}{getBarcoNumber()}}
+{\footnotesize\ttfamily int Oferta\+::get\+Barco\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the barco number. 
+
+\begin{DoxyReturn}{Returns}
+The barco number. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}\label{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}} 
 \index{Oferta@{Oferta}!get\+Data@{get\+Data}}
 \index{get\+Data@{get\+Data}!Oferta@{Oferta}}
@@ -94,10 +120,10 @@ The barco.
 
 
 
-Gets the data. 
+Gets the date. 
 
 \begin{DoxyReturn}{Returns}
-The data. 
+The date. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classOferta_a13ebfcae88d39a90f0c66368534ed335}\label{classOferta_a13ebfcae88d39a90f0c66368534ed335}} 
 \index{Oferta@{Oferta}!get\+Data\+Mesmo@{get\+Data\+Mesmo}}
@@ -107,10 +133,10 @@ The data.
 
 
 
-Gets the barco number. 
+Gets the date. 
 
 \begin{DoxyReturn}{Returns}
-The barco number. 
+The date 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}\label{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}} 
 \index{Oferta@{Oferta}!get\+Destinos@{get\+Destinos}}

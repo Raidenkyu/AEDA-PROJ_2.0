@@ -1,6 +1,8 @@
 var searchData=
 [
   ['getbarco',['getBarco',['../classOferta.html#aaed9b5937f9f33d2980fcc13ac02132c',1,'Oferta']]],
+  ['getbarconumber',['getBarcoNumber',['../classOferta.html#abf0f062fa730edf6d4232926980b106c',1,'Oferta']]],
+  ['getcliente',['getCliente',['../classReserva.html#a3b8ef1c42c35aabcc2bdde4767b4bace',1,'Reserva']]],
   ['getclientes',['getClientes',['../classEmpresa.html#a472beae89ee1187e1ec3f70e9d4a99ef',1,'Empresa']]],
   ['getdata',['getData',['../classOferta.html#a2b156b75371ad59af54ad96ad79c9d1e',1,'Oferta']]],
   ['getdatamesmo',['getDataMesmo',['../classOferta.html#a13ebfcae88d39a90f0c66368534ed335',1,'Oferta']]],
