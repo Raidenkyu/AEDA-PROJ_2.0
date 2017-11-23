@@ -101,9 +101,6 @@ void Empresa::displayClientes()
 		}
 		else cout << "Registado: Não" << endl << endl;
 	}
-
-	cin.get();
-	cin.get();
 }
 
 
@@ -121,8 +118,6 @@ void Empresa::displayFornecedores()
 			<< "Preço por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl << endl;
 
 	}
-	cin.get();
-	cin.get();
 }
 
 void Empresa::displayFornecedorescomOfertas()
@@ -142,8 +137,6 @@ void Empresa::displayFornecedorescomOfertas()
 
 
 	}
-	cin.get();
-	cin.get();
 }
 
 void Empresa::displayReservas()
@@ -155,11 +148,9 @@ void Empresa::displayReservas()
 		cout << "Cliente: " << _reservas.at(i)->getCliente()->getNome() << endl
 			<< "Pontos do Cliente: " << _reservas.at(i)->getCliente()->getPontos() << endl
 			<< "Preço (a pagar): " << _reservas.at(i)->getPreco() << endl
-			<< "Cancelada: " << _reservas.at(i)->isCancelada() << endl << endl;
+			<< "Cancelada: " << (_reservas.at(i)->isCancelada()? "sim" : "nao") << endl << endl;
 
 	}
-	cin.get();
-	cin.get();
 }
 
 void Empresa::load(){
@@ -399,7 +390,6 @@ vector<Oferta> & Fornecedor::getOfertas(){
 
 int Fornecedor::calculaPreco(int tipodebarco, int lotacao) {
 
-
 	return definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao; //1 - iate; 2 - barco rabelo; 3 - veleiro;
 
 }
@@ -422,8 +412,6 @@ void Fornecedor::displayOfertas() {
 		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl << endl;
 
 	}
-	cin.get();
-	cin.get();
 }
 
 

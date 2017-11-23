@@ -66,7 +66,6 @@ void Empresa::menuCliente() {
 		switch (opcaocliente) {
 
 		case 0:
-			cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.";
 			return;
 			break;
 
@@ -82,6 +81,8 @@ void Empresa::menuCliente() {
 		
 		case 4:
 			displayClientes();
+			cin.get();
+			cin.get();
 			break;
 			
 		default:
@@ -160,6 +161,7 @@ void Empresa::adicionaClienteNormal() {
 	getline(cin,nomeCliente);
 	Cliente * novocliente = new Cliente(nomeCliente);
 	addClientes(*novocliente);
+	this->sort();
 	return;
 
 }
@@ -177,6 +179,7 @@ void Empresa::adicionaClienteRegistado() {
 	getline(cin,nomeClienteRegistado);
 	Cliente * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado, 0);
 	addClientes(*novoClienteRegistado);
+	this->sort();
 	cout << "Pressione Enter para regressar\n";
 	cin.get();
 	return;
@@ -359,9 +362,13 @@ void Empresa::menuFornecedor() {
 		break;
 	case 4:
 		displayFornecedores();
+		cin.get();
+		cin.get();
 		break;
 	case 5:
 		displayFornecedorescomOfertas();
+		cin.get();
+		cin.get();
 
 	default:
 		cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
@@ -398,8 +405,9 @@ void Empresa::adicionaFornecedor() {
 	cin.ignore(INT_MAX,'\n');
 	getline(cin,morada);
 	Fornecedor * novoFornecedor = new Fornecedor(nome_fornecedor, NIF, morada);
-	addFornecedores(*novoFornecedor);
 	novoFornecedor->setDefinicoesFornecedor();
+	addFornecedores(*novoFornecedor);
+	this->sort();
 }
 
 
@@ -420,7 +428,7 @@ void Empresa::modificaFornecedor() {
 	
 
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index = -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -563,7 +571,6 @@ void Fornecedor::setDefinicoesFornecedor() {
 void Empresa::menuReservas() {
 
 
-	titulo();
 	int opcaoreservas;
 	while (true) {
 		titulo();
@@ -609,6 +616,8 @@ void Empresa::menuReservas() {
 			break;
 		case 5:
 			displayReservas();
+			cin.get();
+			cin.get();
 			break;
 
 		case 0:
@@ -632,9 +641,7 @@ void Empresa::adicionaReserva() {
 	int  preco,lotacao;
 	bool cancelada = false;
 	bool erroNome = false;
-	vector<Oferta> vectorOfertasDisponiveis;
-	Oferta * oferta = NULL;
-	Cliente * cliente;
+	vector<Oferta> ofertas;
 
 	
 	cout << "+----------------------------------------------------------+\n";
@@ -646,11 +653,19 @@ void Empresa::adicionaReserva() {
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o nome do cliente:                               |\n";
 	cout << "+----------------------------------------------------------+\n";
-
+	cin.ignore(INT_MAX,'\n');
 	getline(cin, nomeCliente);
 
 	int indexCliente = BinarySearch(_clientes, nomeCliente);
+	try{
 	if (indexCliente == -1) { throw ObjetoInexistente<string>(nomeCliente); }
+	}
+	catch(ObjetoInexistente<string> & ex){
+		cout << "O cliente " << ex << " nao existe" << endl;
+		cout << "Pressione Enter para regressar ao menu anterior" << endl;
+		cin.get();
+		return;
+	}
 	
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Estes são todos os fornecedores e respetivas ofertas     |\n";
@@ -664,8 +679,15 @@ void Empresa::adicionaReserva() {
 
 	getline(cin, nome_fornecedor);
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index = -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
-
+	try{
+	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	}
+	catch(ObjetoInexistente<string> & ex){
+		cout << "O fornecedor " << ex << " nao existe" << endl;
+		cout << "Pressione Enter para regressar ao menu anterior" << endl;
+		cin.get();
+		return;
+	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Estas são as suas ofertas:                               |\n";
@@ -683,7 +705,7 @@ void Empresa::adicionaReserva() {
 	{
 		if (_fornecedores.at(index)->getOfertas().at(k).getNome() == nomeOferta)
 		{
-			*oferta = _fornecedores.at(index)->getOfertas().at(k);
+			ofertas.push_back(_fornecedores.at(index)->getOfertas().at(k));
 
 		}
 		else
@@ -704,25 +726,24 @@ void Empresa::adicionaReserva() {
 
 	cin >> lotacao;
 
-	if (lotacao <= oferta->getLotacao())
-		oferta->diminuiLotacao(lotacao);
+	if (lotacao <= ofertas[0].getLotacao())
+		ofertas[0].diminuiLotacao(lotacao);
 	else {
-		cout << "Esse número de pessoas excede o limite na oferta. Pressione Enter para tentar novamente.";
+		cout << "Esse número de pessoas excede o limite na oferta. Pressione Enter regressar.";
 		cin.get();
 		return;
 	}
 
+	cin.get();
 
 
-
-	preco = _fornecedores.at(index)->calculaPreco(oferta->getBarcoNumber(),  lotacao);
-	
-	Reserva * novaReserva = new Reserva(nome_fornecedor, oferta, nomeCliente, _clientes.at(indexCliente), preco, cancelada);
+	preco = _fornecedores.at(index)->calculaPreco(ofertas[0].getBarcoNumber(),  lotacao);
+	Reserva * novaReserva = new Reserva(nome_fornecedor, &ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
 	addReservas(*novaReserva);  
-
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| A oferta foi reservada com sucesso.                      |\n";
 	cout << "+----------------------------------------------------------+\n";
+	this->sort();
 
 }
 
@@ -744,7 +765,7 @@ void Empresa::modificaReserva()
 
 
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index = -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -901,7 +922,7 @@ void Empresa::cancelaReservas() {
 void Empresa::menuOfertas() {
 
 
-	titulo();
+
 	int opcaoOfertas;
 	while (true) {
 		titulo();
@@ -945,6 +966,8 @@ void Empresa::menuOfertas() {
 			break;
 		case 4:
 			displayFornecedorescomOfertas();
+			cin.get();
+			cin.get();
 			break;
 
 		case 0:
@@ -968,7 +991,7 @@ void Empresa::adicionaOferta() {
 	std::string nome;
 	std::string barco;
 	int numeroBarco;
-	std::string temp = "";
+	std::string temp;
 	std::vector<std::string> destinos;
 	Oferta * novaOferta;
 	unsigned int distancia;
@@ -990,6 +1013,11 @@ void Empresa::adicionaOferta() {
 	}
 	
 
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Qual e o nome da oferta?                                 |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	getline(cin,nome);
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Escolha o tipo de barco:                                 |\n";
@@ -1021,7 +1049,7 @@ void Empresa::adicionaOferta() {
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique os destinos (escreva FIM quando terminar):       |\n";
 	cout << "+----------------------------------------------------------+\n";
-
+	cin.ignore(INT_MAX,'\n');
 	while (temp != "FIM")
 	{
 		getline(cin,temp);
@@ -1076,7 +1104,7 @@ void Empresa::modificaOferta()
 
 
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index = -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -1189,7 +1217,7 @@ void Empresa::menuTipodeUtilizador()
 		switch (tipodeutilizador) {
 
 		case 0:
-			cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.";
+			cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.\n";
 			return;
 			break;
 		case 1:
@@ -1217,11 +1245,13 @@ void Empresa::menuTipodeUtilizador()
 
 void Empresa::menuInicial()
 {
-	
+	cout << "\n" << endl;
 	titulo();
 	cout << "\n";
 	cout << "\n";
 	cout << "Seja bem vindo ao gestor da Porto Rivers, aqui podera controlar todas as vertentes da sua empresa e visualizar toda a informacao de que necessita. \n";
+	cout <<  "Pressione qualquer tecla para continuar" << endl;
+	cin.get();
 	menuTipodeUtilizador();
 	clearScreen();
 
