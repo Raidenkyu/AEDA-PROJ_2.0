@@ -16,10 +16,9 @@ Time::Time(unsigned int min, unsigned int h, unsigned int d, unsigned int m, uns
 Time::Time(string time){
 	stringstream ss;
 	char slash;
-	char space;
 	char double_point;
-	ss >> time;
-	ss >> this->year >> slash >> this->month >> slash >> this->day >> space >> this->hours >> double_point >> this->minutes;
+	ss << time;
+	ss >> this->year >> slash >> this->month >> slash >> this->day >> this->hours >> double_point >> this->minutes;
 }
 
 RealTime::RealTime():Time(0, 0, 0, 0, 0){
@@ -38,8 +37,9 @@ void Time::printTime(ostream & os){
 
 ostream & operator<<(ostream & os, Time & t){
 	t.printTime(os);
-	return os;
+	return os ;
 }
+
 
 unsigned int Time::getMinutes(){
 	return this->minutes;

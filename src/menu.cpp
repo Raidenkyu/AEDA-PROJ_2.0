@@ -200,7 +200,16 @@ void Empresa::modificaCliente() {
 
 
 	int index = BinarySearch(_clientes, nome_cliente);
-	if (index = -1) { throw ObjetoInexistente<string>(nome_cliente); }
+	try{
+	if (index == -1) { throw ObjetoInexistente<string>(nome_cliente); }
+	}
+	catch(ObjetoInexistente<string> & ex){
+		clearScreen();
+		cout << "O cliente " << ex << " nao existe. " << endl;
+		cout << "Pressione enter para regressar ao menu" << endl;
+		cin.get();
+		return;
+	}
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -242,10 +251,16 @@ void Empresa::modificaCliente() {
 		break;
 
 	case 3:
-		
+		if(this->_clientes.at(index)->isRegistado()){
+			cout << "O cliente ja se encontra registado" << endl;
+			cout << "Pressione Enter para regressar ao menu" << endl;
+			cin.get();
+		}
+		else{
 		novonome = _clientes.at(index)->getNome();
 		cliente = new ClienteRegistado(novonome, 0);
 		_clientes.at(index) = cliente;
+		}
 		break;
 
 	
@@ -1032,6 +1047,7 @@ void Empresa::adicionaOferta() {
 	cout << "| Indique a data da viagem (YY/MM/DD H:M):				        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
+	cin.ignore(INT_MAX,'\n');
 	getline(cin,data);
 	tempo = new Time(data);
 

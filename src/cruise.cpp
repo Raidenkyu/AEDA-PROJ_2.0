@@ -174,6 +174,7 @@ void Empresa::load(){
 	string morada;
 	unsigned int num1;
 	unsigned int num2;
+	vector<int> v;
 	unsigned int p;
 	vector<string> destinos;
 	Cliente * c = NULL;
@@ -215,7 +216,16 @@ void Empresa::load(){
 				getline(fornecedores_file,line);
 				s2 = line;
 				f = new Fornecedor(s1,num1,s2);
-
+				getline(fornecedores_file,line);
+				v.push_back(stoi(line));
+				getline(fornecedores_file,line);
+				v.push_back(stoi(line));
+				getline(fornecedores_file,line);
+				v.push_back(stoi(line));
+				getline(fornecedores_file,line);
+				v.push_back(stoi(line));
+				f->setDefenicoes(v);
+				v.clear();
 				while(true){
 					getline(fornecedores_file,line);
 					if(line == "fend")
@@ -251,8 +261,6 @@ void Empresa::load(){
 				}
 
 				this->addFornecedores(*f);
-
-
 			}
 	}
 		else {
@@ -302,7 +310,7 @@ void Empresa::save(){
 	ofstream clientes_file("src/clientes.txt");
 	ofstream registados_file("src/clientes_registados.txt");
 	ofstream fornecedores_file("src/fornecedores.txt");
-	ofstream reservas_file("src/fornecedores.txt");
+	ofstream reservas_file("src/reservas.txt");
 	if(!clientes_file.is_open()){
 		cout << "O programa não consegue abrir o ficheiro de clientes" << endl;
 		return;
@@ -321,14 +329,24 @@ void Empresa::save(){
 	}
 	for(unsigned int i = 0; i < this->_clientes.size(); i++){
 		if(this->_clientes[i]->isRegistado())
-			registados_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getPontos() << endl;
+			registados_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getPontos();
 		else
-			clientes_file << this->_clientes[i]->getNome() << endl;
+			clientes_file << this->_clientes[i]->getNome();
+		if(i < this->_clientes.size() -1){
+			if(this->_clientes[i]->isRegistado())
+						registados_file << endl;
+			else
+						clientes_file << endl;
+		}
 	}
 	for(unsigned int i = 0; i < this->_fornecedores.size(); i++){
 		fornecedores_file << this->_fornecedores[i]->getNome() << endl;
 		fornecedores_file << this->_fornecedores[i]->getNif() << endl;
 		fornecedores_file << this->_fornecedores[i]->getMorada() << endl;
+		fornecedores_file << this->_fornecedores[i]->getDefinicoesFornecedor().at(0) << endl;
+		fornecedores_file << this->_fornecedores[i]->getDefinicoesFornecedor().at(1) << endl;
+		fornecedores_file << this->_fornecedores[i]->getDefinicoesFornecedor().at(2) << endl;
+		fornecedores_file << this->_fornecedores[i]->getDefinicoesFornecedor().at(3) << endl;
 		for(unsigned int j = 0; j < this->_fornecedores[i]->getOfertas().size(); j++){
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getNome() << endl;
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getBarco() << endl;
@@ -342,8 +360,11 @@ void Empresa::save(){
 			if(this->_fornecedores[i]->getOfertas().size() != 0){
 				fornecedores_file << "oend" << endl;
 			}
-			fornecedores_file << "fend" << endl;
 
+		}
+		fornecedores_file << "fend";
+		if(i < this->_fornecedores.size()-1){
+			fornecedores_file << endl;
 		}
 	}
 	for(unsigned int i = 0; i < this->_reservas.size(); i++){
@@ -390,12 +411,12 @@ void Fornecedor::displayOfertas() {
 	{
 		cout << "Nome: " << ofertas.at(i).getNome() << endl;
 		cout << "Barco: " << ofertas.at(i).getBarco() << endl;
-
-		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
 		cout << "Destinos:" << endl;
+		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
+
 		cout << "	Destino nº" << j << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
 	}
-		cout << "Distancia: " << ofertas.at(i).getDistancia() << "/n";
+		cout << "Distancia: " << ofertas.at(i).getDistancia() << "\n";
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
 		cout << "Data: " << ofertas.at(i).getData() << endl;
 		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl << endl;
@@ -451,7 +472,7 @@ int Oferta::getBarcoNumber()
 
 string Oferta::getData() {
 	
-	return to_string(data.getYear()) + "/" + to_string(data.getMonth()) + "/" + to_string(data.getDay());
+	return to_string(data.getYear()) + "/" + to_string(data.getMonth()) + "/" + to_string(data.getDay()) + " " + to_string(data.getHours()) + ":" + to_string(data.getMinutes());
 }
 
 void Oferta::printOferta()

@@ -199,6 +199,8 @@ public:
 
 	Fornecedor & deleteOfertas(std::string name);
 
+	void setDefenicoes(std::vector<int> def){this->definicoesfornecedor=def;};
+
 };
 
 /**

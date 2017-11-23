@@ -2,6 +2,7 @@
 #define EXTRAS_H_
 #include <vector>
 #include <string>
+#include <fstream>
 
                       /////                                          /////
                      /////               EXTRAS . H                 /////
@@ -163,5 +164,7 @@ int BinarySearch(const std::vector<T> &v, P x){
 
 int getRealDay();
 
+std::ostream & operator<<(std::ostream & os, Time & t);
+std::ofstream &operator<<(std::ofstream& stream, Time& d);
 
 #endif /* SRC_EXTRAS_H_ */
