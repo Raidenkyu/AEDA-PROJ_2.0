@@ -99,7 +99,7 @@ void Empresa::displayClientes()
 		if (_clientes.at(i)->isRegistado()) {
 			cout << "Registado: Sim" << endl << endl;
 		}
-		else cout << "Registado: Não" << endl << endl;
+		else cout << "Registado: Nao" << endl << endl;
 	}
 }
 
@@ -111,11 +111,11 @@ void Empresa::displayFornecedores()
 		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
 			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
 			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
-			<< "Definições de Fornecedor: " << endl
-			<< "Preço Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
-			<< "Preço Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
-			<< "Preço Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
-			<< "Preço por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl << endl;
+			<< "Definicões de Fornecedor: " << endl
+			<< "Preco Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
+			<< "Preco Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
+			<< "Preco Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
+			<< "Preco por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl << endl;
 
 	}
 }
@@ -127,11 +127,11 @@ void Empresa::displayFornecedorescomOfertas()
 		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
 			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
 			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
-			<< "Definições de Fornecedor: " << endl
-			<< "Preço Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
-			<< "Preço Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
-			<< "Preço Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
-			<< "Preço por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl;
+			<< "Definicões de Fornecedor: " << endl
+			<< "Preco Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
+			<< "Preco Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
+			<< "Preco Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
+			<< "Preco por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl;
 		_fornecedores.at(i)->displayOfertas();
 		cout << endl;
 
@@ -147,7 +147,7 @@ void Empresa::displayReservas()
 			<< "Oferta: ";  _reservas.at(i)->getOferta()->printOferta();
 		cout << "Cliente: " << _reservas.at(i)->getCliente()->getNome() << endl
 			<< "Pontos do Cliente: " << _reservas.at(i)->getCliente()->getPontos() << endl
-			<< "Preço (a pagar): " << _reservas.at(i)->getPreco() << endl
+			<< "Preco (a pagar): " << _reservas.at(i)->getPreco() << endl
 			<< "Cancelada: " << (_reservas.at(i)->isCancelada()? "sim" : "nao") << endl << endl;
 
 	}
@@ -303,19 +303,19 @@ void Empresa::save(){
 	ofstream fornecedores_file("fornecedores.txt");
 	ofstream reservas_file("reservas.txt");
 	if(!clientes_file.is_open()){
-		cout << "O programa não consegue abrir o ficheiro de clientes" << endl;
+		cout << "O programa nao consegue abrir o ficheiro de clientes" << endl;
 		return;
 	}
 	if(!registados_file.is_open()){
-		cout << "O programa não consegue abrir o ficheiro de clientes registados" << endl;
+		cout << "O programa nao consegue abrir o ficheiro de clientes registados" << endl;
 		return;
 	}
 	if(!fornecedores_file.is_open()){
-		cout << "O programa não consegue abrir o ficheiro de fornecedores" << endl;
+		cout << "O programa nao consegue abrir o ficheiro de fornecedores" << endl;
 		return;
 	}
 	if(!reservas_file.is_open()){
-		cout << "O programa não consegue abrir o ficheiro de reservas" << endl;
+		cout << "O programa nao consegue abrir o ficheiro de reservas" << endl;
 		return;
 	}
 	for(unsigned int i = 0; i < this->_clientes.size(); i++){
@@ -404,7 +404,7 @@ void Fornecedor::displayOfertas() {
 		cout << "Destinos:" << endl;
 		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
 
-		cout << "	Destino nº" << j+1 << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
+		cout << "	Destino numero" << j+1 << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
 	}
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << "\n";
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
