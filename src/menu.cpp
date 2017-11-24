@@ -641,7 +641,7 @@ void Empresa::adicionaReserva() {
 	int  preco,lotacao;
 	bool cancelada = false;
 	bool erroNome = false;
-	vector<Oferta> ofertas;
+	vector<Oferta*> ofertas;
 
 	
 	cout << "+----------------------------------------------------------+\n";
@@ -705,7 +705,7 @@ void Empresa::adicionaReserva() {
 	{
 		if (_fornecedores.at(index)->getOfertas().at(k).getNome() == nomeOferta)
 		{
-			ofertas.push_back(_fornecedores.at(index)->getOfertas().at(k));
+			ofertas.push_back(&_fornecedores.at(index)->getOfertas()[k]);
 
 		}
 		else
@@ -726,8 +726,8 @@ void Empresa::adicionaReserva() {
 
 	cin >> lotacao;
 
-	if (lotacao <= ofertas[0].getLotacao())
-		ofertas[0].diminuiLotacao(lotacao);
+	if (lotacao <= ofertas[0]->getLotacao())
+		ofertas[0]->diminuiLotacao(lotacao);
 	else {
 		cout << "Esse número de pessoas excede o limite na oferta. Pressione Enter regressar.";
 		cin.get();
@@ -737,8 +737,8 @@ void Empresa::adicionaReserva() {
 	cin.get();
 
 
-	preco = _fornecedores.at(index)->calculaPreco(ofertas[0].getBarcoNumber(),  lotacao);
-	Reserva * novaReserva = new Reserva(nome_fornecedor, &ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
+	preco = _fornecedores.at(index)->calculaPreco(ofertas[0]->getBarcoNumber(),  lotacao);
+	Reserva * novaReserva = new Reserva(nome_fornecedor, ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
 	addReservas(*novaReserva);  
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| A oferta foi reservada com sucesso.                      |\n";

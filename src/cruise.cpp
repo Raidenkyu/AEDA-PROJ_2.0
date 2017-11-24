@@ -154,10 +154,10 @@ void Empresa::displayReservas()
 }
 
 void Empresa::load(){
-	ifstream clientes_file("src/clientes.txt");
-	ifstream registados_file("src/clientes_registados.txt");
-	ifstream fornecedores_file("src/fornecedores.txt");
-	ifstream reservas_file("src/reservas.txt");
+	ifstream clientes_file("clientes.txt");
+	ifstream registados_file("clientes_registados.txt");
+	ifstream fornecedores_file("fornecedores.txt");
+	ifstream reservas_file("reservas.txt");
 	string line;
 	string s1;
 	string s2;
@@ -298,10 +298,10 @@ void Empresa::load(){
 	reservas_file.close();
 }
 void Empresa::save(){
-	ofstream clientes_file("src/clientes.txt");
-	ofstream registados_file("src/clientes_registados.txt");
-	ofstream fornecedores_file("src/fornecedores.txt");
-	ofstream reservas_file("src/reservas.txt");
+	ofstream clientes_file("clientes.txt");
+	ofstream registados_file("clientes_registados.txt");
+	ofstream fornecedores_file("fornecedores.txt");
+	ofstream reservas_file("reservas.txt");
 	if(!clientes_file.is_open()){
 		cout << "O programa não consegue abrir o ficheiro de clientes" << endl;
 		return;
@@ -404,7 +404,7 @@ void Fornecedor::displayOfertas() {
 		cout << "Destinos:" << endl;
 		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
 
-		cout << "	Destino nº" << j << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
+		cout << "	Destino nº" << j+1 << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
 	}
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << "\n";
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
