@@ -38,6 +38,14 @@ public:
 	 */
 	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, Time data, unsigned int preco);
 	
+	void setNome(std::string name) { nome = name; }
+	void setBarco(std::string boat) { barco = boat; }
+	void setDestinos(std::vector <std::string> destinies) { destinos = destinies; }
+	void apagaDestinos() { destinos.erase(destinos.begin(),destinos.end()); }
+	void setDistancia(unsigned int distance) { distancia = distance; }
+	void setLotacao(unsigned int limit) { lotacao = limit; }
+	void setTime(Time novaData) { data = novaData; }
+	void setPreco(unsigned int price) { preco = price; }
 	/**
 	 * @brief      Gets the name
 	 *

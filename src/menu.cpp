@@ -18,7 +18,7 @@ void Empresa::titulo() {
 	cout << "\\______   \\____________/  |_  ____   \\______   \\__|__  __ ___________  ______      \n";
 	cout << " |     ___/  _ \\_  __ \\   __\\/  _ \\   |       _/  \\  \\/ // __ \\_  __ \\/  ___/    \n";
 	cout << " |    |  (  <_> )  | \\/|  | (  <_> )  |    |   \\  |\\   /\\  ___/|  | \\/\\___ \\   \n";
-	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\_____>__|  /____  >\n";
+	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\_____>__|  /_____ >\n";
 	cout << "                                             \\/                            \\/       \n";
 	cout << "\n";
 
@@ -249,7 +249,7 @@ void Empresa::modificaCliente() {
 			cin >> pontos;
 			_clientes.at(index)->setPontos(pontos);
 		}
-		else cout << "Esse cliente não é registado, logo não tem pontos. Registe-o antes de utilizar os pontos. \n";
+		else cout << "Esse cliente nao é registado, logo nao tem pontos. Registe-o antes de utilizar os pontos. \n";
 
 		break;
 
@@ -268,7 +268,7 @@ void Empresa::modificaCliente() {
 
 	
 	default:
-		cout << "Essa opção não é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
@@ -295,7 +295,7 @@ void Empresa::removeCliente() {
 		if (index == -1) { throw ObjetoInexistente<string>(clienteremover); }
 	}
 	catch (ObjetoInexistente<string> & ex) {
-		cout << "Cliente não encontrado: " << clienteremover << endl;
+		cout << "Cliente nao encontrado: " << clienteremover << endl;
 		cout << "Pressione Enter para voltar ao menu";
 		cin.get();
 		return;
@@ -355,7 +355,7 @@ void Empresa::menuFornecedor() {
 		adicionaFornecedor();
 		break;
 	case 2:
-		//ModificaFornecedor();
+		modificaFornecedor();
 		break;
 	case 3:
 		removeFornecedor();
@@ -420,7 +420,7 @@ void Empresa::modificaFornecedor() {
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estes são os fornecedores:                               |\n";
+	cout << "| Estes sao os fornecedores:                               |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	displayFornecedores();
@@ -444,7 +444,7 @@ void Empresa::modificaFornecedor() {
 	cout << "| 1 - Nome                                                 |\n";
 	cout << "| 2 - NIF                                                  |\n";
 	cout << "| 3 - Morada                                               |\n";
-	cout << "| 4 - Definições de Fornecedor                             |\n";
+	cout << "| 4 - Definicões de Fornecedor                             |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -484,7 +484,7 @@ void Empresa::modificaFornecedor() {
 	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
 
 	default:
-		cout << "Essa opção não é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
@@ -497,7 +497,7 @@ void Empresa::removeFornecedor() {
 	string fornecedorremover;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estes são os fornecedores:                               |\n";
+	cout << "| Estes sao os fornecedores:                               |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	displayFornecedores();
@@ -521,7 +521,7 @@ void Empresa::removeFornecedor() {
 		}
 	}
 
-	cout << endl << "O fornecedor com esse nome não foi encontrado" << endl;
+	cout << endl << "O fornecedor com esse nome nao foi encontrado" << endl;
 	cout << "Pressione Enter para regressar" << endl;
 
 	cin.get();
@@ -531,7 +531,7 @@ void Empresa::removeFornecedor() {
 void Fornecedor::setDefinicoesFornecedor() {
 
 
-	int porpessoa, iate, barco_rebelo, veleiro;
+	int porpessoa, iate, barco_rabelo, veleiro;
 
 	definicoesfornecedor.erase(definicoesfornecedor.begin(), definicoesfornecedor.end()); //limpa_o_vetor, caso tivesse definicoes prévias
 
@@ -550,10 +550,10 @@ void Fornecedor::setDefinicoesFornecedor() {
 	cin >> iate;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o preco base para a reserva de um barco rebelo:  |\n";
+	cout << "| Indique o preco base para a reserva de um barco rabelo:  |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> barco_rebelo;
+	cin >> barco_rabelo;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o preco base para a reserva de um veleiro:       |\n";
@@ -563,7 +563,7 @@ void Fornecedor::setDefinicoesFornecedor() {
 	
 	definicoesfornecedor.push_back(porpessoa);
 	definicoesfornecedor.push_back(iate);
-	definicoesfornecedor.push_back(barco_rebelo);
+	definicoesfornecedor.push_back(barco_rabelo);
 	definicoesfornecedor.push_back(veleiro);
 
 	cout << "+----------------------------------------------------------+\n";
@@ -619,7 +619,7 @@ void Empresa::menuReservas() {
 			adicionaReserva();
 			break;
 		case 2:
-			//ModificaReservas();
+			modificaReserva();
 			break;
 		case 3:
 			cancelaReservas();
@@ -681,7 +681,7 @@ void Empresa::adicionaReserva() {
 	}
 	
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estes são todos os fornecedores e respetivas ofertas     |\n";
+	cout << "| Estes sao todos os fornecedores e respetivas ofertas     |\n";
 	cout << "+----------------------------------------------------------+\n";
 	
 	displayFornecedorescomOfertas();
@@ -703,7 +703,7 @@ void Empresa::adicionaReserva() {
 	}
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas são as suas ofertas:                               |\n";
+	cout << "| Estas sao as suas ofertas:                               |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	_fornecedores.at(index)->displayOfertas();
@@ -728,7 +728,7 @@ void Empresa::adicionaReserva() {
 
 	if (erroNome)
 	{
-		cout << "Esse nome de oferta não existe. Pressione Enter para tentar novamente.";
+		cout << "Esse nome de oferta nao existe. Pressione Enter para tentar novamente.";
 		cin.get();
 		return;
 	}
@@ -762,7 +762,6 @@ void Empresa::adicionaReserva() {
 
 void Empresa::modificaReserva()
 {
-
 	titulo();
 	string nome_fornecedor, novonome, novamorada;
 	int modifica;
@@ -787,7 +786,7 @@ void Empresa::modificaReserva()
 	cout << "| 1 - Nome                                                 |\n";
 	cout << "| 2 - NIF                                                  |\n";
 	cout << "| 3 - Morada                                               |\n";
-	cout << "| 4 - Definições de Fornecedor                             |\n";
+	cout << "| 4 - Definicões de Fornecedor                             |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -827,18 +826,21 @@ void Empresa::modificaReserva()
 	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
 
 	default:
-		cout << "Essa opção não é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
 	return;
+
 }
+
+
 
 void Empresa::removeReservas() {
 	titulo();
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas são as reservas disponíveis para remover:          |\n";
+	cout << "| Estas sao as reservas disponíveis para remover:          |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	displayReservas();
@@ -879,7 +881,7 @@ void Empresa::cancelaReservas() {
 	int novoPreco;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas são as reservas disponíveis:                       |\n";
+	cout << "| Estas sao as reservas disponíveis:                       |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	displayReservas();
@@ -972,10 +974,10 @@ void Empresa::menuOfertas() {
 			adicionaOferta();
 			break;
 		case 2:
-			//ModificaOfertas();
+			modificaOferta();
 			break;
 		case 3:
-			//removeOfertas();
+			removeOferta();
 			break;
 		case 4:
 			displayFornecedorescomOfertas();
@@ -1038,7 +1040,7 @@ void Empresa::adicionaOferta() {
 	cout << "| Escolha o tipo de barco:                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| 1 - Iate                                                 |\n";
-	cout << "| 2 - Barco Rebelo                                         |\n";
+	cout << "| 2 - Barco rabelo                                         |\n";
 	cout << "| 3 - Veleiro                                              |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -1048,13 +1050,13 @@ void Empresa::adicionaOferta() {
 		barco = "iate";
 		break;
 	case 2:
-		barco = "barco rebelo";
+		barco = "barco rabelo";
 		break;
 	case 3:
 		barco = "veleiro";
 		break;
 	default:
-		cout << "Esse número não é reconhecido como barco.";
+		cout << "Esse número nao é reconhecido como barco.";
 		
 
 	}
@@ -1104,31 +1106,54 @@ void Empresa::adicionaOferta() {
 
 void Empresa::modificaOferta()
 {
+
 	titulo();
-	string nome_fornecedor, novonome, novamorada;
-	int modifica;
-	unsigned int novoNIF;
+	int modifica, indexOferta;
+	string nomeCliente, nomeOferta, novonome, novobarco, novahora, novodestino, temp;
+	unsigned int novopreco, novalotacao, novadistancia;
+	std::vector<std::string> novosdestinos;
+	Time *tempo;
+
+
+
+
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual e o nome do fornecedor?                             |\n";
+	cout << "| Indique o nome do cliente cuja oferta quer remover:      |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX, '\n');
-	getline(cin, nome_fornecedor);
+	getline(cin, nomeCliente);
 
+	int index = BinarySearch(_clientes, nomeCliente);
+	if (index == -1) { throw ObjetoInexistente<string>(nomeCliente); }
 
-	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Indique o nome da oferta reservada pelo cliente:         |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	getline(cin, nomeOferta);
+
+	for (unsigned int i = 0; i < _reservas.size(); i++)
+	{
+		if (_reservas.at(i)->getOferta()->getNome() == nomeOferta && _reservas.at(i)->getCliente()->getNome() == nomeCliente)
+		{
+			indexOferta = i;
+		}
+	}
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Que propriedade do fornecedor é que pretende modificar?  |\n";
+	cout << "| Que propriedade da oferta é que pretende modificar?      |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| 1 - Nome                                                 |\n";
-	cout << "| 2 - NIF                                                  |\n";
-	cout << "| 3 - Morada                                               |\n";
-	cout << "| 4 - Definições de Fornecedor                             |\n";
+	cout << "| 2 - Tipo de Barco                                        |\n";
+	cout << "| 3 - Destinos                                             |\n";
+	cout << "| 4 - Distancia                                            |\n";
+	cout << "| 5 - Lotacao                                              |\n";
+	cout << "| 6 - Data e Hora                                          |\n";
+	cout << "| 7 - Preco                                                |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -1144,31 +1169,100 @@ void Empresa::modificaOferta()
 		cout << "+----------------------------------------------------------+\n";
 
 		getline(cin, novonome);
-		_fornecedores.at(index)->setNome(novonome);
+		_reservas.at(indexOferta)->getOferta()->setNome(novonome);
 		break;
 
 	case 2:
+
 		cout << "+----------------------------------------------------------+\n";
-		cout << "| Indique o novo NIF:                                      |\n";
+		cout << "| Escolha o tipo de barco:                                 |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| 1 - Iate                                                 |\n";
+		cout << "| 2 - Barco Rabelo                                         |\n";
+		cout << "| 3 - Veleiro                                              |\n";
 		cout << "+----------------------------------------------------------+\n";
 
-		cin >> novoNIF;
-		_fornecedores.at(index)->setNIF(novoNIF);
+		int numeroBarco;
+		cin >> numeroBarco;
+		if (numeroBarco == 1) {
+			novobarco = "iate";
+			_reservas.at(indexOferta)->getOferta()->setBarco(novobarco);
+		}
+		else if (numeroBarco == 2) {
+			novobarco = "barco rabelo";
+			_reservas.at(indexOferta)->getOferta()->setBarco(novobarco);
+		}
+		else if (numeroBarco == 3) {
+			novobarco = "veleiro";
+			_reservas.at(indexOferta)->getOferta()->setBarco(novobarco);
+		}
+		else
+			cout << "Esse número nao é reconhecido como barco.";
 		break;
+		return;
+
+
 
 	case 3:
 		cout << "+----------------------------------------------------------+\n";
-		cout << "| Indique a nova morada:                                   |\n";
+		cout << "| Indique os novos destinos (os anteriores serao apagados):|\n";
+		cout << "| Para terminar, escreva FIM                               |\n";
 		cout << "+----------------------------------------------------------+\n";
+		_reservas.at(indexOferta)->getOferta()->apagaDestinos();
+		cin.ignore(INT_MAX, '\n');
 
-		getline(cin, novamorada);
-		_fornecedores.at(index)->setMorada(novamorada);
+		while (temp != "FIM")
+		{
+			getline(cin, temp);
+			if (temp != "FIM") {
+				novosdestinos.push_back(temp);
+			}
+			cout << "\n";
+		}
+		_reservas.at(indexOferta)->getOferta()->setDestinos(novosdestinos);
 		break;
 
-	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
+	case 4:
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Indique a nova distancia:                                |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cin >> novadistancia;
+		_reservas.at(indexOferta)->getOferta()->setDistancia(novadistancia);
+		break;
+
+	case 5:
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Indique a nova lotacao total:                            |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cin >> novalotacao;
+		_reservas.at(indexOferta)->getOferta()->setLotacao(novalotacao);
+		break;
+
+	case 6:
+
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Indique a data da viagem (YY/MM/DD H:M):                 |\n";
+		cout << "+----------------------------------------------------------+\n";
+
+		cin.ignore(INT_MAX, '\n');
+		getline(cin, novahora);
+		tempo = new Time(novahora);
+		_reservas.at(indexOferta)->getOferta()->setTime(*tempo);
+		break;
+
+
+
+	case 7:
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Indique o novo preco total:                              |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cin >> novopreco;
+		_reservas.at(indexOferta)->getOferta()->setPreco(novopreco);
+		break;
+
 
 	default:
-		cout << "Essa opção não é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
@@ -1180,14 +1274,42 @@ void Empresa::removeOferta() {
 
 	titulo();
 
-	string ofertaremover;
+	string ofertaremover, nomeFornecedor;
+
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Qual e o fornecedor com a oferta a remover?	            |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	displayFornecedorescomOfertas();
+
+	cin.ignore(INT_MAX, '\n');
+	getline(cin, nomeFornecedor);
+
+
+	int index = BinarySearch(_fornecedores, nomeFornecedor);
+	if (index == -1) { throw ObjetoInexistente<string>(nomeFornecedor); }
+
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Estas sao as ofertas desse fornecedor:                   |\n";
+	cout << "+----------------------------------------------------------+\n";
+	_fornecedores.at(index)->displayOfertas();
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual e a oferta a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
+
+
 	cin.ignore(INT_MAX,'\n');
+
 	getline(cin,ofertaremover);
-	deleteReservas(ofertaremover);
+	for (unsigned int i = 0; i < _fornecedores.at(index)->getOfertas().size(); i++)
+	{
+		if (ofertaremover == _fornecedores.at(index)->getOfertas().at(i).getNome())
+			_fornecedores.at(index)->getOfertas().erase(_fornecedores.at(index)->getOfertas().begin() + i);
+	}
+
 	cout << "Oferta removida com sucesso" << endl;
 	cout << "Pressione Enter para regressar" << endl;
 
