@@ -32,8 +32,18 @@ public:
 	 */
 	Time(std::string time);
 
+	/**
+	 * @brief      Gets the minutes.
+	 *
+	 * @return     The minutes.
+	 */
 	unsigned int getMinutes();
 
+	/**
+	 * @brief      Gets the hours.
+	 *
+	 * @return     The hours.
+	 */
 	unsigned int getHours();
 
 	/**
@@ -64,6 +74,11 @@ public:
 	 */
 	void printTime(std::ostream & os);
 
+	/**
+	 * @brief      calculates the difference os days between this date and the actual date
+	 *
+	 * @return     the difference between the real date and the offer date
+	 */
 	int diferencaDias();
 
 protected:
@@ -163,6 +178,11 @@ int BinarySearch(const std::vector<T> &v, P x){
 }
 
 
+/**
+ * @brief      Gets the real day.
+ *
+ * @return     The real day.
+ */
 int getRealDay();
 
 #endif /* SRC_EXTRAS_H_ */

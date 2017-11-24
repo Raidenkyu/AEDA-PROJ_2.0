@@ -13,34 +13,35 @@ Class for fornecedor.
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classFornecedor_a2f207b2242cf6ec5d76a3808dbb4fd80}{set\+Nome} (std\+::string novo\+Nome)
-\begin{DoxyCompactList}\small\item\em Sets the nome. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the name. \end{DoxyCompactList}\item 
 void \hyperlink{classFornecedor_a9bbb88ef7aa281df4042aeedadcd510e}{set\+N\+IF} (unsigned int novo\+N\+IF)
 \begin{DoxyCompactList}\small\item\em Sets the nif. \end{DoxyCompactList}\item 
 void \hyperlink{classFornecedor_a240f4abc6ac49f030c93679b3628e222}{set\+Morada} (std\+::string nova\+Morada)
-\begin{DoxyCompactList}\small\item\em Sets the morada. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the address. \end{DoxyCompactList}\item 
 \hyperlink{classFornecedor_a0cbc4556289cc946756039ab0da52756}{Fornecedor} (std\+::string nome, unsigned int nif, std\+::string morada)
 \begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classFornecedor}{Fornecedor} Object. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classFornecedor_a8d14dd862259e29adef0e283f15cbb16}{get\+Nome} ()
-\begin{DoxyCompactList}\small\item\em Gets the nome. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classFornecedor_aec536b071f628fc1aa468071fa5a6067}{get\+Nif} ()
 \begin{DoxyCompactList}\small\item\em Gets the nif. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classFornecedor_ae71fba3a196f749f54956fdbb25ede6a}{get\+Morada} ()
-\begin{DoxyCompactList}\small\item\em Gets the morada. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the address. \end{DoxyCompactList}\item 
 void \hyperlink{classFornecedor_a220373fd19f44a30d7c6c1ec913be700}{add\+Oferta} (\hyperlink{classOferta}{Oferta} \&oferta)
-\begin{DoxyCompactList}\small\item\em Adds an oferta. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds an offer. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{classOferta}{Oferta} $>$ \& \hyperlink{classFornecedor_a7ef7f5f79e2c61aaca5d60c06b2a0051}{get\+Ofertas} ()
-\begin{DoxyCompactList}\small\item\em Gets the ofertas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the offers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFornecedor_a0a0945cbd2fd120d9eab5d5aec441b72}\label{classFornecedor_a0a0945cbd2fd120d9eab5d5aec441b72}} 
 void \hyperlink{classFornecedor_a0a0945cbd2fd120d9eab5d5aec441b72}{set\+Definicoes\+Fornecedor} ()
-\begin{DoxyCompactList}\small\item\em remove the oferta of a fornecedor \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the definitions of a supplier. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{classFornecedor_a94de4f30aa8328ce58dc1a8ec18e24c2}{get\+Definicoes\+Fornecedor} ()
-\begin{DoxyCompactList}\small\item\em Gets the definitions of the fornecedor. \end{DoxyCompactList}\item 
-int \hyperlink{classFornecedor_a53594b9690eb9ed098b5c9baa3d46c31}{calcula\+Preco} (int tipodebarco, int lotacao)
+\begin{DoxyCompactList}\small\item\em Gets the definitions of the supplier. \end{DoxyCompactList}\item 
+int \hyperlink{classFornecedor_a977992e1dd6370a599e730d9883be277}{calcula\+Preco} (int tipodebarco, int lotacao, int distancia)
 \begin{DoxyCompactList}\small\item\em Calculates the price of a boat trip. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classFornecedor_a858875f921d2eebb652c4b7628f95c71}\label{classFornecedor_a858875f921d2eebb652c4b7628f95c71}} 
 void \hyperlink{classFornecedor_a858875f921d2eebb652c4b7628f95c71}{display\+Ofertas} ()
 \begin{DoxyCompactList}\small\item\em prints all the offers \end{DoxyCompactList}\item 
 \hyperlink{classFornecedor}{Fornecedor} \& \hyperlink{classFornecedor_a55df81a932be74bc25122639c64ab5a0}{delete\+Ofertas} (std\+::string name)
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em removes an offer \end{DoxyCompactList}\item 
 void \hyperlink{classFornecedor_a63bb5795c45d195995de437620503d98}{set\+Defenicoes} (std\+::vector$<$ int $>$ def)
 \begin{DoxyCompactList}\small\item\em Sets the defenicoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -61,11 +62,11 @@ Construct a \hyperlink{classFornecedor}{Fornecedor} Object.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em nome} & The nome \\
+\mbox{\tt in}  & {\em nome} & The name \\
 \hline
 \mbox{\tt in}  & {\em nif} & The nif \\
 \hline
-\mbox{\tt in}  & {\em morada} & The morada \\
+\mbox{\tt in}  & {\em morada} & The address \\
 \hline
 \end{DoxyParams}
 
@@ -79,18 +80,18 @@ Construct a \hyperlink{classFornecedor}{Fornecedor} Object.
 
 
 
-Adds an oferta. 
+Adds an offer. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em oferta} & The oferta \\
+{\em oferta} & The offer \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classFornecedor_a53594b9690eb9ed098b5c9baa3d46c31}\label{classFornecedor_a53594b9690eb9ed098b5c9baa3d46c31}} 
+\mbox{\Hypertarget{classFornecedor_a977992e1dd6370a599e730d9883be277}\label{classFornecedor_a977992e1dd6370a599e730d9883be277}} 
 \index{Fornecedor@{Fornecedor}!calcula\+Preco@{calcula\+Preco}}
 \index{calcula\+Preco@{calcula\+Preco}!Fornecedor@{Fornecedor}}
 \subsubsection{\texorpdfstring{calcula\+Preco()}{calculaPreco()}}
-{\footnotesize\ttfamily int Fornecedor\+::calcula\+Preco (\begin{DoxyParamCaption}\item[{int}]{tipodebarco,  }\item[{int}]{lotacao }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int Fornecedor\+::calcula\+Preco (\begin{DoxyParamCaption}\item[{int}]{tipodebarco,  }\item[{int}]{lotacao,  }\item[{int}]{distancia }\end{DoxyParamCaption})}
 
 
 
@@ -98,9 +99,9 @@ Calculates the price of a boat trip.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em tipodebarco} & The tipodebarco \\
+\mbox{\tt in}  & {\em tipodebarco} & The type of boat \\
 \hline
-\mbox{\tt in}  & {\em lotacao} & The lotacao\\
+\mbox{\tt in}  & {\em lotacao} & The lotation\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -114,15 +115,15 @@ the value of the price
 
 
 
-\{ function\+\_\+description \} 
+removes an offer 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em name} & The name\\
+\mbox{\tt in}  & {\em name} & The name of the offer\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+the modified supplier 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classFornecedor_a94de4f30aa8328ce58dc1a8ec18e24c2}\label{classFornecedor_a94de4f30aa8328ce58dc1a8ec18e24c2}} 
 \index{Fornecedor@{Fornecedor}!get\+Definicoes\+Fornecedor@{get\+Definicoes\+Fornecedor}}
@@ -132,10 +133,10 @@ the value of the price
 
 
 
-Gets the definitions of the fornecedor. 
+Gets the definitions of the supplier. 
 
 \begin{DoxyReturn}{Returns}
-The definitions of the fornecedor. 
+The definitions of the supplier 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classFornecedor_ae71fba3a196f749f54956fdbb25ede6a}\label{classFornecedor_ae71fba3a196f749f54956fdbb25ede6a}} 
 \index{Fornecedor@{Fornecedor}!get\+Morada@{get\+Morada}}
@@ -145,10 +146,10 @@ The definitions of the fornecedor.
 
 
 
-Gets the morada. 
+Gets the address. 
 
 \begin{DoxyReturn}{Returns}
-The morada. 
+The morada 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classFornecedor_aec536b071f628fc1aa468071fa5a6067}\label{classFornecedor_aec536b071f628fc1aa468071fa5a6067}} 
 \index{Fornecedor@{Fornecedor}!get\+Nif@{get\+Nif}}
@@ -171,7 +172,7 @@ The nif.
 
 
 
-Gets the nome. 
+Gets the name. 
 
 \begin{DoxyReturn}{Returns}
 The nome. 
@@ -184,10 +185,10 @@ The nome.
 
 
 
-Gets the ofertas. 
+Gets the offers. 
 
 \begin{DoxyReturn}{Returns}
-The ofertas. 
+The ofertas 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classFornecedor_a63bb5795c45d195995de437620503d98}\label{classFornecedor_a63bb5795c45d195995de437620503d98}} 
 \index{Fornecedor@{Fornecedor}!set\+Defenicoes@{set\+Defenicoes}}
@@ -204,24 +205,6 @@ Sets the defenicoes.
 \mbox{\tt in}  & {\em def} & The definition \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classFornecedor_a0a0945cbd2fd120d9eab5d5aec441b72}\label{classFornecedor_a0a0945cbd2fd120d9eab5d5aec441b72}} 
-\index{Fornecedor@{Fornecedor}!set\+Definicoes\+Fornecedor@{set\+Definicoes\+Fornecedor}}
-\index{set\+Definicoes\+Fornecedor@{set\+Definicoes\+Fornecedor}!Fornecedor@{Fornecedor}}
-\subsubsection{\texorpdfstring{set\+Definicoes\+Fornecedor()}{setDefinicoesFornecedor()}}
-{\footnotesize\ttfamily void Fornecedor\+::set\+Definicoes\+Fornecedor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-remove the oferta of a fornecedor 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em name} & The name\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the modified fornecedor 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classFornecedor_a240f4abc6ac49f030c93679b3628e222}\label{classFornecedor_a240f4abc6ac49f030c93679b3628e222}} 
 \index{Fornecedor@{Fornecedor}!set\+Morada@{set\+Morada}}
 \index{set\+Morada@{set\+Morada}!Fornecedor@{Fornecedor}}
@@ -230,11 +213,11 @@ the modified fornecedor
 
 
 
-Sets the morada. 
+Sets the address. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em nova\+Morada} & The nova morada \\
+\mbox{\tt in}  & {\em nova\+Morada} & The new morada \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classFornecedor_a9bbb88ef7aa281df4042aeedadcd510e}\label{classFornecedor_a9bbb88ef7aa281df4042aeedadcd510e}} 
@@ -249,7 +232,7 @@ Sets the nif.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em novo\+N\+IF} & The novo nif \\
+\mbox{\tt in}  & {\em novo\+N\+IF} & The new nif \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classFornecedor_a2f207b2242cf6ec5d76a3808dbb4fd80}\label{classFornecedor_a2f207b2242cf6ec5d76a3808dbb4fd80}} 
@@ -260,11 +243,11 @@ Sets the nif.
 
 
 
-Sets the nome. 
+Sets the name. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em novo\+Nome} & The novo nome \\
+\mbox{\tt in}  & {\em novo\+Nome} & The new nome \\
 \hline
 \end{DoxyParams}
 

@@ -39,23 +39,23 @@ public:
 	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, Time data, unsigned int preco);
 	
 	/**
-	 * @brief      Gets the nome.
+	 * @brief      Gets the name
 	 *
 	 * @return     The nome.
 	 */
 	std::string getNome() { return this->nome; }
 
 	/**
-	 * @brief      Gets the barco.
+	 * @brief      Gets the boat
 	 *
 	 * @return     The barco.
 	 */
 	std::string getBarco() { return this->barco; }
 
 	/**
-	 * @brief      Gets the date.
+	 * @brief      Gets the date in string format
 	 *
-	 * @return     The date.
+	 * @return     The date(string)
 	 */
 	std::string getData();
 
@@ -67,21 +67,21 @@ public:
 	Time getDataMesmo() { return this->data; }
 
 	/**
-	 * @brief      Gets the barco number.
+	 * @brief      Gets the number of the boat.
 	 *
 	 * @return     The barco number.
 	 */
 	int getBarcoNumber();
 
 	/**
-	 * @brief      Gets the lotacao.
+	 * @brief      Gets the lotation
 	 *
 	 * @return     The lotacao.
 	 */
 	unsigned int getLotacao() { return this->lotacao; }
 
 	/**
-	 * @brief      Gets the destinos.
+	 * @brief      Gets the stops
 	 *
 	 * @return     The destinos.
 	 */
@@ -89,28 +89,28 @@ public:
 	unsigned int getDistancia() { return this->distancia; }
 
 	/**
-	 * @brief      Gets the destinos.
+	 * @brief      Gets the distance of the trip
 	 *
-	 * @return     The destinos.
+	 * @return     The destinos
 	 */
 	const std::vector<std::string> & getDestinos();
 
 	/**
-	 * @brief      Gets the preco.
+	 * @brief      Gets the price
 	 *
-	 * @return     The preco.
+	 * @return     The preco
 	 */
 	unsigned int getPreco(){return this->preco;};
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      decreases the lotation
 	 *
-	 * @param[in]  lotacaoocupada  The lotacaoocupada
+	 * @param[in]  lotacaoocupada  The lotation reserved
 	 */
 	void diminuiLotacao(int lotacaoocupada) { lotacao = lotacao - lotacaoocupada; }
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      prints the information of the offers
 	 */
 	void printOferta();
 
@@ -132,23 +132,23 @@ private:
 public:
 
 	/**
-	 * @brief      Sets the nome.
+	 * @brief      Sets the name
 	 *
-	 * @param[in]  novoNome  The novo nome
+	 * @param[in]  novoNome  The new nome
 	 */
 	void setNome(std::string novoNome) { nome = novoNome; }
 
 	/**
 	 * @brief      Sets the nif.
 	 *
-	 * @param[in]  novoNIF  The novo nif
+	 * @param[in]  novoNIF  The new nif
 	 */
 	void setNIF(unsigned int novoNIF) { nif = novoNIF; }
 
 	/**
-	 * @brief      Sets the morada.
+	 * @brief      Sets the address
 	 *
-	 * @param[in]  novaMorada  The nova morada
+	 * @param[in]  novaMorada  The new morada
 	 */
 	void setMorada(std::string novaMorada) { morada = novaMorada; }
 
@@ -157,14 +157,14 @@ public:
 	/**
 	 * @brief      Construct a Fornecedor Object
 	 *
-	 * @param[in]  nome    The nome
+	 * @param[in]  nome    The name
 	 * @param[in]  nif     The nif
-	 * @param[in]  morada  The morada
+	 * @param[in]  morada  The address
 	 */
 	Fornecedor(std::string nome, unsigned int nif, std::string morada);
 
 	/**
-	 * @brief      Gets the nome.
+	 * @brief      Gets the name
 	 *
 	 * @return     The nome.
 	 */
@@ -178,47 +178,44 @@ public:
 	unsigned int getNif() { return this->nif; }
 
 	/**
-	 * @brief      Gets the morada.
+	 * @brief      Gets the address
 	 *
-	 * @return     The morada.
+	 * @return     The morada
 	 */
 	std::string getMorada() { return this->morada; }
 
 	/**
-	 * @brief      Adds an oferta.
+	 * @brief      Adds an offer
 	 *
-	 * @param      oferta  The oferta
+	 * @param      oferta  The offer
 	 */
 	void addOferta(Oferta & oferta);
 
 	/**
-	 * @brief      Gets the ofertas.
+	 * @brief      Gets the offers
 	 *
-	 * @return     The ofertas.
+	 * @return     The ofertas
 	 */
 	std::vector<Oferta> & getOfertas();
 	
+
 	/**
-	 * @brief      remove the oferta of a fornecedor
-	 *
-	 * @param[in]  name  The name
-	 *
-	 * @return     the modified fornecedor
+	 * @brief      Sets the definitions of a supplier.
 	 */
 	void setDefinicoesFornecedor();
 
 	/**
-	 * @brief      Gets the definitions of the fornecedor.
+	 * @brief      Gets the definitions of the supplier
 	 *
-	 * @return     The definitions of the fornecedor.
+	 * @return     The definitions of the supplier
 	 */
 	std::vector<int> getDefinicoesFornecedor() { return this->definicoesfornecedor; }
 
 	/**
 	 * @brief      Calculates the price of a boat trip
 	 *
-	 * @param[in]  tipodebarco  The tipodebarco
-	 * @param[in]  lotacao      The lotacao
+	 * @param[in]  tipodebarco  The type of boat
+	 * @param[in]  lotacao      The lotation
 	 *
 	 * @return     the value of the price
 	 */
@@ -230,11 +227,11 @@ public:
 	void displayOfertas();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      removes an offer
 	 *
-	 * @param[in]  name  The name
+	 * @param[in]  name  The name of the offer
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     the modified supplier
 	 */
 	Fornecedor & deleteOfertas(std::string name);
 
@@ -258,26 +255,26 @@ public:
 	/**
 	 * @brief      Construct a Cliente object
 	 *
-	 * @param[in]  nome  The nome
+	 * @param[in]  nome  The name
 	 */
 	Cliente(std::string nome);
 
 	/**
-	 * @brief      Gets the nome.
+	 * @brief      Gets the name
 	 *
 	 * @return     The nome.
 	 */
 	std::string getNome() { return this->nome; };
 
 	/**
-	 * @brief      Sets the nome.
+	 * @brief      Sets the name.
 	 *
 	 * @param[in]  novoNome  The novo nome
 	 */
 	void setNome(std::string novoNome) { nome = novoNome; }
 
 	/**
-	 * @brief      Gets the pontos.
+	 * @brief      Gets the points
 	 *
 	 * @return     The pontos.
 	 */
@@ -291,9 +288,9 @@ public:
 	virtual bool isRegistado() { return false;};
 
 	/**
-	 * @brief      Sets the pontos.
+	 * @brief      Sets the points
 	 *
-	 * @param[in]  pontos  The pontos
+	 * @param[in]  pontos  The points
 	 */
 	virtual void setPontos(unsigned int pontos) {};
 
@@ -312,22 +309,22 @@ public:
 	/**
 	 * @brief      Construct ClienteRegistado object
 	 *
-	 * @param[in]  nome    The nome
-	 * @param[in]  pontos  The pontos
+	 * @param[in]  nome    The name
+	 * @param[in]  pontos  The points
 	 */
 	ClienteRegistado(std::string nome, unsigned int pontos = 0);
 
 	/**
-	 * @brief      Gets the pontos.
+	 * @brief      Gets the points
 	 *
-	 * @return     The pontos.
+	 * @return     The points
 	 */
 	unsigned int getPontos() { return this->pontos; };
 
 	/**
-	 * @brief      Adds pontos.
+	 * @brief      Adds points
 	 *
-	 * @param[in]  pontos  The pontos
+	 * @param[in]  pontos  The points
 	 */
 	void setPontos(unsigned int pontos);
 
@@ -416,7 +413,7 @@ public:
 	/**
 	 * @brief      Sets the preco.
 	 *
-	 * @param[in]  novoPreco  The novo preco
+	 * @param[in]  novoPreco  The new price
 	 */
 	void setPreco(int novoPreco) { preco = novoPreco; }
 
@@ -441,7 +438,7 @@ public:
 	Empresa();
 
 	/**
-	 * @brief      Adds fornecedores.
+	 * @brief      Adds suppliers
 	 *
 	 * @param      f     Fornecedor
 	 *
@@ -450,7 +447,7 @@ public:
 	Empresa & addFornecedores(Fornecedor& f);
 
 	/**
-	 * @brief      Adds clientes.
+	 * @brief      Adds clients
 	 *
 	 * @param      c     Cliente
 	 *
@@ -459,7 +456,7 @@ public:
 	Empresa & addClientes(Cliente& c);
 
 	/**
-	 * @brief      Adds a reservas.
+	 * @brief      Adds a reservations
 	 *
 	 * @param      r     Reserva
 	 *
@@ -468,7 +465,7 @@ public:
 	Empresa & addReservas(Reserva & r);
 
 	/**
-	 * @brief      removes a Fornecedor
+	 * @brief      removes a supplier
 	 *
 	 * @param[in]  name  The name
 	 *
@@ -477,7 +474,7 @@ public:
 	Empresa & deleteFornecedores(std::string name);
 
 	/**
-	 * @brief      removes a Cliente
+	 * @brief      removes a Client
 	 *
 	 * @param[in]  name  The name
 	 *
@@ -486,7 +483,7 @@ public:
 	Empresa & deleteClientes(std::string name);
 
 	/**
-	 * @brief      removes a Reserva
+	 * @brief      removes a Reservation
 	 *
 	 * @param[in]  name  The name
 	 *
@@ -497,7 +494,7 @@ public:
 
 	// menusGerais
 	/**
-	 * @brief      dislpay the main title of the company
+	 * @brief      displays the main title of the company
 	 */
 	void titulo();
 
@@ -528,12 +525,12 @@ public:
 	void adicionaClienteRegistado();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      adds Clients
 	 */
 	void adicionaCliente();
 
 	/**
-	 * @brief      Removes a cliente.
+	 * @brief      Modifies a cliente.
 	 */
 
 	void modificaCliente();
@@ -545,72 +542,72 @@ public:
 
 	// menuFornecedor
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the Supplier Menu
 	 */
 
 	void menuFornecedor();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface to add suppliers
 	 */
 	void adicionaFornecedor();
 
 	/**
-	 * @brief      Removes a fornecedor.
+	 * @brief      Modifies a supplier
 	 */
 
 	void modificaFornecedor();
 
 	/**
-	 * @brief      Removes a fornecedor.
+	 * @brief      Removes a supplier
 	 */
 	void removeFornecedor();
 
 	//menuReservas
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the Reservations Menu
 	 */
 	void menuReservas();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface to add reservations
 	 */
 	void adicionaReserva();
 
 	/**
-	 * @brief      Removes a reservas.
+	 * @brief      displays the interface to modify reservations
 	 */
 
 	void modificaReserva();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface to cancel reservations
 	 */
 	void cancelaReservas();
 
 	//menuOfertas
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface to remove reservations
 	 */
 
 	void removeReservas();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the offers Menu
 	 */
 	void menuOfertas();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface to adds offers
 	 */
 	void adicionaOferta();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface to modify offers
 	 */
 	void modificaOferta();
 	/**
-	 * @brief      Removes an oferta.
+	 * @brief      displays the interface to remove offers
 	 */
 	void removeOferta();
 
@@ -644,7 +641,7 @@ public:
 	const std::vector<Fornecedor*> & getFornecedores();
 
 	/**
-	 * @brief      Gets the clientes.
+	 * @brief      Gets the clients.
 	 *
 	 * @return     The clientes.
 	 */

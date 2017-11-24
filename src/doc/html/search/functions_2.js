@@ -4,6 +4,7 @@ var searchData=
   ['deletefornecedores',['deleteFornecedores',['../classEmpresa.html#ab8b7dda77caceec58e464c16b7e45f7c',1,'Empresa']]],
   ['deleteofertas',['deleteOfertas',['../classFornecedor.html#a55df81a932be74bc25122639c64ab5a0',1,'Fornecedor']]],
   ['deletereservas',['deleteReservas',['../classEmpresa.html#a079c008b006f56faac3c1016fe770e8c',1,'Empresa']]],
+  ['diferencadias',['diferencaDias',['../classTime.html#a346c1dbc706dfd41e4a15b16577e4265',1,'Time']]],
   ['diminuilotacao',['diminuiLotacao',['../classOferta.html#a15e6c1e4f49243136eb5ca1d46925a77',1,'Oferta']]],
   ['displayclientes',['displayClientes',['../classEmpresa.html#a28e04d59daa7206bec6055249ce17410',1,'Empresa']]],
   ['displayfornecedores',['displayFornecedores',['../classEmpresa.html#a55c3756c01b45b41ad03f4e4f3e4dcac',1,'Empresa']]],

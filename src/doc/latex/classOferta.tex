@@ -15,28 +15,28 @@ Class for oferta.
 \hyperlink{classOferta_a49a53f9d6ba51f97a3b428c8fac98d7f}{Oferta} (std\+::string nome, std\+::string barco, std\+::vector$<$ std\+::string $>$ destinos, unsigned int distancia, unsigned int lotacao, \hyperlink{classTime}{Time} data, unsigned int preco)
 \begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classOferta}{Oferta} object. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{get\+Nome} ()
-\begin{DoxyCompactList}\small\item\em Gets the nome. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{get\+Barco} ()
-\begin{DoxyCompactList}\small\item\em Gets the barco. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the boat. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{get\+Data} ()
-\begin{DoxyCompactList}\small\item\em Gets the date. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the date in string format. \end{DoxyCompactList}\item 
 \hyperlink{classTime}{Time} \hyperlink{classOferta_a13ebfcae88d39a90f0c66368534ed335}{get\+Data\+Mesmo} ()
 \begin{DoxyCompactList}\small\item\em Gets the date. \end{DoxyCompactList}\item 
 int \hyperlink{classOferta_abf0f062fa730edf6d4232926980b106c}{get\+Barco\+Number} ()
-\begin{DoxyCompactList}\small\item\em Gets the barco number. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the number of the boat. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{get\+Lotacao} ()
-\begin{DoxyCompactList}\small\item\em Gets the lotacao. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the lotation. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{get\+Distancia} ()
-\begin{DoxyCompactList}\small\item\em Gets the destinos. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the stops. \end{DoxyCompactList}\item 
 const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{get\+Destinos} ()
-\begin{DoxyCompactList}\small\item\em Gets the destinos. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the distance of the trip. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{get\+Preco} ()
-\begin{DoxyCompactList}\small\item\em Gets the preco. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the price. \end{DoxyCompactList}\item 
 void \hyperlink{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}{diminui\+Lotacao} (int lotacaoocupada)
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em decreases the lotation \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classOferta_a745e9845f3d1a36e8a8712d576f303ba}\label{classOferta_a745e9845f3d1a36e8a8712d576f303ba}} 
 void \hyperlink{classOferta_a745e9845f3d1a36e8a8712d576f303ba}{print\+Oferta} ()
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em prints the information of the offers \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -79,11 +79,11 @@ Construct a \hyperlink{classOferta}{Oferta} object.
 
 
 
-\{ function\+\_\+description \} 
+decreases the lotation 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em lotacaoocupada} & The lotacaoocupada \\
+\mbox{\tt in}  & {\em lotacaoocupada} & The lotation reserved \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}\label{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}} 
@@ -94,7 +94,7 @@ Construct a \hyperlink{classOferta}{Oferta} object.
 
 
 
-Gets the barco. 
+Gets the boat. 
 
 \begin{DoxyReturn}{Returns}
 The barco. 
@@ -107,7 +107,7 @@ The barco.
 
 
 
-Gets the barco number. 
+Gets the number of the boat. 
 
 \begin{DoxyReturn}{Returns}
 The barco number. 
@@ -120,10 +120,10 @@ The barco number.
 
 
 
-Gets the date. 
+Gets the date in string format. 
 
 \begin{DoxyReturn}{Returns}
-The date. 
+The date(string) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classOferta_a13ebfcae88d39a90f0c66368534ed335}\label{classOferta_a13ebfcae88d39a90f0c66368534ed335}} 
 \index{Oferta@{Oferta}!get\+Data\+Mesmo@{get\+Data\+Mesmo}}
@@ -146,10 +146,10 @@ The date
 
 
 
-Gets the destinos. 
+Gets the distance of the trip. 
 
 \begin{DoxyReturn}{Returns}
-The destinos. 
+The destinos 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}\label{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}} 
 \index{Oferta@{Oferta}!get\+Distancia@{get\+Distancia}}
@@ -159,7 +159,7 @@ The destinos.
 
 
 
-Gets the destinos. 
+Gets the stops. 
 
 \begin{DoxyReturn}{Returns}
 The destinos. 
@@ -172,7 +172,7 @@ The destinos.
 
 
 
-Gets the lotacao. 
+Gets the lotation. 
 
 \begin{DoxyReturn}{Returns}
 The lotacao. 
@@ -185,7 +185,7 @@ The lotacao.
 
 
 
-Gets the nome. 
+Gets the name. 
 
 \begin{DoxyReturn}{Returns}
 The nome. 
@@ -198,10 +198,10 @@ The nome.
 
 
 
-Gets the preco. 
+Gets the price. 
 
 \begin{DoxyReturn}{Returns}
-The preco. 
+The preco 
 \end{DoxyReturn}
 
 

@@ -19,15 +19,15 @@ Inheritance diagram for Cliente\+:
 \hyperlink{classCliente_a17e05e34ce319b738fb68c53e4ded2c3}{Cliente} (std\+::string nome)
 \begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classCliente}{Cliente} object. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classCliente_a09b99b4140f32bdd3bf486cc2ac5ee27}{get\+Nome} ()
-\begin{DoxyCompactList}\small\item\em Gets the nome. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
 void \hyperlink{classCliente_a008bf4cc277a8ba5f9c58e0f4f622872}{set\+Nome} (std\+::string novo\+Nome)
-\begin{DoxyCompactList}\small\item\em Sets the nome. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the name. \end{DoxyCompactList}\item 
 virtual unsigned int \hyperlink{classCliente_a4bcd51f0d9a0bfe7d9d47074ac4e65de}{get\+Pontos} ()
-\begin{DoxyCompactList}\small\item\em Gets the pontos. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the points. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classCliente_acb60d8bf04134b986ae56a79db8beaaf}{is\+Registado} ()
 \begin{DoxyCompactList}\small\item\em Determines if registado. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classCliente_ac56e5f622d2fc636e204fad0d7c3a36b}{set\+Pontos} (unsigned int pontos)
-\begin{DoxyCompactList}\small\item\em Sets the pontos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,7 +52,7 @@ Construct a \hyperlink{classCliente}{Cliente} object.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em nome} & The nome \\
+\mbox{\tt in}  & {\em nome} & The name \\
 \hline
 \end{DoxyParams}
 
@@ -66,7 +66,7 @@ Construct a \hyperlink{classCliente}{Cliente} object.
 
 
 
-Gets the nome. 
+Gets the name. 
 
 \begin{DoxyReturn}{Returns}
 The nome. 
@@ -79,7 +79,7 @@ The nome.
 
 
 
-Gets the pontos. 
+Gets the points. 
 
 \begin{DoxyReturn}{Returns}
 The pontos. 
@@ -113,7 +113,7 @@ Reimplemented in \hyperlink{classClienteRegistado_a3dade20423acb0e84c9fbe30c75f0
 
 
 
-Sets the nome. 
+Sets the name. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -128,11 +128,11 @@ Sets the nome.
 
 
 
-Sets the pontos. 
+Sets the points. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pontos} & The pontos \\
+\mbox{\tt in}  & {\em pontos} & The points \\
 \hline
 \end{DoxyParams}
 
