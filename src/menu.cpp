@@ -420,6 +420,13 @@ void Empresa::modificaFornecedor() {
 
 
 	cout << "+----------------------------------------------------------+\n";
+	cout << "| Estes são os fornecedores:                               |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	displayFornecedores();
+
+
+	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual e o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -603,12 +610,7 @@ void Empresa::menuReservas() {
 					return;
 
 				}
-		catch(InputInvalido<char> & ex){
-		clearScreen();
-		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros." << ex << endl;
-		cout << "Pressione Enter para voltar ao menu" << endl;
-		cin.get();
-		}
+		
 		switch (opcaoreservas) {
 
 		
@@ -748,7 +750,7 @@ void Empresa::adicionaReserva() {
 	cin.get();
 
 
-	preco = _fornecedores.at(index)->calculaPreco(ofertas[0]->getBarcoNumber(),  lotacao);
+	preco = _fornecedores.at(index)->calculaPreco(ofertas[0]->getBarcoNumber(),  lotacao, ofertas[0]->getDistancia());
 	Reserva * novaReserva = new Reserva(nome_fornecedor, ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
 	addReservas(*novaReserva);  
 	cout << "+----------------------------------------------------------+\n";
@@ -884,7 +886,7 @@ void Empresa::cancelaReservas() {
 
 	string reservaremoveOferta,reservaremoveCliente;
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o nome do cliente cuja oferta quer remover:      |\n";
+	cout << "| Indique o nome do cliente cuja oferta quer cancelar      |\n";
 	cout << "+----------------------------------------------------------+\n";
 
     cin.ignore(INT_MAX,'\n');
@@ -1012,6 +1014,8 @@ void Empresa::adicionaOferta() {
 	Time * tempo;
 	int index;
 
+	displayFornecedores();
+
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual e o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
@@ -1071,26 +1075,26 @@ void Empresa::adicionaOferta() {
 	}
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a distancia total percorrida:			        |\n";
+	cout << "| Indique a distancia total percorrida:                    |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> distancia;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a lotacao total do barco:				        |\n";
+	cout << "| Indique a lotacao total do barco:                        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin >> lotacao;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique a data da viagem (YY/MM/DD H:M):				        |\n";
+	cout << "| Indique a data da viagem (YY/MM/DD H:M):                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX,'\n');
 	getline(cin,data);
 	tempo = new Time(data);
 
-	preco = _fornecedores.at(index)->calculaPreco(numeroBarco, lotacao);
+	preco = _fornecedores.at(index)->calculaPreco(numeroBarco, lotacao, distancia);
 	
 	
 	novaOferta = new Oferta(nome, barco, destinos, distancia, lotacao, *tempo, preco);

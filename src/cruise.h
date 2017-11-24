@@ -222,7 +222,7 @@ public:
 	 *
 	 * @return     the value of the price
 	 */
-	int calculaPreco(int tipodebarco, int lotacao);
+	int calculaPreco(int tipodebarco, int lotacao, int distancia);
 
 	/**
 	 * @brief      prints all the offers

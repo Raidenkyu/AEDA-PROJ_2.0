@@ -388,9 +388,9 @@ vector<Oferta> & Fornecedor::getOfertas(){
 }
 
 
-int Fornecedor::calculaPreco(int tipodebarco, int lotacao) {
+int Fornecedor::calculaPreco(int tipodebarco, int lotacao, int distancia) {
 
-	return definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao; //1 - iate; 2 - barco rabelo; 3 - veleiro;
+	return (definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao)*distancia/1000 ; //1 - iate; 2 - barco rabelo; 3 - veleiro;
 
 }
 
@@ -409,7 +409,8 @@ void Fornecedor::displayOfertas() {
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << "\n";
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
 		cout << "Data: " << ofertas.at(i).getData() << endl;
-		cout << "Preco: " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao()) << endl << endl;
+		cout << "Preco (por pessoa): " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao(), ofertas.at(i).getDistancia())/ ofertas.at(i).getLotacao() << endl;
+		cout << "Preco (total): " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao(), ofertas.at(i).getDistancia()) << endl << endl;
 
 	}
 }

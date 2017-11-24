@@ -129,7 +129,7 @@ int Time::diferencaDias() {
 				dias = (30 - rt.getDay()) + getDay();
 			case 10: //Outubro
 				dias = (31 - rt.getDay()) + getDay();
-			case 11: //Novembro (n�o h� dezembro j� que, para haver uma diferen�a de 1 m�s positiva para Dezembro, o ano teria de ser diferente)
+			case 11: //Novembro (nao ha dezembro ja que, para haver uma diferenca de 1 mes positiva para Dezembro, o ano teria de ser diferente)
 				dias = (30 - rt.getDay()) + getDay();
 			default:
 				dias = -1;
@@ -149,6 +149,15 @@ int Time::diferencaDias() {
 		}
 		else
 			dias = -1;
+	}
+
+	if (dias == 2)
+	{
+		if (rt.getHours() * 60 + rt.getMinutes() < getHours() * 60 + getMinutes())
+		{
+			return dias;
+		}
+		else return 1;
 	}
 	/*
 	return abs(rt.getDay() - this->getDay()) + abs(rt.getMonth - this->getMonth()) * 30 + abs(rt.getYear() - this->getYear()) * 365;*/
