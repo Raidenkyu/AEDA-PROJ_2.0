@@ -235,6 +235,7 @@ void Empresa::modificaCliente() {
 		cout << "| Indique o novo nome:                                     |\n";
 		cout << "+----------------------------------------------------------+\n";
 
+		cin.ignore(INT_MAX, '\n');
 		getline(cin, novonome);
 		_clientes.at(index)->setNome(novonome);
 		break;
@@ -287,6 +288,7 @@ void Empresa::removeCliente() {
 	cout << "| Qual e o cliente a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
 
+	cin.ignore(INT_MAX, '\n');
 	getline(cin, clienteremover);
 	
 
@@ -459,6 +461,7 @@ void Empresa::modificaFornecedor() {
 		cout << "| Indique o novo nome:                                     |\n";
 		cout << "+----------------------------------------------------------+\n";
 
+		cin.ignore(INT_MAX, '\n');
 		getline(cin, novonome);
 		_fornecedores.at(index)->setNome(novonome);
 		break;
@@ -477,6 +480,7 @@ void Empresa::modificaFornecedor() {
 		cout << "| Indique a nova morada:                                   |\n";
 		cout << "+----------------------------------------------------------+\n";
 
+		cin.ignore(INT_MAX, '\n');
 		getline(cin, novamorada);
 		_fornecedores.at(index)->setMorada(novamorada);
 		break;
@@ -690,6 +694,7 @@ void Empresa::adicionaReserva() {
 	cout << "| Indique o nome do fornecedor:                            |\n";
 	cout << "+----------------------------------------------------------+\n";
 
+
 	getline(cin, nome_fornecedor);
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
 	try{
@@ -801,6 +806,7 @@ void Empresa::modificaReserva()
 		cout << "| Indique o novo nome:                                     |\n";
 		cout << "+----------------------------------------------------------+\n";
 
+		cin.ignore(INT_MAX, '\n');
 		getline(cin, novonome);
 		_fornecedores.at(index)->setNome(novonome);
 		break;
@@ -819,6 +825,7 @@ void Empresa::modificaReserva()
 		cout << "| Indique a nova morada:                                   |\n";
 		cout << "+----------------------------------------------------------+\n";
 
+		cin.ignore(INT_MAX, '\n');
 		getline(cin, novamorada);
 		_fornecedores.at(index)->setMorada(novamorada);
 		break;
@@ -856,6 +863,7 @@ void Empresa::removeReservas() {
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o nome da oferta reservada pelo cliente:         |\n";
 	cout << "+----------------------------------------------------------+\n";
+
 
 	getline(cin, reservaremoveOferta);
 
@@ -898,6 +906,7 @@ void Empresa::cancelaReservas() {
 	cout << "| Indique o nome da oferta reservada pelo cliente:         |\n";
 	cout << "+----------------------------------------------------------+\n";
 
+	
 	getline(cin, reservaremoveOferta);
 
 	for (unsigned int i = 0; i < _reservas.size(); i++)
@@ -1168,6 +1177,7 @@ void Empresa::modificaOferta()
 		cout << "| Indique o novo nome:                                     |\n";
 		cout << "+----------------------------------------------------------+\n";
 
+		cin.ignore(INT_MAX, '\n');
 		getline(cin, novonome);
 		_reservas.at(indexOferta)->getOferta()->setNome(novonome);
 		break;

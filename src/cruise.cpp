@@ -404,9 +404,9 @@ void Fornecedor::displayOfertas() {
 		cout << "Destinos:" << endl;
 		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
 
-		cout << "	Destino numero" << j+1 << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
+		cout << "	Destino numero " << j+1 << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
 	}
-		cout << "Distancia: " << ofertas.at(i).getDistancia() << "\n";
+		cout << "Distancia: " << ofertas.at(i).getDistancia() << endl;
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
 		cout << "Data: " << ofertas.at(i).getData() << endl;
 		cout << "Preco (por pessoa): " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao(), ofertas.at(i).getDistancia())/ ofertas.at(i).getLotacao() << endl;
@@ -469,12 +469,13 @@ void Oferta::printOferta()
 
 	cout << "Nome: " << getNome() << endl;
 	cout << "Barco: " <<getBarco() << endl;
+	cout << "Destinos:" << endl;
 
 	for (unsigned int j = 0; j < getDestinos().size(); j++) {
-		cout << "Destinos:" << endl;
-		cout << "	Destino nº" << j << " : " << getDestinos().at(j) << endl;
+		
+		cout << "	Destino numero" << j + 1 << " : " << getDestinos().at(j) << endl;
 	}
-	cout << "Distancia: " << getDistancia() << "/n";
+	cout << "Distancia: " << getDistancia() << "\n";
 	cout << "Lotacao: " << getLotacao() << endl;
 	cout << "Data: " << getData() << endl;
 	cout << "Preco: " << getPreco() << endl;
