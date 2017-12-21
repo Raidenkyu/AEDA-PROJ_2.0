@@ -763,7 +763,7 @@ void Empresa::adicionaReserva() {
 	{
 		if (_fornecedores.at(index)->getOfertas().at(l).getNome() == nomeOferta)
 		{
-			_fornecedores.at(index)->getOfertas().at(l).setTimeUltimaReserva = tempoReserva;
+			_fornecedores.at(index)->getOfertas().at(l).setTimeUltimaReserva(tempoReserva);
 
 		}
 		else

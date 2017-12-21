@@ -77,7 +77,7 @@ public:
 	 */
 	Time getDataMesmo() { return this->data; }
 
-	Time getUltimaReserva(){ return this->ultimaReserva; }
+	 Time  & getUltimaReserva(){ return this->ultimaReserva; }
 
 	/**
 	 * @brief      Gets the number of the boat.
@@ -437,6 +437,20 @@ public:
 	
 };
 
+struct comparaOfertas
+{
+	bool operator() (Oferta oferta1, Oferta oferta2)  const{
+		if (oferta1.getUltimaReserva() < oferta2.getUltimaReserva())
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+};
+
+typedef std::priority_queue<Oferta, std::vector<Oferta>,comparaOfertas> pq_ofertas;
+
 /**
  * @brief      Class for empresa.
  */
@@ -445,9 +459,6 @@ private:
 	std::vector<Fornecedor*> _fornecedores;
 	std::vector<Cliente*> _clientes;
 	std::vector<Reserva*>_reservas;
-
-	typedef priority_queue<Oferta, std::vector<Oferta>,comparaOfertas> pq_ofertas;
-
 	pq_ofertas queueOfertasOrdenadas;
 
 public:
@@ -829,20 +840,5 @@ std::ostream & operator<<(std::ostream & os,ObjetoInexistente<T> & ex){
   os << ex.getObj();
   return os;
 }
-
-
-
-struct comparaOfertas
-{
-	bool operator() (Oferta oferta1, Oferta oferta2)  const{
-		if (oferta1.getUltimaReserva() < oferta2.getUltimaReserva())
-		{
-			return true;
-		}
-		else
-			return false;
-	}
-};
-
 
 #endif /* CRUISE_H_ */

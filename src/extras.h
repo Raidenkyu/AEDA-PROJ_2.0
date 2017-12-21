@@ -16,6 +16,8 @@
  */
 class Time{
 public:
+	Time(){};
+	Time(const Time &t1);
 
 	/**
 	 * @brief      Constructs Time Object

@@ -398,7 +398,7 @@ int Fornecedor::calculaPreco(int tipodebarco, int lotacao, int distancia) {
 void Empresa::displayOfertasemOrdem() {
 	
 	pq_ofertas temp = queueOfertasOrdenadas;
-	
+
 
 	while(!(temp.empty())){
 		Oferta ofertatemp = temp.top();
@@ -415,6 +415,7 @@ void Empresa::displayOfertasemOrdem() {
 		cout << "Data: " << ofertatemp.getData() << endl;
 		cout << "Preco (por pessoa): " << ofertatemp.getPreco()/ofertatemp.getLotacao() << endl;
 		cout << "Preco (total): " << ofertatemp.getPreco() << endl << endl;
+		temp.pop();
 
 	}
 }
@@ -466,7 +467,16 @@ void ClienteRegistado::setPontos(unsigned int pontos){
 
 //// Metodos da classe Oferta ////
 
-Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time date, unsigned int preco): nome(name),barco(boat),destinos(dest),distancia(dist),lotacao(lot),data(date), preco(preco){};
+
+Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time  date, unsigned int price):
+		nome(name),
+		barco(boat),
+		destinos(dest),
+		distancia(dist),
+		lotacao(lot),
+		data(date),
+		preco(price)
+{};
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;
