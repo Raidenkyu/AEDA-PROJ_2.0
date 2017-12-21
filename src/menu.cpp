@@ -327,8 +327,8 @@ void Empresa::menuFornecedor() {
 	cout << "| 1 - Adicionar Fornecedor                                 |\n";
 	cout << "| 2 - Modificar Fornecedor                                 |\n";
 	cout << "| 3 - Apagar Fornecedor                                    |\n";
-	cout << "| 4 - Ver Fornecedores (sem reservas)                      |\n";
-	cout << "| 5 - Ver Fornecedores (com reservas)                      |\n";
+	cout << "| 4 - Ver Fornecedores (sem ofertas)                      |\n";
+	cout << "| 5 - Ver Fornecedores (com ofertas)                      |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -758,6 +758,18 @@ void Empresa::adicionaReserva() {
 	preco = _fornecedores.at(index)->calculaPreco(ofertas[0]->getBarcoNumber(),  lotacao, ofertas[0]->getDistancia());
 	Reserva * novaReserva = new Reserva(nome_fornecedor, ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
 	addReservas(*novaReserva);  
+	RealTime tempoReserva;
+	for (unsigned int l = 0; l < _fornecedores.at(index)->getOfertas().size(); l++)
+	{
+		if (_fornecedores.at(index)->getOfertas().at(l).getNome() == nomeOferta)
+		{
+			_fornecedores.at(index)->getOfertas().at(l).setTimeUltimaReserva = tempoReserva;
+
+		}
+		else
+			erroNome = true;
+	}
+	
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| A oferta foi reservada com sucesso.                      |\n";
 	cout << "+----------------------------------------------------------+\n";

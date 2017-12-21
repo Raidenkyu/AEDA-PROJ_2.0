@@ -4,6 +4,7 @@
 #include "extras.h"
 #include <iostream>
 
+
 using namespace std;
 
 
@@ -394,8 +395,33 @@ int Fornecedor::calculaPreco(int tipodebarco, int lotacao, int distancia) {
 
 }
 
-void Fornecedor::displayOfertas() {
+void Empresa::displayOfertasemOrdem() {
 	
+	pq_ofertas temp = queueOfertasOrdenadas;
+	
+
+	while(!(temp.empty())){
+		Oferta ofertatemp = temp.top();
+
+		cout << "Nome: " << ofertatemp.getNome() << endl;
+		cout << "Barco: " << ofertatemp.getBarco() << endl;
+		cout << "Destinos:" << endl;
+		for (unsigned int j = 0; j < ofertatemp.getDestinos().size(); j++) {
+
+		cout << "	Destino numero " << j+1 << " : "<< ofertatemp.getDestinos().at(j) << endl;
+	}
+		cout << "Distancia: " << ofertatemp.getDistancia() << endl;
+		cout << "Lotacao: " << ofertatemp.getLotacao() << endl;
+		cout << "Data: " << ofertatemp.getData() << endl;
+		cout << "Preco (por pessoa): " << ofertatemp.getPreco()/ofertatemp.getLotacao() << endl;
+		cout << "Preco (total): " << ofertatemp.getPreco() << endl << endl;
+
+	}
+}
+
+
+void Fornecedor::displayOfertas() {
+
 
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
@@ -404,17 +430,16 @@ void Fornecedor::displayOfertas() {
 		cout << "Destinos:" << endl;
 		for (unsigned int j = 0; j < ofertas.at(i).getDestinos().size(); j++) {
 
-		cout << "	Destino numero " << j+1 << " : "<< ofertas.at(i).getDestinos().at(j) << endl;
-	}
+			cout << "	Destino numero " << j + 1 << " : " << ofertas.at(i).getDestinos().at(j) << endl;
+		}
 		cout << "Distancia: " << ofertas.at(i).getDistancia() << endl;
 		cout << "Lotacao: " << ofertas.at(i).getLotacao() << endl;
 		cout << "Data: " << ofertas.at(i).getData() << endl;
-		cout << "Preco (por pessoa): " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao(), ofertas.at(i).getDistancia())/ ofertas.at(i).getLotacao() << endl;
+		cout << "Preco (por pessoa): " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao(), ofertas.at(i).getDistancia()) / ofertas.at(i).getLotacao() << endl;
 		cout << "Preco (total): " << calculaPreco(ofertas.at(i).getBarcoNumber(), ofertas.at(i).getLotacao(), ofertas.at(i).getDistancia()) << endl << endl;
 
 	}
 }
-
 
 
 
@@ -479,4 +504,17 @@ void Oferta::printOferta()
 	cout << "Lotacao: " << getLotacao() << endl;
 	cout << "Data: " << getData() << endl;
 	cout << "Preco: " << getPreco() << endl;
+}
+
+//priority queue stuff
+
+void Empresa::addOfertasQueue()
+{
+	for (unsigned int i = 0; i < _fornecedores.size(); i++)
+	{
+		for (unsigned int j = 0; j < _fornecedores[i]->getOfertas().size(); j++)
+		{
+			queueOfertasOrdenadas.push(_fornecedores[i]->getOfertas()[j]);
+		}
+	}
 }

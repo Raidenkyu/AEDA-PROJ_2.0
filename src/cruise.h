@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "extras.h"
+#include <queue>
 
 
 
@@ -23,6 +24,7 @@ private:
 	unsigned int distancia;
 	unsigned int lotacao;
 	Time data;
+	Time ultimaReserva;
 	unsigned int preco;
 public:
 
@@ -45,6 +47,7 @@ public:
 	void setDistancia(unsigned int distance) { distancia = distance; }
 	void setLotacao(unsigned int limit) { lotacao = limit; }
 	void setTime(Time novaData) { data = novaData; }
+	void setTimeUltimaReserva(Time novaDataReserva) { ultimaReserva = novaDataReserva; };
 	void setPreco(unsigned int price) { preco = price; }
 	/**
 	 * @brief      Gets the name
@@ -73,6 +76,8 @@ public:
 	 * @return     The date
 	 */
 	Time getDataMesmo() { return this->data; }
+
+	Time getUltimaReserva(){ return this->ultimaReserva; }
 
 	/**
 	 * @brief      Gets the number of the boat.
@@ -232,6 +237,8 @@ public:
 	/**
 	 * @brief      prints all the offers
 	 */
+	
+
 	void displayOfertas();
 
 	/**
@@ -438,6 +445,11 @@ private:
 	std::vector<Fornecedor*> _fornecedores;
 	std::vector<Cliente*> _clientes;
 	std::vector<Reserva*>_reservas;
+
+	typedef priority_queue<Oferta, std::vector<Oferta>,comparaOfertas> pq_ofertas;
+
+	pq_ofertas queueOfertasOrdenadas;
+
 public:
 
 	/**
@@ -622,6 +634,11 @@ public:
 	/**
 	 * @brief      displays all the information about the Clients
 	 */
+
+	void addOfertasQueue();
+	
+	void displayOfertasemOrdem();
+
 	void displayClientes();
 
 	/**
@@ -812,5 +829,20 @@ std::ostream & operator<<(std::ostream & os,ObjetoInexistente<T> & ex){
   os << ex.getObj();
   return os;
 }
+
+
+
+struct comparaOfertas
+{
+	bool operator() (Oferta oferta1, Oferta oferta2)  const{
+		if (oferta1.getUltimaReserva() < oferta2.getUltimaReserva())
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+};
+
 
 #endif /* CRUISE_H_ */
