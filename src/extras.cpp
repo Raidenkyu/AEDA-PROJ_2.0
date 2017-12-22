@@ -11,6 +11,8 @@ using namespace std;
 
 // Definition of class: Time
 
+Time::Time(){}
+
 Time::Time(unsigned int min, unsigned int h, unsigned int d, unsigned int m, unsigned int y): minutes(min), hours(h), day(d), month(m), year(y){}
 
 Time::Time(const Time &t1):

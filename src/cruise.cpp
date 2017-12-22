@@ -96,7 +96,7 @@ Fornecedor & Fornecedor::deleteOfertas(string name) {
 void Empresa::displayClientes()
 {
 	for (unsigned int i = 0; i < _clientes.size(); i++) {
-		cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
+		cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Morada" << _clientes.at(i)->getMorada() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
 		if (_clientes.at(i)->isRegistado()) {
 			cout << "Registado: Sim" << endl << endl;
 		}
@@ -179,7 +179,9 @@ void Empresa::load(){
 	if(clientes_file.is_open())
 		while(getline(clientes_file,line)){
 			s1 = line;
-			c = new Cliente(s1);
+			getline(clientes_file,line);
+			s2 = line;
+			c = new Cliente(s1,s2);
 			this->addClientes(*c);
 		}
 	else {
@@ -190,9 +192,11 @@ void Empresa::load(){
 	if(registados_file.is_open())
 			while(getline(registados_file,line)){
 				s1 = line;
+				getline(registados_file,line);
+				s2 = line;
 				getline(registados_file,line,'\n');
 				num1 = stoi(line);
-				c = new ClienteRegistado(s1,num1);
+				c = new ClienteRegistado(s1,s2,num1);
 				this->addClientes(*c);
 			}
 		else {
@@ -453,15 +457,31 @@ Reserva::Reserva(string nome_fornecedor, Oferta * oferta, string nome_cliente, C
 
 //// Metodos da classe Cliente ////
 
-Cliente::Cliente(string nome): nome(nome){}
+Cliente::Cliente(string nome, string morada): nome(nome), morada(morada){}
 
 
 //// Metodos da classe ClienteRegistado ////
 
-ClienteRegistado::ClienteRegistado(string nome, unsigned int pontos): Cliente(nome),pontos(pontos){}
+ClienteRegistado::ClienteRegistado(string nome, string morada,unsigned int pontos): Cliente(nome, morada),pontos(pontos){}
 
 void ClienteRegistado::setPontos(unsigned int pontos){
 	this->pontos = pontos;
+}
+
+//// Metodos da classe Cliente Inativo ////
+
+ClienteInativo::ClienteInativo(Cliente * ptr): ptr(ptr){}
+
+string ClienteInativo::getNome() const {
+	return this->ptr->getNome();
+}
+
+string ClienteInativo::getMorada(){
+	return this->ptr->getMorada();
+}
+
+void ClienteInativo::setMorada(string novaMorada){
+	this->setMorada(novaMorada);
 }
 
 
@@ -527,4 +547,25 @@ void Empresa::addOfertasQueue()
 			queueOfertasOrdenadas.push(_fornecedores[i]->getOfertas()[j]);
 		}
 	}
+}
+
+//Hash table stuff
+
+
+Empresa & Empresa::desativaCliente(Cliente * c){
+	ClienteInativo ci(c);
+	this->_clientesInativos.insert(ci);
+	return *this;
+}
+
+Empresa & Empresa::atualizaInatividade(){
+
+
+	return *this;
+}
+
+Empresa & Empresa::reativaCliente(Cliente * c){
+	ClienteInativo ci(c);
+	this->_clientesInativos.erase(ci);
+	return *this;
 }

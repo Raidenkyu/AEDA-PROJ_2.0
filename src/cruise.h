@@ -5,6 +5,7 @@
 #include <string>
 #include "extras.h"
 #include <queue>
+#include <unordered_set>
 
 
 
@@ -265,6 +266,7 @@ public:
 class Cliente{
 protected:
 	std::string nome;
+	std::string morada;
 public:
 
 	/**
@@ -272,7 +274,7 @@ public:
 	 *
 	 * @param[in]  nome  The name
 	 */
-	Cliente(std::string nome);
+	Cliente(std::string nome, std::string morada);
 
 	/**
 	 * @brief      Gets the name
@@ -281,12 +283,16 @@ public:
 	 */
 	std::string getNome() { return this->nome; };
 
+	std::string getMorada(){ return this->morada;};
+
 	/**
 	 * @brief      Sets the name.
 	 *
 	 * @param[in]  novoNome  The novo nome
 	 */
 	void setNome(std::string novoNome) { nome = novoNome; }
+
+	void setMorada(std::string novaMorada){this->morada = novaMorada;};
 
 	/**
 	 * @brief      Gets the points
@@ -327,7 +333,7 @@ public:
 	 * @param[in]  nome    The name
 	 * @param[in]  pontos  The points
 	 */
-	ClienteRegistado(std::string nome, unsigned int pontos = 0);
+	ClienteRegistado(std::string nome, std::string morada, unsigned int pontos = 0);
 
 	/**
 	 * @brief      Gets the points
@@ -350,6 +356,16 @@ public:
 	 */
 	bool isRegistado(){return true;};
 
+};
+
+class ClienteInativo {
+private:
+	Cliente * ptr;
+public:
+	ClienteInativo(Cliente * ptr);
+	std::string getNome() const;
+	std::string getMorada();
+	void setMorada(std::string novaMorada);
 };
 
 /**
@@ -440,16 +456,22 @@ public:
 struct comparaOfertas
 {
 	bool operator() (Oferta oferta1, Oferta oferta2)  const{
-		if (oferta1.getUltimaReserva() < oferta2.getUltimaReserva())
-		{
-			return true;
-		}
-		else
-			return false;
+		return oferta1.getUltimaReserva() < oferta2.getUltimaReserva();
+	}
+};
+
+struct comparaClientesInativos
+{
+	int operator() (const ClienteInativo & c) const {
+		return 0;
+	}
+	bool operator() (const ClienteInativo & c1, const ClienteInativo & c2)  const{
+		return c1.getNome() < c2.getNome();
 	}
 };
 
 typedef std::priority_queue<Oferta, std::vector<Oferta>,comparaOfertas> pq_ofertas;
+typedef std::unordered_set<ClienteInativo, comparaClientesInativos,comparaClientesInativos> tabHInativos;
 
 /**
  * @brief      Class for empresa.
@@ -460,6 +482,7 @@ private:
 	std::vector<Cliente*> _clientes;
 	std::vector<Reserva*>_reservas;
 	pq_ofertas queueOfertasOrdenadas;
+	tabHInativos _clientesInativos;
 
 public:
 
@@ -699,41 +722,17 @@ public:
 	void sort();
 
 
+	Empresa & desativaCliente(Cliente * c);
+
+	Empresa & atualizaInatividade();
+
+	Empresa & reativaCliente(Cliente * c);
+
+
 
 };
 
 //Exceptions
-
-
-/**
- * @brief      Class for invalid input exception.
- *
- * @tparam     T     the type of the input
- */
-template <class T>
-class InputInvalido{
-private:
-  T input;
-public:
-
-  /**
-   * @brief      Construct the InputInvalido Exception
-   *
-   * @param[in]  input  The input
-   */
-  InputInvalido(T input):input(input){};
-
-  /**
-   * @brief      Gets the input.
-   *
-   * @return     The input.
-   */
-  T getInput(){return this->input;};
-
-
-};
-
-
 
 /**
  * @brief      Class for objeto repetido Exception
@@ -792,22 +791,6 @@ public:
 
 //Overload do operador << para as exceptions
 
-
-/**
- * @brief      overload to << operator to display InvalidInput Exception
- *
- * @param      os    ostream
- * @param      ex    Invalid Input Exception
- *
- * @tparam     T     the type of the invalid input
- *
- * @return     ostream that reads InputInvalid object
- */
-template <class T>
-std::ostream & operator<<(std::ostream & os,InputInvalido<T> & ex){
-  os << ex.getInput();
-  return os;
-};
 
 /**
  * @brief      overload to << operator to display ObjetoRepetido Exception

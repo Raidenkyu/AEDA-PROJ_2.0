@@ -16,7 +16,7 @@
  */
 class Time{
 public:
-	Time(){};
+	Time();
 	Time(const Time &t1);
 
 	/**
