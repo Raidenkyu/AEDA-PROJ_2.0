@@ -760,7 +760,8 @@ void Empresa::adicionaReserva() {
 		else
 			erroNome = true;
 	}
-	
+	ClienteInativo * ci = new ClienteInativo(this->_clientes[indexCliente]);
+		this->_clientesInativos.erase(*ci);
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| A oferta foi reservada com sucesso.                      |\n";
 	cout << "+----------------------------------------------------------+\n";
