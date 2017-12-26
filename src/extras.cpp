@@ -78,15 +78,15 @@ bool operator==(Time & t1, Time & t2){
 		return false;
 }
 
-bool operator<(Time &t1, Time & t2){
-	if(t1.getYear() < t2.getYear())
+bool Time::operator<( Time  t2){
+	if(this->getYear() < t2.getYear())
 		return true;
-	else if(t1.getYear() == t2.getYear()){
-		if(t1.getMonth() < t2. getMonth()){
+	else if(this->getYear() == t2.getYear()){
+		if(this->getMonth() < t2. getMonth()){
 			return true;
 		}
-		else if(t1.getMonth() == t2.getMonth()){
-			if(t1.getDay() < t2.getDay()){
+		else if(this->getMonth() == t2.getMonth()){
+			if(this->getDay() < t2.getDay()){
 				return true;
 			}
 			else{
@@ -123,7 +123,7 @@ int Time::diferencaDias() {
 					dias = (29 - rt.getDay()) + getDay();
 				else
 				dias = (28 - rt.getDay()) + getDay();
-			case 3: //Mar�o
+			case 3: //Marco
 				dias = (31 - rt.getDay()) + getDay();
 			case 4: //Abril
 				dias = (30 - rt.getDay()) + getDay();

@@ -6,12 +6,13 @@
 #include "extras.h"
 #include <queue>
 #include <unordered_set>
+#include "BST.h"
 
 
 
-                      /////                                          /////
-                     /////               CRUISE . H                 /////
-                    /////                                          /////
+                     /////                                          /////
+                    /////               CRUISE . H                 /////
+                   /////                                          /////
 
 
 /**
@@ -78,7 +79,7 @@ public:
 	 */
 	Time getDataMesmo() { return this->data; }
 
-	 Time  & getUltimaReserva(){ return this->ultimaReserva; }
+	Time  & getUltimaReserva(){ return this->ultimaReserva; }
 
 	/**
 	 * @brief      Gets the number of the boat.
@@ -368,6 +369,7 @@ public:
 	void setMorada(std::string novaMorada);
 };
 
+
 /**
  * @brief      Class for reserva.
  */
@@ -379,6 +381,7 @@ private:
 	Cliente * cliente;
 	bool cancelada;
 	unsigned int preco;
+	Time data;
 public:
 
 	/**
@@ -448,10 +451,10 @@ public:
 	 */
 	void setPreco(int novoPreco) { preco = novoPreco; }
 
+	Time getData() {return data;}
 
-	
-	
 };
+
 
 struct comparaOfertas
 {
@@ -473,6 +476,18 @@ struct comparaClientesInativos
 typedef std::priority_queue<Oferta, std::vector<Oferta>,comparaOfertas> pq_ofertas;
 typedef std::unordered_set<ClienteInativo, comparaClientesInativos,comparaClientesInativos> tabHInativos;
 
+
+class Fatura{
+private:
+	Reserva reserva;
+public:
+	Fatura(Reserva &r);
+	Reserva getReserva();
+	bool operator< (Fatura &f1);
+};
+
+
+
 /**
  * @brief      Class for empresa.
  */
@@ -481,6 +496,7 @@ private:
 	std::vector<Fornecedor*> _fornecedores;
 	std::vector<Cliente*> _clientes;
 	std::vector<Reserva*>_reservas;
+	BinaryTree<Fatura*> _faturas;
 	pq_ofertas queueOfertasOrdenadas;
 	tabHInativos _clientesInativos;
 
@@ -517,6 +533,9 @@ public:
 	 * @return     the modified Empresa
 	 */
 	Empresa & addReservas(Reserva & r);
+
+	Empresa & addFaturas(Fatura & r);
+
 
 	/**
 	 * @brief      removes a supplier
@@ -731,6 +750,8 @@ public:
 
 
 };
+
+
 
 //Exceptions
 

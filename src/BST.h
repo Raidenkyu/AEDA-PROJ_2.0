@@ -61,6 +61,8 @@ class BinaryTree {
 
   void makeEmpty();
   void outputPreorder(ostream &out) const;
+  void addNode(BTNode<T> *node, BTNode<T> *tree);
+  void setRoot (BTNode<T> *r);
 
  private:
   BTNode<T> *root;
@@ -92,8 +94,7 @@ template <class T>
 BTNode<T> *BinaryTree<T>::copySubtree(const BTNode<T> *n) const
 {
   if (n) {
-    BTNode<T> *node = new BTNode<T>(n->element, copySubtree(n->left),
-				    copySubtree(n->right));
+    BTNode<T> *node = new BTNode<T>(n->element, copySubtree(n->left),copySubtree(n->right));
     return node;
   } else
     return 0;
@@ -139,6 +140,24 @@ void BinaryTree<T>::outputPreorder(ostream &out) const
 {
   outputPreorder(out, root);
 
+}
+
+template<class T>
+inline void BinaryTree<T>::addNode(BTNode<T> *node, BTNode<T> *tree) {
+	if (tree->element == 0){
+		tree = node;
+	}
+	else if(node < tree){
+		addNode(*node, tree->left);
+	}
+	else if(tree < node){
+		addNode(*node, tree->rigth);
+	}
+}
+
+template<class T>
+inline void BinaryTree<T>::setRoot(BTNode<T>* r) {
+	this->root = r;
 }
 
 template <class T>

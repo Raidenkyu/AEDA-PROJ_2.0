@@ -84,6 +84,16 @@ public:
 	 */
 	int diferencaDias();
 
+	/**
+	 * @brief      Checks if one time is more recent than the other
+	 *
+	 * @param      t1    The time 1
+	 * @param      t2    The time 2
+	 *
+	 * @return     if time 1 is more recent than time 2 return true otherwise return false.
+	 */
+	bool operator<( Time  t2);
+
 protected:
 	unsigned int minutes, hours, day, month, year;
 
@@ -109,15 +119,6 @@ public:
  */
 bool operator==(Time & t1, Time & t2);
 
-/**
- * @brief      Checks if one time is more recent than the other
- *
- * @param      t1    The time 1
- * @param      t2    The time 2
- *
- * @return     if time 1 is more recent than time 2 return true otherwise return false.
- */
-bool operator<(Time &t1, Time & t2);
 
 /**
  * @brief      prints the time in a ostream in string format

@@ -19,6 +19,8 @@ using namespace std;
  * @brief      Constructs object of type Empresa
  */
 Empresa::Empresa(){
+	BinaryTree<Fatura*>* bt1 = new BinaryTree<Fatura*>();
+	this->_faturas = *bt1;
 	this->load();
 	this->menuInicial();
 	this->save();
@@ -451,7 +453,9 @@ void Fornecedor::displayOfertas() {
 //// Metodos da classe Reserva ////
 
 Reserva::Reserva(string nome_fornecedor, Oferta * oferta, string nome_cliente, Cliente * cliente, unsigned int preco, bool cancelada):
-		nome_fornecedor(nome_fornecedor), oferta(oferta), nome_cliente(nome_cliente),cliente(cliente),preco(preco), cancelada(cancelada) {}
+		nome_fornecedor(nome_fornecedor), oferta(oferta), nome_cliente(nome_cliente),cliente(cliente),preco(preco), cancelada(cancelada) {
+	this->data = RealTime();
+}
 
 
 
@@ -564,8 +568,35 @@ Empresa & Empresa::atualizaInatividade(){
 	return *this;
 }
 
+Empresa& Empresa::addFaturas(Fatura& r) {
+}
+
 Empresa & Empresa::reativaCliente(Cliente * c){
 	ClienteInativo ci(c);
 	this->_clientesInativos.erase(ci);
 	return *this;
 }
+
+Fatura::Fatura(Reserva& r): reserva(r) {}
+
+Reserva Fatura::getReserva() {
+	return reserva;
+}
+
+bool Fatura::operator <(Fatura& f1) {
+	if (this->getReserva().getNomeCliente() < f1.getReserva().getNomeCliente()) {
+		return true;
+	}
+	else if (this->getReserva().getNomeCliente() == f1.getReserva().getNomeCliente()) {
+		if (this->getReserva().getData() < f1.getReserva().getData()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		return false;
+	}
+}
+

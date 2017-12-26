@@ -3,6 +3,7 @@
 #include "extras.h"
 #include "cruise.h"
 #include <climits>
+#include "BST.h"
 
 using namespace std;
 
@@ -209,7 +210,7 @@ void Empresa::modificaCliente() {
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Que propriedade do cliente é que pretende modificar?     |\n";
+	cout << "| Que propriedade do cliente pretende modificar?           |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| 1 - Nome                                                 |\n";
 	cout << "| 2 - Pontos                                               |\n";
@@ -243,7 +244,7 @@ void Empresa::modificaCliente() {
 			cin >> pontos;
 			_clientes.at(index)->setPontos(pontos);
 		}
-		else cout << "Esse cliente nao é registado, logo nao tem pontos. Registe-o antes de utilizar os pontos. \n";
+		else cout << "Esse cliente nao esta registado, logo nao tem pontos. Registe-o antes de utilizar os pontos. \n";
 
 		break;
 
@@ -262,7 +263,7 @@ void Empresa::modificaCliente() {
 
 	
 	default:
-		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao e viavel. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
@@ -429,12 +430,12 @@ void Empresa::modificaFornecedor() {
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Que propriedade do fornecedor é que pretende modificar?  |\n";
+	cout << "| Que propriedade do fornecedor pretende modificar?        |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| 1 - Nome                                                 |\n";
 	cout << "| 2 - NIF                                                  |\n";
 	cout << "| 3 - Morada                                               |\n";
-	cout << "| 4 - Definicões de Fornecedor                             |\n";
+	cout << "| 4 - Definicoes de Fornecedor                             |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -476,7 +477,7 @@ void Empresa::modificaFornecedor() {
 	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
 
 	default:
-		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao e viavel. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
@@ -729,7 +730,7 @@ void Empresa::adicionaReserva() {
 	if (lotacao <= ofertas[0]->getLotacao())
 		ofertas[0]->diminuiLotacao(lotacao);
 	else {
-		cout << "Esse número de pessoas excede o limite na oferta. Pressione Enter regressar.";
+		cout << "Esse numero de pessoas excede o limite na oferta. Pressione Enter regressar.";
 		cin.get();
 		return;
 	}
@@ -740,6 +741,9 @@ void Empresa::adicionaReserva() {
 	preco = _fornecedores.at(index)->calculaPreco(ofertas[0]->getBarcoNumber(),  lotacao, ofertas[0]->getDistancia());
 	Reserva * novaReserva = new Reserva(nome_fornecedor, ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
 	addReservas(*novaReserva);  
+	Fatura * novaFatura = new Fatura(*novaReserva);
+	BTNode<Fatura*> * no = new BTNode<Fatura*>(novaFatura);
+	this->_faturas.addNode(no, this->_faturas.getRoot());
 	RealTime tempoReserva;
 	for (unsigned int l = 0; l < _fornecedores.at(index)->getOfertas().size(); l++)
 	{
@@ -780,12 +784,12 @@ void Empresa::modificaReserva()
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Que propriedade do fornecedor é que pretende modificar?  |\n";
+	cout << "| Que propriedade do fornecedor pretende modificar?        |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| 1 - Nome                                                 |\n";
 	cout << "| 2 - NIF                                                  |\n";
 	cout << "| 3 - Morada                                               |\n";
-	cout << "| 4 - Definicões de Fornecedor                             |\n";
+	cout << "| 4 - Definicoes de Fornecedor                             |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -827,7 +831,7 @@ void Empresa::modificaReserva()
 	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
 
 	default:
-		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao e viavel. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();
@@ -841,7 +845,7 @@ void Empresa::removeReservas() {
 	titulo();
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas sao as reservas disponíveis para remover:          |\n";
+	cout << "| Estas sao as reservas disponiveis para remover:          |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	displayReservas();
