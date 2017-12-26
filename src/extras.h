@@ -78,7 +78,7 @@ public:
 	void printTime(std::ostream & os);
 
 	/**
-	 * @brief      calculates the difference os days between this date and the actual date
+	 * @brief      calculates the difference of days between this date and the actual date
 	 *
 	 * @return     the difference between the real date and the offer date
 	 */

@@ -365,7 +365,7 @@ private:
 public:
 	ClienteInativo(Cliente * ptr);
 	std::string getNome() const;
-	std::string getMorada();
+	std::string getMorada() const;
 	void setMorada(std::string novaMorada);
 };
 
@@ -750,7 +750,7 @@ public:
 
 	Empresa & reativaCliente(Cliente * c);
 
-
+	void displayClientesInativos();
 
 };
 

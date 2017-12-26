@@ -20,6 +20,7 @@ using namespace std;
  */
 Empresa::Empresa(): _faturas(Fatura(NULL)){
 	this->load();
+	atualizaInatividade();
 	this->menuInicial();
 	this->save();
 }
@@ -478,7 +479,7 @@ string ClienteInativo::getNome() const {
 	return this->ptr->getNome();
 }
 
-string ClienteInativo::getMorada(){
+string ClienteInativo::getMorada() const{
 	return this->ptr->getMorada();
 }
 
@@ -561,12 +562,21 @@ Empresa & Empresa::desativaCliente(Cliente * c){
 }
 
 Empresa & Empresa::atualizaInatividade(){
+	Time ultimaReserva;
+	RealTime rt;
+	ClienteInativo * ci;
+	for(unsigned int i = 0; i < this->_reservas.size(); i++){
+		ci = new ClienteInativo(this->_reservas[i]->getCliente());
+		if(this->_clientesInativos.find(*ci) != this->_clientesInativos.end()){
+				continue;
+		}
+		if(this->_reservas[i]->getData().diferencaDias() > (6*30)){
+			this->_clientesInativos.insert(*ci);
+		}
 
+	}
 
 	return *this;
-}
-
-Empresa& Empresa::addFaturas(Fatura& r) {
 }
 
 Empresa & Empresa::reativaCliente(Cliente * c){
@@ -575,9 +585,21 @@ Empresa & Empresa::reativaCliente(Cliente * c){
 	return *this;
 }
 
+void Empresa::displayClientesInativos(){
+	tabHInativos::const_iterator it;
+	for(it = this->_clientesInativos.begin();it != this->_clientesInativos.end();it++){
+		cout << "Nome: " <<  it->getNome() << endl << "Morada: " << it->getMorada() << endl << endl;
+	}
+}
+
 
 //BST stuff
 Fatura::Fatura(Reserva* r): reserva(r) {}
+
+Empresa& Empresa::addFaturas(Fatura& r) {
+	this->_faturas.insert(r);
+	return *this;
+}
 
 Reserva * Fatura::getReserva() {
 	return reserva;

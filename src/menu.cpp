@@ -44,6 +44,7 @@ void Empresa::menuCliente() {
 		cout << "| 2 - Modificar Cliente                                    |\n";
 		cout << "| 3 - Apagar Cliente                                       |\n";
 		cout << "| 4 - Ver todos os Clientes                                |\n";
+		cout << "| 5 - Ver todos os Clientes Inativos                       |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 
@@ -75,6 +76,11 @@ void Empresa::menuCliente() {
 		
 		case 4:
 			displayClientes();
+			cin.get();
+			cin.get();
+			break;
+		case 5:
+			displayClientesInativos();
 			cin.get();
 			cin.get();
 			break;
