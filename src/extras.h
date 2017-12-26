@@ -93,6 +93,7 @@ public:
 	 * @return     if time 1 is more recent than time 2 return true otherwise return false.
 	 */
 	bool operator<( Time  t2);
+	bool operator==(Time t2);
 
 protected:
 	unsigned int minutes, hours, day, month, year;

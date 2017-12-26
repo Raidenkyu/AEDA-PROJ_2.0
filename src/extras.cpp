@@ -71,11 +71,9 @@ unsigned int Time::getYear() {
 	return year;
 }
 
-bool operator==(Time & t1, Time & t2){
-	if(t1.getDay() == t2.getDay() && t2.getMonth() == t1.getMonth() && t1.getYear() == t2.getYear())
-		return true;
-	else
-		return false;
+bool Time::operator==(Time t2){
+	return (this->getDay() == t2.getDay() && t2.getMonth() == this->getMonth() && this->getYear() == t2.getYear());
+
 }
 
 bool Time::operator<( Time  t2){

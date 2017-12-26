@@ -18,9 +18,7 @@ using namespace std;
 /**
  * @brief      Constructs object of type Empresa
  */
-Empresa::Empresa(){
-	BinaryTree<Fatura*>* bt1 = new BinaryTree<Fatura*>();
-	this->_faturas = *bt1;
+Empresa::Empresa(): _faturas(Fatura(NULL)){
 	this->load();
 	this->menuInicial();
 	this->save();
@@ -577,26 +575,30 @@ Empresa & Empresa::reativaCliente(Cliente * c){
 	return *this;
 }
 
-Fatura::Fatura(Reserva& r): reserva(r) {}
 
-Reserva Fatura::getReserva() {
+//BST stuff
+Fatura::Fatura(Reserva* r): reserva(r) {}
+
+Reserva * Fatura::getReserva() {
 	return reserva;
 }
 
-bool Fatura::operator <(Fatura& f1) {
-	if (this->getReserva().getNomeCliente() < f1.getReserva().getNomeCliente()) {
-		return true;
+string Fatura::getNomeCliente() const{
+	return this->reserva->getNomeCliente();
+}
+
+Time Fatura::getData() const {
+	return this->reserva->getData();
+}
+
+bool Fatura::operator<(const Fatura& f1) const {
+	if (this->getNomeCliente() != f1.getNomeCliente()) {
+		return this->getNomeCliente() < f1.getNomeCliente();
 	}
-	else if (this->getReserva().getNomeCliente() == f1.getReserva().getNomeCliente()) {
-		if (this->getReserva().getData() < f1.getReserva().getData()) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	else {
-		return false;
-	}
+	else return this->getData() < f1.getData();
+}
+
+bool Fatura::operator==(const Fatura& f1) const {
+	return (this->getNomeCliente() == f1.getNomeCliente()) && (this->getData() == f1.getData());
 }
 

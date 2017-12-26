@@ -479,11 +479,14 @@ typedef std::unordered_set<ClienteInativo, comparaClientesInativos,comparaClient
 
 class Fatura{
 private:
-	Reserva reserva;
+	Reserva * reserva;
 public:
-	Fatura(Reserva &r);
-	Reserva getReserva();
-	bool operator< (Fatura &f1);
+	Fatura(Reserva *r);
+	Reserva *getReserva();
+	std::string getNomeCliente() const;
+	Time getData() const ;
+	bool operator< (const Fatura &f1) const;
+	bool operator== (const Fatura &f1) const;
 };
 
 
@@ -496,7 +499,7 @@ private:
 	std::vector<Fornecedor*> _fornecedores;
 	std::vector<Cliente*> _clientes;
 	std::vector<Reserva*>_reservas;
-	BinaryTree<Fatura*> _faturas;
+	BST<Fatura> _faturas;
 	pq_ofertas queueOfertasOrdenadas;
 	tabHInativos _clientesInativos;
 

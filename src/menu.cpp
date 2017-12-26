@@ -741,9 +741,8 @@ void Empresa::adicionaReserva() {
 	preco = _fornecedores.at(index)->calculaPreco(ofertas[0]->getBarcoNumber(),  lotacao, ofertas[0]->getDistancia());
 	Reserva * novaReserva = new Reserva(nome_fornecedor, ofertas[0], nomeCliente, _clientes.at(indexCliente), preco, cancelada);
 	addReservas(*novaReserva);  
-	Fatura * novaFatura = new Fatura(*novaReserva);
-	BTNode<Fatura*> * no = new BTNode<Fatura*>(novaFatura);
-	this->_faturas.addNode(no, this->_faturas.getRoot());
+	Fatura novaFatura(novaReserva);
+	this->_faturas.insert(novaFatura);
 	RealTime tempoReserva;
 	for (unsigned int l = 0; l < _fornecedores.at(index)->getOfertas().size(); l++)
 	{
