@@ -766,7 +766,7 @@ public:
 template <class T>
 class ObjetoRepetido{
 private:
-  T obj;
+  std::string obj;
 public:
 
   /**
@@ -774,14 +774,14 @@ public:
    *
    * @param[in]  obj   The repeated object
    */
-  ObjetoRepetido(T obj):obj(obj){};
+  ObjetoRepetido(std::string obj):obj(obj){};
 
   /**
    * @brief      Gets the object.
    *
    * @return     The object.
    */
-  T getObj(){return this->obj;};
+  std::string getObj(){return this->obj;};
 
 };
 
@@ -794,7 +794,7 @@ public:
 template<class T>
 class ObjetoInexistente{
 private:
-  T obj;
+  string obj;
 public:
 
   /**
@@ -802,14 +802,14 @@ public:
    *
    * @param[in]  obj   The not found object
    */
-  ObjetoInexistente(T obj):obj(obj){};
+  ObjetoInexistente(std::string obj):obj(obj){};
 
   /**
    * @brief      Gets the object.
    *
    * @return     The object.
    */
-  T getObj(){return this->obj;};
+  std::string getObj(){return this->obj;};
 
 };
 

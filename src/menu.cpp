@@ -65,13 +65,37 @@ void Empresa::menuCliente() {
 			break;
 
 		case 1:
+			try{
 			adicionaCliente();
+			}
+			catch(ObjetoRepetido<string> & ex){
+				clearScreen();
+				cout << "O cliente " << ex << " ja existe " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 2:
+			try{
 			modificaCliente();
+			}
+			catch(ObjetoInexistente<Cliente> & ex){
+				clearScreen();
+				cout << "O cliente " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 3:
+			try{
 			removeCliente();
+			}
+			catch (ObjetoInexistente<Cliente> & ex) {
+				clearScreen();
+				cout << "O cliente " << ex << " nao existe. " << endl;
+				cout << "Pressione Enter para voltar ao menu";
+				cin.get();
+			}
 			break;
 		
 		case 4:
@@ -155,6 +179,10 @@ void Empresa::adicionaClienteNormal() {
 	cin.ignore (INT_MAX,'\n');
 	getline(cin,nomeCliente);
 
+	if(BinarySearch(this->_clientes,nomeCliente) != -1){
+		throw ObjetoRepetido<string>(nomeCliente);
+	}
+
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual a sua morada?                                       |\n";
 	cout << "+----------------------------------------------------------+\n";
@@ -177,6 +205,9 @@ void Empresa::adicionaClienteRegistado() {
 
 	cin.ignore(INT_MAX, '\n');
 	getline(cin,nomeClienteRegistado);
+	if(BinarySearch(this->_clientes,nomeClienteRegistado) != -1){
+		throw ObjetoRepetido<string>(nomeClienteRegistado);
+	}
 	Cliente * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado, 0);
 	addClientes(*novoClienteRegistado);
 	this->sort();
@@ -203,17 +234,7 @@ void Empresa::modificaCliente() {
 
 
 	int index = BinarySearch(_clientes, nome_cliente);
-	try{
-	if (index == -1) { throw ObjetoInexistente<string>(nome_cliente); }
-	}
-	catch(ObjetoInexistente<string> & ex){
-		clearScreen();
-		cout << "O cliente " << ex << " nao existe. " << endl;
-		cout << "Pressione enter para regressar ao menu" << endl;
-		cin.get();
-		return;
-	}
-
+	if (index == -1) { throw ObjetoInexistente<Cliente>(nome_cliente); }
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Que propriedade do cliente pretende modificar?           |\n";
@@ -263,6 +284,7 @@ void Empresa::modificaCliente() {
 		else{
 		novonome = _clientes.at(index)->getNome();
 		novaMorada = _clientes.at(index)->getMorada();
+		delete _clientes.at(index);
 		_clientes.at(index) = new ClienteRegistado(novonome, novaMorada,0);
 		}
 		break;
@@ -292,16 +314,9 @@ void Empresa::removeCliente() {
 	getline(cin, clienteremover);
 	
 
-	try {
 		int index = BinarySearch(_clientes, clienteremover);
-		if (index == -1) { throw ObjetoInexistente<string>(clienteremover); }
-	}
-	catch (ObjetoInexistente<string> & ex) {
-		cout << "Cliente nao encontrado: " << clienteremover << endl;
-		cout << "Pressione Enter para voltar ao menu";
-		cin.get();
-		return;
-	}
+		if (index == -1) { throw ObjetoInexistente<Cliente>(clienteremover); }
+
 
 	deleteClientes(clienteremover);
 	cout << endl << "O cliente foi removido com sucesso" << endl;
@@ -349,13 +364,37 @@ void Empresa::menuFornecedor() {
 		break;
 
 	case 1:
+		try{
 		adicionaFornecedor();
+		}
+		catch(ObjetoRepetido<string> & ex){
+			clearScreen();
+			cout << "O cliente " << ex << " ja existe " << endl;
+			cout << "Pressione enter para regressar ao menu" << endl;
+			cin.get();
+		}
 		break;
 	case 2:
+		try{
 		modificaFornecedor();
+		}
+		catch(ObjetoInexistente<Fornecedor> & ex){
+			clearScreen();
+			cout << "O fornecedor " << ex << " nao existe. " << endl;
+			cout << "Pressione enter para regressar ao menu" << endl;
+			cin.get();
+		}
 		break;
 	case 3:
+		try{
 		removeFornecedor();
+		}
+		catch(ObjetoInexistente<Fornecedor> & ex){
+			clearScreen();
+			cout << "O fornecedor " << ex << " nao existe. " << endl;
+			cout << "Pressione enter para regressar ao menu" << endl;
+			cin.get();
+		}
 		break;
 	case 4:
 		displayFornecedores();
@@ -366,7 +405,7 @@ void Empresa::menuFornecedor() {
 		displayFornecedorescomOfertas();
 		cin.get();
 		cin.get();
-
+		break;
 	default:
 		cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
 
@@ -388,6 +427,9 @@ void Empresa::adicionaFornecedor() {
 
 	cin.ignore(INT_MAX,'\n');
 	getline(cin,nome_fornecedor);
+	if(BinarySearch(this->_fornecedores,nome_fornecedor) != -1){
+		throw ObjetoRepetido<string>(nome_fornecedor);
+	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o NIF:                                           |\n";
@@ -432,7 +474,7 @@ void Empresa::modificaFornecedor() {
 	
 
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -480,7 +522,9 @@ void Empresa::modificaFornecedor() {
 		_fornecedores.at(index)->setMorada(novamorada);
 		break;
 	
-	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
+	case 4:
+		_fornecedores.at(index)->setDefinicoesFornecedor();
+		break;
 
 	default:
 		cout << "Essa opcao nao e viavel. Pressione Enter para voltar ao menu anterior.";
@@ -609,16 +653,60 @@ void Empresa::menuReservas() {
 		
 
 		case 1:
+			try{
 			adicionaReserva();
+			}
+			catch(ObjetoInexistente<Cliente> & ex){
+				cout << "O cliente " << ex << " nao existe" << endl;
+				cout << "Pressione Enter para regressar ao menu anterior" << endl;
+				cin.get();
+				return;
+			}
+			catch(ObjetoInexistente<Fornecedor> & ex){
+				cout << "O fornecedor " << ex << " nao existe" << endl;
+				cout << "Pressione Enter para regressar ao menu anterior" << endl;
+				cin.get();
+				return;
+			}
+			catch(ObjetoInexistente<Oferta> & ex){
+				cout << "A oferta " << ex << " nao existe" << endl;
+				cout << "Pressione Enter para regressar ao menu anterior" << endl;
+				cin.get();
+				return;
+			}
 			break;
 		case 2:
+			try{
 			modificaReserva();
+			}
+			catch(ObjetoInexistente<Fornecedor> & ex){
+				clearScreen();
+				cout << "O fornecedor " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 3:
+			try{
 			cancelaReservas();
+			}
+			catch(ObjetoInexistente<Reserva> & ex){
+				clearScreen();
+				cout << "A reserva indicada nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 4:
+			try{
 			removeReservas();
+			}
+			catch(ObjetoInexistente<Reserva> & ex){
+				clearScreen();
+				cout << "A reserva indicada nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 5:
 			displayReservas();
@@ -646,7 +734,7 @@ void Empresa::adicionaReserva() {
 	string nome_fornecedor, nomeCliente, nomeOferta;
 	unsigned int  preco,lotacao;
 	bool cancelada = false;
-	bool erroNome = false;
+	bool erroNome = true;
 	vector<Oferta*> ofertas;
 
 	
@@ -663,15 +751,9 @@ void Empresa::adicionaReserva() {
 	getline(cin, nomeCliente);
 
 	int indexCliente = BinarySearch(_clientes, nomeCliente);
-	try{
-	if (indexCliente == -1) { throw ObjetoInexistente<string>(nomeCliente); }
-	}
-	catch(ObjetoInexistente<string> & ex){
-		cout << "O cliente " << ex << " nao existe" << endl;
-		cout << "Pressione Enter para regressar ao menu anterior" << endl;
-		cin.get();
-		return;
-	}
+
+	if (indexCliente == -1) { throw ObjetoInexistente<Cliente>(nomeCliente); }
+
 	
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Estes sao todos os fornecedores e respetivas ofertas     |\n";
@@ -686,15 +768,9 @@ void Empresa::adicionaReserva() {
 
 	getline(cin, nome_fornecedor);
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	try{
-	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
-	}
-	catch(ObjetoInexistente<string> & ex){
-		cout << "O fornecedor " << ex << " nao existe" << endl;
-		cout << "Pressione Enter para regressar ao menu anterior" << endl;
-		cin.get();
-		return;
-	}
+
+	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
+
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Estas sao as suas ofertas:                               |\n";
@@ -713,18 +789,15 @@ void Empresa::adicionaReserva() {
 		if (_fornecedores.at(index)->getOfertas().at(k).getNome() == nomeOferta)
 		{
 			ofertas.push_back(&_fornecedores.at(index)->getOfertas()[k]);
+			erroNome = false;
 
 		}
-		else
-			erroNome = true;
 
 	}
 
 	if (erroNome)
 	{
-		cout << "Esse nome de oferta nao existe. Pressione Enter para tentar novamente.";
-		cin.get();
-		return;
+		throw ObjetoInexistente<Oferta>(nomeOferta);
 	}
 
 	cout << "+----------------------------------------------------------+\n";
@@ -757,8 +830,6 @@ void Empresa::adicionaReserva() {
 			_fornecedores.at(index)->getOfertas().at(l).setTimeUltimaReserva(tempoReserva);
 
 		}
-		else
-			erroNome = true;
 	}
 	ClienteInativo * ci = new ClienteInativo(this->_clientes[indexCliente]);
 		this->_clientesInativos.erase(*ci);
@@ -786,7 +857,7 @@ void Empresa::modificaReserva()
 
 
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index == -1) { throw ObjetoInexistente<string>(nome_fornecedor); }
+	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -834,7 +905,9 @@ void Empresa::modificaReserva()
 		_fornecedores.at(index)->setMorada(novamorada);
 		break;
 
-	case 4: _fornecedores.at(index)->setDefinicoesFornecedor();
+	case 4:
+		_fornecedores.at(index)->setDefinicoesFornecedor();
+		break;
 
 	default:
 		cout << "Essa opcao nao e viavel. Pressione Enter para voltar ao menu anterior.";
@@ -849,6 +922,7 @@ void Empresa::modificaReserva()
 
 void Empresa::removeReservas() {
 	titulo();
+	bool nfound = true;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Estas sao as reservas disponiveis para remover:          |\n";
@@ -864,6 +938,7 @@ void Empresa::removeReservas() {
 	cin.ignore(INT_MAX, '\n');
 	getline(cin, reservaremoveCliente);
 
+
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o nome da oferta reservada pelo cliente:         |\n";
 	cout << "+----------------------------------------------------------+\n";
@@ -876,7 +951,11 @@ void Empresa::removeReservas() {
 		if (_reservas.at(i)->getOferta()->getNome() == reservaremoveOferta && _reservas.at(i)->getCliente()->getNome() == reservaremoveCliente)
 		{
 			deleteReservas(reservaremoveOferta);
+			nfound = false;
 		}
+	}
+	if(nfound){
+		throw ObjetoInexistente<Reserva>("");
 	}
 
 	cout << "+----------------------------------------------------------+\n";
@@ -891,6 +970,7 @@ void Empresa::removeReservas() {
 void Empresa::cancelaReservas() {
 	titulo();
 	int novoPreco;
+	bool nfound = true;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Estas sao as reservas disponíveis:                       |\n";
@@ -917,6 +997,7 @@ void Empresa::cancelaReservas() {
 	{
 		if (_reservas.at(i)->getOferta()->getNome() == reservaremoveOferta && _reservas.at(i)->getCliente()->getNome() == reservaremoveCliente)
 		{
+			nfound = false;
 			if (_reservas.at(i)->getOferta()->getDataMesmo().diferencaDias() >= 7)
 			{
 				_reservas.at(i)->cancelamento();
@@ -934,6 +1015,9 @@ void Empresa::cancelaReservas() {
 				_reservas.at(i)->cancelamento();
 
 		}
+	}
+	if(nfound){
+		throw ObjetoInexistente<Reserva>("");
 	}
 
 	cout << "+----------------------------------------------------------+\n";
@@ -977,13 +1061,55 @@ void Empresa::menuOfertas() {
 		switch (opcaoOfertas) {
 
 		case 1:
+			try{
 			adicionaOferta();
+			}
+			catch(ObjetoRepetido<Oferta> & ex){
+				clearScreen();
+				cout << "A oferta " << ex << " ja existe " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
+			catch(ObjetoInexistente<Fornecedor> & ex){
+				clearScreen();
+				cout << "O fornecedor " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 2:
+			try{
 			modificaOferta();
+			}
+			catch(ObjetoInexistente<Cliente> & ex){
+				clearScreen();
+				cout << "O cliente " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
+			catch(ObjetoInexistente<Oferta> & ex){
+				clearScreen();
+				cout << "A oferta " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 3:
+			try{
 			removeOferta();
+			}
+			catch(ObjetoInexistente<Fornecedor> & ex){
+				clearScreen();
+				cout << "O fornecedor " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
+			catch(ObjetoInexistente<Oferta> & ex){
+				clearScreen();
+				cout << "A oferta " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 		case 4:
 			displayFornecedorescomOfertas();
@@ -1032,7 +1158,7 @@ void Empresa::adicionaOferta() {
 	getline(cin,nome);
 	index = BinarySearch(this->_fornecedores,nome);
 	if(index == -1){
-		throw ObjetoInexistente<string>(nome);
+		throw ObjetoInexistente<Fornecedor>(nome);
 	}
 	
 
@@ -1041,6 +1167,9 @@ void Empresa::adicionaOferta() {
 	cout << "+----------------------------------------------------------+\n";
 
 	getline(cin,nome);
+	if(index != -1){
+		throw ObjetoRepetido<Oferta>(nome);
+	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Escolha o tipo de barco:                                 |\n";
@@ -1114,7 +1243,7 @@ void Empresa::modificaOferta()
 {
 
 	titulo();
-	int modifica, indexOferta;
+	int modifica, indexOferta = -1;
 	string nomeCliente, nomeOferta, novonome, novobarco, novahora, novodestino, temp;
 	unsigned int novopreco, novalotacao, novadistancia;
 	std::vector<std::string> novosdestinos;
@@ -1133,7 +1262,7 @@ void Empresa::modificaOferta()
 	getline(cin, nomeCliente);
 
 	int index = BinarySearch(_clientes, nomeCliente);
-	if (index == -1) { throw ObjetoInexistente<string>(nomeCliente); }
+	if (index == -1) { throw ObjetoInexistente<Cliente>(nomeCliente); }
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o nome da oferta reservada pelo cliente:         |\n";
@@ -1148,7 +1277,9 @@ void Empresa::modificaOferta()
 			indexOferta = i;
 		}
 	}
-
+	if(indexOferta == -1){
+		throw ObjetoInexistente<Oferta>(nomeOferta);
+	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Que propriedade da oferta é que pretende modificar?      |\n";
@@ -1282,6 +1413,7 @@ void Empresa::removeOferta() {
 	titulo();
 
 	string ofertaremover, nomeFornecedor;
+	bool nfound = true;
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -1295,7 +1427,7 @@ void Empresa::removeOferta() {
 
 
 	int index = BinarySearch(_fornecedores, nomeFornecedor);
-	if (index == -1) { throw ObjetoInexistente<string>(nomeFornecedor); }
+	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nomeFornecedor); }
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -1313,10 +1445,14 @@ void Empresa::removeOferta() {
 	getline(cin,ofertaremover);
 	for (unsigned int i = 0; i < _fornecedores.at(index)->getOfertas().size(); i++)
 	{
-		if (ofertaremover == _fornecedores.at(index)->getOfertas().at(i).getNome())
+		if (ofertaremover == _fornecedores.at(index)->getOfertas().at(i).getNome()){
 			_fornecedores.at(index)->getOfertas().erase(_fornecedores.at(index)->getOfertas().begin() + i);
+			nfound = false;
+		}
 	}
-
+	if(nfound){
+		throw ObjetoInexistente<Oferta>(ofertaremover);
+	}
 	cout << "Oferta removida com sucesso" << endl;
 	cout << "Pressione Enter para regressar" << endl;
 
