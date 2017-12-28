@@ -3,6 +3,7 @@
 #include "cruise.h"
 #include "extras.h"
 #include <iostream>
+#include <ostream>
 
 
 using namespace std;
@@ -153,6 +154,27 @@ void Empresa::displayReservas()
 			<< "Cancelada: " << (_reservas.at(i)->isCancelada()? "sim" : "nao") << endl << endl;
 
 	}
+}
+
+void Empresa::listaFaturas() {
+
+	BSTItrIn<Fatura> it(_faturas);
+	while (!it.isAtEnd()) {
+
+		ostream os;
+		it.retrieve().getData().printTime(os);
+
+		cout << "----------------------------------------------------\n"
+				<< endl;
+
+		cout << "Nome do cliente: " << it.retrieve().getNomeCliente() << endl;
+		cout << "Data de faturacao: " << os.str() << endl;
+		cout << endl;
+
+		it.advance();
+	}
+
+
 }
 
 void Empresa::load(){
@@ -584,6 +606,7 @@ Empresa & Empresa::reativaCliente(Cliente * c){
 	this->_clientesInativos.erase(ci);
 	return *this;
 }
+
 
 void Empresa::displayClientesInativos(){
 	tabHInativos::const_iterator it;

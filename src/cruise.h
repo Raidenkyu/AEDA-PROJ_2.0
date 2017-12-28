@@ -668,6 +668,10 @@ public:
 
 	void removeReservas();
 
+	void menuFaturas();
+
+	void listaFaturas();
+
 	/**
 	 * @brief      displays the offers Menu
 	 */

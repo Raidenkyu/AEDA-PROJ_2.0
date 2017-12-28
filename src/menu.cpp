@@ -918,8 +918,6 @@ void Empresa::modificaReserva()
 
 }
 
-
-
 void Empresa::removeReservas() {
 	titulo();
 	bool nfound = true;
@@ -966,6 +964,56 @@ void Empresa::removeReservas() {
 	cin.get();
 	return;
 }
+
+void Empresa::menuFaturas() {
+
+	int opcaofaturas;
+	while (true) {
+		titulo();
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Escolha o que pretende fazer com as faturas              |\n";
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
+		cout << "+----------------------------------------------------------+ \n";
+		cout << "| 1 - Listar faturas                                       |\n";
+		cout << "| 0 - Sair                                                 |\n";
+		cout << "+----------------------------------------------------------+\n";
+
+		cin >> opcaofaturas;
+
+		if (cin.fail()){
+			cin.clear();
+			cin.ignore(INT_MAX,'\n');
+			clearScreen();
+			cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros." << endl;
+			cout << "Pressione Enter para voltar ao menu" << endl;
+			cin.get();
+			return;
+		}
+		switch (opcaofaturas) {
+
+
+
+		case 1:
+
+			listaFaturas();
+			break;
+
+		case 0:
+			return;
+			break;
+
+		default:
+			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
+			return;
+
+
+		}
+
+	}
+	return;
+}
+
 
 void Empresa::cancelaReservas() {
 	titulo();
@@ -1474,7 +1522,8 @@ void Empresa::menuTipodeUtilizador()
 		cout << "| 1 - Gestao de Clientes                                   |\n";
 		cout << "| 2 - Gestao de Fornecedores                               |\n";
 		cout << "| 3 - Gestao de Reservas                                   |\n";
-		cout << "| 4 - Gestao de Ofertas                                    |\n";
+		cout << "| 4 - Gestao de faturas                                    |\n";
+		cout << "| 5 - Gestao de Ofertas                                    |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 
@@ -1507,6 +1556,10 @@ void Empresa::menuTipodeUtilizador()
 			break;
 
 		case 4:
+			menuFaturas();
+			break;
+
+		case 5:
 			menuOfertas();
 			break;
 		default:
