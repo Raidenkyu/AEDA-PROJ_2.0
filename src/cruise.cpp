@@ -156,19 +156,18 @@ void Empresa::displayReservas()
 	}
 }
 
+
 void Empresa::listaFaturas() {
 
 	BSTItrIn<Fatura> it(_faturas);
 	while (!it.isAtEnd()) {
 
-		ostream os;
-		it.retrieve().getData().printTime(os);
 
-		cout << "----------------------------------------------------\n"
-				<< endl;
+		cout << "----------------------------------------------------\n" << endl;
 
 		cout << "Nome do cliente: " << it.retrieve().getNomeCliente() << endl;
-		cout << "Data de faturacao: " << os.str() << endl;
+		cout << "Fornecedor: " << it.retrieve().getFornecedor() << endl;
+		//cout << "Data de faturacao: " << it.retrieve().getData() << endl;
 		cout << endl;
 
 		it.advance();
@@ -632,15 +631,22 @@ string Fatura::getNomeCliente() const{
 	return this->reserva->getNomeCliente();
 }
 
-Time Fatura::getData() const {
+Time Fatura::getData() const{
 	return this->reserva->getData();
 }
+
+
+
 
 bool Fatura::operator<(const Fatura& f1) const {
 	if (this->getNomeCliente() != f1.getNomeCliente()) {
 		return this->getNomeCliente() < f1.getNomeCliente();
 	}
 	else return this->getData() < f1.getData();
+}
+
+string Fatura::getFornecedor() {
+	this->reserva->getNomeFornecedor();
 }
 
 bool Fatura::operator==(const Fatura& f1) const {
