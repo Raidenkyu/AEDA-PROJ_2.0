@@ -1095,6 +1095,7 @@ void Empresa::menuOfertas() {
 		cout << "| 2 - Modificar Oferta                                     |\n";
 		cout << "| 3 - Apagar Oferta                                        |\n";
 		cout << "| 4 - Ver Ofertas                                          |\n";
+		cout << "| 5 - Ver Ofertas (Ordenadas por Prioridade)               |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cin >> opcaoOfertas;
@@ -1161,6 +1162,12 @@ void Empresa::menuOfertas() {
 			break;
 		case 4:
 			displayFornecedorescomOfertas();
+			cin.get();
+			cin.get();
+			break;
+
+		case 5:
+			displayOfertasemOrdem();
 			cin.get();
 			cin.get();
 			break;
