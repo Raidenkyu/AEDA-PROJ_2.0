@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
 #include "menu.h"
 #include "extras.h"
 #include "cruise.h"
@@ -180,12 +180,14 @@ void Empresa::adicionaClienteNormal() {
 	getline(cin,nomeCliente);
 
 	if(BinarySearch(this->_clientes,nomeCliente) != -1){
-		throw ObjetoRepetido<string>(nomeCliente);
+		throw ObjetoRepetido<Cliente>(nomeCliente);
 	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual a sua morada?                                       |\n";
 	cout << "+----------------------------------------------------------+\n";
+
+	getline(cin,morada);
 
 	Cliente * novocliente = new Cliente(nomeCliente, morada);
 	addClientes(*novocliente);
@@ -198,6 +200,7 @@ void Empresa::adicionaClienteRegistado() {
 
 	titulo();
 	string nomeClienteRegistado;
+	string morada;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Com que nome pretende ficar registado?                   |\n";
@@ -208,7 +211,14 @@ void Empresa::adicionaClienteRegistado() {
 	if(BinarySearch(this->_clientes,nomeClienteRegistado) != -1){
 		throw ObjetoRepetido<string>(nomeClienteRegistado);
 	}
-	Cliente * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado, 0);
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Qual a sua morada?                                       |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	getline(cin,morada);
+
+	Cliente * novoClienteRegistado = new ClienteRegistado(nomeClienteRegistado,morada, 0);
 	addClientes(*novoClienteRegistado);
 	this->sort();
 	cout << "Pressione Enter para regressar\n";

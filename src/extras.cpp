@@ -50,7 +50,6 @@ ostream & operator<<(ostream & os, Time & t){
 	return os ;
 }
 
-
 unsigned int Time::getMinutes(){
 	return this->minutes;
 }

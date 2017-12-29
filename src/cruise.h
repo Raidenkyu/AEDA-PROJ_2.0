@@ -485,6 +485,7 @@ public:
 	Reserva *getReserva();
 	std::string getNomeCliente() const;
 	Time getData() const;
+	Time getData();
 	string getFornecedor();
 	bool operator< (const Fatura &f1) const;
 	bool operator== (const Fatura &f1) const;

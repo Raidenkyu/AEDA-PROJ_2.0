@@ -168,9 +168,9 @@ void Empresa::listaFaturas() {
 
 		cout << "Nome do cliente: " << it.retrieve().getNomeCliente() << endl;
 		cout << "Fornecedor: " << it.retrieve().getFornecedor() << endl;
-		//cout << "Data de faturacao: " << it.retrieve().getData() << endl;
+		cout << "Data de faturacao: ";
+		it.retrieve().getData().printTime(cout);
 		cout << endl;
-
 		it.advance();
 	}
 
@@ -637,7 +637,9 @@ Time Fatura::getData() const{
 	return this->reserva->getData();
 }
 
-
+Time Fatura::getData() {
+	return this->reserva->getData();
+}
 
 
 bool Fatura::operator<(const Fatura& f1) const {
