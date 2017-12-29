@@ -1303,17 +1303,17 @@ void Empresa::modificaOferta()
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o nome do cliente cuja oferta quer remover:      |\n";
+	cout << "| Indique o nome do fornecedor cuja oferta quer alterar:      |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX, '\n');
 	getline(cin, nomeCliente);
 
-	int index = BinarySearch(_clientes, nomeCliente);
+	int index = BinarySearch(_fornecedores, nomeCliente);
 	if (index == -1) { throw ObjetoInexistente<Cliente>(nomeCliente); }
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o nome da oferta reservada pelo cliente:         |\n";
+	cout << "| Indique o nome da oferta reservada pelo fornecedor:         |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	getline(cin, nomeOferta);
@@ -1355,7 +1355,7 @@ void Empresa::modificaOferta()
 
 		cin.ignore(INT_MAX, '\n');
 		getline(cin, novonome);
-		_reservas.at(indexOferta)->getOferta()->setNome(novonome);
+		_fornecedores.at(index)->getOfertas().at(indexOferta).setNome(novonome);
 		break;
 
 	case 2:
@@ -1372,15 +1372,15 @@ void Empresa::modificaOferta()
 		cin >> numeroBarco;
 		if (numeroBarco == 1) {
 			novobarco = "iate";
-			_reservas.at(indexOferta)->getOferta()->setBarco(novobarco);
+			_fornecedores.at(index)->getOfertas().at(indexOferta).setBarco(novobarco);
 		}
 		else if (numeroBarco == 2) {
 			novobarco = "barco rabelo";
-			_reservas.at(indexOferta)->getOferta()->setBarco(novobarco);
+			_fornecedores.at(index)->getOfertas().at(indexOferta).setBarco(novobarco);
 		}
 		else if (numeroBarco == 3) {
 			novobarco = "veleiro";
-			_reservas.at(indexOferta)->getOferta()->setBarco(novobarco);
+			_fornecedores.at(index)->getOfertas().at(indexOferta).setBarco(novobarco);
 		}
 		else
 			cout << "Esse número nao é reconhecido como barco.";
@@ -1394,7 +1394,7 @@ void Empresa::modificaOferta()
 		cout << "| Indique os novos destinos (os anteriores serao apagados):|\n";
 		cout << "| Para terminar, escreva FIM                               |\n";
 		cout << "+----------------------------------------------------------+\n";
-		_reservas.at(indexOferta)->getOferta()->apagaDestinos();
+		_fornecedores.at(index)->getOfertas().at(indexOferta).apagaDestinos();
 		cin.ignore(INT_MAX, '\n');
 
 		while (temp != "FIM")
@@ -1405,7 +1405,7 @@ void Empresa::modificaOferta()
 			}
 			cout << "\n";
 		}
-		_reservas.at(indexOferta)->getOferta()->setDestinos(novosdestinos);
+		_fornecedores.at(index)->getOfertas().at(indexOferta).setDestinos(novosdestinos);
 		break;
 
 	case 4:
@@ -1413,7 +1413,7 @@ void Empresa::modificaOferta()
 		cout << "| Indique a nova distancia:                                |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cin >> novadistancia;
-		_reservas.at(indexOferta)->getOferta()->setDistancia(novadistancia);
+		_fornecedores.at(index)->getOfertas().at(indexOferta).setDistancia(novadistancia);
 		break;
 
 	case 5:
@@ -1421,7 +1421,7 @@ void Empresa::modificaOferta()
 		cout << "| Indique a nova lotacao total:                            |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cin >> novalotacao;
-		_reservas.at(indexOferta)->getOferta()->setLotacao(novalotacao);
+		_fornecedores.at(index)->getOfertas().at(indexOferta).setLotacao(novalotacao);
 		break;
 
 	case 6:
@@ -1433,7 +1433,7 @@ void Empresa::modificaOferta()
 		cin.ignore(INT_MAX, '\n');
 		getline(cin, novahora);
 		tempo = new Time(novahora);
-		_reservas.at(indexOferta)->getOferta()->setTime(*tempo);
+		_fornecedores.at(index)->getOfertas().at(indexOferta).setTime(*tempo);
 		break;
 
 
@@ -1443,7 +1443,7 @@ void Empresa::modificaOferta()
 		cout << "| Indique o novo preco total:                              |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cin >> novopreco;
-		_reservas.at(indexOferta)->getOferta()->setPreco(novopreco);
+		_fornecedores.at(index)->getOfertas().at(indexOferta).setPreco(novopreco);
 		break;
 
 

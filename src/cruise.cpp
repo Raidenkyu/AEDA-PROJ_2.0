@@ -646,7 +646,7 @@ bool Fatura::operator<(const Fatura& f1) const {
 }
 
 string Fatura::getFornecedor() {
-	this->reserva->getNomeFornecedor();
+	return this->reserva->getNomeFornecedor();
 }
 
 bool Fatura::operator==(const Fatura& f1) const {
