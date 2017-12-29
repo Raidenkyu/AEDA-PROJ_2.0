@@ -1222,9 +1222,6 @@ void Empresa::adicionaOferta() {
 	cout << "+----------------------------------------------------------+\n";
 
 	getline(cin,nome);
-	if(index != -1){
-		throw ObjetoRepetido<Oferta>(nome);
-	}
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Escolha o tipo de barco:                                 |\n";
@@ -1320,14 +1317,14 @@ void Empresa::modificaOferta()
 	if (index == -1) { throw ObjetoInexistente<Cliente>(nomeCliente); }
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o nome da oferta reservada pelo fornecedor:         |\n";
+	cout << "| Indique o nome da oferta em questao:					    |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	getline(cin, nomeOferta);
 
-	for (unsigned int i = 0; i < _reservas.size(); i++)
+	for (unsigned int i = 0; i <_fornecedores.at(i)->getOfertas().size(); i++)
 	{
-		if (_reservas.at(i)->getOferta()->getNome() == nomeOferta && _reservas.at(i)->getCliente()->getNome() == nomeCliente)
+		if (_fornecedores.at(index)->getOfertas().at(i).getNome() == nomeOferta)
 		{
 			indexOferta = i;
 		}

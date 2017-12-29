@@ -22,6 +22,7 @@ using namespace std;
 Empresa::Empresa(): _faturas(Fatura(NULL)){
 	this->load();
 	atualizaInatividade();
+	addOfertasQueue();
 	this->menuInicial();
 	this->save();
 }
@@ -421,30 +422,6 @@ int Fornecedor::calculaPreco(int tipodebarco, int lotacao, int distancia) {
 
 }
 
-void Empresa::displayOfertasemOrdem() {
-	
-	pq_ofertas temp = queueOfertasOrdenadas;
-
-
-	while(!(temp.empty())){
-		Oferta ofertatemp = temp.top();
-
-		cout << "Nome: " << ofertatemp.getNome() << endl;
-		cout << "Barco: " << ofertatemp.getBarco() << endl;
-		cout << "Destinos:" << endl;
-		for (unsigned int j = 0; j < ofertatemp.getDestinos().size(); j++) {
-
-		cout << "	Destino numero " << j+1 << " : "<< ofertatemp.getDestinos().at(j) << endl;
-	}
-		cout << "Distancia: " << ofertatemp.getDistancia() << endl;
-		cout << "Lotacao: " << ofertatemp.getLotacao() << endl;
-		cout << "Data: " << ofertatemp.getData() << endl;
-		cout << "Preco (por pessoa): " << ofertatemp.getPreco()/ofertatemp.getLotacao() << endl;
-		cout << "Preco (total): " << ofertatemp.getPreco() << endl << endl;
-		temp.pop();
-
-	}
-}
 
 
 void Fornecedor::displayOfertas() {
@@ -573,6 +550,31 @@ void Empresa::addOfertasQueue()
 	}
 }
 
+
+void Empresa::displayOfertasemOrdem() {
+
+	pq_ofertas temp = queueOfertasOrdenadas;
+
+
+	while (!(temp.empty())) {
+		Oferta ofertatemp = temp.top();
+
+		cout << "Nome: " << ofertatemp.getNome() << endl;
+		cout << "Barco: " << ofertatemp.getBarco() << endl;
+		cout << "Destinos:" << endl;
+		for (unsigned int j = 0; j < ofertatemp.getDestinos().size(); j++) {
+
+			cout << "Destino numero " << j + 1 << " : " << ofertatemp.getDestinos().at(j) << endl;
+		}
+		cout << "Distancia: " << ofertatemp.getDistancia() << endl;
+		cout << "Lotacao: " << ofertatemp.getLotacao() << endl;
+		cout << "Data: " << ofertatemp.getData() << endl;
+		cout << "Preco (por pessoa): " << ofertatemp.getPreco() / ofertatemp.getLotacao() << endl;
+		cout << "Preco (total): " << ofertatemp.getPreco() << endl << endl;
+		temp.pop();
+
+	}
+}
 //Hash table stuff
 
 
