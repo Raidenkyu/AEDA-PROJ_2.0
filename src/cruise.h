@@ -42,14 +42,65 @@ public:
 	 */
 	Oferta(std::string nome,std::string barco, std::vector<std::string> destinos, unsigned int distancia, unsigned int lotacao, Time data, unsigned int preco);
 	
+	/**
+	 * @brief      Sets the name.
+	 *
+	 * @param[in]  name  The name
+	 */
 	void setNome(std::string name) { nome = name; }
+
+	/**
+	 * @brief      Sets the boat
+	 *
+	 * @param[in]  boat  The boat
+	 */
 	void setBarco(std::string boat) { barco = boat; }
+
+	/**
+	 * @brief      Sets the stops
+	 *
+	 * @param[in]  destinies  The stops
+	 */
 	void setDestinos(std::vector <std::string> destinies) { destinos = destinies; }
+
+	/**
+	 * @brief      erases all the stops of the trip
+	 */
 	void apagaDestinos() { destinos.erase(destinos.begin(),destinos.end()); }
+
+	/**
+	 * @brief      Sets the distance
+	 *
+	 * @param[in]  distance  The distance
+	 */
 	void setDistancia(unsigned int distance) { distancia = distance; }
+
+	/**
+	 * @brief      Sets the lotation
+	 *
+	 * @param[in]  limit  The limit
+	 */
 	void setLotacao(unsigned int limit) { lotacao = limit; }
+
+	/**
+	 * @brief      Sets the time.
+	 *
+	 * @param[in]  novaData  The new date
+	 */
 	void setTime(Time novaData) { data = novaData; }
+
+	/**
+	 * @brief      Sets the time of the last reservation
+	 *
+	 * @param[in]  novaDataReserva  The date of the new Reservation
+	 */
 	void setTimeUltimaReserva(Time novaDataReserva) { ultimaReserva = novaDataReserva; };
+
+	/**
+	 * @brief      Sets the price
+	 *
+	 * @param[in]  price  The price
+	 */
 	void setPreco(unsigned int price) { preco = price; }
 	/**
 	 * @brief      Gets the name
@@ -79,6 +130,11 @@ public:
 	 */
 	Time getDataMesmo() { return this->data; }
 
+	/**
+	 * @brief      Gets the time of the last reservation
+	 *
+	 * @return     The time of the last reservation
+	 */
 	Time  & getUltimaReserva(){ return this->ultimaReserva; }
 
 	/**
@@ -239,8 +295,6 @@ public:
 	/**
 	 * @brief      prints all the offers
 	 */
-	
-
 	void displayOfertas();
 
 	/**
@@ -284,6 +338,11 @@ public:
 	 */
 	std::string getNome() { return this->nome; };
 
+	/**
+	 * @brief      Gets the address
+	 *
+	 * @return     The address
+	 */
 	std::string getMorada(){ return this->morada;};
 
 	/**
@@ -293,6 +352,11 @@ public:
 	 */
 	void setNome(std::string novoNome) { nome = novoNome; }
 
+	/**
+	 * @brief      Sets the address
+	 *
+	 * @param[in]  novaMorada  The new address
+	 */
 	void setMorada(std::string novaMorada){this->morada = novaMorada;};
 
 	/**
@@ -359,13 +423,40 @@ public:
 
 };
 
+/**
+ * @brief      Class for inactive clients
+ */
 class ClienteInativo {
 private:
 	Cliente * ptr;
 public:
+
+	/**
+	 * @brief      Contructs the inactive client object
+	 *
+	 * @param      ptr   The pointer
+	 */
 	ClienteInativo(Cliente * ptr);
+
+	/**
+	 * @brief      Gets the name
+	 *
+	 * @return     The name
+	 */
 	std::string getNome() const;
+
+	/**
+	 * @brief      Gets the address
+	 *
+	 * @return     The address
+	 */
 	std::string getMorada() const;
+
+	/**
+	 * @brief      Sets the address
+	 *
+	 * @param[in]  novaMorada  The new address
+	 */
 	void setMorada(std::string novaMorada);
 };
 
@@ -451,10 +542,14 @@ public:
 	 */
 	void setPreco(int novoPreco) { preco = novoPreco; }
 
+	/**
+	 * @brief      Gets the date
+	 *
+	 * @return     The date
+	 */
 	Time getData() {return data;}
 
 };
-
 
 struct comparaOfertas
 {
@@ -477,17 +572,66 @@ typedef std::priority_queue<Oferta, std::vector<Oferta>,comparaOfertas> pq_ofert
 typedef std::unordered_set<ClienteInativo, comparaClientesInativos,comparaClientesInativos> tabHInativos;
 
 
+/**
+ * @brief      Class for fatura.
+ */
 class Fatura{
 private:
 	Reserva * reserva;
 public:
 	Fatura(Reserva *r);
+
+	/**
+	 * @brief      Gets the reserva.
+	 *
+	 * @return     The reserva.
+	 */
 	Reserva *getReserva();
+
+	/**
+	 * @brief      Gets the nome cliente.
+	 *
+	 * @return     The nome cliente.
+	 */
 	std::string getNomeCliente() const;
+
+	/**
+	 * @brief      Gets the data.
+	 *
+	 * @return     The data.
+	 */
 	Time getData() const;
+
+	/**
+	 * @brief      Gets the data.
+	 *
+	 * @return     The data.
+	 */
 	Time getData();
+
+	/**
+	 * @brief      Gets the fornecedor.
+	 *
+	 * @return     The fornecedor.
+	 */
 	string getFornecedor();
+
+	/**
+	 * @brief      { operator_description }
+	 *
+	 * @param[in]  f1    The f 1
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	bool operator< (const Fatura &f1) const;
+
+	/**
+	 * @brief      { operator_description }
+	 *
+	 * @param[in]  f1    The f 1
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	bool operator== (const Fatura &f1) const;
 };
 
@@ -539,6 +683,13 @@ public:
 	 */
 	Empresa & addReservas(Reserva & r);
 
+	/**
+	 * @brief      Adds a faturas.
+	 *
+	 * @param      r     { parameter_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	Empresa & addFaturas(Fatura & r);
 
 
@@ -670,8 +821,14 @@ public:
 
 	void removeReservas();
 
+	/**
+	 * @brief      { function_description }
+	 */
 	void menuFaturas();
 
+	/**
+	 * @brief      { function_description }
+	 */
 	void listaFaturas();
 
 	/**
@@ -699,8 +856,14 @@ public:
 
 	void addOfertasQueue();
 	
+	/**
+	 * @brief      { function_description }
+	 */
 	void displayOfertasemOrdem();
 
+	/**
+	 * @brief      { function_description }
+	 */
 	void displayClientes();
 
 	/**
@@ -750,12 +913,34 @@ public:
 	void sort();
 
 
+	/**
+	 * @brief      { function_description }
+	 *
+	 * @param      c     { parameter_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	Empresa & desativaCliente(Cliente * c);
 
+	/**
+	 * @brief      { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	Empresa & atualizaInatividade();
 
+	/**
+	 * @brief      { function_description }
+	 *
+	 * @param      c     { parameter_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	Empresa & reativaCliente(Cliente * c);
 
+	/**
+	 * @brief      { function_description }
+	 */
 	void displayClientesInativos();
 
 };

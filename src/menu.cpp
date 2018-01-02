@@ -68,7 +68,7 @@ void Empresa::menuCliente() {
 			try{
 			adicionaCliente();
 			}
-			catch(ObjetoRepetido<string> & ex){
+			catch(ObjetoRepetido<Cliente> & ex){
 				clearScreen();
 				cout << "O cliente " << ex << " ja existe " << endl;
 				cout << "Pressione enter para regressar ao menu" << endl;
@@ -209,7 +209,7 @@ void Empresa::adicionaClienteRegistado() {
 	cin.ignore(INT_MAX, '\n');
 	getline(cin,nomeClienteRegistado);
 	if(BinarySearch(this->_clientes,nomeClienteRegistado) != -1){
-		throw ObjetoRepetido<string>(nomeClienteRegistado);
+		throw ObjetoRepetido<Cliente>(nomeClienteRegistado);
 	}
 
 	cout << "+----------------------------------------------------------+\n";
@@ -377,7 +377,7 @@ void Empresa::menuFornecedor() {
 		try{
 		adicionaFornecedor();
 		}
-		catch(ObjetoRepetido<string> & ex){
+		catch(ObjetoRepetido<Cliente> & ex){
 			clearScreen();
 			cout << "O cliente " << ex << " ja existe " << endl;
 			cout << "Pressione enter para regressar ao menu" << endl;
@@ -438,7 +438,7 @@ void Empresa::adicionaFornecedor() {
 	cin.ignore(INT_MAX,'\n');
 	getline(cin,nome_fornecedor);
 	if(BinarySearch(this->_fornecedores,nome_fornecedor) != -1){
-		throw ObjetoRepetido<string>(nome_fornecedor);
+		throw ObjetoRepetido<Fornecedor>(nome_fornecedor);
 	}
 
 	cout << "+----------------------------------------------------------+\n";

@@ -87,12 +87,20 @@ public:
 	/**
 	 * @brief      Checks if one time is more recent than the other
 	 *
-	 * @param      t1    The time 1
 	 * @param      t2    The time 2
 	 *
-	 * @return     if time 1 is more recent than time 2 return true otherwise return false.
+	 * @return     if this time is more recent than time 2 return true otherwise
+	 *             return false.
 	 */
 	bool operator<( Time  t2);
+
+	/**
+	 * @brief      Checks is two times are equal
+	 *
+	 * @param[in]  t2    The time 2
+	 *
+	 * @return     if this time is equal to time 2 returns true, otherwise false
+	 */
 	bool operator==(Time t2);
 
 protected:
