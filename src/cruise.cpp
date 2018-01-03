@@ -99,7 +99,7 @@ Fornecedor & Fornecedor::deleteOfertas(string name) {
 void Empresa::displayClientes()
 {
 	for (unsigned int i = 0; i < _clientes.size(); i++) {
-		cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Morada" << _clientes.at(i)->getMorada() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
+		cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Morada: " << _clientes.at(i)->getMorada() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
 		if (_clientes.at(i)->isRegistado()) {
 			cout << "Registado: Sim" << endl << endl;
 		}
@@ -348,9 +348,9 @@ void Empresa::save(){
 	}
 	for(unsigned int i = 0; i < this->_clientes.size(); i++){
 		if(this->_clientes[i]->isRegistado())
-			registados_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getPontos();
+			registados_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getMorada() << endl << this->_clientes[i]->getPontos();
 		else
-			clientes_file << this->_clientes[i]->getNome();
+			clientes_file << this->_clientes[i]->getNome() << endl << this->_clientes[i]->getMorada();
 		if(i < this->_clientes.size() -1){
 			if(this->_clientes[i]->isRegistado())
 						registados_file << endl;
@@ -393,14 +393,14 @@ void Empresa::save(){
 			reservas_file << "true" << endl;
 		}
 		else reservas_file << "false" << endl;
-		
-		
+
+
 		reservas_file << this->_reservas[i]->getPreco() << endl;
 	}
 }
 void Empresa::sort(){
-	Sort(this->_clientes);
-	Sort(this->_fornecedores);
+	selectionSort(this->_clientes);
+	selectionSort(this->_fornecedores);
 }
 
 //// Metodos da classe Fornecedor ////
@@ -512,11 +512,11 @@ int Oferta::getBarcoNumber()
 	else if (barco == "veleiro")
 		return 3;
 	else return -1;
-	
+
 }
 
 string Oferta::getData() {
-	
+
 	return to_string(data.getYear()) + "/" + to_string(data.getMonth()) + "/" + to_string(data.getDay()) + " " + to_string(data.getHours()) + ":" + to_string(data.getMinutes());
 }
 
@@ -528,7 +528,7 @@ void Oferta::printOferta()
 	cout << "Destinos:" << endl;
 
 	for (unsigned int j = 0; j < getDestinos().size(); j++) {
-		
+
 		cout << "	Destino numero" << j + 1 << " : " << getDestinos().at(j) << endl;
 	}
 	cout << "Distancia: " << getDistancia() << "\n";
@@ -656,4 +656,3 @@ string Fatura::getFornecedor() {
 bool Fatura::operator==(const Fatura& f1) const {
 	return (this->getNomeCliente() == f1.getNomeCliente()) && (this->getData() == f1.getData());
 }
-

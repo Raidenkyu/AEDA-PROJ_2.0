@@ -1,0 +1,4 @@
+src/Makefile
+src/*.txt
+src/*.o
+src/run

@@ -5,6 +5,8 @@
 #include <fstream>
 #include <queue>
 
+std::string toUpperCase(std::string input);
+
                       /////                                          /////
                      /////               EXTRAS . H                 /////
                     /////                                          /////
@@ -150,8 +152,8 @@ std::ostream & operator<<(std::ostream & os, Time & t);
  * @tparam     T      elements of the vector arr
  */
 template<class T>
-void Sort(std::vector<T> arr){
-	T tmp;
+void Sort(std::vector<T*>& arr){
+	T * tmp;
 	for(unsigned int i = 0; i < arr.size();i++){
 		for(unsigned int j = i+1; j < arr.size();j++){
 			if(arr[i]->getNome() > arr[j]->getNome()){
@@ -163,6 +165,23 @@ void Sort(std::vector<T> arr){
 	}
 }
 
+
+template<class T>
+void selectionSort(std::vector<T*>& arr){
+	int index;
+
+	for(unsigned int i = 0; i < arr.size();i++){
+		index = i;
+
+		for(unsigned int j = i+1; j < arr.size();j++){
+			if (toUpperCase(arr[j]->getNome()) < toUpperCase(arr[index]->getNome())){
+				index = j;
+			}
+
+			std::swap(arr[i], arr[index]);
+		}
+	}
+}
 
 /**
  * @brief      implementation of a Binary Search Algorithm
