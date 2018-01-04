@@ -173,7 +173,7 @@ int Time::diferencaDias() {
 
 string toUpperCase(string input)
 {
-	for (int i = 0; i < input.length(); i++)
+	for (unsigned int i = 0; i < input.length(); i++)
 	{
 		if (input[i] >= 'a' && input[i] <= 'z')
 			input[i] += 'A' - 'a';

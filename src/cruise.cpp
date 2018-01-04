@@ -197,6 +197,7 @@ void Empresa::load(){
 	Oferta * o = NULL;
 	Reserva * r;
 	Time * t;
+	Time * t2;
 	vector<Oferta> ofertas;
 	//Stores the clients who aren't registered in the data base
 	if(clientes_file.is_open())
@@ -259,6 +260,8 @@ void Empresa::load(){
 						num2 = stoi(line);
 						getline(fornecedores_file,line);
 						t = new Time(line);
+						getline(fornecedores_file,line);
+						t2 = new Time(line);
 						getline(fornecedores_file,line,'\n');
 
 						p = stoi(line);
@@ -372,6 +375,7 @@ void Empresa::save(){
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getDistancia() << endl;
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getLotacao() << endl;
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getData() << endl;
+			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getUltimaReserva() << endl;
 			fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getPreco() << endl;
 			for(unsigned int k = 0; k < this->_fornecedores[i]->getOfertas()[j].getDestinos().size(); k++){
 				fornecedores_file << this->_fornecedores[i]->getOfertas()[j].getDestinos()[k] << endl;

@@ -332,6 +332,11 @@ public:
 	Cliente(std::string nome, std::string morada);
 
 	/**
+	 * @brief      Destroys the Cliente object
+	 */
+	virtual ~Cliente(){};
+
+	/**
 	 * @brief      Gets the name
 	 *
 	 * @return     The nome.
@@ -399,6 +404,11 @@ public:
 	 * @param[in]  pontos  The points
 	 */
 	ClienteRegistado(std::string nome, std::string morada, unsigned int pontos = 0);
+
+	/**
+	 * @brief      Destroys the ClienteRegistado object
+	 */
+	~ClienteRegistado(){};
 
 	/**
 	 * @brief      Gets the points

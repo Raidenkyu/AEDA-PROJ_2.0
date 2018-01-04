@@ -239,7 +239,6 @@ void Empresa::modificaCliente() {
 	titulo();
 	string nome_cliente, novonome,novaMorada;
 	int modifica, pontos;
-	ClienteRegistado *cliente = NULL;
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -329,8 +328,6 @@ void Empresa::removeCliente() {
 
 	displayClientes();
 	string clienteremover;
-	int quickmaths;
-
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual e o cliente a remover?	                            |\n";
 	cout << "+----------------------------------------------------------+\n";
@@ -665,7 +662,7 @@ void Empresa::menuReservas() {
 		cin >> opcaoreservas;
 
 		if (cin.fail()){
-<<<<<<< HEAD
+
 			cin.clear();
 			cin.ignore(INT_MAX,'\n');
 			clearScreen();
@@ -673,26 +670,10 @@ void Empresa::menuReservas() {
 			cout << "Pressione Enter para voltar ao menu" << endl;
 			cin.get();
 			return;
-=======
-					cin.clear();
-					cin.ignore(INT_MAX,'\n');
-					throw InputInvalido<char>(opcaoreservas);
-				}
-				}
-				catch(InputInvalido<char> & ex){
-					clearScreen();
-					cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros." << ex << endl;
-					cout << "Pressione Enter para voltar ao menu" << endl;
-					cin.get();
-					return;
+
+
 
 				}
-		catch(InputInvalido<char> & ex){
-		clearScreen();
-		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros." << ex << endl;
-		cout << "Pressione Enter para voltar ao menu" << endl;
-		cin.get();
->>>>>>> parent of 4456283... Added report
 		}
 		switch (opcaoreservas) {
 
@@ -774,11 +755,10 @@ void Empresa::menuReservas() {
 			return;
 			
 
-		}
-
 	}
 	return;
 }
+	
 
 void Empresa::adicionaReserva() {
 
