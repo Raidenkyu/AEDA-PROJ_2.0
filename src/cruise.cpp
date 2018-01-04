@@ -276,6 +276,7 @@ void Empresa::load(){
 							} while(line != "oend");
 						}
 						o = new Oferta(s1,s2,destinos,num1,num2,*t,p);
+						o->setTimeUltimaReserva(*t2);
 						f->addOferta(*o);
 
 
@@ -492,7 +493,6 @@ void ClienteInativo::setMorada(string novaMorada){
 
 //// Metodos da classe Oferta ////
 
-
 Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time  date, unsigned int price):
 		nome(name),
 		barco(boat),
@@ -500,6 +500,7 @@ Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, 
 		distancia(dist),
 		lotacao(lot),
 		data(date),
+		/*ultimaReserva(Inicializa aqui dentro com a tua ideia),*/
 		preco(price)
 {};
 
