@@ -112,10 +112,10 @@ void Empresa::displayFornecedores()
 {
 	for (unsigned int i = 0; i < _fornecedores.size(); i++)
 	{
-		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
+		cout << "Fornecedor: " << _fornecedores.at(i)->getNome() << endl
 			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
 			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
-			<< "Definicões de Fornecedor: " << endl
+			<< "Definicoes de Fornecedor: " << endl
 			<< "Preco Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
 			<< "Preco Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
 			<< "Preco Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
@@ -131,11 +131,11 @@ void Empresa::displayFornecedorescomOfertas()
 		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
 			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
 			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
-			<< "Definicões de Fornecedor: " << endl
+			<< "Definicoes de Fornecedor: " << endl
 			<< "Preco Base Iate:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(1) << endl
 			<< "Preco Base Barco Rebelo:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(2) << endl
 			<< "Preco Base Veleiro:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(3) << endl
-			<< "Preco por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl;
+			<< "Preco por pessoa global:" << _fornecedores.at(i)->getDefinicoesFornecedor().at(0) << endl << endl;
 		_fornecedores.at(i)->displayOfertas();
 		cout << endl;
 
@@ -174,7 +174,7 @@ void Empresa::listaFaturas() {
 		it.advance();
 	}
 
-
+	
 }
 
 void Empresa::load(){
