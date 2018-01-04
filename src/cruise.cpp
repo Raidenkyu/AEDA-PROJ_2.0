@@ -501,7 +501,7 @@ data(date),
 preco(price)
 {
 	RealTime * rt = new RealTime();
-	Time tempooferta = Time(rt->getMinutes(),rt->getHours(),rt->getDay, rt->getMonth(),rt->getYear() - 1000);
+	Time tempooferta(rt->getMinutes(),rt->getHours(),rt->getDay(), rt->getMonth(),rt->getYear() - 1000);
 	
 	ultimaReserva = tempooferta;
 };
