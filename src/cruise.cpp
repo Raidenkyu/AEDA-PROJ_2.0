@@ -492,17 +492,19 @@ void ClienteInativo::setMorada(string novaMorada){
 
 
 //// Metodos da classe Oferta ////
-
-Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time  date, unsigned int price):
-		nome(name),
-		barco(boat),
-		destinos(dest),
-		distancia(dist),
-		lotacao(lot),
-		data(date),
-		/*ultimaReserva(Inicializa aqui dentro com a tua ideia),*/
-		preco(price)
-{};
+Oferta::Oferta(string name,string boat, vector<string> dest, unsigned int dist, unsigned int lot, Time  date, unsigned int price): nome(name),
+barco(boat),
+destinos(dest),
+distancia(dist),
+lotacao(lot),
+data(date),
+preco(price)
+{
+	RealTime * rt = new RealTime();
+	Time tempooferta = Time(rt->getMinutes(),rt->getHours(),rt->getDay, rt->getMonth(),rt->getYear() - 1000);
+	
+	ultimaReserva = tempooferta;
+};
 
 const std::vector<std::string> & Oferta::getDestinos(){
 	return this->destinos;

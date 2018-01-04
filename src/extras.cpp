@@ -70,6 +70,7 @@ unsigned int Time::getYear() {
 	return year;
 }
 
+
 bool Time::operator==(Time t2){
 	return (this->getDay() == t2.getDay() && t2.getMonth() == this->getMonth() && this->getYear() == t2.getYear());
 
