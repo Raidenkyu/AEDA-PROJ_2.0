@@ -887,7 +887,7 @@ void Empresa::adicionaReserva() {
 	RealTime tempoReserva;
 	for (unsigned int l = 0; l < _fornecedores.at(index)->getOfertas().size(); l++)
 	{
-		if (_fornecedores.at(index)->getOfertas().at(l).getNome() == nomeOferta)
+		if (_fornecedores.at(index)->getOfertas().at(l).getBarcoNumber() == ofertas[0]->getBarcoNumber())
 		{
 			_fornecedores.at(index)->getOfertas().at(l).setTimeUltimaReserva(tempoReserva);
 
@@ -1302,6 +1302,16 @@ void Empresa::adicionaOferta() {
 	
 	
 	novaOferta = new Oferta(nome, barco, destinos, distancia, lotacao, *tempo, preco);
+
+	for (unsigned int i = 0; i < _fornecedores.size(); i++)
+	{
+		for (unsigned int j = 0; j < _fornecedores[i]->getOfertas().size(); j++)
+		{
+			if (_fornecedores[i]->getOfertas().at(j).getBarcoNumber() == novaOferta->getBarcoNumber()){
+				_fornecedores[i]->getOfertas().at(j).setTimeUltimaReserva(novaOferta->getUltimaReserva());
+		}
+		}
+	}
 	this->_fornecedores[index]->addOferta(*novaOferta);
 
 }
