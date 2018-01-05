@@ -195,7 +195,7 @@ public:
 class Fornecedor {
 private:
 	std::string nome;
-	unsigned int nif;
+	long unsigned int nif;
 	std::string morada;
 	std::vector<Oferta> ofertas;
 	std::vector<int> definicoesfornecedor;  //elementos: 0 - multiplicador lotacao; 1 - iate; 2 - barco rebelo; 3 - veleiro;
@@ -214,7 +214,7 @@ public:
 	 *
 	 * @param[in]  novoNIF  The new nif
 	 */
-	void setNIF(unsigned int novoNIF) { nif = novoNIF; }
+	void setNIF(long unsigned int novoNIF) { nif = novoNIF; }
 
 	/**
 	 * @brief      Sets the address
@@ -232,7 +232,7 @@ public:
 	 * @param[in]  nif     The nif
 	 * @param[in]  morada  The address
 	 */
-	Fornecedor(std::string nome, unsigned int nif, std::string morada);
+	Fornecedor(std::string nome, long unsigned int nif, std::string morada);
 
 	/**
 	 * @brief      Gets the name
@@ -246,7 +246,7 @@ public:
 	 *
 	 * @return     The nif.
 	 */
-	unsigned int getNif() { return this->nif; }
+	long unsigned int getNif() { return this->nif; }
 
 	/**
 	 * @brief      Gets the address

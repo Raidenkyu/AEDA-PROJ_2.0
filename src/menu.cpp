@@ -254,6 +254,7 @@ void Empresa::modificaCliente() {
 	string nome_cliente, novonome,novaMorada;
 	int modifica, pontos;
 
+	displayClientes();
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual e o nome do cliente?                                |\n";
@@ -380,7 +381,7 @@ void Empresa::displayTodasAsReservasdeUmCliente() {
 	int index = BinarySearch(_clientes, nome_cliente);
 	if (index == -1) { throw ObjetoInexistente<Cliente>(nome_cliente); }
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas são todas as reservas efetuadas pelo cliente:      |\n";
+	cout << "| Estas sao todas as reservas efetuadas pelo cliente:      |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	for (unsigned int i = 0; i < _reservas.size(); i++)
@@ -518,7 +519,7 @@ void Empresa::adicionaFornecedor() {
 
 	titulo();
 	string nome_fornecedor, morada;
-	int NIF;
+	long unsigned int NIF;
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Qual e o nome do fornecedor?                             |\n";
@@ -540,7 +541,7 @@ void Empresa::adicionaFornecedor() {
 	cout << "| Indique a morada:                                        |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin.ignore(INT_MAX,'\n');
+	cin.ignore(INT_MAX, '\n');
 	getline(cin,morada);
 	Fornecedor * novoFornecedor = new Fornecedor(nome_fornecedor, NIF, morada);
 	novoFornecedor->setDefinicoesFornecedor();
@@ -554,7 +555,7 @@ void Empresa::modificaFornecedor() {
 	titulo();
 	string nome_fornecedor, novonome,novamorada;
 	int modifica;
-	unsigned int novoNIF;
+	long unsigned int novoNIF;
 
 
 	cout << "+----------------------------------------------------------+\n";
@@ -736,7 +737,7 @@ void Empresa::displayTodasAsReservasdeUmFornecedor() {
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
 	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas são as reservas efetuadas para este fornecedor:    |\n";
+	cout << "| Estas sao as reservas efetuadas para este fornecedor:    |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	for (unsigned int i = 0; i < _reservas.size(); i++)
@@ -785,7 +786,7 @@ void Empresa::displayTodasAsOfertasdeUmFornecedor() {
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
 	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas são todas as reservas efetuadas pelo fornecedor:      |\n";
+	cout << "| Estas sao todas as reservas efetuadas pelo fornecedor:      |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	_fornecedores[index]->displayOfertas();
@@ -1010,26 +1011,28 @@ void Empresa::adicionaReserva() {
 	//se eles tiverem pontos inferiores à viagem, gastam todos e ficam set a 0, mas o custo é reduzido em numero igual aos pontos
 	//se tiverem superior, gastam até cobrir o custo da viagem, e têm a viagem de graça
 
-	pontos = _clientes.at(indexCliente)->getPontos();
+	if (_clientes.at(indexCliente)->isRegistado()) {
+		pontos = _clientes.at(indexCliente)->getPontos();
 		if (_clientes.at(indexCliente)->getPontos() == 0)
 		{
 			pontos = preco / 5;
-			
+
 		}
 		else if (_clientes.at(indexCliente)->getPontos() <= preco)
 		{
 			preco = preco - _clientes.at(indexCliente)->getPontos();
 			pontos = 0;
-			
+
 		}
 		else { // (_clientes.at(indexCliente)->getPontos() > preco)
-			
+
 			pontos = pontos - preco;
 			preco = 0;
-			
-			
+
+
 		}
 		_clientes.at(indexCliente)->setPontos(pontos);
+	}
 		
 	
 	
@@ -1193,7 +1196,7 @@ void Empresa::cancelaReservas() {
 	bool nfound = true;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas sao as reservas disponíveis:                       |\n";
+	cout << "| Estas sao as reservas disponiveis:                       |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	displayReservas();
@@ -1267,7 +1270,7 @@ void Empresa::menuOfertas() {
 		cout << "| 3 - Apagar Oferta                                        |\n";
 		cout << "| 4 - Ver Ofertas                                          |\n";
 		cout << "| 5 - Ver Ofertas (Ordenadas por Prioridade)               |\n";
-		cout << "| 6 - Ver os clientes que reservaram uma oferta específica |\n";
+		cout << "| 6 - Ver os clientes que reservaram uma oferta especifica |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cin >> opcaoOfertas;
@@ -1395,7 +1398,7 @@ void Empresa::displayTodosOsClientesdeumaOferta() {
 	bool nfound = true;
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Indique o fornecedor em questão:                         |\n";
+	cout << "| Indique o fornecedor em questao:                         |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 
@@ -1510,7 +1513,7 @@ void Empresa::adicionaOferta() {
 		barco = "veleiro";
 		break;
 	default:
-		cout << "Esse número nao é reconhecido como barco.";
+		cout << "Esse número nao e reconhecido como barco.";
 		
 
 	}
@@ -1665,7 +1668,7 @@ void Empresa::modificaOferta()
 			_fornecedores.at(index)->getOfertas().at(indexOferta).setBarco(novobarco);
 		}
 		else
-			cout << "Esse número nao é reconhecido como barco.";
+			cout << "Esse número nao e reconhecido como barco.";
 		break;
 		return;
 
@@ -1730,7 +1733,7 @@ void Empresa::modificaOferta()
 
 
 	default:
-		cout << "Essa opcao nao é viável. Pressione Enter para voltar ao menu anterior.";
+		cout << "Essa opcao nao e viável. Pressione Enter para voltar ao menu anterior.";
 
 	}
 	cin.get();

@@ -189,6 +189,7 @@ void Empresa::load(){
 	string morada;
 	unsigned int num1;
 	unsigned int num2;
+	long unsigned int num3;
 	vector<int> v;
 	unsigned int p;
 	vector<string> destinos;
@@ -234,10 +235,10 @@ void Empresa::load(){
 			while(getline(fornecedores_file,line)){
 				s1 = line;
 				getline(fornecedores_file,line,'\n');
-				num1 = stoi(line);
+				num3 = stoi(line);
 				getline(fornecedores_file,line);
 				s2 = line;
-				f = new Fornecedor(s1,num1,s2);
+				f = new Fornecedor(s1,num3,s2);
 				getline(fornecedores_file,line);
 				v.push_back(stoi(line));
 				getline(fornecedores_file,line);
@@ -412,7 +413,7 @@ void Empresa::sort(){
 
 //// Metodos da classe Fornecedor ////
 
-Fornecedor::Fornecedor(string nome, unsigned int nif, string morada):nome(nome), nif(nif), morada(morada){}
+Fornecedor::Fornecedor(string nome, long unsigned int nif, string morada):nome(nome), nif(nif), morada(morada){}
 
 void Fornecedor::addOferta(Oferta & oferta){
 	this->ofertas.push_back(oferta);

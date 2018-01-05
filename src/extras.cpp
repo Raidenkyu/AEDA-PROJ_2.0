@@ -120,7 +120,7 @@ int Time::diferencaDias() {
 				if (getYear() % 4 == 0 && getYear() % 10 == 0 && getYear() % 400 == 0)
 					dias = (29 - rt.getDay()) + getDay();
 				else
-				dias = (28 - rt.getDay()) + getDay();
+					dias = (28 - rt.getDay()) + getDay();
 			case 3: //Marco
 				dias = (31 - rt.getDay()) + getDay();
 			case 4: //Abril
