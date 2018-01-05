@@ -103,13 +103,14 @@ bool Time::operator<( Time  t2){
 int Time::diferencaDias() {
 	RealTime rt;
 	int dias = 0;
+	int realano = rt.getYear() - 100;
 
 	//se ano e m�s forem iguais
-	if ((rt.getYear() == getYear()) && (rt.getMonth() == getMonth()))
+	if ((realano == getYear()) && (rt.getMonth() == getMonth()))
 		dias = this->getDay() - rt.getDay();
 
 	//se ano for igual mas mes for diferente
-	else if ((rt.getYear() == getYear()) && (rt.getMonth() != getMonth()))
+	else if ((realano == getYear()) && (rt.getMonth() != getMonth()))
 	{
 		if (getMonth() - rt.getMonth() == 1)
 		{
@@ -148,20 +149,21 @@ int Time::diferencaDias() {
 			dias = 50;
 			return dias;
 		}
-		
 	}
-	else if (!(rt.getYear() == getYear()))
+
+	else if (!(realano == getYear()))
 	{
-		if (getYear() - rt.getYear() == 1)
+		if (getYear() - realano == 1)
 		{
-			if (rt.getMonth() == 12 && getYear() == 1)
+			if (rt.getMonth() == 12 && getMonth() == 1)
 				dias = (31 - rt.getDay()) + getDay();
 			else
 				dias = -1;
 		}
 		else
-			dias = -1;
+			dias = 50;
 	}
+	
 
 	if (dias == 2)
 	{
@@ -172,7 +174,7 @@ int Time::diferencaDias() {
 		else return 1;
 	}
 	/*
-	return abs(rt.getDay() - this->getDay()) + abs(rt.getMonth - this->getMonth()) * 30 + abs(rt.getYear() - this->getYear()) * 365;*/
+	return abs(rt.getDay() - this->getDay()) + abs(rt.getMonth - this->getMonth()) * 30 + abs(realano - this->getYear()) * 365;*/
 	return dias;
 }
 
