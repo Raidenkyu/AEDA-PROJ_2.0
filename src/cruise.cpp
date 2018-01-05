@@ -24,8 +24,6 @@ Empresa::Empresa(): _faturas(Fatura(NULL)){
 	atualizaInatividade();
 	addOfertasQueue();
 	sort();
-	sort();
-	sort();
 	this->menuInicial();
 	this->save();
 }
@@ -300,31 +298,31 @@ void Empresa::load(){
 
 	bool cancelada;
 	if(reservas_file.is_open()){
-		while(getline(reservas_file,line)){
+		while (getline(reservas_file, line)) {
 			s1 = line;
-			getline(reservas_file,line);
+			getline(reservas_file, line);
 			s2 = line;
-			getline(reservas_file,line);
-			if(line == "true"){
+			getline(reservas_file, line);
+			if (line == "true") {
 				cancelada = true;
 			}
 			else cancelada = false;
-			getline(reservas_file,line, '\n');
+			getline(reservas_file, line, '\n');
 
 			num1 = stoi(line);
-			for(unsigned int i = 0; i < this->_clientes.size();i++){
-				if(this->_clientes[i]->getNome() == s2){
-					*c = *this->_clientes[i];
+			for (unsigned int i = 0; i < this->_clientes.size(); i++) {
+				if (this->_clientes[i]->getNome() == s2) {
+				c = this->_clientes[i];
 				}
 			}
-			for(unsigned int i = 0; i < this->_fornecedores.size();i++){
-							for(unsigned int j = 0;j < this->_fornecedores[i]->getOfertas().size();j++){
-								if(this->_fornecedores[i]->getOfertas().at(j).getNome() == s1){
-									*o = this->_fornecedores[i]->getOfertas()[j];
-								}
-							}
-						}
-			r = new Reserva(s1,o,s2,c,num1,cancelada);
+			for (unsigned int i = 0; i < this->_fornecedores.size(); i++) {
+				for (unsigned int j = 0; j < this->_fornecedores[i]->getOfertas().size(); j++) {
+					if (this->_fornecedores[i]->getOfertas().at(j).getNome() == s1) {
+						*o = this->_fornecedores[i]->getOfertas()[j];
+					}
+				}
+			}
+			r = new Reserva(s1, o, s2, c, num1, cancelada);
 			this->addReservas(*r);
 		}
 	}

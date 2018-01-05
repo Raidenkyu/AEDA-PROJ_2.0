@@ -1,0 +1,40 @@
+DouroMagic Trips
+335127882
+Rua das Flores, Porto, 11
+15
+20
+15
+10
+Houdini Tour
+barco rabelo
+5500
+48
+18/2/18 15:30
+118/0/5 18:38
+4207
+Foz
+Cais de Ganha
+Ribeira Nova
+Vinha do Louro
+Travessa do Outeiro
+oend
+PuffMagic SpeedTour
+veleiro
+1500
+77
+18/5/19 16:30
+118/0/5 18:39
+1815
+Rota das Marmitas
+Subida do Alqueva
+Largo do Mosteiro
+oend
+fend
+SuperBoat Tours
+223410926
+Porto, Avenida Sarmento Cardoso, n.78
+25
+40
+30
+25
+fend
