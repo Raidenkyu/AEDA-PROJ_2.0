@@ -959,7 +959,7 @@ public:
 
 	void displayTodasAsOfertasdeUmFornecedor();
 
-	void displayTodosOsClientesdeumaReserva();
+	void displayTodosOsClientesdeumaOferta();
 
 };
 
