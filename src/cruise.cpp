@@ -23,6 +23,9 @@ Empresa::Empresa(): _faturas(Fatura(NULL)){
 	this->load();
 	atualizaInatividade();
 	addOfertasQueue();
+	sort();
+	sort();
+	sort();
 	this->menuInicial();
 	this->save();
 }
@@ -281,6 +284,7 @@ void Empresa::load(){
 						o = new Oferta(s1,s2,destinos,num1,num2,*t,p);
 						o->setTimeUltimaReserva(*t2);
 						f->addOferta(*o);
+						destinos.clear();
 
 
 					}
