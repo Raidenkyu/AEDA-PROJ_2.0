@@ -43,9 +43,10 @@ void Empresa::menuCliente() {
 		cout << "| 1 - Adicionar Cliente                                    |\n";
 		cout << "| 2 - Modificar Cliente                                    |\n";
 		cout << "| 3 - Apagar Cliente                                       |\n";
-		cout << "| 4 - Ver todos os Clientes                                |\n";
-		cout << "| 5 - Ver todos os Clientes Inativos                       |\n";
+		cout << "| 4 - Ver Todos os Clientes                                |\n";
+		cout << "| 5 - Ver Todos os Clientes Inativos                       |\n";
 		cout << "| 6 - Ver Faturas                                          |\n";
+		cout << "| 7 - Ver Todas as Reservas de um Cliente                  |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 
@@ -114,6 +115,19 @@ void Empresa::menuCliente() {
 			listaFaturas();
 			cin.get();
 			cin.get();
+			break;
+		
+		case 7:
+			try {
+				displayTodasAsReservasdeUmCliente();
+			}
+			catch (ObjetoInexistente<Cliente> & ex) {
+				clearScreen();
+				cout << "O cliente " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
+
 			break;
 			
 		default:
@@ -348,6 +362,42 @@ void Empresa::removeCliente() {
 	
 
 }
+void Empresa::displayTodasAsReservasdeUmCliente() {
+
+	titulo();
+	string nome_cliente;
+
+	displayClientes();
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Qual e o nome do cliente?                                |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	cin.ignore(INT_MAX, '\n');
+	getline(cin, nome_cliente);
+
+
+	int index = BinarySearch(_clientes, nome_cliente);
+	if (index == -1) { throw ObjetoInexistente<Cliente>(nome_cliente); }
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Estas são todas as reservas efetuadas pelo cliente:      |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	for (unsigned int i = 0; i < _reservas.size(); i++)
+	{
+		if (_reservas[i]->getNomeCliente() == nome_cliente)
+		{
+			cout << "Fornecedor: " << _reservas.at(i)->getNomeFornecedor() << endl
+				<< "Oferta: ";  _reservas.at(i)->getOferta()->printOferta();
+			cout << "Cliente: " << _reservas.at(i)->getCliente()->getNome() << endl
+				<< "Pontos do Cliente: " << _reservas.at(i)->getCliente()->getPontos() << endl
+				<< "Preco (a pagar): " << _reservas.at(i)->getPreco() << endl
+				<< "Cancelada: " << (_reservas.at(i)->isCancelada() ? "sim" : "nao") << endl << endl;
+		}
+	}
+
+
+}
 
 
 void Empresa::menuFornecedor() {
@@ -360,12 +410,14 @@ void Empresa::menuFornecedor() {
 	cout << "| Escolha o que pretende fazer com os fornecedores         |\n";
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-	cout << "+----------------------------------------------------------+ \n";
+	cout << "+----------------------------------------------------------+\n";
 	cout << "| 1 - Adicionar Fornecedor                                 |\n";
 	cout << "| 2 - Modificar Fornecedor                                 |\n";
 	cout << "| 3 - Apagar Fornecedor                                    |\n";
-	cout << "| 4 - Ver Fornecedores (sem ofertas)                      |\n";
-	cout << "| 5 - Ver Fornecedores (com ofertas)                      |\n";
+	cout << "| 4 - Ver Fornecedores (sem ofertas)                       |\n";
+	cout << "| 5 - Ver Fornecedores (com ofertas)                       |\n";
+	cout << "| 6 - Ver todas as ofertas de um fornecedor                |\n";
+	cout << "| 7 - Ver todas as reservas feitas para um fornecedor      |\n";
 	cout << "| 0 - Sair                                                 |\n";
 	cout << "+----------------------------------------------------------+\n";
 
@@ -428,6 +480,32 @@ void Empresa::menuFornecedor() {
 		cin.get();
 		cin.get();
 		break;
+
+	case 6:
+		try {
+			displayTodasAsOfertasdeUmFornecedor();
+		}
+		catch (ObjetoInexistente<Fornecedor> & ex) {
+			clearScreen();
+			cout << "O fornecedor " << ex << " nao existe. " << endl;
+			cout << "Pressione enter para regressar ao menu" << endl;
+			cin.get();
+		}
+		break;
+
+	case 7:
+		try {
+			displayTodasAsReservasdeUmFornecedor();
+	}
+		catch (ObjetoInexistente<Fornecedor> & ex) {
+			clearScreen();
+			cout << "O fornecedor " << ex << " nao existe. " << endl;
+			cout << "Pressione enter para regressar ao menu" << endl;
+			cin.get();
+		}
+		break;
+	
+		
 	default:
 		cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
 
@@ -640,6 +718,84 @@ void Fornecedor::setDefinicoesFornecedor() {
 	return;
 }
 
+void Empresa::displayTodasAsReservasdeUmFornecedor() {
+
+	titulo();
+	string nome_fornecedor;
+	bool existe = false;
+
+	displayFornecedores();
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Qual e o nome do fornecedor?                                |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	cin.ignore(INT_MAX, '\n');
+	getline(cin, nome_fornecedor);
+
+
+	int index = BinarySearch(_fornecedores, nome_fornecedor);
+	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Estas são as reservas efetuadas para este fornecedor:    |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	for (unsigned int i = 0; i < _reservas.size(); i++)
+	{
+		if (_reservas[i]->getNomeFornecedor() == nome_fornecedor)
+		{
+			existe = true;
+
+			cout << "Fornecedor: " << _reservas.at(i)->getNomeFornecedor() << endl
+				<< "Oferta: ";  _reservas.at(i)->getOferta()->printOferta();
+			cout << "Cliente: " << _reservas.at(i)->getCliente()->getNome() << endl
+				<< "Pontos do Cliente: " << _reservas.at(i)->getCliente()->getPontos() << endl
+				<< "Preco (a pagar): " << _reservas.at(i)->getPreco() << endl
+				<< "Cancelada: " << (_reservas.at(i)->isCancelada() ? "sim" : "nao") << endl << endl;
+		}
+		
+	}
+	if (!existe)
+	{
+		cout << "+----------------------------------------------------------+\n";
+		cout << "| Ninguem reservou uma oferta deste fornecedor!            |\n";
+		cout << "+----------------------------------------------------------+\n";
+	}
+
+	return;
+
+
+}
+
+
+void Empresa::displayTodasAsOfertasdeUmFornecedor() {
+
+	titulo();
+	string nome_fornecedor;
+
+	displayFornecedores();
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Qual e o nome do fornecedor?                                |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	cin.ignore(INT_MAX, '\n');
+	getline(cin, nome_fornecedor);
+
+
+	int index = BinarySearch(_fornecedores, nome_fornecedor);
+	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Estas são todas as reservas efetuadas pelo fornecedor:      |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	_fornecedores[index]->displayOfertas();
+
+	return;
+
+
+}
+
 void Empresa::menuReservas() {
 
 
@@ -656,6 +812,7 @@ void Empresa::menuReservas() {
 		cout << "| 3 - Cancelar Reserva                                     |\n";
 		cout << "| 4 - Apagar Reserva                                       |\n";
 		cout << "| 5 - Ver Reservas                                         |\n";
+		cout << "| 6 - Ver os clientes que marcaram uma reserva específica  |\n";
 		cout << "| 0 - Sair                                                 |\n";
 		cout << "+----------------------------------------------------------+\n";
 
@@ -745,6 +902,17 @@ void Empresa::menuReservas() {
 			displayReservas();
 			cin.get();
 			cin.get();
+			break;
+		case 6:
+			try {
+				displayTodosOsClientesdeumaReserva();
+			}
+			catch (ObjetoInexistente<Reserva> & ex) {
+				clearScreen();
+				cout << "A reserva indicada nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
 			break;
 
 		case 0:
@@ -1093,6 +1261,45 @@ void Empresa::cancelaReservas() {
 
 }
 
+void Empresa::displayTodosOsClientesdeumaReserva() {
+	titulo();
+	displayReservas();
+	string reserva;
+	bool nfound = true;
+
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Indique a reserva em questão:                            |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	getline(cin, reserva);
+
+	for (unsigned int j = 0; j < _reservas.size(); j++)
+	{
+		if (_reservas.at(j)->getOferta()->getNome() == reserva)
+		{
+			
+			nfound = false;
+
+			for (unsigned int i = 0; i < _clientes.size(); i++)
+			{
+				if(_reservas.at(j)->getNomeCliente() == _clientes.at(i)->getNome())
+				{
+					cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Morada: " << _clientes.at(i)->getMorada() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
+					if (_clientes.at(i)->isRegistado()) {
+						cout << "Registado: Sim" << endl << endl;
+					}
+					else cout << "Registado: Nao" << endl << endl;
+				}
+			}
+		}
+	}
+	if (nfound) {
+		throw ObjetoInexistente<Reserva>("");
+	}
+
+
+
+}
 void Empresa::menuOfertas() {
 
 

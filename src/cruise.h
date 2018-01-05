@@ -953,6 +953,14 @@ public:
 	 */
 	void displayClientesInativos();
 
+	void displayTodasAsReservasdeUmCliente();
+
+	void displayTodasAsReservasdeUmFornecedor();
+
+	void displayTodasAsOfertasdeUmFornecedor();
+
+	void displayTodosOsClientesdeumaReserva();
+
 };
 
 
