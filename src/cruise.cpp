@@ -40,7 +40,7 @@ Empresa & Empresa::addFornecedores(Fornecedor& f){
 	return *this;
 }
 
-Empresa & Empresa::addClientes(Cliente& c){
+Empresa & Empresa::addClientes(Cliente &c){
 	this->_clientes.push_back(&c);
 	return *this;
 }
@@ -213,6 +213,8 @@ void Empresa::load(){
 	}
 	clientes_file.close();
 	//Stores the clients who are registered in the data base
+	s1.clear();
+	s2.clear();
 	if(registados_file.is_open())
 			while(getline(registados_file,line)){
 				s1 = line;

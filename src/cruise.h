@@ -682,29 +682,29 @@ public:
 	Empresa & addFornecedores(Fornecedor& f);
 
 	/**
-	 * @brief      Adds clients
+	 * @brief      Adds a clients
 	 *
-	 * @param      c     Cliente
+	 * @param      c     Client
 	 *
-	 * @return     the modified Empresa
+	 * @return     the modified company
 	 */
 	Empresa & addClientes(Cliente& c);
 
 	/**
-	 * @brief      Adds a reservations
+	 * @brief      Adds a reservation
 	 *
-	 * @param      r     Reserva
+	 * @param      r     Reservation
 	 *
 	 * @return     the modified Empresa
 	 */
 	Empresa & addReservas(Reserva & r);
 
 	/**
-	 * @brief      Adds a faturas.
+	 * @brief      Adds a bill
 	 *
-	 * @param      r     { parameter_description }
+	 * @param      r     the bill
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     the modified company
 	 */
 	Empresa & addFaturas(Fatura & r);
 
@@ -838,12 +838,12 @@ public:
 	void removeReservas();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays the interface related to bills
 	 */
 	void menuFaturas();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Lists all the bills
 	 */
 	void listaFaturas();
 
@@ -867,18 +867,18 @@ public:
 	void removeOferta();
 
 	/**
-	 * @brief      displays all the information about the Clients
+	 * @brief      displays all the information about the Offerts in priority order
 	 */
 
 	void addOfertasQueue();
 	
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays all the information about the Offerts without priority order
 	 */
 	void displayOfertasemOrdem();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      displays all the information about the Clients
 	 */
 	void displayClientes();
 

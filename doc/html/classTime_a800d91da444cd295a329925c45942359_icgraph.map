@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$classOferta.html#a2b156b75371ad59af54ad96ad79c9d1e" title="Gets the date in string format. " alt="" coords="189,72,301,99"/>
 <area shape="rect" id="node10" href="$classTime.html#a346c1dbc706dfd41e4a15b16577e4265" title="calculates the difference of days between this date and the actual date " alt="" coords="176,123,315,149"/>
 <area shape="rect" id="node4" href="$classOferta.html#a745e9845f3d1a36e8a8712d576f303ba" title="prints the information of the offers " alt="" coords="630,5,757,32"/>
-<area shape="rect" id="node6" href="$classEmpresa.html#acd458614a3cca3f432b54212a2e72584" title="{ function_description } " alt="" coords="601,65,785,106"/>
+<area shape="rect" id="node6" href="$classEmpresa.html#acd458614a3cca3f432b54212a2e72584" title="displays all the information about the Offerts without priority order " alt="" coords="601,65,785,106"/>
 <area shape="rect" id="node7" href="$classEmpresa.html#aea372dbf680408d9fb32341c03b3e5ad" title="Updates which clients are inactive. " alt="" coords="363,148,553,175"/>
 <area shape="rect" id="node9" href="$classOferta.html#aaed9b5937f9f33d2980fcc13ac02132c" title="Gets the boat. " alt="" coords="399,47,517,73"/>
 <area shape="rect" id="node5" href="$classOferta.html#a15e6c1e4f49243136eb5ca1d46925a77" title="decreases the lotation " alt="" coords="833,5,987,32"/>

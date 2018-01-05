@@ -109,7 +109,7 @@ int Time::diferencaDias() {
 		dias = this->getDay() - rt.getDay();
 
 	//se ano for igual mas m�s for diferente
-	else if ((rt.getYear() == getYear()) && !(rt.getMonth() == getMonth()))
+	else if ((rt.getYear() == getYear()) && (rt.getMonth() != getMonth()))
 	{
 		if (getMonth() - rt.getMonth() == 1)
 		{

@@ -1,6 +1,6 @@
 <map id="Reserva::getNomeCliente" name="Reserva::getNomeCliente">
 <area shape="rect" id="node2" href="$classFatura.html#aa16421065127ac0fd15740b80dd1893b" title="Gets the nome cliente. " alt="" coords="227,56,388,83"/>
-<area shape="rect" id="node3" href="$classEmpresa.html#ab1950b5b5e9fca80823b5d01c6c1de6f" title="{ function_description } " alt="" coords="436,5,587,32"/>
+<area shape="rect" id="node3" href="$classEmpresa.html#ab1950b5b5e9fca80823b5d01c6c1de6f" title="Lists all the bills. " alt="" coords="436,5,587,32"/>
 <area shape="rect" id="node4" href="$classFatura.html#adb4cd8ad6992c102ba6f92c5f6a2fbee" title="{ operator_description } " alt="" coords="450,56,573,83"/>
 <area shape="rect" id="node5" href="$classFatura.html#a337e1169c75de3089dcf3e16ee179aa3" title="{ operator_description } " alt="" coords="446,107,577,133"/>
 </map>

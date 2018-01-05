@@ -96,26 +96,25 @@ Construct a \hyperlink{classOferta}{Oferta} object.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-495                                                                                                            
+497                                                                                                            
                           : nome(name),
-496 barco(boat),
-497 destinos(dest),
-498 distancia(dist),
-499 lotacao(lot),
-500 data(date),
-501 preco(price)
-502 \{
-503     \hyperlink{classRealTime}{RealTime} * rt = \textcolor{keyword}{new} \hyperlink{classRealTime}{RealTime}();
-504     \hyperlink{classTime}{Time} tempooferta(rt->\hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}(),rt->\hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}(),rt->
+498 barco(boat),
+499 destinos(dest),
+500 distancia(dist),
+501 lotacao(lot),
+502 data(date),
+503 preco(price)
+504 \{
+505     \hyperlink{classRealTime}{RealTime} * rt = \textcolor{keyword}{new} \hyperlink{classRealTime}{RealTime}();
+506     \hyperlink{classTime}{Time} tempooferta(rt->\hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}(),rt->\hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}(),rt->
       \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}(), rt->\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}(),rt->\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() - 1000);
-505     
-506     ultimaReserva = tempooferta;
-507 \};
+507     
+508     ultimaReserva = tempooferta;
+509 \};
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -164,8 +163,7 @@ decreases the lotation
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -194,8 +192,7 @@ The barco.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,21 +229,20 @@ The barco number.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-514 \{
-515     \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"iate"})
-516         \textcolor{keywordflow}{return} 1;
-517     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"barco rabelo"} || barco == \textcolor{stringliteral}{"barco\_rabelo"})
-518         \textcolor{keywordflow}{return} 2;
-519     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"veleiro"})
-520         \textcolor{keywordflow}{return} 3;
-521     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
-522 
-523 \}
+516 \{
+517     \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"iate"})
+518         \textcolor{keywordflow}{return} 1;
+519     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"barco rabelo"} || barco == \textcolor{stringliteral}{"barco\_rabelo"})
+520         \textcolor{keywordflow}{return} 2;
+521     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"veleiro"})
+522         \textcolor{keywordflow}{return} 3;
+523     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+524 
+525 \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -271,17 +267,16 @@ The date(string)
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-525                        \{
-526 
-527     \textcolor{keywordflow}{return} to\_string(data.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}()) + \textcolor{stringliteral}{"/"} + to\_string(data.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}()) + \textcolor{stringliteral}{"/"} + to\_string(
+527                        \{
+528 
+529     \textcolor{keywordflow}{return} to\_string(data.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}()) + \textcolor{stringliteral}{"/"} + to\_string(data.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}()) + \textcolor{stringliteral}{"/"} + to\_string(
       data.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \textcolor{stringliteral}{" "} + to\_string(data.\hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}()) + \textcolor{stringliteral}{":"} + to\_string(data.
       \hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}());
-528 \}
+530 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -336,9 +331,9 @@ The destinos
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-509                                                 \{
-510     \textcolor{keywordflow}{return} this->destinos;
-511 \}
+511                                                 \{
+512     \textcolor{keywordflow}{return} this->destinos;
+513 \}
 \end{DoxyCode}
 
 
@@ -372,8 +367,7 @@ The destinos.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -504,8 +498,7 @@ The time of the last reservation
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -516,8 +509,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -539,26 +531,25 @@ prints the information of the offers
 
 
 \begin{DoxyCode}
-531 \{
-532 
-533     cout << \textcolor{stringliteral}{"Nome: "} << \hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{getNome}() << endl;
-534     cout << \textcolor{stringliteral}{"Barco: "} <<\hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{getBarco}() << endl;
-535     cout << \textcolor{stringliteral}{"Destinos:"} << endl;
-536 
-537     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().size(); j++) \{
+533 \{
+534 
+535     cout << \textcolor{stringliteral}{"Nome: "} << \hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{getNome}() << endl;
+536     cout << \textcolor{stringliteral}{"Barco: "} <<\hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{getBarco}() << endl;
+537     cout << \textcolor{stringliteral}{"Destinos:"} << endl;
 538 
-539         cout << \textcolor{stringliteral}{"   Destino numero"} << j + 1 << \textcolor{stringliteral}{" : "} << \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().at(j) << endl;
-540     \}
-541     cout << \textcolor{stringliteral}{"Distancia: "} << \hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{getDistancia}() << \textcolor{stringliteral}{"\(\backslash\)n"};
-542     cout << \textcolor{stringliteral}{"Lotacao: "} << \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{getLotacao}() << endl;
-543     cout << \textcolor{stringliteral}{"Data: "} << \hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{getData}() << endl;
-544     cout << \textcolor{stringliteral}{"Preco: "} << \hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() << endl;
-545 \}
+539     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().size(); j++) \{
+540 
+541         cout << \textcolor{stringliteral}{"   Destino numero"} << j + 1 << \textcolor{stringliteral}{" : "} << \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().at(j) << endl;
+542     \}
+543     cout << \textcolor{stringliteral}{"Distancia: "} << \hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{getDistancia}() << \textcolor{stringliteral}{"\(\backslash\)n"};
+544     cout << \textcolor{stringliteral}{"Lotacao: "} << \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{getLotacao}() << endl;
+545     cout << \textcolor{stringliteral}{"Data: "} << \hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{getData}() << endl;
+546     cout << \textcolor{stringliteral}{"Preco: "} << \hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() << endl;
+547 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -569,8 +560,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -701,8 +691,7 @@ Sets the price.
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -753,8 +742,7 @@ Sets the time of the last reservation.
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -17,11 +17,11 @@ Class for empresa.
 \hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a0c858479d6e92094adbb2fc085039376}{add\+Fornecedores} (\hyperlink{classFornecedor}{Fornecedor} \&f)
 \begin{DoxyCompactList}\small\item\em Adds suppliers. \end{DoxyCompactList}\item 
 \hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}{add\+Clientes} (\hyperlink{classCliente}{Cliente} \&c)
-\begin{DoxyCompactList}\small\item\em Adds clients. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds a clients. \end{DoxyCompactList}\item 
 \hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a42a1671b234ab8380cfb2ed33517edb2}{add\+Reservas} (\hyperlink{classReserva}{Reserva} \&r)
-\begin{DoxyCompactList}\small\item\em Adds a reservations. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds a reservation. \end{DoxyCompactList}\item 
 \hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a89c034ba48b716dfe61724e38eb0afbb}{add\+Faturas} (\hyperlink{classFatura}{Fatura} \&r)
-\begin{DoxyCompactList}\small\item\em Adds a faturas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds a bill. \end{DoxyCompactList}\item 
 \hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_ab8b7dda77caceec58e464c16b7e45f7c}{delete\+Fornecedores} (std\+::string name)
 \begin{DoxyCompactList}\small\item\em removes a supplier \end{DoxyCompactList}\item 
 \hyperlink{classEmpresa}{Empresa} \& \hyperlink{classEmpresa_a52b9f4d94c2a05704d74854ed4dd1590}{delete\+Clientes} (std\+::string name)
@@ -65,9 +65,9 @@ void \hyperlink{classEmpresa_aa0b169a112c75b6fd1bc80128720282e}{cancela\+Reserva
 void \hyperlink{classEmpresa_a3e0ee0b5d92f0cd655a26095229849f1}{remove\+Reservas} ()
 \begin{DoxyCompactList}\small\item\em displays the interface to remove reservations \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_a58d040d3983d55414d5c6fac5ac3b6c5}{menu\+Faturas} ()
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em displays the interface related to bills \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_ab1950b5b5e9fca80823b5d01c6c1de6f}{lista\+Faturas} ()
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Lists all the bills. \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_a3cab1a61ff84c5b20ac2faa6251e25ed}{menu\+Ofertas} ()
 \begin{DoxyCompactList}\small\item\em displays the offers Menu \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_ae244a8ae3afb85eb5e9e5febce8b8728}{adiciona\+Oferta} ()
@@ -77,11 +77,11 @@ void \hyperlink{classEmpresa_ac8948065c65d5c02cb30103118f502d4}{modifica\+Oferta
 void \hyperlink{classEmpresa_a5b5c42d733ccee37f932db5db8aec243}{remove\+Oferta} ()
 \begin{DoxyCompactList}\small\item\em displays the interface to remove offers \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_a5ca8821d938f11f29558ae90913de528}{add\+Ofertas\+Queue} ()
-\begin{DoxyCompactList}\small\item\em displays all the information about the Clients \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em displays all the information about the Offerts in priority order \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_acd458614a3cca3f432b54212a2e72584}{display\+Ofertasem\+Ordem} ()
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em displays all the information about the Offerts without priority order \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_a28e04d59daa7206bec6055249ce17410}{display\+Clientes} ()
-\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em displays all the information about the Clients \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_a55c3756c01b45b41ad03f4e4f3e4dcac}{display\+Fornecedores} ()
 \begin{DoxyCompactList}\small\item\em displays all the information about the suppliers; \end{DoxyCompactList}\item 
 void \hyperlink{classEmpresa_aa47e9a64800a41180b7f374b73a1f32b}{display\+Fornecedorescom\+Ofertas} ()
@@ -169,15 +169,15 @@ Here is the call graph for this function\+:
 )}\hypertarget{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}{}\label{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}
 
 
-Adds clients. 
+Adds a clients. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em c} & \hyperlink{classCliente}{Cliente}\\
+{\em c} & Client\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the modified \hyperlink{classEmpresa}{Empresa} 
+the modified company 
 \end{DoxyReturn}
 
 \begin{DoxyCode}
@@ -188,8 +188,7 @@ the modified \hyperlink{classEmpresa}{Empresa}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -207,22 +206,22 @@ Here is the caller graph for this function\+:
 )}\hypertarget{classEmpresa_a89c034ba48b716dfe61724e38eb0afbb}{}\label{classEmpresa_a89c034ba48b716dfe61724e38eb0afbb}
 
 
-Adds a faturas. 
+Adds a bill. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em r} & \{ parameter\+\_\+description \}\\
+{\em r} & the bill\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+the modified company 
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-644                                       \{
-645     this->\_faturas.\hyperlink{classBST_a2b117df6521c7d61dac75ff2c938bae7}{insert}(r);
-646     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
-647 \}
+646                                       \{
+647     this->\_faturas.\hyperlink{classBST_a2b117df6521c7d61dac75ff2c938bae7}{insert}(r);
+648     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+649 \}
 \end{DoxyCode}
 \index{Empresa@{Empresa}!add\+Fornecedores@{add\+Fornecedores}}
 \index{add\+Fornecedores@{add\+Fornecedores}!Empresa@{Empresa}}
@@ -252,8 +251,7 @@ the modified \hyperlink{classEmpresa}{Empresa}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -271,28 +269,27 @@ Here is the caller graph for this function\+:
 )}\hypertarget{classEmpresa_a5ca8821d938f11f29558ae90913de528}{}\label{classEmpresa_a5ca8821d938f11f29558ae90913de528}
 
 
-displays all the information about the Clients 
+displays all the information about the Offerts in priority order 
 
 
 \begin{DoxyCode}
-550 \{
-551     \textcolor{keywordflow}{while} (!queueOfertasOrdenadas.empty()) \{
-552         queueOfertasOrdenadas.pop();
-553     \}
-554 
-555     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \_fornecedores.size(); i++)
-556     \{
-557         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \_fornecedores[i]->getOfertas().size(); j++)
-558         \{
-559             queueOfertasOrdenadas.push(\_fornecedores[i]->getOfertas()[j]);
-560         \}
-561     \}
-562 \}
+552 \{
+553     \textcolor{keywordflow}{while} (!queueOfertasOrdenadas.empty()) \{
+554         queueOfertasOrdenadas.pop();
+555     \}
+556 
+557     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \_fornecedores.size(); i++)
+558     \{
+559         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \_fornecedores[i]->getOfertas().size(); j++)
+560         \{
+561             queueOfertasOrdenadas.push(\_fornecedores[i]->getOfertas()[j]);
+562         \}
+563     \}
+564 \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -310,11 +307,11 @@ Here is the caller graph for this function\+:
 )}\hypertarget{classEmpresa_a42a1671b234ab8380cfb2ed33517edb2}{}\label{classEmpresa_a42a1671b234ab8380cfb2ed33517edb2}
 
 
-Adds a reservations. 
+Adds a reservation. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em r} & \hyperlink{classReserva}{Reserva}\\
+{\em r} & Reservation\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -329,8 +326,7 @@ the modified \hyperlink{classEmpresa}{Empresa}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -446,8 +442,7 @@ displays the interface to add Clients
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -503,8 +498,7 @@ displays the interface to add Registred Clients
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -562,8 +556,7 @@ displays the interface to add suppliers
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -706,8 +699,7 @@ displays the interface to adds offers
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -879,8 +871,7 @@ displays the interface to add reservations
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -902,20 +893,19 @@ Applies discount.
 
 
 \begin{DoxyCode}
-590                              \{
-591     \textcolor{keywordtype}{int} antigopreco;
-592     
-593     \hyperlink{classOferta}{Oferta} ofertatemp = queueOfertasOrdenadas.top();
-594     antigopreco = ofertatemp.\hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}();
-595     ofertatemp.\hyperlink{classOferta_a900c1febcd11221d877bc7cce577dd18}{setPreco}(antigopreco*0.8);
-596     queueOfertasOrdenadas.pop();
-597     queueOfertasOrdenadas.push(ofertatemp);
-598 \}
+592                              \{
+593     \textcolor{keywordtype}{int} antigopreco;
+594     
+595     \hyperlink{classOferta}{Oferta} ofertatemp = queueOfertasOrdenadas.top();
+596     antigopreco = ofertatemp.\hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}();
+597     ofertatemp.\hyperlink{classOferta_a900c1febcd11221d877bc7cce577dd18}{setPreco}(antigopreco*0.8);
+598     queueOfertasOrdenadas.pop();
+599     queueOfertasOrdenadas.push(ofertatemp);
+600 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -940,28 +930,27 @@ The modified empresa
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-608                                       \{
-609     \hyperlink{classTime}{Time} ultimaReserva;
-610     \hyperlink{classRealTime}{RealTime} rt;
-611     \hyperlink{classClienteInativo}{ClienteInativo} * ci;
-612     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_reservas.size(); i++)\{
-613         ci = \textcolor{keyword}{new} \hyperlink{classClienteInativo}{ClienteInativo}(this->\_reservas[i]->getCliente());
-614         \textcolor{keywordflow}{if}(this->\_clientesInativos.find(*ci) != this->\_clientesInativos.end())\{
-615                 \textcolor{keywordflow}{continue};
-616         \}
-617         \textcolor{keywordflow}{if}(this->\_reservas[i]->getData().diferencaDias() > (6*30))\{
-618             this->\_clientesInativos.insert(*ci);
-619         \}
-620 
-621     \}
+610                                       \{
+611     \hyperlink{classTime}{Time} ultimaReserva;
+612     \hyperlink{classRealTime}{RealTime} rt;
+613     \hyperlink{classClienteInativo}{ClienteInativo} * ci;
+614     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_reservas.size(); i++)\{
+615         ci = \textcolor{keyword}{new} \hyperlink{classClienteInativo}{ClienteInativo}(this->\_reservas[i]->getCliente());
+616         \textcolor{keywordflow}{if}(this->\_clientesInativos.find(*ci) != this->\_clientesInativos.end())\{
+617                 \textcolor{keywordflow}{continue};
+618         \}
+619         \textcolor{keywordflow}{if}(this->\_reservas[i]->getData().diferencaDias() > (6*30))\{
+620             this->\_clientesInativos.insert(*ci);
+621         \}
 622 
-623     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
-624 \}
+623     \}
+624 
+625     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+626 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -972,8 +961,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1094,8 +1082,7 @@ the modified \hyperlink{classEmpresa}{Empresa}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1187,11 +1174,11 @@ The modified company
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-602                                              \{
-603     \hyperlink{classClienteInativo}{ClienteInativo} ci(c);
-604     this->\_clientesInativos.insert(ci);
-605     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
-606 \}
+604                                              \{
+605     \hyperlink{classClienteInativo}{ClienteInativo} ci(c);
+606     this->\_clientesInativos.insert(ci);
+607     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+608 \}
 \end{DoxyCode}
 \index{Empresa@{Empresa}!display\+Clientes@{display\+Clientes}}
 \index{display\+Clientes@{display\+Clientes}!Empresa@{Empresa}}
@@ -1202,7 +1189,7 @@ The modified company
 )}\hypertarget{classEmpresa_a28e04d59daa7206bec6055249ce17410}{}\label{classEmpresa_a28e04d59daa7206bec6055249ce17410}
 
 
-\{ function\+\_\+description \} 
+displays all the information about the Clients 
 
 
 \begin{DoxyCode}
@@ -1230,12 +1217,12 @@ Lists all the inactive clients.
 
 
 \begin{DoxyCode}
-633                                      \{
-634     tabHInativos::const\_iterator it;
-635     \textcolor{keywordflow}{for}(it = this->\_clientesInativos.begin();it != this->\_clientesInativos.end();it++)\{
-636         cout << \textcolor{stringliteral}{"Nome: "} <<  it->getNome() << endl << \textcolor{stringliteral}{"Morada: "} << it->getMorada() << endl << endl;
-637     \}
-638 \}
+635                                      \{
+636     tabHInativos::const\_iterator it;
+637     \textcolor{keywordflow}{for}(it = this->\_clientesInativos.begin();it != this->\_clientesInativos.end();it++)\{
+638         cout << \textcolor{stringliteral}{"Nome: "} <<  it->getNome() << endl << \textcolor{stringliteral}{"Morada: "} << it->getMorada() << endl << endl;
+639     \}
+640 \}
 \end{DoxyCode}
 \index{Empresa@{Empresa}!display\+Fornecedores@{display\+Fornecedores}}
 \index{display\+Fornecedores@{display\+Fornecedores}!Empresa@{Empresa}}
@@ -1307,41 +1294,40 @@ displays all the information about the suppliers all their respective offers
 )}\hypertarget{classEmpresa_acd458614a3cca3f432b54212a2e72584}{}\label{classEmpresa_acd458614a3cca3f432b54212a2e72584}
 
 
-\{ function\+\_\+description \} 
+displays all the information about the Offerts without priority order 
 
 
 \begin{DoxyCode}
-565                                     \{
-566 
-567     \hyperlink{cruise_8h_a50ef8d79980af734cd40fd8d4c2ad566}{pq\_ofertas} temp = queueOfertasOrdenadas;
+567                                     \{
 568 
-569 
-570     \textcolor{keywordflow}{while} (!(temp.empty())) \{
-571         \hyperlink{classOferta}{Oferta} ofertatemp = temp.top();
-572 
-573         cout << \textcolor{stringliteral}{"Nome: "} << ofertatemp.\hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{getNome}() << endl;
-574         cout << \textcolor{stringliteral}{"Barco: "} << ofertatemp.\hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{getBarco}() << endl;
-575         cout << \textcolor{stringliteral}{"Destinos:"} << endl;
-576         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < ofertatemp.\hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().size(); j++) \{
-577 
-578             cout << \textcolor{stringliteral}{"Destino numero "} << j + 1 << \textcolor{stringliteral}{" : "} << ofertatemp.
+569     \hyperlink{cruise_8h_a50ef8d79980af734cd40fd8d4c2ad566}{pq\_ofertas} temp = queueOfertasOrdenadas;
+570 
+571 
+572     \textcolor{keywordflow}{while} (!(temp.empty())) \{
+573         \hyperlink{classOferta}{Oferta} ofertatemp = temp.top();
+574 
+575         cout << \textcolor{stringliteral}{"Nome: "} << ofertatemp.\hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{getNome}() << endl;
+576         cout << \textcolor{stringliteral}{"Barco: "} << ofertatemp.\hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{getBarco}() << endl;
+577         cout << \textcolor{stringliteral}{"Destinos:"} << endl;
+578         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < ofertatemp.\hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().size(); j++) \{
+579 
+580             cout << \textcolor{stringliteral}{"Destino numero "} << j + 1 << \textcolor{stringliteral}{" : "} << ofertatemp.
       \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().at(j) << endl;
-579         \}
-580         cout << \textcolor{stringliteral}{"Distancia: "} << ofertatemp.\hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{getDistancia}() << endl;
-581         cout << \textcolor{stringliteral}{"Lotacao: "} << ofertatemp.\hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{getLotacao}() << endl;
-582         cout << \textcolor{stringliteral}{"Data: "} << ofertatemp.\hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{getData}() << endl;
-583         cout << \textcolor{stringliteral}{"Preco (por pessoa): "} << ofertatemp.\hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() / ofertatemp.
+581         \}
+582         cout << \textcolor{stringliteral}{"Distancia: "} << ofertatemp.\hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{getDistancia}() << endl;
+583         cout << \textcolor{stringliteral}{"Lotacao: "} << ofertatemp.\hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{getLotacao}() << endl;
+584         cout << \textcolor{stringliteral}{"Data: "} << ofertatemp.\hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{getData}() << endl;
+585         cout << \textcolor{stringliteral}{"Preco (por pessoa): "} << ofertatemp.\hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() / ofertatemp.
       \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{getLotacao}() << endl;
-584         cout << \textcolor{stringliteral}{"Preco (total): "} << ofertatemp.\hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() << endl << endl;
-585         temp.pop();
-586 
-587     \}
-588 \}
+586         cout << \textcolor{stringliteral}{"Preco (total): "} << ofertatemp.\hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() << endl << endl;
+587         temp.pop();
+588 
+589     \}
+590 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1419,8 +1405,7 @@ Lists all the offers of one Supplier.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1481,8 +1466,7 @@ Lists all the reservations made by one client.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1555,8 +1539,7 @@ Lists all the reservations with offers of one supplier.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1648,8 +1631,7 @@ Lists all the clients that reserved a certain offer.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1707,7 +1689,7 @@ The fornecedores.
 )}\hypertarget{classEmpresa_ab1950b5b5e9fca80823b5d01c6c1de6f}{}\label{classEmpresa_ab1950b5b5e9fca80823b5d01c6c1de6f}
 
 
-\{ function\+\_\+description \} 
+Lists all the bills. 
 
 
 \begin{DoxyCode}
@@ -1732,8 +1714,7 @@ The fornecedores.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1791,122 +1772,124 @@ loads the information generated in previous executions
 213     \}
 214     clientes\_file.close();
 215     \textcolor{comment}{//Stores the clients who are registered in the data base}
-216     \textcolor{keywordflow}{if}(registados\_file.is\_open())
-217             \textcolor{keywordflow}{while}(getline(registados\_file,line))\{
-218                 s1 = line;
-219                 getline(registados\_file,line);
-220                 s2 = line;
-221                 getline(registados\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
-222                 num1 = stoi(line);
-223                 c = \textcolor{keyword}{new} \hyperlink{classClienteRegistado}{ClienteRegistado}(s1,s2,num1);
-224                 this->\hyperlink{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}{addClientes}(*c);
-225             \}
-226         \textcolor{keywordflow}{else} \{
-227             cout << \textcolor{stringliteral}{"O programa falhou a abrir o ficheiro com a informacao de clientes registados"} << endl;
-228         \}
-229     registados\_file.close();
-230    \textcolor{comment}{//Stores the supplier}
-231     \textcolor{keywordflow}{if}(fornecedores\_file.is\_open())\{
-232             \textcolor{keywordflow}{while}(getline(fornecedores\_file,line))\{
-233                 s1 = line;
-234                 getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
-235                 num1 = stoi(line);
-236                 getline(fornecedores\_file,line);
-237                 s2 = line;
-238                 f = \textcolor{keyword}{new} \hyperlink{classFornecedor}{Fornecedor}(s1,num1,s2);
-239                 getline(fornecedores\_file,line);
-240                 v.push\_back(stoi(line));
+216     s1.clear();
+217     s2.clear();
+218     \textcolor{keywordflow}{if}(registados\_file.is\_open())
+219             \textcolor{keywordflow}{while}(getline(registados\_file,line))\{
+220                 s1 = line;
+221                 getline(registados\_file,line);
+222                 s2 = line;
+223                 getline(registados\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
+224                 num1 = stoi(line);
+225                 c = \textcolor{keyword}{new} \hyperlink{classClienteRegistado}{ClienteRegistado}(s1,s2,num1);
+226                 this->\hyperlink{classEmpresa_a57597ec4154f274686bc648ccf5d2a59}{addClientes}(*c);
+227             \}
+228         \textcolor{keywordflow}{else} \{
+229             cout << \textcolor{stringliteral}{"O programa falhou a abrir o ficheiro com a informacao de clientes registados"} << endl;
+230         \}
+231     registados\_file.close();
+232    \textcolor{comment}{//Stores the supplier}
+233     \textcolor{keywordflow}{if}(fornecedores\_file.is\_open())\{
+234             \textcolor{keywordflow}{while}(getline(fornecedores\_file,line))\{
+235                 s1 = line;
+236                 getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
+237                 num1 = stoi(line);
+238                 getline(fornecedores\_file,line);
+239                 s2 = line;
+240                 f = \textcolor{keyword}{new} \hyperlink{classFornecedor}{Fornecedor}(s1,num1,s2);
 241                 getline(fornecedores\_file,line);
 242                 v.push\_back(stoi(line));
 243                 getline(fornecedores\_file,line);
 244                 v.push\_back(stoi(line));
 245                 getline(fornecedores\_file,line);
 246                 v.push\_back(stoi(line));
-247                 f->\hyperlink{classFornecedor_a63bb5795c45d195995de437620503d98}{setDefenicoes}(v);
-248                 v.clear();
-249                 \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{
-250                     getline(fornecedores\_file,line);
-251                     \textcolor{keywordflow}{if}(line == \textcolor{stringliteral}{"fend"})
-252                         \textcolor{keywordflow}{break};
-253                     \textcolor{keywordflow}{else}\{
-254                         s1 = line;
-255                         getline(fornecedores\_file,line);
-256                         s2 = line;
-257                         getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
-258                         num1 = stoi(line);
+247                 getline(fornecedores\_file,line);
+248                 v.push\_back(stoi(line));
+249                 f->\hyperlink{classFornecedor_a63bb5795c45d195995de437620503d98}{setDefenicoes}(v);
+250                 v.clear();
+251                 \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{
+252                     getline(fornecedores\_file,line);
+253                     \textcolor{keywordflow}{if}(line == \textcolor{stringliteral}{"fend"})
+254                         \textcolor{keywordflow}{break};
+255                     \textcolor{keywordflow}{else}\{
+256                         s1 = line;
+257                         getline(fornecedores\_file,line);
+258                         s2 = line;
 259                         getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
-260                         num2 = stoi(line);
-261                         getline(fornecedores\_file,line);
-262                         t = \textcolor{keyword}{new} \hyperlink{classTime}{Time}(line);
+260                         num1 = stoi(line);
+261                         getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
+262                         num2 = stoi(line);
 263                         getline(fornecedores\_file,line);
-264                         t2 = \textcolor{keyword}{new} \hyperlink{classTime}{Time}(line);
-265                         getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
-266 
-267                         p = stoi(line);
-268                         getline(fornecedores\_file,line);
-269                         \textcolor{keywordflow}{if}(line == \textcolor{stringliteral}{"oend"})\{
-270                             \textcolor{keywordflow}{break};
-271                         \}
-272                         \textcolor{keywordflow}{else}\{
-273                             \textcolor{keywordflow}{do}\{
-274                                 destinos.push\_back(line);
-275                                 getline(fornecedores\_file,line);
-276                             \} \textcolor{keywordflow}{while}(line != \textcolor{stringliteral}{"oend"});
-277                         \}
-278                         o = \textcolor{keyword}{new} \hyperlink{classOferta}{Oferta}(s1,s2,destinos,num1,num2,*t,p);
-279                         o->\hyperlink{classOferta_a50c041d2301a351f2ac69ed235175116}{setTimeUltimaReserva}(*t2);
-280                         f->\hyperlink{classFornecedor_a220373fd19f44a30d7c6c1ec913be700}{addOferta}(*o);
-281 
-282 
-283                     \}
-284                 \}
-285 
-286                 this->\hyperlink{classEmpresa_a0c858479d6e92094adbb2fc085039376}{addFornecedores}(*f);
-287             \}
-288     \}
-289         \textcolor{keywordflow}{else} \{
-290             cout << \textcolor{stringliteral}{"O programa falhou a abrir o ficheiro com a informacao de fornecedores"} << endl;
-291         \}
-292     fornecedores\_file.close();
-293 
-294     \textcolor{keywordtype}{bool} cancelada;
-295     \textcolor{keywordflow}{if}(reservas\_file.is\_open())\{
-296         \textcolor{keywordflow}{while}(getline(reservas\_file,line))\{
-297             s1 = line;
-298             getline(reservas\_file,line);
-299             s2 = line;
+264                         t = \textcolor{keyword}{new} \hyperlink{classTime}{Time}(line);
+265                         getline(fornecedores\_file,line);
+266                         t2 = \textcolor{keyword}{new} \hyperlink{classTime}{Time}(line);
+267                         getline(fornecedores\_file,line,\textcolor{charliteral}{'\(\backslash\)n'});
+268 
+269                         p = stoi(line);
+270                         getline(fornecedores\_file,line);
+271                         \textcolor{keywordflow}{if}(line == \textcolor{stringliteral}{"oend"})\{
+272                             \textcolor{keywordflow}{break};
+273                         \}
+274                         \textcolor{keywordflow}{else}\{
+275                             \textcolor{keywordflow}{do}\{
+276                                 destinos.push\_back(line);
+277                                 getline(fornecedores\_file,line);
+278                             \} \textcolor{keywordflow}{while}(line != \textcolor{stringliteral}{"oend"});
+279                         \}
+280                         o = \textcolor{keyword}{new} \hyperlink{classOferta}{Oferta}(s1,s2,destinos,num1,num2,*t,p);
+281                         o->\hyperlink{classOferta_a50c041d2301a351f2ac69ed235175116}{setTimeUltimaReserva}(*t2);
+282                         f->\hyperlink{classFornecedor_a220373fd19f44a30d7c6c1ec913be700}{addOferta}(*o);
+283 
+284 
+285                     \}
+286                 \}
+287 
+288                 this->\hyperlink{classEmpresa_a0c858479d6e92094adbb2fc085039376}{addFornecedores}(*f);
+289             \}
+290     \}
+291         \textcolor{keywordflow}{else} \{
+292             cout << \textcolor{stringliteral}{"O programa falhou a abrir o ficheiro com a informacao de fornecedores"} << endl;
+293         \}
+294     fornecedores\_file.close();
+295 
+296     \textcolor{keywordtype}{bool} cancelada;
+297     \textcolor{keywordflow}{if}(reservas\_file.is\_open())\{
+298         \textcolor{keywordflow}{while}(getline(reservas\_file,line))\{
+299             s1 = line;
 300             getline(reservas\_file,line);
-301             \textcolor{keywordflow}{if}(line == \textcolor{stringliteral}{"true"})\{
-302                 cancelada = \textcolor{keyword}{true};
-303             \}
-304             \textcolor{keywordflow}{else} cancelada = \textcolor{keyword}{false};
-305             getline(reservas\_file,line, \textcolor{charliteral}{'\(\backslash\)n'});
-306 
-307             num1 = stoi(line);
-308             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_clientes.size();i++)\{
-309                 \textcolor{keywordflow}{if}(this->\_clientes[i]->getNome() == s2)\{
-310                     *c = *this->\_clientes[i];
-311                 \}
-312             \}
-313             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_fornecedores.size();i++)\{
-314                             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0;j < this->\_fornecedores[i]->getOfertas().size();j++)\{
-315                                 \textcolor{keywordflow}{if}(this->\_fornecedores[i]->getOfertas().at(j).getNome() == s1)\{
-316                                     *o = this->\_fornecedores[i]->getOfertas()[j];
-317                                 \}
-318                             \}
-319                         \}
-320             r = \textcolor{keyword}{new} \hyperlink{classReserva}{Reserva}(s1,o,s2,c,num1,cancelada);
-321             this->\hyperlink{classEmpresa_a42a1671b234ab8380cfb2ed33517edb2}{addReservas}(*r);
-322         \}
-323     \}
-324     \textcolor{keywordflow}{else}\{
-325         cout << \textcolor{stringliteral}{"Erro: O programa nao conseguiu abrir o ficheiro das reservas"} << endl;
-326     \}
-327     this->\hyperlink{classEmpresa_aa7424cde3bdf1b1921967bc176d0ab50}{sort}();
-328 
-329 
-330     reservas\_file.close();
-331 \}
+301             s2 = line;
+302             getline(reservas\_file,line);
+303             \textcolor{keywordflow}{if}(line == \textcolor{stringliteral}{"true"})\{
+304                 cancelada = \textcolor{keyword}{true};
+305             \}
+306             \textcolor{keywordflow}{else} cancelada = \textcolor{keyword}{false};
+307             getline(reservas\_file,line, \textcolor{charliteral}{'\(\backslash\)n'});
+308 
+309             num1 = stoi(line);
+310             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_clientes.size();i++)\{
+311                 \textcolor{keywordflow}{if}(this->\_clientes[i]->getNome() == s2)\{
+312                     *c = *this->\_clientes[i];
+313                 \}
+314             \}
+315             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_fornecedores.size();i++)\{
+316                             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0;j < this->\_fornecedores[i]->getOfertas().size();j++)\{
+317                                 \textcolor{keywordflow}{if}(this->\_fornecedores[i]->getOfertas().at(j).getNome() == s1)\{
+318                                     *o = this->\_fornecedores[i]->getOfertas()[j];
+319                                 \}
+320                             \}
+321                         \}
+322             r = \textcolor{keyword}{new} \hyperlink{classReserva}{Reserva}(s1,o,s2,c,num1,cancelada);
+323             this->\hyperlink{classEmpresa_a42a1671b234ab8380cfb2ed33517edb2}{addReservas}(*r);
+324         \}
+325     \}
+326     \textcolor{keywordflow}{else}\{
+327         cout << \textcolor{stringliteral}{"Erro: O programa nao conseguiu abrir o ficheiro das reservas"} << endl;
+328     \}
+329     this->\hyperlink{classEmpresa_aa7424cde3bdf1b1921967bc176d0ab50}{sort}();
+330 
+331 
+332     reservas\_file.close();
+333 \}
 \end{DoxyCode}
 
 
@@ -1922,8 +1905,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2065,7 +2047,7 @@ displays the client menu
 )}\hypertarget{classEmpresa_a58d040d3983d55414d5c6fac5ac3b6c5}{}\label{classEmpresa_a58d040d3983d55414d5c6fac5ac3b6c5}
 
 
-\{ function\+\_\+description \} 
+displays the interface related to bills 
 
 \index{Empresa@{Empresa}!menu\+Fornecedor@{menu\+Fornecedor}}
 \index{menu\+Fornecedor@{menu\+Fornecedor}!Empresa@{Empresa}}
@@ -2223,8 +2205,7 @@ displays the first menu
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2692,8 +2673,7 @@ Modifies a cliente.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2802,8 +2782,7 @@ Modifies a supplier.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2995,8 +2974,7 @@ displays the interface to modify offers
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3097,8 +3075,7 @@ displays the interface to modify reservations
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3128,11 +3105,11 @@ The modified company
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-626                                             \{
-627     \hyperlink{classClienteInativo}{ClienteInativo} ci(c);
-628     this->\_clientesInativos.erase(ci);
-629     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
-630 \}
+628                                             \{
+629     \hyperlink{classClienteInativo}{ClienteInativo} ci(c);
+630     this->\_clientesInativos.erase(ci);
+631     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+632 \}
 \end{DoxyCode}
 \index{Empresa@{Empresa}!remove\+Cliente@{remove\+Cliente}}
 \index{remove\+Cliente@{remove\+Cliente}!Empresa@{Empresa}}
@@ -3175,8 +3152,7 @@ Removes a cliente.
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3301,8 +3277,7 @@ displays the interface to remove offers
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3385,86 +3360,85 @@ stores in a text file all the information generated by the program execution
 
 
 \begin{DoxyCode}
-332                   \{
-333     ofstream clientes\_file(\textcolor{stringliteral}{"clientes.txt"});
-334     ofstream registados\_file(\textcolor{stringliteral}{"clientes\_registados.txt"});
-335     ofstream fornecedores\_file(\textcolor{stringliteral}{"fornecedores.txt"});
-336     ofstream reservas\_file(\textcolor{stringliteral}{"reservas.txt"});
-337     \textcolor{keywordflow}{if}(!clientes\_file.is\_open())\{
-338         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de clientes"} << endl;
-339         \textcolor{keywordflow}{return};
-340     \}
-341     \textcolor{keywordflow}{if}(!registados\_file.is\_open())\{
-342         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de clientes registados"} << endl;
-343         \textcolor{keywordflow}{return};
-344     \}
-345     \textcolor{keywordflow}{if}(!fornecedores\_file.is\_open())\{
-346         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de fornecedores"} << endl;
-347         \textcolor{keywordflow}{return};
-348     \}
-349     \textcolor{keywordflow}{if}(!reservas\_file.is\_open())\{
-350         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de reservas"} << endl;
-351         \textcolor{keywordflow}{return};
-352     \}
-353     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_clientes.size(); i++)\{
-354         \textcolor{keywordflow}{if}(this->\_clientes[i]->isRegistado())
-355             registados\_file << this->\_clientes[i]->getNome() << endl << this->\_clientes[i]->getMorada() << 
+334                   \{
+335     ofstream clientes\_file(\textcolor{stringliteral}{"clientes.txt"});
+336     ofstream registados\_file(\textcolor{stringliteral}{"clientes\_registados.txt"});
+337     ofstream fornecedores\_file(\textcolor{stringliteral}{"fornecedores.txt"});
+338     ofstream reservas\_file(\textcolor{stringliteral}{"reservas.txt"});
+339     \textcolor{keywordflow}{if}(!clientes\_file.is\_open())\{
+340         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de clientes"} << endl;
+341         \textcolor{keywordflow}{return};
+342     \}
+343     \textcolor{keywordflow}{if}(!registados\_file.is\_open())\{
+344         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de clientes registados"} << endl;
+345         \textcolor{keywordflow}{return};
+346     \}
+347     \textcolor{keywordflow}{if}(!fornecedores\_file.is\_open())\{
+348         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de fornecedores"} << endl;
+349         \textcolor{keywordflow}{return};
+350     \}
+351     \textcolor{keywordflow}{if}(!reservas\_file.is\_open())\{
+352         cout << \textcolor{stringliteral}{"O programa nao consegue abrir o ficheiro de reservas"} << endl;
+353         \textcolor{keywordflow}{return};
+354     \}
+355     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_clientes.size(); i++)\{
+356         \textcolor{keywordflow}{if}(this->\_clientes[i]->isRegistado())
+357             registados\_file << this->\_clientes[i]->getNome() << endl << this->\_clientes[i]->getMorada() << 
       endl << this->\_clientes[i]->getPontos();
-356         \textcolor{keywordflow}{else}
-357             clientes\_file << this->\_clientes[i]->getNome() << endl << this->\_clientes[i]->getMorada();
-358         \textcolor{keywordflow}{if}(i < this->\_clientes.size() -1)\{
-359             \textcolor{keywordflow}{if}(this->\_clientes[i]->isRegistado())
-360                         registados\_file << endl;
-361             \textcolor{keywordflow}{else}
-362                         clientes\_file << endl;
-363         \}
-364     \}
-365     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_fornecedores.size(); i++)\{
-366         fornecedores\_file << this->\_fornecedores[i]->getNome() << endl;
-367         fornecedores\_file << this->\_fornecedores[i]->getNif() << endl;
-368         fornecedores\_file << this->\_fornecedores[i]->getMorada() << endl;
-369         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(0) << endl;
-370         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(1) << endl;
-371         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(2) << endl;
-372         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(3) << endl;
-373         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < this->\_fornecedores[i]->getOfertas().size(); j++)\{
-374             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getNome() << endl;
-375             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getBarco() << endl;
-376             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getDistancia() << endl;
-377             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getLotacao() << endl;
-378             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getData() << endl;
-379             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getUltimaReserva() << endl;
-380             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getPreco() << endl;
-381             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} k = 0; k < this->\_fornecedores[i]->getOfertas()[j].getDestinos().size(); k++)\{
-382                 fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getDestinos()[k] << endl;
-383             \}
-384             \textcolor{keywordflow}{if}(this->\_fornecedores[i]->getOfertas().size() != 0)\{
-385                 fornecedores\_file << \textcolor{stringliteral}{"oend"} << endl;
-386             \}
-387 
-388         \}
-389         fornecedores\_file << \textcolor{stringliteral}{"fend"};
-390         \textcolor{keywordflow}{if}(i < this->\_fornecedores.size()-1)\{
-391             fornecedores\_file << endl;
-392         \}
-393     \}
-394     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_reservas.size(); i++)\{
-395         reservas\_file << this->\_reservas[i]->getNomeFornecedor() << endl;
-396         reservas\_file << this->\_reservas[i]->getNomeCliente() << endl;
-397         \textcolor{keywordflow}{if}(this->\_reservas[i]->isCancelada())\{
-398             reservas\_file << \textcolor{stringliteral}{"true"} << endl;
-399         \}
-400         \textcolor{keywordflow}{else} reservas\_file << \textcolor{stringliteral}{"false"} << endl;
-401 
-402 
-403         reservas\_file << this->\_reservas[i]->getPreco() << endl;
-404     \}
-405 \}
+358         \textcolor{keywordflow}{else}
+359             clientes\_file << this->\_clientes[i]->getNome() << endl << this->\_clientes[i]->getMorada();
+360         \textcolor{keywordflow}{if}(i < this->\_clientes.size() -1)\{
+361             \textcolor{keywordflow}{if}(this->\_clientes[i]->isRegistado())
+362                         registados\_file << endl;
+363             \textcolor{keywordflow}{else}
+364                         clientes\_file << endl;
+365         \}
+366     \}
+367     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_fornecedores.size(); i++)\{
+368         fornecedores\_file << this->\_fornecedores[i]->getNome() << endl;
+369         fornecedores\_file << this->\_fornecedores[i]->getNif() << endl;
+370         fornecedores\_file << this->\_fornecedores[i]->getMorada() << endl;
+371         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(0) << endl;
+372         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(1) << endl;
+373         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(2) << endl;
+374         fornecedores\_file << this->\_fornecedores[i]->getDefinicoesFornecedor().at(3) << endl;
+375         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < this->\_fornecedores[i]->getOfertas().size(); j++)\{
+376             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getNome() << endl;
+377             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getBarco() << endl;
+378             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getDistancia() << endl;
+379             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getLotacao() << endl;
+380             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getData() << endl;
+381             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getUltimaReserva() << endl;
+382             fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getPreco() << endl;
+383             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} k = 0; k < this->\_fornecedores[i]->getOfertas()[j].getDestinos().size(); k++)\{
+384                 fornecedores\_file << this->\_fornecedores[i]->getOfertas()[j].getDestinos()[k] << endl;
+385             \}
+386             \textcolor{keywordflow}{if}(this->\_fornecedores[i]->getOfertas().size() != 0)\{
+387                 fornecedores\_file << \textcolor{stringliteral}{"oend"} << endl;
+388             \}
+389 
+390         \}
+391         fornecedores\_file << \textcolor{stringliteral}{"fend"};
+392         \textcolor{keywordflow}{if}(i < this->\_fornecedores.size()-1)\{
+393             fornecedores\_file << endl;
+394         \}
+395     \}
+396     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this->\_reservas.size(); i++)\{
+397         reservas\_file << this->\_reservas[i]->getNomeFornecedor() << endl;
+398         reservas\_file << this->\_reservas[i]->getNomeCliente() << endl;
+399         \textcolor{keywordflow}{if}(this->\_reservas[i]->isCancelada())\{
+400             reservas\_file << \textcolor{stringliteral}{"true"} << endl;
+401         \}
+402         \textcolor{keywordflow}{else} reservas\_file << \textcolor{stringliteral}{"false"} << endl;
+403 
+404 
+405         reservas\_file << this->\_reservas[i]->getPreco() << endl;
+406     \}
+407 \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3486,15 +3460,14 @@ sorts the vectors of the class
 
 
 \begin{DoxyCode}
-406                   \{
-407     \hyperlink{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}{selectionSort}(this->\_clientes);
-408     \hyperlink{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}{selectionSort}(this->\_fornecedores);
-409 \}
+408                   \{
+409     \hyperlink{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}{selectionSort}(this->\_clientes);
+410     \hyperlink{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}{selectionSort}(this->\_fornecedores);
+411 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3505,8 +3478,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

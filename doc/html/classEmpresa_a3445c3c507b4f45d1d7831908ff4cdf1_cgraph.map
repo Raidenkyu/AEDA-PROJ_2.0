@@ -1,10 +1,10 @@
 <map id="Empresa::load" name="Empresa::load">
-<area shape="rect" id="node2" href="$classEmpresa.html#a57597ec4154f274686bc648ccf5d2a59" title="Adds clients. " alt="" coords="185,5,335,32"/>
+<area shape="rect" id="node2" href="$classEmpresa.html#a57597ec4154f274686bc648ccf5d2a59" title="Adds a clients. " alt="" coords="185,5,335,32"/>
 <area shape="rect" id="node3" href="$classFornecedor.html#a63bb5795c45d195995de437620503d98" title="Sets the defenicoes. " alt="" coords="171,56,349,83"/>
 <area shape="rect" id="node4" href="$classOferta.html#a50c041d2301a351f2ac69ed235175116" title="Sets the time of the last reservation. " alt="" coords="160,107,360,133"/>
 <area shape="rect" id="node5" href="$classFornecedor.html#a220373fd19f44a30d7c6c1ec913be700" title="Adds an offer. " alt="" coords="184,157,336,184"/>
 <area shape="rect" id="node6" href="$classEmpresa.html#a0c858479d6e92094adbb2fc085039376" title="Adds suppliers. " alt="" coords="169,208,351,235"/>
-<area shape="rect" id="node7" href="$classEmpresa.html#a42a1671b234ab8380cfb2ed33517edb2" title="Adds a reservations. " alt="" coords="181,259,339,285"/>
+<area shape="rect" id="node7" href="$classEmpresa.html#a42a1671b234ab8380cfb2ed33517edb2" title="Adds a reservation. " alt="" coords="181,259,339,285"/>
 <area shape="rect" id="node8" href="$classEmpresa.html#aa7424cde3bdf1b1921967bc176d0ab50" title="sorts the vectors of the class " alt="" coords="208,309,312,336"/>
 <area shape="rect" id="node9" href="$extras_8h.html#a72dd13ed3c0a6dcddc949fbc4a13a2c3" title="Implementation of a template Selection Sort Algorithm. " alt="" coords="408,309,507,336"/>
 <area shape="rect" id="node10" href="$extras_8h.html#a1b86ac0cfd7ff9525ec8fa3a32bf7802" title="Turns all the characters of the string in upper case. " alt="" coords="555,309,653,336"/>

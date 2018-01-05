@@ -72,7 +72,7 @@ Construct a \hyperlink{classFornecedor}{Fornecedor} Object.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-413 :nome(nome), nif(nif), morada(morada)\{\}
+415 :nome(nome), nif(nif), morada(morada)\{\}
 \end{DoxyCode}
 
 
@@ -95,14 +95,13 @@ Adds an offer.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-415                                          \{
-416     this->ofertas.push\_back(oferta);
-417 \}
+417                                          \{
+418     this->ofertas.push\_back(oferta);
+419 \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -136,17 +135,16 @@ the value of the price
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-424                                                                         \{
-425 
-426     \textcolor{keywordflow}{return} (definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao)*distancia/1000 ; \textcolor{comment}{
-      //1 - iate; 2 - barco rabelo; 3 - veleiro;}
+426                                                                         \{
 427 
-428 \}
+428     \textcolor{keywordflow}{return} (definicoesfornecedor.at(tipodebarco) + definicoesfornecedor.at(0) * lotacao)*distancia/1000 ; \textcolor{comment}{
+      //1 - iate; 2 - barco rabelo; 3 - veleiro;}
+429 
+430 \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,33 +197,32 @@ prints all the offers
 
 
 \begin{DoxyCode}
-432                                 \{
-433 
-434 
-435     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < ofertas.size(); i++)
-436     \{
-437         cout << \textcolor{stringliteral}{"Nome: "} << ofertas.at(i).getNome() << endl;
-438         cout << \textcolor{stringliteral}{"Barco: "} << ofertas.at(i).getBarco() << endl;
-439         cout << \textcolor{stringliteral}{"Destinos:"} << endl;
-440         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < ofertas.at(i).getDestinos().size(); j++) \{
-441 
-442             cout << \textcolor{stringliteral}{"   Destino numero "} << j + 1 << \textcolor{stringliteral}{" : "} << ofertas.at(i).getDestinos().at(j) << endl;
-443         \}
-444         cout << \textcolor{stringliteral}{"Distancia: "} << ofertas.at(i).getDistancia() << endl;
-445         cout << \textcolor{stringliteral}{"Lotacao: "} << ofertas.at(i).getLotacao() << endl;
-446         cout << \textcolor{stringliteral}{"Data: "} << ofertas.at(i).getData() << endl;
-447         cout << \textcolor{stringliteral}{"Preco (por pessoa): "} << \hyperlink{classFornecedor_a977992e1dd6370a599e730d9883be277}{calculaPreco}(ofertas.at(i).getBarcoNumber(), ofertas.
+434                                 \{
+435 
+436 
+437     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < ofertas.size(); i++)
+438     \{
+439         cout << \textcolor{stringliteral}{"Nome: "} << ofertas.at(i).getNome() << endl;
+440         cout << \textcolor{stringliteral}{"Barco: "} << ofertas.at(i).getBarco() << endl;
+441         cout << \textcolor{stringliteral}{"Destinos:"} << endl;
+442         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < ofertas.at(i).getDestinos().size(); j++) \{
+443 
+444             cout << \textcolor{stringliteral}{"   Destino numero "} << j + 1 << \textcolor{stringliteral}{" : "} << ofertas.at(i).getDestinos().at(j) << endl;
+445         \}
+446         cout << \textcolor{stringliteral}{"Distancia: "} << ofertas.at(i).getDistancia() << endl;
+447         cout << \textcolor{stringliteral}{"Lotacao: "} << ofertas.at(i).getLotacao() << endl;
+448         cout << \textcolor{stringliteral}{"Data: "} << ofertas.at(i).getData() << endl;
+449         cout << \textcolor{stringliteral}{"Preco (por pessoa): "} << \hyperlink{classFornecedor_a977992e1dd6370a599e730d9883be277}{calculaPreco}(ofertas.at(i).getBarcoNumber(), ofertas.
       at(i).getLotacao(), ofertas.at(i).getDistancia()) / ofertas.at(i).getLotacao() << endl;
-448         cout << \textcolor{stringliteral}{"Preco (total): "} << \hyperlink{classFornecedor_a977992e1dd6370a599e730d9883be277}{calculaPreco}(ofertas.at(i).getBarcoNumber(), ofertas.at(i)
+450         cout << \textcolor{stringliteral}{"Preco (total): "} << \hyperlink{classFornecedor_a977992e1dd6370a599e730d9883be277}{calculaPreco}(ofertas.at(i).getBarcoNumber(), ofertas.at(i)
       .getLotacao(), ofertas.at(i).getDistancia()) << endl << endl;
-449 
-450     \}
-451 \}
+451 
+452     \}
+453 \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -322,9 +319,9 @@ The ofertas
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-419                                        \{
-420     \textcolor{keywordflow}{return} this->ofertas;
-421 \}
+421                                        \{
+422     \textcolor{keywordflow}{return} this->ofertas;
+423 \}
 \end{DoxyCode}
 \index{Fornecedor@{Fornecedor}!set\+Defenicoes@{set\+Defenicoes}}
 \index{set\+Defenicoes@{set\+Defenicoes}!Fornecedor@{Fornecedor}}
@@ -348,8 +345,7 @@ Sets the defenicoes.
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -421,8 +417,7 @@ Sets the definitions of a supplier.
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
