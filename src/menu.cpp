@@ -1058,8 +1058,13 @@ void Empresa::adicionaReserva() {
 	cout << "+----------------------------------------------------------+\n";
 	this->sort();
 
+
 	addOfertasQueue();
 	aplicaDesconto();
+
+	cin.get();
+	cin.get();
+
 
 }
 

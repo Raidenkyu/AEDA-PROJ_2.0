@@ -172,9 +172,10 @@ void selectionSort(std::vector<T*>& arr){
 		for(unsigned int j = i+1; j < arr.size();j++){
 			if (toUpperCase(arr[j]->getNome()) < toUpperCase(arr[index]->getNome())){
 				index = j;
+				std::swap(arr[i], arr[index]);
 			}
 
-			std::swap(arr[i], arr[index]);
+			
 		}
 	}
 }

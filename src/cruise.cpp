@@ -131,7 +131,7 @@ void Empresa::displayFornecedorescomOfertas()
 {
 	for (unsigned int i = 0; i < _fornecedores.size(); i++)
 	{
-		cout << "Fornecedor " << _fornecedores.at(i)->getNome() << endl
+		cout << "Fornecedor: " << _fornecedores.at(i)->getNome() << endl
 			<< "NIF: " << _fornecedores.at(i)->getNif() << endl
 			<< "Morada: " << _fornecedores.at(i)->getMorada() << endl
 			<< "Definicoes de Fornecedor: " << endl
