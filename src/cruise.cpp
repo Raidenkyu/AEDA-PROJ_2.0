@@ -99,6 +99,7 @@ Fornecedor & Fornecedor::deleteOfertas(string name) {
 
 void Empresa::displayClientes()
 {
+	cout << endl;
 	for (unsigned int i = 0; i < _clientes.size(); i++) {
 		cout << "Cliente: " << _clientes.at(i)->getNome() << endl << "Morada: " << _clientes.at(i)->getMorada() << endl << "Pontos: " << _clientes.at(i)->getPontos() << endl;
 		if (_clientes.at(i)->isRegistado()) {
@@ -111,6 +112,7 @@ void Empresa::displayClientes()
 
 void Empresa::displayFornecedores()
 {
+	cout << endl;
 	for (unsigned int i = 0; i < _fornecedores.size(); i++)
 	{
 		cout << "Fornecedor: " << _fornecedores.at(i)->getNome() << endl
@@ -127,6 +129,7 @@ void Empresa::displayFornecedores()
 
 void Empresa::displayFornecedorescomOfertas()
 {
+	cout << endl;
 	for (unsigned int i = 0; i < _fornecedores.size(); i++)
 	{
 		cout << "Fornecedor: " << _fornecedores.at(i)->getNome() << endl
@@ -146,6 +149,7 @@ void Empresa::displayFornecedorescomOfertas()
 
 void Empresa::displayReservas()
 {
+	cout << endl;
 	for (unsigned int i = 0; i < _reservas.size(); i++)
 	{
 		cout << "Fornecedor: " << _reservas.at(i)->getNomeFornecedor() << endl
@@ -439,7 +443,8 @@ int Fornecedor::calculaPreco(int tipodebarco, int lotacao, int distancia) {
 
 
 void Fornecedor::displayOfertas() {
-
+	
+	cout << endl;
 
 	for (unsigned int i = 0; i < ofertas.size(); i++)
 	{
@@ -576,6 +581,7 @@ void Empresa::displayOfertasemOrdem() {
 	pq_ofertas temp = queueOfertasOrdenadas;
 
 
+	cout << endl;
 	while (!(temp.empty())) {
 		Oferta ofertatemp = temp.top();
 
@@ -641,6 +647,7 @@ Empresa & Empresa::reativaCliente(Cliente * c){
 
 void Empresa::displayClientesInativos(){
 	tabHInativos::const_iterator it;
+	cout << endl;
 	for(it = this->_clientesInativos.begin();it != this->_clientesInativos.end();it++){
 		cout << "Nome: " <<  it->getNome() << endl << "Morada: " << it->getMorada() << endl << endl;
 	}

@@ -22,6 +22,7 @@ void Empresa::titulo() {
 	cout << " |____|   \\____/|__|   |__|  \\____/   |____|_  /__| \\_/  \\_____>__|  /_____ >\n";
 	cout << "                                             \\/                            \\/       \n";
 	cout << "\n";
+	cout << "\n";
 
 }
 
@@ -869,9 +870,15 @@ void Empresa::menuReservas() {
 			try{
 			modificaReserva();
 			}
-			catch(ObjetoInexistente<Fornecedor> & ex){
+			catch(ObjetoInexistente<Cliente> & ex){
 				clearScreen();
-				cout << "O fornecedor " << ex << " nao existe. " << endl;
+				cout << "O cliente " << ex << " nao existe. " << endl;
+				cout << "Pressione enter para regressar ao menu" << endl;
+				cin.get();
+			}
+			catch (ObjetoInexistente<Reserva> & ex) {
+				clearScreen();
+				cout << "A reserva indicada nao existe. " << endl;
 				cout << "Pressione enter para regressar ao menu" << endl;
 				cin.get();
 			}
@@ -1079,79 +1086,112 @@ void Empresa::adicionaReserva() {
 void Empresa::modificaReserva()
 {
 	titulo();
-	string nome_fornecedor, novonome, novamorada;
-	int modifica;
-	unsigned int novoNIF;
-
+	bool nfound = true;
+	int reserva, novopreco;
+	
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual e o nome do fornecedor?                             |\n";
+	cout << "| Estas sao as reservas disponiveis para modificar:        |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	displayReservas();
+
+	string reservaremoveOferta, reservaremoveCliente;
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Indique o nome do cliente cuja oferta quer modificar:    |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX, '\n');
-	getline(cin, nome_fornecedor);
+	getline(cin, reservaremoveCliente);
 
 
-	int index = BinarySearch(_fornecedores, nome_fornecedor);
-	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
+	int index = BinarySearch(_clientes, reservaremoveCliente);
+	if (index == -1) { throw ObjetoInexistente<Cliente>(reservaremoveCliente); }
 
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Que propriedade do fornecedor pretende modificar?        |\n";
-	cout << "+----------------------------------------------------------+\n";
-	cout << "| 1 - Nome                                                 |\n";
-	cout << "| 2 - NIF                                                  |\n";
-	cout << "| 3 - Morada                                               |\n";
-	cout << "| 4 - Definicoes de Fornecedor                             |\n";
-	cout << "| 0 - Sair                                                 |\n";
+	cout << "| Estas sao todas as reservas efetuadas pelo cliente:      |\n";
 	cout << "+----------------------------------------------------------+\n";
 
-	cin >> modifica;
-
-	switch (modifica) {
-	case 0:
-		return;
-		break;
-	case 1:
-		cout << "+----------------------------------------------------------+\n";
-		cout << "| Indique o novo nome:                                     |\n";
-		cout << "+----------------------------------------------------------+\n";
-
-		cin.ignore(INT_MAX, '\n');
-		getline(cin, novonome);
-		_fornecedores.at(index)->setNome(novonome);
-		break;
-
-	case 2:
-		cout << "+----------------------------------------------------------+\n";
-		cout << "| Indique o novo NIF:                                      |\n";
-		cout << "+----------------------------------------------------------+\n";
-
-		cin >> novoNIF;
-		_fornecedores.at(index)->setNIF(novoNIF);
-		break;
-
-	case 3:
-		cout << "+----------------------------------------------------------+\n";
-		cout << "| Indique a nova morada:                                   |\n";
-		cout << "+----------------------------------------------------------+\n";
-
-		cin.ignore(INT_MAX, '\n');
-		getline(cin, novamorada);
-		_fornecedores.at(index)->setMorada(novamorada);
-		break;
-
-	case 4:
-		_fornecedores.at(index)->setDefinicoesFornecedor();
-		break;
-
-	default:
-		cout << "Essa opcao nao e viavel. Pressione Enter para voltar ao menu anterior.";
-
+	for (unsigned int i = 0; i < _reservas.size(); i++)
+	{
+		if (_reservas[i]->getNomeCliente() == reservaremoveCliente)
+		{
+			cout << "Fornecedor: " << _reservas.at(i)->getNomeFornecedor() << endl
+				<< "Oferta: ";  _reservas.at(i)->getOferta()->printOferta();
+			cout << "Cliente: " << _reservas.at(i)->getCliente()->getNome() << endl
+				<< "Pontos do Cliente: " << _reservas.at(i)->getCliente()->getPontos() << endl
+				<< "Preco (a pagar): " << _reservas.at(i)->getPreco() << endl
+				<< "Cancelada: " << (_reservas.at(i)->isCancelada() ? "sim" : "nao") << endl << endl;
+		}
 	}
-	cin.get();
-	return;
+	
 
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Indique o nome da reserva que pretende modificar:        |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	
+
+	getline(cin, reservaremoveOferta);
+
+	for (unsigned int j = 0; j < _reservas.size(); j++)
+	{
+		if (_reservas.at(j)->getOferta()->getNome() == reservaremoveOferta && _reservas.at(j)->getCliente()->getNome() == reservaremoveCliente)
+		{
+			nfound = false;
+			reserva = j;
+		}
+	}
+	if (nfound) {
+		throw ObjetoInexistente<Reserva>("");
+	}
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| Escolha o que pretende fazer com a reserva               |\n";
+	cout << "+----------------------------------------------------------+\n";
+	cout << "| 1 - Alterar Preco                                        |\n";
+	cout << "| 2 - Alterar Estado de Cancelada                          |\n";
+	cout << "+----------------------------------------------------------+\n";
+
+	int alteracao;
+	
+
+	cin >> alteracao;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		clearScreen();
+		cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros." << endl;
+		cout << "Pressione Enter para voltar ao menu" << endl;
+		cin.get();
+	}
+
+	switch (alteracao) {
+	
+	case 1:
+		cout << "Indique o novo preco da reserva:";
+		cin >> novopreco; 
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			clearScreen();
+			cout << "Erro: Introduziu um input invalido. So pode usar numeros inteiros." << endl;
+			cout << "Pressione Enter para voltar ao menu" << endl;
+			cin.get();
+		}
+		_reservas.at(reserva)->setPreco(novopreco);
+		break;
+	case 2:
+		if (!(_reservas.at(reserva)->isCancelada()))
+			_reservas.at(reserva)->cancelamento();
+		else cout << "Lamento, mas devido a ja terem sido efetuadas as transicoes monetarias no que toca ao cancelamento, nao e possivel reverter este processo. Pedimos que remova esta reserva e crie uma nova.";
+		break;
+	default:
+		return;
+		
+	}
+
+	return;
 }
 
 void Empresa::removeReservas() {
@@ -1424,7 +1464,7 @@ void Empresa::displayTodosOsClientesdeumaOferta() {
 	}
 
 
-	
+	_fornecedores[index]->displayOfertas();
 
 	cout << "+----------------------------------------------------------+\n";
 	cout << "| Indique o nome da oferta em questao:					    |\n";
