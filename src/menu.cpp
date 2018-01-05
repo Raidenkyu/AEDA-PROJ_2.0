@@ -1057,6 +1057,9 @@ void Empresa::adicionaReserva() {
 	cout << "+----------------------------------------------------------+\n";
 	this->sort();
 
+	addOfertasQueue();
+	aplicaDesconto();
+
 }
 
 void Empresa::modificaReserva()
@@ -1387,7 +1390,7 @@ void Empresa::menuOfertas() {
 
 
 void Empresa::displayTodosOsClientesdeumaOferta() {
-	titulo();
+	
 	displayFornecedorescomOfertas();
 	string nomeOferta,nomefornecedor;
 	int index, indexOferta;
@@ -1565,6 +1568,9 @@ void Empresa::adicionaOferta() {
 	}
 	this->_fornecedores[index]->addOferta(*novaOferta);
 
+	addOfertasQueue();
+	aplicaDesconto();
+
 }
 
 void Empresa::modificaOferta()
@@ -1731,6 +1737,9 @@ void Empresa::modificaOferta()
 	}
 	cin.get();
 	return;
+
+	addOfertasQueue();
+	aplicaDesconto();
 }
 
 void Empresa::removeOferta() {
@@ -1842,6 +1851,8 @@ void Empresa::menuTipodeUtilizador()
 			clearScreen();
 		}
 	}
+	addOfertasQueue();
+	aplicaDesconto();
 }
 
 void Empresa::menuInicial()

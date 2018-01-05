@@ -961,6 +961,8 @@ public:
 
 	void displayTodosOsClientesdeumaOferta();
 
+	void aplicaDesconto();
+
 };
 
 

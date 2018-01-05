@@ -548,6 +548,10 @@ void Oferta::printOferta()
 
 void Empresa::addOfertasQueue()
 {
+	while (!queueOfertasOrdenadas.empty()) {
+		queueOfertasOrdenadas.pop();
+	}
+
 	for (unsigned int i = 0; i < _fornecedores.size(); i++)
 	{
 		for (unsigned int j = 0; j < _fornecedores[i]->getOfertas().size(); j++)
@@ -581,6 +585,16 @@ void Empresa::displayOfertasemOrdem() {
 		temp.pop();
 
 	}
+}
+
+void Empresa::aplicaDesconto() {
+	int antigopreco, novopreco;
+	
+	Oferta ofertatemp = queueOfertasOrdenadas.top();
+	antigopreco = ofertatemp.getPreco();
+	ofertatemp.setPreco(antigopreco*0.8);
+	queueOfertasOrdenadas.pop();
+	queueOfertasOrdenadas.push(ofertatemp);
 }
 //Hash table stuff
 
