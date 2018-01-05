@@ -1,0 +1,145 @@
+\hypertarget{cruise_8h}{}\section{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/cruise.h File Reference}
+\label{cruise_8h}\index{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/cruise.\+h@{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/cruise.\+h}}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}extras.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$queue$>$}\\*
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\\*
+{\ttfamily \#include \char`\"{}B\+S\+T.\+h\char`\"{}}\\*
+Include dependency graph for cruise.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cruise_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cruise_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOferta}{Oferta}
+\begin{DoxyCompactList}\small\item\em Class for oferta. \end{DoxyCompactList}\item 
+class \hyperlink{classFornecedor}{Fornecedor}
+\begin{DoxyCompactList}\small\item\em Class for fornecedor. \end{DoxyCompactList}\item 
+class \hyperlink{classCliente}{Cliente}
+\begin{DoxyCompactList}\small\item\em Class for cliente. \end{DoxyCompactList}\item 
+class \hyperlink{classClienteRegistado}{Cliente\+Registado}
+\begin{DoxyCompactList}\small\item\em Class for cliente registado. \end{DoxyCompactList}\item 
+class \hyperlink{classClienteInativo}{Cliente\+Inativo}
+\begin{DoxyCompactList}\small\item\em Class for inactive clients. \end{DoxyCompactList}\item 
+class \hyperlink{classReserva}{Reserva}
+\begin{DoxyCompactList}\small\item\em Class for reserva. \end{DoxyCompactList}\item 
+struct \hyperlink{structcomparaOfertas}{compara\+Ofertas}
+\begin{DoxyCompactList}\small\item\em Comparison criteria in the prioritie queue. \end{DoxyCompactList}\item 
+struct \hyperlink{structcomparaClientesInativos}{compara\+Clientes\+Inativos}
+\begin{DoxyCompactList}\small\item\em Comparison criteria in the hash table. \end{DoxyCompactList}\item 
+class \hyperlink{classFatura}{Fatura}
+\begin{DoxyCompactList}\small\item\em Class for fatura. \end{DoxyCompactList}\item 
+class \hyperlink{classEmpresa}{Empresa}
+\begin{DoxyCompactList}\small\item\em Class for empresa. \end{DoxyCompactList}\item 
+class \hyperlink{classObjetoRepetido}{Objeto\+Repetido$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Class for objeto repetido Exception. \end{DoxyCompactList}\item 
+class \hyperlink{classObjetoInexistente}{Objeto\+Inexistente$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Class for objeto inexistente Exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::priority\+\_\+queue$<$ \hyperlink{classOferta}{Oferta}, std\+::vector$<$ \hyperlink{classOferta}{Oferta} $>$, \hyperlink{structcomparaOfertas}{compara\+Ofertas} $>$ \hyperlink{cruise_8h_a50ef8d79980af734cd40fd8d4c2ad566}{pq\+\_\+ofertas}
+\item 
+typedef std\+::unordered\+\_\+set$<$ \hyperlink{classClienteInativo}{Cliente\+Inativo}, \hyperlink{structcomparaClientesInativos}{compara\+Clientes\+Inativos}, \hyperlink{structcomparaClientesInativos}{compara\+Clientes\+Inativos} $>$ \hyperlink{cruise_8h_ababc0c958dbdb1fa62688bf507746649}{tab\+H\+Inativos}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{cruise_8h_a395abc09fe49554bc4411040b7c13f51}{operator$<$$<$} (std\+::ostream \&os, \hyperlink{classObjetoRepetido}{Objeto\+Repetido}$<$ T $>$ \&ex)
+\begin{DoxyCompactList}\small\item\em overload to $<$$<$ operator to display \hyperlink{classObjetoRepetido}{Objeto\+Repetido} Exception \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{cruise_8h_aa42c52a1221ab489f44d66b27a48b94f}{operator$<$$<$} (std\+::ostream \&os, \hyperlink{classObjetoInexistente}{Objeto\+Inexistente}$<$ T $>$ \&ex)
+\begin{DoxyCompactList}\small\item\em overload to $<$$<$ operator to display \hyperlink{classObjetoInexistente}{Objeto\+Inexistente} Exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{cruise.\+h@{cruise.\+h}!pq\+\_\+ofertas@{pq\+\_\+ofertas}}
+\index{pq\+\_\+ofertas@{pq\+\_\+ofertas}!cruise.\+h@{cruise.\+h}}
+\subsubsection[{\texorpdfstring{pq\+\_\+ofertas}{pq_ofertas}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::priority\+\_\+queue$<${\bf Oferta}, std\+::vector$<${\bf Oferta}$>$,{\bf compara\+Ofertas}$>$ {\bf pq\+\_\+ofertas}}\hypertarget{cruise_8h_a50ef8d79980af734cd40fd8d4c2ad566}{}\label{cruise_8h_a50ef8d79980af734cd40fd8d4c2ad566}
+\index{cruise.\+h@{cruise.\+h}!tab\+H\+Inativos@{tab\+H\+Inativos}}
+\index{tab\+H\+Inativos@{tab\+H\+Inativos}!cruise.\+h@{cruise.\+h}}
+\subsubsection[{\texorpdfstring{tab\+H\+Inativos}{tabHInativos}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::unordered\+\_\+set$<${\bf Cliente\+Inativo}, {\bf compara\+Clientes\+Inativos},{\bf compara\+Clientes\+Inativos}$>$ {\bf tab\+H\+Inativos}}\hypertarget{cruise_8h_ababc0c958dbdb1fa62688bf507746649}{}\label{cruise_8h_ababc0c958dbdb1fa62688bf507746649}
+
+
+\subsection{Function Documentation}
+\index{cruise.\+h@{cruise.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cruise.\+h@{cruise.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, Objeto\+Repetido$<$ T $>$ \&ex)}{operator<<(std::ostream &os, ObjetoRepetido< T > &ex)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{{\bf Objeto\+Repetido}$<$ T $>$ \&}]{ex}
+\end{DoxyParamCaption}
+)}\hypertarget{cruise_8h_a395abc09fe49554bc4411040b7c13f51}{}\label{cruise_8h_a395abc09fe49554bc4411040b7c13f51}
+
+
+overload to $<$$<$ operator to display \hyperlink{classObjetoRepetido}{Objeto\+Repetido} Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & ostream \\
+\hline
+{\em ex} & Repeated Object Exception\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the repeated obhect\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+ostream that reads \hyperlink{classObjetoRepetido}{Objeto\+Repetido} object 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1062                                                                \{
+1063   os << ex.\hyperlink{classObjetoRepetido_abd0357809b910ea6cbbd33ef907e8dbe}{getObj}();
+1064   \textcolor{keywordflow}{return} os;
+1065 \};
+\end{DoxyCode}
+\index{cruise.\+h@{cruise.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cruise.\+h@{cruise.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, Objeto\+Inexistente$<$ T $>$ \&ex)}{operator<<(std::ostream &os, ObjetoInexistente< T > &ex)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{{\bf Objeto\+Inexistente}$<$ T $>$ \&}]{ex}
+\end{DoxyParamCaption}
+)}\hypertarget{cruise_8h_aa42c52a1221ab489f44d66b27a48b94f}{}\label{cruise_8h_aa42c52a1221ab489f44d66b27a48b94f}
+
+
+overload to $<$$<$ operator to display \hyperlink{classObjetoInexistente}{Objeto\+Inexistente} Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & ostream \\
+\hline
+{\em ex} & Not found Object Exception\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the not found obhect\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+ostream that reads \hyperlink{classObjetoInexistente}{Objeto\+Inexistente} object 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1078                                                                   \{
+1079   os << ex.\hyperlink{classObjetoInexistente_ae43ef3bc4f862eed4afbc961b0691093}{getObj}();
+1080   \textcolor{keywordflow}{return} os;
+1081 \}
+\end{DoxyCode}

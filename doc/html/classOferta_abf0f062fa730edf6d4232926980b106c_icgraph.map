@@ -1,0 +1,5 @@
+<map id="Oferta::getBarcoNumber" name="Oferta::getBarcoNumber">
+<area shape="rect" id="node2" href="$classOferta.html#a1caf2c681c14c9fbd04312b35f99b64c" title="Gets the time of the last reservation. " alt="" coords="217,5,388,32"/>
+<area shape="rect" id="node4" href="$classEmpresa.html#ae244a8ae3afb85eb5e9e5febce8b8728" title="displays the interface to adds offers " alt="" coords="442,56,609,83"/>
+<area shape="rect" id="node3" href="$structcomparaOfertas.html#a8b792bc79e9870004caa3e95826a0f1f" title="comparaOfertas::operator()" alt="" coords="436,5,615,32"/>
+</map>

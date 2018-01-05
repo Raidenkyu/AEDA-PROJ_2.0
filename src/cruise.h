@@ -561,6 +561,9 @@ public:
 
 };
 
+/**
+ * @brief      Comparison criteria in the prioritie queue
+ */
 struct comparaOfertas
 {
 	bool operator() (Oferta oferta1, Oferta oferta2)  const{
@@ -568,6 +571,9 @@ struct comparaOfertas
 	}
 };
 
+/**
+ * @brief      Comparison criteria in the hash table
+ */
 struct comparaClientesInativos
 {
 	int operator() (const ClienteInativo & c) const {
@@ -924,43 +930,58 @@ public:
 
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Makes a client inactive
 	 *
-	 * @param      c     { parameter_description }
+	 * @param      c     the client
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     The modified company
 	 */
 	Empresa & desativaCliente(Cliente * c);
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Updates which clients are inactive
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     The modified empresa
 	 */
 	Empresa & atualizaInatividade();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Makes a client active again
 	 *
-	 * @param      c     { parameter_description }
+	 * @param      c     The client
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     The modified company
 	 */
 	Empresa & reativaCliente(Cliente * c);
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Lists all the inactive clients
 	 */
 	void displayClientesInativos();
 
+	/**
+	 * @brief      Lists all the reservations made by one client
+	 */
 	void displayTodasAsReservasdeUmCliente();
 
+	/**
+	 * @brief      Lists all the reservations with offers of one supplier
+	 */
 	void displayTodasAsReservasdeUmFornecedor();
 
+	/**
+	 * @brief      Lists all the offers of one Supplier
+	 */
 	void displayTodasAsOfertasdeUmFornecedor();
 
+	/**
+	 * @brief      Lists all the clients that reserved a certain offer
+	 */
 	void displayTodosOsClientesdeumaOferta();
 
+	/**
+	 * @brief      Applies discount
+	 */
 	void aplicaDesconto();
 
 };

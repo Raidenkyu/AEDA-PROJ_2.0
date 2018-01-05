@@ -1,0 +1,6 @@
+<map id="Fatura::operator==" name="Fatura::operator==">
+<area shape="rect" id="node2" href="$classFatura.html#aa16421065127ac0fd15740b80dd1893b" title="Gets the nome cliente. " alt="" coords="184,5,345,32"/>
+<area shape="rect" id="node4" href="$classFatura.html#af7d5b6d4f800887742a7bb1adbfecc65" title="Gets the data. " alt="" coords="208,56,321,83"/>
+<area shape="rect" id="node3" href="$classReserva.html#a87b0465c8e9d2291d5dddd48fce24c38" title="Gets the name of the client. " alt="" coords="393,5,567,32"/>
+<area shape="rect" id="node5" href="$classReserva.html#a187007ee30ffdc2372739708901b6fc7" title="Gets the date. " alt="" coords="417,56,543,83"/>
+</map>

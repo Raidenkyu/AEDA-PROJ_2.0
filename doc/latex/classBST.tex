@@ -1,0 +1,391 @@
+\hypertarget{classBST}{}\section{B\+ST$<$ Comparable $>$ Class Template Reference}
+\label{classBST}\index{B\+S\+T$<$ Comparable $>$@{B\+S\+T$<$ Comparable $>$}}
+
+
+{\ttfamily \#include $<$B\+S\+T.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBST_a3185a79cf472271f122a97d0f59022d1}{B\+ST} (const Comparable \&not\+Found)
+\item 
+\hyperlink{classBST_a163232cc6ffcbd1a51707efcc3fa36ca}{B\+ST} (const \hyperlink{classBST}{B\+ST} \&rhs)
+\item 
+\hyperlink{classBST_abf3125f968641c8726101c5dd18f36be}{$\sim$\+B\+ST} ()
+\item 
+const Comparable \& \hyperlink{classBST_a34fd17be76f49a77573185f29dede6be}{find\+Min} () const 
+\item 
+const Comparable \& \hyperlink{classBST_aee725fe273c0b3641070883b50eee271}{find\+Max} () const 
+\item 
+const Comparable \& \hyperlink{classBST_a337dce7f94a881e253635cbf3ac7eacf}{find} (const Comparable \&x) const 
+\item 
+bool \hyperlink{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}{is\+Empty} () const 
+\item 
+void \hyperlink{classBST_a5270473db9e17e1737b92dd0d6cd0ee5}{print\+Tree} () const 
+\item 
+void \hyperlink{classBST_a050d829503a88714c4ad0773cf6d3af6}{make\+Empty} ()
+\item 
+void \hyperlink{classBST_a2b117df6521c7d61dac75ff2c938bae7}{insert} (const Comparable \&x)
+\item 
+void \hyperlink{classBST_a6f01a0b44daf82a42022b6eb4c0df7a2}{remove} (const Comparable \&x)
+\item 
+const \hyperlink{classBST}{B\+ST} \& \hyperlink{classBST_aa80c39f454c89d4a202be3d1445823f3}{operator=} (const \hyperlink{classBST}{B\+ST} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBST_aab3993acac2ab24a0b59edb0c3acc775}{B\+S\+T\+Itr\+In$<$ Comparable $>$}
+\item 
+class \hyperlink{classBST_a45a55df6f11541416d4ea7684c575c1a}{B\+S\+T\+Itr\+Pre$<$ Comparable $>$}
+\item 
+class \hyperlink{classBST_a5dc153694be266f6e772659486219da7}{B\+S\+T\+Itr\+Post$<$ Comparable $>$}
+\item 
+class \hyperlink{classBST_a26ff00bc0d87069aed877f10fd3c80a8}{B\+S\+T\+Itr\+Level$<$ Comparable $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T(const Comparable \&not\+Found)}{BST(const Comparable &notFound)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ {\bf B\+ST}$<$ Comparable $>$\+::{\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{const Comparable \&}]{not\+Found}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classBST_a3185a79cf472271f122a97d0f59022d1}{}\label{classBST_a3185a79cf472271f122a97d0f59022d1}
+
+\begin{DoxyCode}
+87                                                   :
+88   root(NULL), ITEM\_NOT\_FOUND( notFound )
+89 \{ \}
+\end{DoxyCode}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T(const B\+S\+T \&rhs)}{BST(const BST &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ {\bf B\+ST}$<$ Comparable $>$\+::{\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Comparable $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classBST_a163232cc6ffcbd1a51707efcc3fa36ca}{}\label{classBST_a163232cc6ffcbd1a51707efcc3fa36ca}
+
+\begin{DoxyCode}
+92                                                   : root( NULL ), ITEM\_NOT\_FOUND( rhs.ITEM\_NOT\_FOUND )
+93 \{ 
+94   *\textcolor{keyword}{this} = rhs;
+95 \}
+\end{DoxyCode}
+\index{B\+ST@{B\+ST}!````~B\+ST@{$\sim$\+B\+ST}}
+\index{````~B\+ST@{$\sim$\+B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{$\sim$\+B\+S\+T()}{~BST()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ {\bf B\+ST}$<$ Comparable $>$\+::$\sim${\bf B\+ST} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBST_abf3125f968641c8726101c5dd18f36be}{}\label{classBST_abf3125f968641c8726101c5dd18f36be}
+
+\begin{DoxyCode}
+100 \{
+101   \hyperlink{classBST_a050d829503a88714c4ad0773cf6d3af6}{makeEmpty}( );
+102 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classBST_abf3125f968641c8726101c5dd18f36be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{B\+ST@{B\+ST}!find@{find}}
+\index{find@{find}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{find(const Comparable \&x) const }{find(const Comparable &x) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ const Comparable \& {\bf B\+ST}$<$ Comparable $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const Comparable \&}]{x}
+\end{DoxyParamCaption}
+) const}\hypertarget{classBST_a337dce7f94a881e253635cbf3ac7eacf}{}\label{classBST_a337dce7f94a881e253635cbf3ac7eacf}
+
+\begin{DoxyCode}
+131 \{
+132   \textcolor{keywordflow}{return} elementAt( \hyperlink{classBST_a337dce7f94a881e253635cbf3ac7eacf}{find}( x, root ) );
+133 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a337dce7f94a881e253635cbf3ac7eacf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!find\+Max@{find\+Max}}
+\index{find\+Max@{find\+Max}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{find\+Max() const }{findMax() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ const Comparable \& {\bf B\+ST}$<$ Comparable $>$\+::find\+Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classBST_aee725fe273c0b3641070883b50eee271}{}\label{classBST_aee725fe273c0b3641070883b50eee271}
+
+\begin{DoxyCode}
+124 \{
+125   \textcolor{keywordflow}{return} elementAt( \hyperlink{classBST_aee725fe273c0b3641070883b50eee271}{findMax}( root ) );
+126 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classBST_aee725fe273c0b3641070883b50eee271_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_aee725fe273c0b3641070883b50eee271_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!find\+Min@{find\+Min}}
+\index{find\+Min@{find\+Min}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{find\+Min() const }{findMin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ const Comparable \& {\bf B\+ST}$<$ Comparable $>$\+::find\+Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classBST_a34fd17be76f49a77573185f29dede6be}{}\label{classBST_a34fd17be76f49a77573185f29dede6be}
+
+\begin{DoxyCode}
+118 \{
+119   \textcolor{keywordflow}{return} elementAt( \hyperlink{classBST_a34fd17be76f49a77573185f29dede6be}{findMin}( root ) );
+120 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a34fd17be76f49a77573185f29dede6be_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!insert@{insert}}
+\index{insert@{insert}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{insert(const Comparable \&x)}{insert(const Comparable &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ void {\bf B\+ST}$<$ Comparable $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const Comparable \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classBST_a2b117df6521c7d61dac75ff2c938bae7}{}\label{classBST_a2b117df6521c7d61dac75ff2c938bae7}
+
+\begin{DoxyCode}
+106 \{
+107   \hyperlink{classBST_a2b117df6521c7d61dac75ff2c938bae7}{insert}( x, root );
+108 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a2b117df6521c7d61dac75ff2c938bae7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ bool {\bf B\+ST}$<$ Comparable $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}{}\label{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}
+
+\begin{DoxyCode}
+143 \{
+144   \textcolor{keywordflow}{return} root == NULL;
+145 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a8018fc7d6c15b2564c10ddcc4316c64d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!make\+Empty@{make\+Empty}}
+\index{make\+Empty@{make\+Empty}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{make\+Empty()}{makeEmpty()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ void {\bf B\+ST}$<$ Comparable $>$\+::make\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBST_a050d829503a88714c4ad0773cf6d3af6}{}\label{classBST_a050d829503a88714c4ad0773cf6d3af6}
+
+\begin{DoxyCode}
+137 \{
+138   \hyperlink{classBST_a050d829503a88714c4ad0773cf6d3af6}{makeEmpty}( root );
+139 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a050d829503a88714c4ad0773cf6d3af6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!operator=@{operator=}}
+\index{operator=@{operator=}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{operator=(const B\+S\+T \&rhs)}{operator=(const BST &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ const {\bf B\+ST}$<$ Comparable $>$ \& {\bf B\+ST}$<$ Comparable $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Comparable $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classBST_aa80c39f454c89d4a202be3d1445823f3}{}\label{classBST_aa80c39f454c89d4a202be3d1445823f3}
+
+\begin{DoxyCode}
+161 \{
+162   \textcolor{keywordflow}{if}( \textcolor{keyword}{this} != &rhs )
+163     \{
+164       \hyperlink{classBST_a050d829503a88714c4ad0773cf6d3af6}{makeEmpty}( );
+165       root = clone( rhs.root );
+166     \}
+167   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+168 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_aa80c39f454c89d4a202be3d1445823f3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classBST_aa80c39f454c89d4a202be3d1445823f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!print\+Tree@{print\+Tree}}
+\index{print\+Tree@{print\+Tree}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{print\+Tree() const }{printTree() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ void {\bf B\+ST}$<$ Comparable $>$\+::print\+Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classBST_a5270473db9e17e1737b92dd0d6cd0ee5}{}\label{classBST_a5270473db9e17e1737b92dd0d6cd0ee5}
+
+\begin{DoxyCode}
+150 \{
+151   \textcolor{keywordflow}{if}( \hyperlink{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}{isEmpty}( ) )
+152     cout << \textcolor{stringliteral}{"Empty tree"} << endl;
+153   \textcolor{keywordflow}{else}
+154     \hyperlink{classBST_a5270473db9e17e1737b92dd0d6cd0ee5}{printTree}( root );
+155 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a5270473db9e17e1737b92dd0d6cd0ee5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classBST_a5270473db9e17e1737b92dd0d6cd0ee5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+ST@{B\+ST}!remove@{remove}}
+\index{remove@{remove}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{remove(const Comparable \&x)}{remove(const Comparable &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ void {\bf B\+ST}$<$ Comparable $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{const Comparable \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classBST_a6f01a0b44daf82a42022b6eb4c0df7a2}{}\label{classBST_a6f01a0b44daf82a42022b6eb4c0df7a2}
+
+\begin{DoxyCode}
+112 \{
+113   \textcolor{keyword}{remove}( x, root );
+114 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBST_a6f01a0b44daf82a42022b6eb4c0df7a2_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{B\+ST@{B\+ST}!B\+S\+T\+Itr\+In$<$ Comparable $>$@{B\+S\+T\+Itr\+In$<$ Comparable $>$}}
+\index{B\+S\+T\+Itr\+In$<$ Comparable $>$@{B\+S\+T\+Itr\+In$<$ Comparable $>$}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+In$<$ Comparable $>$}{BSTItrIn< Comparable >}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ friend class {\bf B\+S\+T\+Itr\+In}$<$ Comparable $>$\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classBST_aab3993acac2ab24a0b59edb0c3acc775}{}\label{classBST_aab3993acac2ab24a0b59edb0c3acc775}
+\index{B\+ST@{B\+ST}!B\+S\+T\+Itr\+Level$<$ Comparable $>$@{B\+S\+T\+Itr\+Level$<$ Comparable $>$}}
+\index{B\+S\+T\+Itr\+Level$<$ Comparable $>$@{B\+S\+T\+Itr\+Level$<$ Comparable $>$}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+Level$<$ Comparable $>$}{BSTItrLevel< Comparable >}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ friend class {\bf B\+S\+T\+Itr\+Level}$<$ Comparable $>$\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classBST_a26ff00bc0d87069aed877f10fd3c80a8}{}\label{classBST_a26ff00bc0d87069aed877f10fd3c80a8}
+\index{B\+ST@{B\+ST}!B\+S\+T\+Itr\+Post$<$ Comparable $>$@{B\+S\+T\+Itr\+Post$<$ Comparable $>$}}
+\index{B\+S\+T\+Itr\+Post$<$ Comparable $>$@{B\+S\+T\+Itr\+Post$<$ Comparable $>$}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+Post$<$ Comparable $>$}{BSTItrPost< Comparable >}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ friend class {\bf B\+S\+T\+Itr\+Post}$<$ Comparable $>$\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classBST_a5dc153694be266f6e772659486219da7}{}\label{classBST_a5dc153694be266f6e772659486219da7}
+\index{B\+ST@{B\+ST}!B\+S\+T\+Itr\+Pre$<$ Comparable $>$@{B\+S\+T\+Itr\+Pre$<$ Comparable $>$}}
+\index{B\+S\+T\+Itr\+Pre$<$ Comparable $>$@{B\+S\+T\+Itr\+Pre$<$ Comparable $>$}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+Pre$<$ Comparable $>$}{BSTItrPre< Comparable >}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ friend class {\bf B\+S\+T\+Itr\+Pre}$<$ Comparable $>$\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classBST_a45a55df6f11541416d4ea7684c575c1a}{}\label{classBST_a45a55df6f11541416d4ea7684c575c1a}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{BST_8h}{B\+S\+T.\+h}\end{DoxyCompactItemize}

@@ -5,11 +5,20 @@
 #include <fstream>
 #include <queue>
 
-std::string toUpperCase(std::string input);
+
 
                       /////                                          /////
                      /////               EXTRAS . H                 /////
                     /////                                          /////
+
+/**
+ * @brief      Turns all the characters of the string in upper case
+ *
+ * @param[in]  input  The input string
+ *
+ * @return     A string with all chars in upper case
+ */
+std::string toUpperCase(std::string input);
 
 // Class: Time
 
@@ -145,27 +154,12 @@ std::ostream & operator<<(std::ostream & os, Time & t);
 
 
 /**
- * @brief      implementation of a Quick Sort Algorithm
+ * @brief      Implementation of a template Selection Sort Algorithm
  *
- * @param[in]  arr    The arr
+ * @param      arr   The vector
  *
- * @tparam     T      elements of the vector arr
+ * @tparam     T     The element of the array
  */
-template<class T>
-void Sort(std::vector<T*>& arr){
-	T * tmp;
-	for(unsigned int i = 0; i < arr.size();i++){
-		for(unsigned int j = i+1; j < arr.size();j++){
-			if(arr[i]->getNome() > arr[j]->getNome()){
-				tmp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = tmp;
-			}
-		}
-	}
-}
-
-
 template<class T>
 void selectionSort(std::vector<T*>& arr){
 	int index;

@@ -1,0 +1,771 @@
+\hypertarget{classOferta}{}\section{Oferta Class Reference}
+\label{classOferta}\index{Oferta@{Oferta}}
+
+
+Class for oferta.  
+
+
+
+
+{\ttfamily \#include $<$cruise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOferta_a49a53f9d6ba51f97a3b428c8fac98d7f}{Oferta} (std\+::string nome, std\+::string barco, std\+::vector$<$ std\+::string $>$ destinos, unsigned int distancia, unsigned int lotacao, \hyperlink{classTime}{Time} data, unsigned int preco)
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classOferta}{Oferta} object. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a65327899463413d06e8d57291ac797cd}{set\+Nome} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Sets the name. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a618e63a54f6c5cb2988efb2db5625847}{set\+Barco} (std\+::string boat)
+\begin{DoxyCompactList}\small\item\em Sets the boat. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_ae73dec907ff619093f06492f5f30ebe0}{set\+Destinos} (std\+::vector$<$ std\+::string $>$ destinies)
+\begin{DoxyCompactList}\small\item\em Sets the stops. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a1c2caf1032ad1a24706db8fb3bcfa980}{apaga\+Destinos} ()
+\begin{DoxyCompactList}\small\item\em erases all the stops of the trip \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_aecc4032aa7cb52bba09755f4654430b7}{set\+Distancia} (unsigned int distance)
+\begin{DoxyCompactList}\small\item\em Sets the distance. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a8dd83eb9185287f796a48930c786eb96}{set\+Lotacao} (unsigned int limit)
+\begin{DoxyCompactList}\small\item\em Sets the lotation. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a2e458f64440ac5ab862f27ac86b348fc}{set\+Time} (\hyperlink{classTime}{Time} nova\+Data)
+\begin{DoxyCompactList}\small\item\em Sets the time. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a50c041d2301a351f2ac69ed235175116}{set\+Time\+Ultima\+Reserva} (\hyperlink{classTime}{Time} nova\+Data\+Reserva)
+\begin{DoxyCompactList}\small\item\em Sets the time of the last reservation. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a900c1febcd11221d877bc7cce577dd18}{set\+Preco} (unsigned int price)
+\begin{DoxyCompactList}\small\item\em Sets the price. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{get\+Nome} ()
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{get\+Barco} ()
+\begin{DoxyCompactList}\small\item\em Gets the boat. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{get\+Data} ()
+\begin{DoxyCompactList}\small\item\em Gets the date in string format. \end{DoxyCompactList}\item 
+\hyperlink{classTime}{Time} \hyperlink{classOferta_a13ebfcae88d39a90f0c66368534ed335}{get\+Data\+Mesmo} ()
+\begin{DoxyCompactList}\small\item\em Gets the date. \end{DoxyCompactList}\item 
+\hyperlink{classTime}{Time} \& \hyperlink{classOferta_a1caf2c681c14c9fbd04312b35f99b64c}{get\+Ultima\+Reserva} ()
+\begin{DoxyCompactList}\small\item\em Gets the time of the last reservation. \end{DoxyCompactList}\item 
+int \hyperlink{classOferta_abf0f062fa730edf6d4232926980b106c}{get\+Barco\+Number} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of the boat. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{get\+Lotacao} ()
+\begin{DoxyCompactList}\small\item\em Gets the lotation. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{get\+Distancia} ()
+\begin{DoxyCompactList}\small\item\em Gets the stops. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{get\+Destinos} ()
+\begin{DoxyCompactList}\small\item\em Gets the distance of the trip. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{get\+Preco} ()
+\begin{DoxyCompactList}\small\item\em Gets the price. \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}{diminui\+Lotacao} (int lotacaoocupada)
+\begin{DoxyCompactList}\small\item\em decreases the lotation \end{DoxyCompactList}\item 
+void \hyperlink{classOferta_a745e9845f3d1a36e8a8712d576f303ba}{print\+Oferta} ()
+\begin{DoxyCompactList}\small\item\em prints the information of the offers \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for oferta. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Oferta@{Oferta}!Oferta@{Oferta}}
+\index{Oferta@{Oferta}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{Oferta(std\+::string nome, std\+::string barco, std\+::vector$<$ std\+::string $>$ destinos, unsigned int distancia, unsigned int lotacao, Time data, unsigned int preco)}{Oferta(std::string nome, std::string barco, std::vector< std::string > destinos, unsigned int distancia, unsigned int lotacao, Time data, unsigned int preco)}}]{\setlength{\rightskip}{0pt plus 5cm}Oferta\+::\+Oferta (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nome, }
+\item[{std\+::string}]{barco, }
+\item[{std\+::vector$<$ std\+::string $>$}]{destinos, }
+\item[{unsigned int}]{distancia, }
+\item[{unsigned int}]{lotacao, }
+\item[{{\bf Time}}]{data, }
+\item[{unsigned int}]{preco}
+\end{DoxyParamCaption}
+)}\hypertarget{classOferta_a49a53f9d6ba51f97a3b428c8fac98d7f}{}\label{classOferta_a49a53f9d6ba51f97a3b428c8fac98d7f}
+
+
+Construct a \hyperlink{classOferta}{Oferta} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nome} & The nome \\
+\hline
+\mbox{\tt in}  & {\em barco} & The barco \\
+\hline
+\mbox{\tt in}  & {\em destinos} & The destinos \\
+\hline
+\mbox{\tt in}  & {\em distancia} & The distancia \\
+\hline
+\mbox{\tt in}  & {\em lotacao} & The lotacao \\
+\hline
+\mbox{\tt in}  & {\em data} & The data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+495                                                                                                            
+                          : nome(name),
+496 barco(boat),
+497 destinos(dest),
+498 distancia(dist),
+499 lotacao(lot),
+500 data(date),
+501 preco(price)
+502 \{
+503     \hyperlink{classRealTime}{RealTime} * rt = \textcolor{keyword}{new} \hyperlink{classRealTime}{RealTime}();
+504     \hyperlink{classTime}{Time} tempooferta(rt->\hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}(),rt->\hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}(),rt->
+      \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}(), rt->\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}(),rt->\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() - 1000);
+505     
+506     ultimaReserva = tempooferta;
+507 \};
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{classOferta_a49a53f9d6ba51f97a3b428c8fac98d7f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Oferta@{Oferta}!apaga\+Destinos@{apaga\+Destinos}}
+\index{apaga\+Destinos@{apaga\+Destinos}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{apaga\+Destinos()}{apagaDestinos()}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::apaga\+Destinos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a1c2caf1032ad1a24706db8fb3bcfa980}{}\label{classOferta_a1c2caf1032ad1a24706db8fb3bcfa980}
+
+
+erases all the stops of the trip 
+
+
+\begin{DoxyCode}
+69 \{ destinos.erase(destinos.begin(),destinos.end()); \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!diminui\+Lotacao@{diminui\+Lotacao}}
+\index{diminui\+Lotacao@{diminui\+Lotacao}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{diminui\+Lotacao(int lotacaoocupada)}{diminuiLotacao(int lotacaoocupada)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::diminui\+Lotacao (
+\begin{DoxyParamCaption}
+\item[{int}]{lotacaoocupada}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}{}\label{classOferta_a15e6c1e4f49243136eb5ca1d46925a77}
+
+
+decreases the lotation 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lotacaoocupada} & The lotation reserved \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+181 \{ lotacao = lotacao - lotacaoocupada; \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a15e6c1e4f49243136eb5ca1d46925a77_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Barco@{get\+Barco}}
+\index{get\+Barco@{get\+Barco}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Barco()}{getBarco()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Oferta\+::get\+Barco (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{}\label{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}
+
+
+Gets the boat. 
+
+\begin{DoxyReturn}{Returns}
+The barco. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+117 \{ \textcolor{keywordflow}{return} this->barco; \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_aaed9b5937f9f33d2980fcc13ac02132c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_aaed9b5937f9f33d2980fcc13ac02132c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Barco\+Number@{get\+Barco\+Number}}
+\index{get\+Barco\+Number@{get\+Barco\+Number}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Barco\+Number()}{getBarcoNumber()}}]{\setlength{\rightskip}{0pt plus 5cm}int Oferta\+::get\+Barco\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOferta_abf0f062fa730edf6d4232926980b106c}{}\label{classOferta_abf0f062fa730edf6d4232926980b106c}
+
+
+Gets the number of the boat. 
+
+\begin{DoxyReturn}{Returns}
+The barco number. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+514 \{
+515     \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"iate"})
+516         \textcolor{keywordflow}{return} 1;
+517     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"barco rabelo"} || barco == \textcolor{stringliteral}{"barco\_rabelo"})
+518         \textcolor{keywordflow}{return} 2;
+519     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (barco == \textcolor{stringliteral}{"veleiro"})
+520         \textcolor{keywordflow}{return} 3;
+521     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+522 
+523 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_abf0f062fa730edf6d4232926980b106c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Data()}{getData()}}]{\setlength{\rightskip}{0pt plus 5cm}string Oferta\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{}\label{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}
+
+
+Gets the date in string format. 
+
+\begin{DoxyReturn}{Returns}
+The date(string) 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+525                        \{
+526 
+527     \textcolor{keywordflow}{return} to\_string(data.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}()) + \textcolor{stringliteral}{"/"} + to\_string(data.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}()) + \textcolor{stringliteral}{"/"} + to\_string(
+      data.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \textcolor{stringliteral}{" "} + to\_string(data.\hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}()) + \textcolor{stringliteral}{":"} + to\_string(data.
+      \hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}());
+528 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classOferta_a2b156b75371ad59af54ad96ad79c9d1e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a2b156b75371ad59af54ad96ad79c9d1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Data\+Mesmo@{get\+Data\+Mesmo}}
+\index{get\+Data\+Mesmo@{get\+Data\+Mesmo}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Data\+Mesmo()}{getDataMesmo()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} Oferta\+::get\+Data\+Mesmo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a13ebfcae88d39a90f0c66368534ed335}{}\label{classOferta_a13ebfcae88d39a90f0c66368534ed335}
+
+
+Gets the date. 
+
+\begin{DoxyReturn}{Returns}
+The date 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+131 \{ \textcolor{keywordflow}{return} this->data; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!get\+Destinos@{get\+Destinos}}
+\index{get\+Destinos@{get\+Destinos}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Destinos()}{getDestinos()}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ std\+::string $>$ \& Oferta\+::get\+Destinos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{}\label{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}
+
+
+Gets the distance of the trip. 
+
+\begin{DoxyReturn}{Returns}
+The destinos 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+509                                                 \{
+510     \textcolor{keywordflow}{return} this->destinos;
+511 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a746c91e5db19098d211a3f6bde2ec8ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Distancia@{get\+Distancia}}
+\index{get\+Distancia@{get\+Distancia}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Distancia()}{getDistancia()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Oferta\+::get\+Distancia (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{}\label{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}
+
+
+Gets the stops. 
+
+\begin{DoxyReturn}{Returns}
+The destinos. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+160 \{ \textcolor{keywordflow}{return} this->distancia; \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Lotacao@{get\+Lotacao}}
+\index{get\+Lotacao@{get\+Lotacao}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Lotacao()}{getLotacao()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Oferta\+::get\+Lotacao (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a9c8fbec401e54e590828209931bf25b0}{}\label{classOferta_a9c8fbec401e54e590828209931bf25b0}
+
+
+Gets the lotation. 
+
+\begin{DoxyReturn}{Returns}
+The lotacao. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+152 \{ \textcolor{keywordflow}{return} this->lotacao; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a9c8fbec401e54e590828209931bf25b0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Nome@{get\+Nome}}
+\index{get\+Nome@{get\+Nome}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Nome()}{getNome()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Oferta\+::get\+Nome (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a16da38d9f369b000cb544c34200707b8}{}\label{classOferta_a16da38d9f369b000cb544c34200707b8}
+
+
+Gets the name. 
+
+\begin{DoxyReturn}{Returns}
+The nome. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+110 \{ \textcolor{keywordflow}{return} this->nome; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a16da38d9f369b000cb544c34200707b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Preco@{get\+Preco}}
+\index{get\+Preco@{get\+Preco}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Preco()}{getPreco()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Oferta\+::get\+Preco (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{}\label{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}
+
+
+Gets the price. 
+
+\begin{DoxyReturn}{Returns}
+The preco 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+174 \{\textcolor{keywordflow}{return} this->preco;\};
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!get\+Ultima\+Reserva@{get\+Ultima\+Reserva}}
+\index{get\+Ultima\+Reserva@{get\+Ultima\+Reserva}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{get\+Ultima\+Reserva()}{getUltimaReserva()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time}\& Oferta\+::get\+Ultima\+Reserva (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a1caf2c681c14c9fbd04312b35f99b64c}{}\label{classOferta_a1caf2c681c14c9fbd04312b35f99b64c}
+
+
+Gets the time of the last reservation. 
+
+\begin{DoxyReturn}{Returns}
+The time of the last reservation 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+138 \{ \textcolor{keywordflow}{return} this->ultimaReserva; \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a1caf2c681c14c9fbd04312b35f99b64c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a1caf2c681c14c9fbd04312b35f99b64c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!print\+Oferta@{print\+Oferta}}
+\index{print\+Oferta@{print\+Oferta}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{print\+Oferta()}{printOferta()}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::print\+Oferta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classOferta_a745e9845f3d1a36e8a8712d576f303ba}{}\label{classOferta_a745e9845f3d1a36e8a8712d576f303ba}
+
+
+prints the information of the offers 
+
+
+\begin{DoxyCode}
+531 \{
+532 
+533     cout << \textcolor{stringliteral}{"Nome: "} << \hyperlink{classOferta_a16da38d9f369b000cb544c34200707b8}{getNome}() << endl;
+534     cout << \textcolor{stringliteral}{"Barco: "} <<\hyperlink{classOferta_aaed9b5937f9f33d2980fcc13ac02132c}{getBarco}() << endl;
+535     cout << \textcolor{stringliteral}{"Destinos:"} << endl;
+536 
+537     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().size(); j++) \{
+538 
+539         cout << \textcolor{stringliteral}{"   Destino numero"} << j + 1 << \textcolor{stringliteral}{" : "} << \hyperlink{classOferta_a746c91e5db19098d211a3f6bde2ec8ec}{getDestinos}().at(j) << endl;
+540     \}
+541     cout << \textcolor{stringliteral}{"Distancia: "} << \hyperlink{classOferta_a0d07f80f25f4fb21c0819c3e25d67fb9}{getDistancia}() << \textcolor{stringliteral}{"\(\backslash\)n"};
+542     cout << \textcolor{stringliteral}{"Lotacao: "} << \hyperlink{classOferta_a9c8fbec401e54e590828209931bf25b0}{getLotacao}() << endl;
+543     cout << \textcolor{stringliteral}{"Data: "} << \hyperlink{classOferta_a2b156b75371ad59af54ad96ad79c9d1e}{getData}() << endl;
+544     cout << \textcolor{stringliteral}{"Preco: "} << \hyperlink{classOferta_a6237afc2e8a33fb55b1ef0decf9d9aaa}{getPreco}() << endl;
+545 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a745e9845f3d1a36e8a8712d576f303ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classOferta_a745e9845f3d1a36e8a8712d576f303ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!set\+Barco@{set\+Barco}}
+\index{set\+Barco@{set\+Barco}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Barco(std\+::string boat)}{setBarco(std::string boat)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Barco (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{boat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a618e63a54f6c5cb2988efb2db5625847}{}\label{classOferta_a618e63a54f6c5cb2988efb2db5625847}
+
+
+Sets the boat. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em boat} & The boat \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+57 \{ barco = boat; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!set\+Destinos@{set\+Destinos}}
+\index{set\+Destinos@{set\+Destinos}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Destinos(std\+::vector$<$ std\+::string $>$ destinies)}{setDestinos(std::vector< std::string > destinies)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Destinos (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::string $>$}]{destinies}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_ae73dec907ff619093f06492f5f30ebe0}{}\label{classOferta_ae73dec907ff619093f06492f5f30ebe0}
+
+
+Sets the stops. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em destinies} & The stops \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+64 \{ destinos = destinies; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!set\+Distancia@{set\+Distancia}}
+\index{set\+Distancia@{set\+Distancia}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Distancia(unsigned int distance)}{setDistancia(unsigned int distance)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Distancia (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_aecc4032aa7cb52bba09755f4654430b7}{}\label{classOferta_aecc4032aa7cb52bba09755f4654430b7}
+
+
+Sets the distance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em distance} & The distance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+76 \{ distancia = distance; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!set\+Lotacao@{set\+Lotacao}}
+\index{set\+Lotacao@{set\+Lotacao}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Lotacao(unsigned int limit)}{setLotacao(unsigned int limit)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Lotacao (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a8dd83eb9185287f796a48930c786eb96}{}\label{classOferta_a8dd83eb9185287f796a48930c786eb96}
+
+
+Sets the lotation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em limit} & The limit \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+83 \{ lotacao = limit; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!set\+Nome@{set\+Nome}}
+\index{set\+Nome@{set\+Nome}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Nome(std\+::string name)}{setNome(std::string name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Nome (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a65327899463413d06e8d57291ac797cd}{}\label{classOferta_a65327899463413d06e8d57291ac797cd}
+
+
+Sets the name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+50 \{ nome = name; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!set\+Preco@{set\+Preco}}
+\index{set\+Preco@{set\+Preco}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Preco(unsigned int price)}{setPreco(unsigned int price)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Preco (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{price}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a900c1febcd11221d877bc7cce577dd18}{}\label{classOferta_a900c1febcd11221d877bc7cce577dd18}
+
+
+Sets the price. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em price} & The price \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+104 \{ preco = price; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classOferta_a900c1febcd11221d877bc7cce577dd18_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Oferta@{Oferta}!set\+Time@{set\+Time}}
+\index{set\+Time@{set\+Time}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Time(\+Time nova\+Data)}{setTime(Time novaData)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Time (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{nova\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a2e458f64440ac5ab862f27ac86b348fc}{}\label{classOferta_a2e458f64440ac5ab862f27ac86b348fc}
+
+
+Sets the time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nova\+Data} & The new date \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+90 \{ data = novaData; \}
+\end{DoxyCode}
+\index{Oferta@{Oferta}!set\+Time\+Ultima\+Reserva@{set\+Time\+Ultima\+Reserva}}
+\index{set\+Time\+Ultima\+Reserva@{set\+Time\+Ultima\+Reserva}!Oferta@{Oferta}}
+\subsubsection[{\texorpdfstring{set\+Time\+Ultima\+Reserva(\+Time nova\+Data\+Reserva)}{setTimeUltimaReserva(Time novaDataReserva)}}]{\setlength{\rightskip}{0pt plus 5cm}void Oferta\+::set\+Time\+Ultima\+Reserva (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{nova\+Data\+Reserva}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classOferta_a50c041d2301a351f2ac69ed235175116}{}\label{classOferta_a50c041d2301a351f2ac69ed235175116}
+
+
+Sets the time of the last reservation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nova\+Data\+Reserva} & The date of the new Reservation \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+97 \{ ultimaReserva = novaDataReserva; \};
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOferta_a50c041d2301a351f2ac69ed235175116_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8h}{cruise.\+h}\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8cpp}{cruise.\+cpp}\end{DoxyCompactItemize}

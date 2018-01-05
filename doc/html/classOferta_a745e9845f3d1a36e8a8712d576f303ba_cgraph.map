@@ -1,0 +1,14 @@
+<map id="Oferta::printOferta" name="Oferta::printOferta">
+<area shape="rect" id="node2" href="$classOferta.html#a16da38d9f369b000cb544c34200707b8" title="Gets the name. " alt="" coords="190,17,309,44"/>
+<area shape="rect" id="node3" href="$classOferta.html#aaed9b5937f9f33d2980fcc13ac02132c" title="Gets the boat. " alt="" coords="190,68,309,95"/>
+<area shape="rect" id="node4" href="$classOferta.html#a2b156b75371ad59af54ad96ad79c9d1e" title="Gets the date in string format. " alt="" coords="379,107,491,133"/>
+<area shape="rect" id="node10" href="$classOferta.html#a746c91e5db19098d211a3f6bde2ec8ec" title="Gets the distance of the trip. " alt="" coords="367,183,503,209"/>
+<area shape="rect" id="node11" href="$classOferta.html#a0d07f80f25f4fb21c0819c3e25d67fb9" title="Gets the stops. " alt="" coords="180,220,319,247"/>
+<area shape="rect" id="node12" href="$classOferta.html#a9c8fbec401e54e590828209931bf25b0" title="Gets the lotation. " alt="" coords="184,271,315,297"/>
+<area shape="rect" id="node13" href="$classOferta.html#a6237afc2e8a33fb55b1ef0decf9d9aaa" title="Gets the price. " alt="" coords="190,321,309,348"/>
+<area shape="rect" id="node5" href="$classTime.html#ade4d01d38041bb86a2e1ded9fd3cd28e" title="Gets the year. " alt="" coords="560,5,664,32"/>
+<area shape="rect" id="node6" href="$classTime.html#a22fd86b14d3b067cf1447fd9ca5caf6f" title="Gets the month. " alt="" coords="555,56,669,83"/>
+<area shape="rect" id="node7" href="$classTime.html#abdccc37217b520155a67a1d732014f1a" title="Gets the day. " alt="" coords="561,107,663,133"/>
+<area shape="rect" id="node8" href="$classTime.html#ac38ba7bbc9876d7d75c6fb16ba7ac453" title="Gets the hours. " alt="" coords="556,157,668,184"/>
+<area shape="rect" id="node9" href="$classTime.html#a800d91da444cd295a329925c45942359" title="Gets the minutes. " alt="" coords="551,208,673,235"/>
+</map>

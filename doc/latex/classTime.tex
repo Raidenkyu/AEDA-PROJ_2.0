@@ -1,0 +1,589 @@
+\hypertarget{classTime}{}\section{Time Class Reference}
+\label{classTime}\index{Time@{Time}}
+
+
+Class for time.  
+
+
+
+
+{\ttfamily \#include $<$extras.\+h$>$}
+
+
+
+Inheritance diagram for Time\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classTime__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTime_a4245e409c7347d1d671858962c2ca3b5}{Time} ()
+\item 
+\hyperlink{classTime_a49a2959967faff0a8d19ec3cde7436b9}{Time} (const \hyperlink{classTime}{Time} \&t1)
+\item 
+\hyperlink{classTime_a355bb7292c28e01866289e1119f457a9}{Time} (unsigned int min, unsigned int h, unsigned int d, unsigned int m, unsigned int y)
+\begin{DoxyCompactList}\small\item\em Constructs \hyperlink{classTime}{Time} Object. \end{DoxyCompactList}\item 
+\hyperlink{classTime_a15f171401599a9a058e89e6cf3244f2b}{Time} (std\+::string time)
+\begin{DoxyCompactList}\small\item\em Constructs \hyperlink{classTime}{Time} Object. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTime_a800d91da444cd295a329925c45942359}{get\+Minutes} ()
+\begin{DoxyCompactList}\small\item\em Gets the minutes. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{get\+Hours} ()
+\begin{DoxyCompactList}\small\item\em Gets the hours. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{get\+Day} ()
+\begin{DoxyCompactList}\small\item\em Gets the day. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{get\+Month} ()
+\begin{DoxyCompactList}\small\item\em Gets the month. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{get\+Year} ()
+\begin{DoxyCompactList}\small\item\em Gets the year. \end{DoxyCompactList}\item 
+void \hyperlink{classTime_a79d96e150ff808580fdf43932897130d}{print\+Time} (std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em prints the time \end{DoxyCompactList}\item 
+int \hyperlink{classTime_a346c1dbc706dfd41e4a15b16577e4265}{diferenca\+Dias} ()
+\begin{DoxyCompactList}\small\item\em calculates the difference of days between this date and the actual date \end{DoxyCompactList}\item 
+bool \hyperlink{classTime_a36e9d3c27e0f42d2d83f9831dcc4a670}{operator$<$} (\hyperlink{classTime}{Time} t2)
+\begin{DoxyCompactList}\small\item\em Checks if one time is more recent than the other. \end{DoxyCompactList}\item 
+bool \hyperlink{classTime_af7141e492faaa66dcde703ff3ee9c9f7}{operator==} (\hyperlink{classTime}{Time} t2)
+\begin{DoxyCompactList}\small\item\em Checks is two times are equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes}
+\item 
+unsigned int \hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours}
+\item 
+unsigned int \hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day}
+\item 
+unsigned int \hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month}
+\item 
+unsigned int \hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for time. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\subsubsection[{\texorpdfstring{Time()}{Time()}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+::\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a4245e409c7347d1d671858962c2ca3b5}{}\label{classTime_a4245e409c7347d1d671858962c2ca3b5}
+
+\begin{DoxyCode}
+14 \{\}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classTime_a4245e409c7347d1d671858962c2ca3b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\subsubsection[{\texorpdfstring{Time(const Time \&t1)}{Time(const Time &t1)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+::\+Time (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{t1}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a49a2959967faff0a8d19ec3cde7436b9}{}\label{classTime_a49a2959967faff0a8d19ec3cde7436b9}
+
+\begin{DoxyCode}
+18                         :
+19         \hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes}(t1.\hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes}),
+20         \hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours}(t1.\hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours}),
+21         \hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day}(t1.\hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day}),
+22         \hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month}(t1.\hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month}),
+23         \hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year}(t1.\hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year})
+24 \{\}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classTime_a49a2959967faff0a8d19ec3cde7436b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\subsubsection[{\texorpdfstring{Time(unsigned int min, unsigned int h, unsigned int d, unsigned int m, unsigned int y)}{Time(unsigned int min, unsigned int h, unsigned int d, unsigned int m, unsigned int y)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+::\+Time (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{min, }
+\item[{unsigned int}]{h, }
+\item[{unsigned int}]{d, }
+\item[{unsigned int}]{m, }
+\item[{unsigned int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a355bb7292c28e01866289e1119f457a9}{}\label{classTime_a355bb7292c28e01866289e1119f457a9}
+
+
+Constructs \hyperlink{classTime}{Time} Object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em d} & day \\
+\hline
+\mbox{\tt in}  & {\em m} & month \\
+\hline
+\mbox{\tt in}  & {\em y} & year \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+16 : \hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes}(min), \hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours}(h), \hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day}(d), \hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month}(m), \hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year}(y)\{\}
+\end{DoxyCode}
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\subsubsection[{\texorpdfstring{Time(std\+::string time)}{Time(std::string time)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+::\+Time (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a15f171401599a9a058e89e6cf3244f2b}{}\label{classTime_a15f171401599a9a058e89e6cf3244f2b}
+
+
+Constructs \hyperlink{classTime}{Time} Object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em time} & The time in string format \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Time@{Time}!diferenca\+Dias@{diferenca\+Dias}}
+\index{diferenca\+Dias@{diferenca\+Dias}!Time@{Time}}
+\subsubsection[{\texorpdfstring{diferenca\+Dias()}{diferencaDias()}}]{\setlength{\rightskip}{0pt plus 5cm}int Time\+::diferenca\+Dias (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a346c1dbc706dfd41e4a15b16577e4265}{}\label{classTime_a346c1dbc706dfd41e4a15b16577e4265}
+
+
+calculates the difference of days between this date and the actual date 
+
+\begin{DoxyReturn}{Returns}
+the difference between the real date and the offer date 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+103                         \{
+104     \hyperlink{classRealTime}{RealTime} rt;
+105     \textcolor{keywordtype}{int} dias = 0;
+106 
+107     \textcolor{comment}{//se ano e m�s forem iguais}
+108     \textcolor{keywordflow}{if} ((rt.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}()) && (rt.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() == 
+      \hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}()))
+109         dias = this->\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}() - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+110 
+111     \textcolor{comment}{//se ano for igual mas m�s for diferente}
+112     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((rt.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}()) && !(rt.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() == 
+      \hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}()))
+113     \{
+114         \textcolor{keywordflow}{if} (\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() - rt.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() == 1)
+115         \{
+116             \textcolor{keywordflow}{switch} (\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}()) \{
+117             \textcolor{keywordflow}{case} 1: \textcolor{comment}{//Janeiro}
+118                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+119             \textcolor{keywordflow}{case} 2: \textcolor{comment}{//Fevereiro}
+120                 \textcolor{keywordflow}{if} (\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() % 4 == 0 && \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() % 10 == 0 && 
+      \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() % 400 == 0)
+121                     dias = (29 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+122                 \textcolor{keywordflow}{else}
+123                 dias = (28 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+124             \textcolor{keywordflow}{case} 3: \textcolor{comment}{//Marco}
+125                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+126             \textcolor{keywordflow}{case} 4: \textcolor{comment}{//Abril}
+127                 dias = (30 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+128             \textcolor{keywordflow}{case} 5: \textcolor{comment}{//Maio}
+129                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+130             \textcolor{keywordflow}{case} 6: \textcolor{comment}{//Junho}
+131                 dias = (30 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+132             \textcolor{keywordflow}{case} 7: \textcolor{comment}{//Julho}
+133                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+134             \textcolor{keywordflow}{case} 8: \textcolor{comment}{//Agosto}
+135                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+136             \textcolor{keywordflow}{case} 9: \textcolor{comment}{//Setembro}
+137                 dias = (30 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+138             \textcolor{keywordflow}{case} 10: \textcolor{comment}{//Outubro}
+139                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+140             \textcolor{keywordflow}{case} 11: \textcolor{comment}{//Novembro (nao ha dezembro ja que, para haver uma diferenca de 1 mes positiva para
+       Dezembro, o ano teria de ser diferente)}
+141                 dias = (30 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+142             \textcolor{keywordflow}{default}:
+143                 dias = -1;
+144             \}
+145         \}
+146         \textcolor{keywordflow}{else}
+147             dias = 50;
+148     \}
+149     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!(rt.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}()))
+150     \{
+151         \textcolor{keywordflow}{if} (\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() - rt.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == 1)
+152         \{
+153             \textcolor{keywordflow}{if} (rt.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() == 12 && \hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == 1)
+154                 dias = (31 - rt.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}()) + \hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}();
+155             \textcolor{keywordflow}{else}
+156                 dias = -1;
+157         \}
+158         \textcolor{keywordflow}{else}
+159             dias = -1;
+160     \}
+161 
+162     \textcolor{keywordflow}{if} (dias == 2)
+163     \{
+164         \textcolor{keywordflow}{if} (rt.\hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}() * 60 + rt.\hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}() < \hyperlink{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{getHours}() * 60 + 
+      \hyperlink{classTime_a800d91da444cd295a329925c45942359}{getMinutes}())
+165         \{
+166             \textcolor{keywordflow}{return} dias;
+167         \}
+168         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 1;
+169     \}
+170     \textcolor{comment}{/*}
+171 \textcolor{comment}{    return abs(rt.getDay() - this->getDay()) + abs(rt.getMonth - this->getMonth()) * 30 + abs(rt.getYear()
+       - this->getYear()) * 365;*/}
+172     \textcolor{keywordflow}{return} dias;
+173 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classTime_a346c1dbc706dfd41e4a15b16577e4265_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!get\+Day@{get\+Day}}
+\index{get\+Day@{get\+Day}!Time@{Time}}
+\subsubsection[{\texorpdfstring{get\+Day()}{getDay()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::get\+Day (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_abdccc37217b520155a67a1d732014f1a}{}\label{classTime_abdccc37217b520155a67a1d732014f1a}
+
+
+Gets the day. 
+
+\begin{DoxyReturn}{Returns}
+The day. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+61                           \{
+62     \textcolor{keywordflow}{return} this->\hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day};
+63 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTime_abdccc37217b520155a67a1d732014f1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!get\+Hours@{get\+Hours}}
+\index{get\+Hours@{get\+Hours}!Time@{Time}}
+\subsubsection[{\texorpdfstring{get\+Hours()}{getHours()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::get\+Hours (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}{}\label{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453}
+
+
+Gets the hours. 
+
+\begin{DoxyReturn}{Returns}
+The hours. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+57                            \{
+58     \textcolor{keywordflow}{return} this->\hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours};
+59 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTime_ac38ba7bbc9876d7d75c6fb16ba7ac453_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!get\+Minutes@{get\+Minutes}}
+\index{get\+Minutes@{get\+Minutes}!Time@{Time}}
+\subsubsection[{\texorpdfstring{get\+Minutes()}{getMinutes()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::get\+Minutes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a800d91da444cd295a329925c45942359}{}\label{classTime_a800d91da444cd295a329925c45942359}
+
+
+Gets the minutes. 
+
+\begin{DoxyReturn}{Returns}
+The minutes. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+53                              \{
+54     \textcolor{keywordflow}{return} this->\hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes};
+55 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTime_a800d91da444cd295a329925c45942359_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!get\+Month@{get\+Month}}
+\index{get\+Month@{get\+Month}!Time@{Time}}
+\subsubsection[{\texorpdfstring{get\+Month()}{getMonth()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::get\+Month (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{}\label{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}
+
+
+Gets the month. 
+
+\begin{DoxyReturn}{Returns}
+The month. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+65                             \{
+66     \textcolor{keywordflow}{return} \hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month};
+67 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!get\+Year@{get\+Year}}
+\index{get\+Year@{get\+Year}!Time@{Time}}
+\subsubsection[{\texorpdfstring{get\+Year()}{getYear()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::get\+Year (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{}\label{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}
+
+
+Gets the year. 
+
+\begin{DoxyReturn}{Returns}
+The year. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+69                            \{
+70     \textcolor{keywordflow}{return} \hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year};
+71 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Time@{Time}}
+\subsubsection[{\texorpdfstring{operator$<$(\+Time t2)}{operator<(Time t2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Time\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a36e9d3c27e0f42d2d83f9831dcc4a670}{}\label{classTime_a36e9d3c27e0f42d2d83f9831dcc4a670}
+
+
+Checks if one time is more recent than the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t2} & The time 2\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if this time is more recent than time 2 return true otherwise return false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+79                              \{
+80     \textcolor{keywordflow}{if}(this->\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() < t2.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}())
+81         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+82     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == t2.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}())\{
+83         \textcolor{keywordflow}{if}(this->\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() < t2. \hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}())\{
+84             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+85         \}
+86         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() == t2.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}())\{
+87             \textcolor{keywordflow}{if}(this->\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}() < t2.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}())\{
+88                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+89             \}
+90             \textcolor{keywordflow}{else}\{
+91                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+92             \}
+93         \}
+94         \textcolor{keywordflow}{else}\{
+95             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+96         \}
+97     \}
+98     \textcolor{keywordflow}{else}\{
+99     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+100     \}
+101 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{classTime_a36e9d3c27e0f42d2d83f9831dcc4a670_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!operator==@{operator==}}
+\index{operator==@{operator==}!Time@{Time}}
+\subsubsection[{\texorpdfstring{operator==(\+Time t2)}{operator==(Time t2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Time\+::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_af7141e492faaa66dcde703ff3ee9c9f7}{}\label{classTime_af7141e492faaa66dcde703ff3ee9c9f7}
+
+
+Checks is two times are equal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t2} & The time 2\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if this time is equal to time 2 returns true, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+74                             \{
+75     \textcolor{keywordflow}{return} (this->\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}() == t2.\hyperlink{classTime_abdccc37217b520155a67a1d732014f1a}{getDay}() && t2.\hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() == this->
+      \hyperlink{classTime_a22fd86b14d3b067cf1447fd9ca5caf6f}{getMonth}() && this->\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}() == t2.\hyperlink{classTime_ade4d01d38041bb86a2e1ded9fd3cd28e}{getYear}());
+76 
+77 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classTime_af7141e492faaa66dcde703ff3ee9c9f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Time@{Time}!print\+Time@{print\+Time}}
+\index{print\+Time@{print\+Time}!Time@{Time}}
+\subsubsection[{\texorpdfstring{print\+Time(std\+::ostream \&os)}{printTime(std::ostream &os)}}]{\setlength{\rightskip}{0pt plus 5cm}void Time\+::print\+Time (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os}
+\end{DoxyParamCaption}
+)}\hypertarget{classTime_a79d96e150ff808580fdf43932897130d}{}\label{classTime_a79d96e150ff808580fdf43932897130d}
+
+
+prints the time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & ostream where the time will be printed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+44                                 \{
+45     os << \hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year} << \textcolor{stringliteral}{"/"} << \hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month} << \textcolor{stringliteral}{"/"} << \hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day} << \textcolor{stringliteral}{" "} << \hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours} << \textcolor{stringliteral}{":"} << 
+      \hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes};
+46 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classTime_a79d96e150ff808580fdf43932897130d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Time@{Time}!day@{day}}
+\index{day@{day}!Time@{Time}}
+\subsubsection[{\texorpdfstring{day}{day}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::day\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{}\label{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}
+\index{Time@{Time}!hours@{hours}}
+\index{hours@{hours}!Time@{Time}}
+\subsubsection[{\texorpdfstring{hours}{hours}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::hours\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{}\label{classTime_a08e7d6202b1fe8c01c25bf6688d41712}
+\index{Time@{Time}!minutes@{minutes}}
+\index{minutes@{minutes}!Time@{Time}}
+\subsubsection[{\texorpdfstring{minutes}{minutes}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::minutes\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{}\label{classTime_ab9da5c3324d296464bf26131fd5d8c3f}
+\index{Time@{Time}!month@{month}}
+\index{month@{month}!Time@{Time}}
+\subsubsection[{\texorpdfstring{month}{month}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::month\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classTime_a6076ed85da3f1d76e8c5d014ae239748}{}\label{classTime_a6076ed85da3f1d76e8c5d014ae239748}
+\index{Time@{Time}!year@{year}}
+\index{year@{year}!Time@{Time}}
+\subsubsection[{\texorpdfstring{year}{year}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Time\+::year\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classTime_ae2f1e52f8d00060a7cf7376927d65994}{}\label{classTime_ae2f1e52f8d00060a7cf7376927d65994}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{extras_8h}{extras.\+h}\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{extras_8cpp}{extras.\+cpp}\end{DoxyCompactItemize}

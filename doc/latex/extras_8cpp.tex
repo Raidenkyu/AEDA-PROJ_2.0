@@ -1,0 +1,68 @@
+\hypertarget{extras_8cpp}{}\section{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/extras.cpp File Reference}
+\label{extras_8cpp}\index{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/extras.\+cpp@{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/extras.\+cpp}}
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include \char`\"{}extras.\+h\char`\"{}}\\*
+Include dependency graph for extras.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{extras_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{extras_8cpp_ae9fcfef01b87ced35f0b6590672af70a}{operator$<$$<$} (ostream \&os, \hyperlink{classTime}{Time} \&t)
+\item 
+string \hyperlink{extras_8cpp_aa984b8b14ad0011a781318a5fc675612}{to\+Upper\+Case} (string input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{extras.\+cpp@{extras.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!extras.\+cpp@{extras.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(ostream \&os, Time \&t)}{operator<<(ostream &os, Time &t)}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{os, }
+\item[{{\bf Time} \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8cpp_ae9fcfef01b87ced35f0b6590672af70a}{}\label{extras_8cpp_ae9fcfef01b87ced35f0b6590672af70a}
+
+\begin{DoxyCode}
+48                                             \{
+49     t.\hyperlink{classTime_a79d96e150ff808580fdf43932897130d}{printTime}(os);
+50     \textcolor{keywordflow}{return} os ;
+51 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{extras_8cpp_ae9fcfef01b87ced35f0b6590672af70a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{extras.\+cpp@{extras.\+cpp}!to\+Upper\+Case@{to\+Upper\+Case}}
+\index{to\+Upper\+Case@{to\+Upper\+Case}!extras.\+cpp@{extras.\+cpp}}
+\subsubsection[{\texorpdfstring{to\+Upper\+Case(string input)}{toUpperCase(string input)}}]{\setlength{\rightskip}{0pt plus 5cm}string to\+Upper\+Case (
+\begin{DoxyParamCaption}
+\item[{string}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8cpp_aa984b8b14ad0011a781318a5fc675612}{}\label{extras_8cpp_aa984b8b14ad0011a781318a5fc675612}
+
+\begin{DoxyCode}
+176 \{
+177     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < input.length(); i++)
+178     \{
+179         \textcolor{keywordflow}{if} (input[i] >= \textcolor{charliteral}{'a'} && input[i] <= \textcolor{charliteral}{'z'})
+180             input[i] += \textcolor{charliteral}{'A'} - \textcolor{charliteral}{'a'};
+181     \}
+182     \textcolor{keywordflow}{return} input;
+183 \}
+\end{DoxyCode}

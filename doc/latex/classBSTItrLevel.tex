@@ -1,0 +1,96 @@
+\hypertarget{classBSTItrLevel}{}\section{B\+S\+T\+Itr\+Level$<$ Comparable $>$ Class Template Reference}
+\label{classBSTItrLevel}\index{B\+S\+T\+Itr\+Level$<$ Comparable $>$@{B\+S\+T\+Itr\+Level$<$ Comparable $>$}}
+
+
+{\ttfamily \#include $<$B\+S\+T.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBSTItrLevel_a8fd5cdde93eb182c4cd5cf6b2c5efaeb}{B\+S\+T\+Itr\+Level} (const \hyperlink{classBST}{B\+ST}$<$ Comparable $>$ \&bt)
+\item 
+void \hyperlink{classBSTItrLevel_ad54a6fa289a59d6050b507abe40d463b}{advance} ()
+\item 
+Comparable \& \hyperlink{classBSTItrLevel_a0340bd9f21f72ae25348f383e67e7f91}{retrieve} ()
+\item 
+bool \hyperlink{classBSTItrLevel_a89bc8e81dde255fd6bad917cacc0d489}{is\+At\+End} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}!B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}}
+\index{B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}!B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+Level(const B\+S\+T$<$ Comparable $>$ \&bt)}{BSTItrLevel(const BST< Comparable > &bt)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ {\bf B\+S\+T\+Itr\+Level}$<$ Comparable $>$\+::{\bf B\+S\+T\+Itr\+Level} (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Comparable $>$ \&}]{bt}
+\end{DoxyParamCaption}
+)}\hypertarget{classBSTItrLevel_a8fd5cdde93eb182c4cd5cf6b2c5efaeb}{}\label{classBSTItrLevel_a8fd5cdde93eb182c4cd5cf6b2c5efaeb}
+
+\begin{DoxyCode}
+472 \{
+473   \textcolor{keywordflow}{if} (!bt.\hyperlink{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}{isEmpty}())
+474     itrQueue.push(bt.root);
+475 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classBSTItrLevel_a8fd5cdde93eb182c4cd5cf6b2c5efaeb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}!advance@{advance}}
+\index{advance@{advance}!B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}}
+\subsubsection[{\texorpdfstring{advance()}{advance()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ void {\bf B\+S\+T\+Itr\+Level}$<$ Comparable $>$\+::advance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBSTItrLevel_ad54a6fa289a59d6050b507abe40d463b}{}\label{classBSTItrLevel_ad54a6fa289a59d6050b507abe40d463b}
+
+\begin{DoxyCode}
+479 \{
+480   \hyperlink{classBinaryNode}{BinaryNode<Comparable>} * actual = itrQueue.front();
+481   itrQueue.pop();
+482   \hyperlink{classBinaryNode}{BinaryNode<Comparable>} * seguinte = actual->left;
+483   \textcolor{keywordflow}{if} (seguinte)
+484     itrQueue.push(seguinte);
+485   seguinte = actual->right;
+486   \textcolor{keywordflow}{if} (seguinte)
+487     itrQueue.push(seguinte);
+488 \}
+\end{DoxyCode}
+\index{B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}!is\+At\+End@{is\+At\+End}}
+\index{is\+At\+End@{is\+At\+End}!B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}}
+\subsubsection[{\texorpdfstring{is\+At\+End()}{isAtEnd()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ bool {\bf B\+S\+T\+Itr\+Level}$<$ Comparable $>$\+::is\+At\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBSTItrLevel_a89bc8e81dde255fd6bad917cacc0d489}{}\label{classBSTItrLevel_a89bc8e81dde255fd6bad917cacc0d489}
+
+\begin{DoxyCode}
+463 \{\textcolor{keywordflow}{return} itrQueue.empty(); \}
+\end{DoxyCode}
+\index{B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!B\+S\+T\+Itr\+Level@{B\+S\+T\+Itr\+Level}}
+\subsubsection[{\texorpdfstring{retrieve()}{retrieve()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ Comparable\& {\bf B\+S\+T\+Itr\+Level}$<$ Comparable $>$\+::retrieve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBSTItrLevel_a0340bd9f21f72ae25348f383e67e7f91}{}\label{classBSTItrLevel_a0340bd9f21f72ae25348f383e67e7f91}
+
+\begin{DoxyCode}
+462 \{ \textcolor{keywordflow}{return} itrQueue.front()->element; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{BST_8h}{B\+S\+T.\+h}\end{DoxyCompactItemize}

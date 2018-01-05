@@ -1,0 +1,129 @@
+\hypertarget{classBSTItrIn}{}\section{B\+S\+T\+Itr\+In$<$ Comparable $>$ Class Template Reference}
+\label{classBSTItrIn}\index{B\+S\+T\+Itr\+In$<$ Comparable $>$@{B\+S\+T\+Itr\+In$<$ Comparable $>$}}
+
+
+{\ttfamily \#include $<$B\+S\+T.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBSTItrIn_ac836e2f560fed9cc7ef8e5431a2836cc}{B\+S\+T\+Itr\+In} (const \hyperlink{classBST}{B\+ST}$<$ Comparable $>$ \&bt)
+\item 
+void \hyperlink{classBSTItrIn_ac772d3ebbac748c5f8cf9bc659f2e32c}{advance} ()
+\item 
+Comparable \& \hyperlink{classBSTItrIn_ac7ac215c1247bd25fc1fdb8053826a32}{retrieve} ()
+\item 
+bool \hyperlink{classBSTItrIn_a6f9a43217862c263a9bf15b9a08b889a}{is\+At\+End} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}!B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}}
+\index{B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}!B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+In(const B\+S\+T$<$ Comparable $>$ \&bt)}{BSTItrIn(const BST< Comparable > &bt)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ {\bf B\+S\+T\+Itr\+In}$<$ Comparable $>$\+::{\bf B\+S\+T\+Itr\+In} (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Comparable $>$ \&}]{bt}
+\end{DoxyParamCaption}
+)}\hypertarget{classBSTItrIn_ac836e2f560fed9cc7ef8e5431a2836cc}{}\label{classBSTItrIn_ac836e2f560fed9cc7ef8e5431a2836cc}
+
+\begin{DoxyCode}
+431 \{
+432   \textcolor{keywordflow}{if} (!bt.\hyperlink{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}{isEmpty}())
+433     slideLeft(bt.root);
+434 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classBSTItrIn_ac836e2f560fed9cc7ef8e5431a2836cc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}!advance@{advance}}
+\index{advance@{advance}!B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}}
+\subsubsection[{\texorpdfstring{advance()}{advance()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ void {\bf B\+S\+T\+Itr\+In}$<$ Comparable $>$\+::advance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBSTItrIn_ac772d3ebbac748c5f8cf9bc659f2e32c}{}\label{classBSTItrIn_ac772d3ebbac748c5f8cf9bc659f2e32c}
+
+\begin{DoxyCode}
+447 \{
+448   \hyperlink{classBinaryNode}{BinaryNode<Comparable>} * actual = itrStack.top();
+449   itrStack.pop();
+450   \hyperlink{classBinaryNode}{BinaryNode<Comparable>} * seguinte = actual->right;
+451   \textcolor{keywordflow}{if} (seguinte)
+452     slideLeft(seguinte);
+453 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classBSTItrIn_ac772d3ebbac748c5f8cf9bc659f2e32c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}!is\+At\+End@{is\+At\+End}}
+\index{is\+At\+End@{is\+At\+End}!B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}}
+\subsubsection[{\texorpdfstring{is\+At\+End()}{isAtEnd()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ bool {\bf B\+S\+T\+Itr\+In}$<$ Comparable $>$\+::is\+At\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBSTItrIn_a6f9a43217862c263a9bf15b9a08b889a}{}\label{classBSTItrIn_a6f9a43217862c263a9bf15b9a08b889a}
+
+\begin{DoxyCode}
+421 \{\textcolor{keywordflow}{return} itrStack.empty(); \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classBSTItrIn_a6f9a43217862c263a9bf15b9a08b889a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!B\+S\+T\+Itr\+In@{B\+S\+T\+Itr\+In}}
+\subsubsection[{\texorpdfstring{retrieve()}{retrieve()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable$>$ Comparable\& {\bf B\+S\+T\+Itr\+In}$<$ Comparable $>$\+::retrieve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBSTItrIn_ac7ac215c1247bd25fc1fdb8053826a32}{}\label{classBSTItrIn_ac7ac215c1247bd25fc1fdb8053826a32}
+
+\begin{DoxyCode}
+420 \{ \textcolor{keywordflow}{return} itrStack.top()->element; \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classBSTItrIn_ac7ac215c1247bd25fc1fdb8053826a32_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{BST_8h}{B\+S\+T.\+h}\end{DoxyCompactItemize}

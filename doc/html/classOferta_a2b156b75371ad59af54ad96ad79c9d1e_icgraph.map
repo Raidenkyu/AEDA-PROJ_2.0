@@ -1,0 +1,8 @@
+<map id="Oferta::getData" name="Oferta::getData">
+<area shape="rect" id="node2" href="$classOferta.html#a745e9845f3d1a36e8a8712d576f303ba" title="prints the information of the offers " alt="" coords="433,5,559,32"/>
+<area shape="rect" id="node4" href="$classEmpresa.html#acd458614a3cca3f432b54212a2e72584" title="{ function_description } " alt="" coords="404,65,588,106"/>
+<area shape="rect" id="node5" href="$classEmpresa.html#aea372dbf680408d9fb32341c03b3e5ad" title="Updates which clients are inactive. " alt="" coords="165,148,356,175"/>
+<area shape="rect" id="node7" href="$classOferta.html#aaed9b5937f9f33d2980fcc13ac02132c" title="Gets the boat. " alt="" coords="201,47,320,73"/>
+<area shape="rect" id="node3" href="$classOferta.html#a15e6c1e4f49243136eb5ca1d46925a77" title="decreases the lotation " alt="" coords="636,5,789,32"/>
+<area shape="rect" id="node6" href="$classEmpresa.html#aff124b958356c479ab50ddf4cf302193" title="Construct Empresa object. " alt="" coords="429,148,563,175"/>
+</map>

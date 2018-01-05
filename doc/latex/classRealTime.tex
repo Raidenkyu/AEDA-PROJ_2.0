@@ -1,0 +1,68 @@
+\hypertarget{classRealTime}{}\section{Real\+Time Class Reference}
+\label{classRealTime}\index{Real\+Time@{Real\+Time}}
+
+
+Class for real time.  
+
+
+
+
+{\ttfamily \#include $<$extras.\+h$>$}
+
+
+
+Inheritance diagram for Real\+Time\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classRealTime__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Real\+Time\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classRealTime__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRealTime_a29d66ec5bf923f03f31143941bfebc83}{Real\+Time} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for real time. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Real\+Time@{Real\+Time}!Real\+Time@{Real\+Time}}
+\index{Real\+Time@{Real\+Time}!Real\+Time@{Real\+Time}}
+\subsubsection[{\texorpdfstring{Real\+Time()}{RealTime()}}]{\setlength{\rightskip}{0pt plus 5cm}Real\+Time\+::\+Real\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRealTime_a29d66ec5bf923f03f31143941bfebc83}{}\label{classRealTime_a29d66ec5bf923f03f31143941bfebc83}
+
+\begin{DoxyCode}
+34                   :\hyperlink{classTime_a4245e409c7347d1d671858962c2ca3b5}{Time}(0, 0, 0, 0, 0)\{
+35     time\_t theTime = time(NULL);
+36     \textcolor{keyword}{struct }tm *aTime = localtime(&theTime);
+37     this->\hyperlink{classTime_ab9da5c3324d296464bf26131fd5d8c3f}{minutes} = aTime->tm\_min;
+38     this->\hyperlink{classTime_a08e7d6202b1fe8c01c25bf6688d41712}{hours} = aTime->tm\_hour;
+39     this->\hyperlink{classTime_a9e8b7d2c0e22ab2b87a5870d0492e508}{day} = aTime->tm\_mday;
+40     this->\hyperlink{classTime_a6076ed85da3f1d76e8c5d014ae239748}{month} = aTime ->tm\_mon;
+41     this->\hyperlink{classTime_ae2f1e52f8d00060a7cf7376927d65994}{year} = aTime->tm\_year;
+42 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{extras_8h}{extras.\+h}\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{extras_8cpp}{extras.\+cpp}\end{DoxyCompactItemize}

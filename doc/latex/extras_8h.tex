@@ -1,0 +1,279 @@
+\hypertarget{extras_8h}{}\section{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/extras.h File Reference}
+\label{extras_8h}\index{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/extras.\+h@{/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/extras.\+h}}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$queue$>$}\\*
+Include dependency graph for extras.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{extras_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{extras_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTime}{Time}
+\begin{DoxyCompactList}\small\item\em Class for time. \end{DoxyCompactList}\item 
+class \hyperlink{classRealTime}{Real\+Time}
+\begin{DoxyCompactList}\small\item\em Class for real time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{extras_8h_a1b86ac0cfd7ff9525ec8fa3a32bf7802}{to\+Upper\+Case} (std\+::string input)
+\begin{DoxyCompactList}\small\item\em Turns all the characters of the string in upper case. \end{DoxyCompactList}\item 
+bool \hyperlink{extras_8h_ac71e9b046f7fcad6e7b06a67015a97bc}{operator==} (\hyperlink{classTime}{Time} \&t1, \hyperlink{classTime}{Time} \&t2)
+\begin{DoxyCompactList}\small\item\em Checks if two times are equal. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{extras_8h_a83bb07da4b6f7eee990da42acbea39f6}{operator$<$$<$} (std\+::ostream \&os, \hyperlink{classTime}{Time} \&t)
+\begin{DoxyCompactList}\small\item\em prints the time in a ostream in string format \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}{selection\+Sort} (std\+::vector$<$ T $\ast$ $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em Implementation of a template Selection Sort Algorithm. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T , class P $>$ }\\int \hyperlink{extras_8h_abc85c93edf561168b5bbee8054caa388}{Binary\+Search} (const std\+::vector$<$ T $>$ \&v, P x)
+\begin{DoxyCompactList}\small\item\em implementation of a Binary Search Algorithm \end{DoxyCompactList}\item 
+int \hyperlink{extras_8h_adeb01afb3f640d1b356981469b47f1ec}{get\+Real\+Day} ()
+\begin{DoxyCompactList}\small\item\em Gets the real day. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{extras.\+h@{extras.\+h}!Binary\+Search@{Binary\+Search}}
+\index{Binary\+Search@{Binary\+Search}!extras.\+h@{extras.\+h}}
+\subsubsection[{\texorpdfstring{Binary\+Search(const std\+::vector$<$ T $>$ \&v, P x)}{BinarySearch(const std::vector< T > &v, P x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class P $>$ int Binary\+Search (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{v, }
+\item[{P}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8h_abc85c93edf561168b5bbee8054caa388}{}\label{extras_8h_abc85c93edf561168b5bbee8054caa388}
+
+
+implementation of a Binary Search Algorithm 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & the vector \\
+\hline
+\mbox{\tt in}  & {\em x} & the element\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the elements of the vector\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+the index of the element if found, otherwise -\/1 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+191                                             \{
+192     \textcolor{keywordtype}{int} left = 0, right = v.size() - 1;
+193     \textcolor{keywordflow}{while} (left <= right)\{
+194         \textcolor{keywordtype}{int} middle = (left + right) / 2;
+195         \textcolor{keywordflow}{if} (v[middle]->getNome() < x)\{
+196             left = middle + 1;
+197         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x < v[middle]->getNome())\{
+198             right = middle - 1;
+199         \}\textcolor{keywordflow}{else}\{
+200             \textcolor{keywordflow}{return} middle; \textcolor{comment}{// encontrou}
+201         \}
+202     \}
+203     \textcolor{keywordflow}{return} -1; \textcolor{comment}{// nao encontrou}
+204 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{extras_8h_abc85c93edf561168b5bbee8054caa388_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{extras_8h_abc85c93edf561168b5bbee8054caa388_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{extras.\+h@{extras.\+h}!get\+Real\+Day@{get\+Real\+Day}}
+\index{get\+Real\+Day@{get\+Real\+Day}!extras.\+h@{extras.\+h}}
+\subsubsection[{\texorpdfstring{get\+Real\+Day()}{getRealDay()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Real\+Day (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8h_adeb01afb3f640d1b356981469b47f1ec}{}\label{extras_8h_adeb01afb3f640d1b356981469b47f1ec}
+
+
+Gets the real day. 
+
+\begin{DoxyReturn}{Returns}
+The real day. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{extras_8h_adeb01afb3f640d1b356981469b47f1ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{extras.\+h@{extras.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!extras.\+h@{extras.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, Time \&t)}{operator<<(std::ostream &os, Time &t)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{{\bf Time} \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8h_a83bb07da4b6f7eee990da42acbea39f6}{}\label{extras_8h_a83bb07da4b6f7eee990da42acbea39f6}
+
+
+prints the time in a ostream in string format 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The oostream \\
+\hline
+{\em t} & The time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ostream where the time will be printed 
+\end{DoxyReturn}
+\index{extras.\+h@{extras.\+h}!operator==@{operator==}}
+\index{operator==@{operator==}!extras.\+h@{extras.\+h}}
+\subsubsection[{\texorpdfstring{operator==(\+Time \&t1, Time \&t2)}{operator==(Time &t1, Time &t2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Time} \&}]{t1, }
+\item[{{\bf Time} \&}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8h_ac71e9b046f7fcad6e7b06a67015a97bc}{}\label{extras_8h_ac71e9b046f7fcad6e7b06a67015a97bc}
+
+
+Checks if two times are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & The time 1 \\
+\hline
+{\em t2} & The time 2\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if both times are equal return true otherwise return false. 
+\end{DoxyReturn}
+\index{extras.\+h@{extras.\+h}!selection\+Sort@{selection\+Sort}}
+\index{selection\+Sort@{selection\+Sort}!extras.\+h@{extras.\+h}}
+\subsubsection[{\texorpdfstring{selection\+Sort(std\+::vector$<$ T $\ast$ $>$ \&arr)}{selectionSort(std::vector< T * > &arr)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void selection\+Sort (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $\ast$ $>$ \&}]{arr}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}{}\label{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3}
+
+
+Implementation of a template Selection Sort Algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The vector\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The element of the array \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyCode}
+164                                       \{
+165     \textcolor{keywordtype}{int} index;
+166 
+167     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < arr.size();i++)\{
+168         index = i;
+169 
+170         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = i+1; j < arr.size();j++)\{
+171             \textcolor{keywordflow}{if} (\hyperlink{extras_8h_a1b86ac0cfd7ff9525ec8fa3a32bf7802}{toUpperCase}(arr[j]->getNome()) < \hyperlink{extras_8h_a1b86ac0cfd7ff9525ec8fa3a32bf7802}{toUpperCase}(arr[index]->getNome()))\{
+172                 index = j;
+173             \}
+174 
+175             std::swap(arr[i], arr[index]);
+176         \}
+177     \}
+178 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{extras_8h_a72dd13ed3c0a6dcddc949fbc4a13a2c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{extras.\+h@{extras.\+h}!to\+Upper\+Case@{to\+Upper\+Case}}
+\index{to\+Upper\+Case@{to\+Upper\+Case}!extras.\+h@{extras.\+h}}
+\subsubsection[{\texorpdfstring{to\+Upper\+Case(std\+::string input)}{toUpperCase(std::string input)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string to\+Upper\+Case (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{extras_8h_a1b86ac0cfd7ff9525ec8fa3a32bf7802}{}\label{extras_8h_a1b86ac0cfd7ff9525ec8fa3a32bf7802}
+
+
+Turns all the characters of the string in upper case. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & The input string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string with all chars in upper case 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{extras_8h_a1b86ac0cfd7ff9525ec8fa3a32bf7802_icgraph}
+\end{center}
+\end{figure}
+
+

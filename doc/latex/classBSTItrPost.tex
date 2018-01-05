@@ -1,0 +1,95 @@
+\hypertarget{classBSTItrPost}{}\section{B\+S\+T\+Itr\+Post$<$ Comparable $>$ Class Template Reference}
+\label{classBSTItrPost}\index{B\+S\+T\+Itr\+Post$<$ Comparable $>$@{B\+S\+T\+Itr\+Post$<$ Comparable $>$}}
+
+
+{\ttfamily \#include $<$B\+S\+T.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBSTItrPost_acf7e537dea01978f40c40909c55c56c2}{B\+S\+T\+Itr\+Post} (const \hyperlink{classBST}{B\+ST}$<$ Comparable $>$ \&bt)
+\item 
+void \hyperlink{classBSTItrPost_a376098e5a82cd02118dd4dcdec49bb26}{advance} ()
+\item 
+Comparable \& \hyperlink{classBSTItrPost_a72446e4d0df0bcafc14294a78faeb56e}{retrieve} ()
+\item 
+bool \hyperlink{classBSTItrPost_a2f330e73bb817e8bd1c797805e66ddb7}{is\+At\+End} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}!B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}}
+\index{B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}!B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Itr\+Post(const B\+S\+T$<$ Comparable $>$ \&bt)}{BSTItrPost(const BST< Comparable > &bt)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ {\bf B\+S\+T\+Itr\+Post}$<$ Comparable $>$\+::{\bf B\+S\+T\+Itr\+Post} (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Comparable $>$ \&}]{bt}
+\end{DoxyParamCaption}
+)}\hypertarget{classBSTItrPost_acf7e537dea01978f40c40909c55c56c2}{}\label{classBSTItrPost_acf7e537dea01978f40c40909c55c56c2}
+
+\begin{DoxyCode}
+334 \{
+335   \textcolor{keywordflow}{if} (!bt.\hyperlink{classBST_a8018fc7d6c15b2564c10ddcc4316c64d}{isEmpty}())
+336     slideDown(bt.root);
+337 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classBSTItrPost_acf7e537dea01978f40c40909c55c56c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}!advance@{advance}}
+\index{advance@{advance}!B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}}
+\subsubsection[{\texorpdfstring{advance()}{advance()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ void {\bf B\+S\+T\+Itr\+Post}$<$ Comparable $>$\+::advance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBSTItrPost_a376098e5a82cd02118dd4dcdec49bb26}{}\label{classBSTItrPost_a376098e5a82cd02118dd4dcdec49bb26}
+
+\begin{DoxyCode}
+341 \{
+342   itrStack.pop();
+343   visitStack.pop();
+344   \textcolor{keywordflow}{if} ((!itrStack.empty()) && (visitStack.top() == \textcolor{keyword}{false})) \{
+345     visitStack.pop();
+346     visitStack.push(\textcolor{keyword}{true});
+347     slideDown(itrStack.top()->right);
+348   \}
+349 \}
+\end{DoxyCode}
+\index{B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}!is\+At\+End@{is\+At\+End}}
+\index{is\+At\+End@{is\+At\+End}!B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}}
+\subsubsection[{\texorpdfstring{is\+At\+End()}{isAtEnd()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ bool {\bf B\+S\+T\+Itr\+Post}$<$ Comparable $>$\+::is\+At\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBSTItrPost_a2f330e73bb817e8bd1c797805e66ddb7}{}\label{classBSTItrPost_a2f330e73bb817e8bd1c797805e66ddb7}
+
+\begin{DoxyCode}
+323 \{\textcolor{keywordflow}{return} itrStack.empty(); \}
+\end{DoxyCode}
+\index{B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!B\+S\+T\+Itr\+Post@{B\+S\+T\+Itr\+Post}}
+\subsubsection[{\texorpdfstring{retrieve()}{retrieve()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Comparable $>$ Comparable\& {\bf B\+S\+T\+Itr\+Post}$<$ Comparable $>$\+::retrieve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBSTItrPost_a72446e4d0df0bcafc14294a78faeb56e}{}\label{classBSTItrPost_a72446e4d0df0bcafc14294a78faeb56e}
+
+\begin{DoxyCode}
+322 \{ \textcolor{keywordflow}{return} itrStack.top()->element; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{BST_8h}{B\+S\+T.\+h}\end{DoxyCompactItemize}

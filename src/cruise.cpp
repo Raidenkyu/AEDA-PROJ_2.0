@@ -588,7 +588,7 @@ void Empresa::displayOfertasemOrdem() {
 }
 
 void Empresa::aplicaDesconto() {
-	int antigopreco, novopreco;
+	int antigopreco;
 	
 	Oferta ofertatemp = queueOfertasOrdenadas.top();
 	antigopreco = ofertatemp.getPreco();

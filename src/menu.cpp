@@ -433,7 +433,6 @@ void Empresa::menuFornecedor() {
 	switch (opcaofornecedor) {
 
 	case 0:
-		cout << "\n" << "Agradecemos a utilizacao do nosso servico, a aplicacao ira agora fechar.";
 		return;
 		break;
 
@@ -507,7 +506,7 @@ void Empresa::menuFornecedor() {
 	
 		
 	default:
-		cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
+		cout << "Lamento, mas a opcao que inseriu nao e valida \n";
 
 
 	}
@@ -806,7 +805,7 @@ void Empresa::menuReservas() {
 		cout << "| Escolha o que pretende fazer com as reservas             |\n";
 		cout << "+----------------------------------------------------------+\n";
 		cout << "| Selecione a sua opcao (insira apenas o numero):          |\n";
-		cout << "+----------------------------------------------------------+ \n";
+		cout << "+----------------------------------------------------------+\n";
 		cout << "| 1 - Adicionar Reserva                                    |\n";
 		cout << "| 2 - Modificar Reserva                                    |\n";
 		cout << "| 3 - Cancelar Reserva                                     |\n";
@@ -830,7 +829,6 @@ void Empresa::menuReservas() {
 
 
 				}
-		}
 		switch (opcaoreservas) {
 
 		
@@ -908,11 +906,11 @@ void Empresa::menuReservas() {
 			return;
 
 		default:
-			cout << "Lamento, mas a opcao que inseriu nao e valida. Sera redirecionado/a para o inicio do menu. \n";
-			return;
+			cout << "Lamento, mas a opcao que inseriu nao e valida. \n";
 			
 
 	}
+}
 	return;
 }
 	

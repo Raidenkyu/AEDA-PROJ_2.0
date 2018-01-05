@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['addclientes',['addClientes',['../classEmpresa.html#a57597ec4154f274686bc648ccf5d2a59',1,'Empresa']]],
+  ['addfaturas',['addFaturas',['../classEmpresa.html#a89c034ba48b716dfe61724e38eb0afbb',1,'Empresa']]],
+  ['addfornecedores',['addFornecedores',['../classEmpresa.html#a0c858479d6e92094adbb2fc085039376',1,'Empresa']]],
+  ['addoferta',['addOferta',['../classFornecedor.html#a220373fd19f44a30d7c6c1ec913be700',1,'Fornecedor']]],
+  ['addofertasqueue',['addOfertasQueue',['../classEmpresa.html#a5ca8821d938f11f29558ae90913de528',1,'Empresa']]],
+  ['addreservas',['addReservas',['../classEmpresa.html#a42a1671b234ab8380cfb2ed33517edb2',1,'Empresa']]],
+  ['adicionacliente',['adicionaCliente',['../classEmpresa.html#aba4af6a945948ac66e771a416cfc2a2a',1,'Empresa']]],
+  ['adicionaclientenormal',['adicionaClienteNormal',['../classEmpresa.html#a372599c8aee20690517cc3ae6c8e1ca7',1,'Empresa']]],
+  ['adicionaclienteregistado',['adicionaClienteRegistado',['../classEmpresa.html#a430c00a63ef70338de3b4b7c096ea194',1,'Empresa']]],
+  ['adicionafornecedor',['adicionaFornecedor',['../classEmpresa.html#af20261a3f95a5dd0c4a5a796d9a3d442',1,'Empresa']]],
+  ['adicionaoferta',['adicionaOferta',['../classEmpresa.html#ae244a8ae3afb85eb5e9e5febce8b8728',1,'Empresa']]],
+  ['adicionareserva',['adicionaReserva',['../classEmpresa.html#a42953bdbb2fb39173ad6f38892fc122b',1,'Empresa']]],
+  ['advance',['advance',['../classBSTItrPost.html#a376098e5a82cd02118dd4dcdec49bb26',1,'BSTItrPost::advance()'],['../classBSTItrPre.html#a7a743d66a842018fd833fb2b0737254d',1,'BSTItrPre::advance()'],['../classBSTItrIn.html#ac772d3ebbac748c5f8cf9bc659f2e32c',1,'BSTItrIn::advance()'],['../classBSTItrLevel.html#ad54a6fa289a59d6050b507abe40d463b',1,'BSTItrLevel::advance()']]],
+  ['apagadestinos',['apagaDestinos',['../classOferta.html#a1c2caf1032ad1a24706db8fb3bcfa980',1,'Oferta']]],
+  ['aplicadesconto',['aplicaDesconto',['../classEmpresa.html#a46a4898b8ae8e09bdf656b25b8ffe99d',1,'Empresa']]],
+  ['atualizainatividade',['atualizaInatividade',['../classEmpresa.html#aea372dbf680408d9fb32341c03b3e5ad',1,'Empresa']]]
+];

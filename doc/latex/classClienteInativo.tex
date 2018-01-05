@@ -1,0 +1,155 @@
+\hypertarget{classClienteInativo}{}\section{Cliente\+Inativo Class Reference}
+\label{classClienteInativo}\index{Cliente\+Inativo@{Cliente\+Inativo}}
+
+
+Class for inactive clients.  
+
+
+
+
+{\ttfamily \#include $<$cruise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClienteInativo_a89308172bb87ed33261ab3f0543b407d}{Cliente\+Inativo} (\hyperlink{classCliente}{Cliente} $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Contructs the inactive client object. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a}{get\+Nome} () const 
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classClienteInativo_ad7bb77ba3d2752dc916fdc7072846969}{get\+Morada} () const 
+\begin{DoxyCompactList}\small\item\em Gets the address. \end{DoxyCompactList}\item 
+void \hyperlink{classClienteInativo_aea3df2299f33ea2f4e22f406ba73d5b2}{set\+Morada} (std\+::string nova\+Morada)
+\begin{DoxyCompactList}\small\item\em Sets the address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for inactive clients. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cliente\+Inativo@{Cliente\+Inativo}!Cliente\+Inativo@{Cliente\+Inativo}}
+\index{Cliente\+Inativo@{Cliente\+Inativo}!Cliente\+Inativo@{Cliente\+Inativo}}
+\subsubsection[{\texorpdfstring{Cliente\+Inativo(\+Cliente $\ast$ptr)}{ClienteInativo(Cliente *ptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Cliente\+Inativo\+::\+Cliente\+Inativo (
+\begin{DoxyParamCaption}
+\item[{{\bf Cliente} $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{classClienteInativo_a89308172bb87ed33261ab3f0543b407d}{}\label{classClienteInativo_a89308172bb87ed33261ab3f0543b407d}
+
+
+Contructs the inactive client object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+479 : ptr(ptr)\{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Cliente\+Inativo@{Cliente\+Inativo}!get\+Morada@{get\+Morada}}
+\index{get\+Morada@{get\+Morada}!Cliente\+Inativo@{Cliente\+Inativo}}
+\subsubsection[{\texorpdfstring{get\+Morada() const }{getMorada() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Cliente\+Inativo\+::get\+Morada (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classClienteInativo_ad7bb77ba3d2752dc916fdc7072846969}{}\label{classClienteInativo_ad7bb77ba3d2752dc916fdc7072846969}
+
+
+Gets the address. 
+
+\begin{DoxyReturn}{Returns}
+The address 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+485                                       \{
+486     \textcolor{keywordflow}{return} this->ptr->\hyperlink{classCliente_a7f69a0a6ffad90dc0282d7dd9d5cb994}{getMorada}();
+487 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classClienteInativo_ad7bb77ba3d2752dc916fdc7072846969_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Cliente\+Inativo@{Cliente\+Inativo}!get\+Nome@{get\+Nome}}
+\index{get\+Nome@{get\+Nome}!Cliente\+Inativo@{Cliente\+Inativo}}
+\subsubsection[{\texorpdfstring{get\+Nome() const }{getNome() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Cliente\+Inativo\+::get\+Nome (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a}{}\label{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a}
+
+
+Gets the name. 
+
+\begin{DoxyReturn}{Returns}
+The name 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+481                                      \{
+482     \textcolor{keywordflow}{return} this->ptr->\hyperlink{classCliente_a09b99b4140f32bdd3bf486cc2ac5ee27}{getNome}();
+483 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Cliente\+Inativo@{Cliente\+Inativo}!set\+Morada@{set\+Morada}}
+\index{set\+Morada@{set\+Morada}!Cliente\+Inativo@{Cliente\+Inativo}}
+\subsubsection[{\texorpdfstring{set\+Morada(std\+::string nova\+Morada)}{setMorada(std::string novaMorada)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cliente\+Inativo\+::set\+Morada (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nova\+Morada}
+\end{DoxyParamCaption}
+)}\hypertarget{classClienteInativo_aea3df2299f33ea2f4e22f406ba73d5b2}{}\label{classClienteInativo_aea3df2299f33ea2f4e22f406ba73d5b2}
+
+
+Sets the address. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nova\+Morada} & The new address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+489                                                \{
+490     this->\hyperlink{classClienteInativo_aea3df2299f33ea2f4e22f406ba73d5b2}{setMorada}(novaMorada);
+491 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8h}{cruise.\+h}\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8cpp}{cruise.\+cpp}\end{DoxyCompactItemize}

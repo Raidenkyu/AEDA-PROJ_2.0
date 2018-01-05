@@ -1,0 +1,286 @@
+\hypertarget{classReserva}{}\section{Reserva Class Reference}
+\label{classReserva}\index{Reserva@{Reserva}}
+
+
+Class for reserva.  
+
+
+
+
+{\ttfamily \#include $<$cruise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classReserva_a96145a1381e9a9e5bb2091bb17e1d496}{Reserva} (std\+::string nome\+\_\+fornecedor, \hyperlink{classOferta}{Oferta} $\ast$oferta, std\+::string nome\+\_\+cliente, \hyperlink{classCliente}{Cliente} $\ast$cliente, unsigned int preco, bool cancelada=false)
+\begin{DoxyCompactList}\small\item\em Construct the \hyperlink{classReserva}{Reserva} Objet. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classReserva_a87b0465c8e9d2291d5dddd48fce24c38}{get\+Nome\+Cliente} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the client. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classReserva_ad54ef5f67fa096e711d2ab526db30bf3}{get\+Nome\+Fornecedor} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the offer. \end{DoxyCompactList}\item 
+\hyperlink{classOferta}{Oferta} $\ast$ \hyperlink{classReserva_ac7fb69d14f442f58961bd337267bd92d}{get\+Oferta} ()
+\begin{DoxyCompactList}\small\item\em Determines if the reservation was cancelled. \end{DoxyCompactList}\item 
+\hyperlink{classCliente}{Cliente} $\ast$ \hyperlink{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}{get\+Cliente} ()
+\begin{DoxyCompactList}\small\item\em Gets the cliente. \end{DoxyCompactList}\item 
+bool \hyperlink{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}{is\+Cancelada} ()
+\begin{DoxyCompactList}\small\item\em Determines if cancelada. \end{DoxyCompactList}\item 
+void \hyperlink{classReserva_a05435b60142460ad2b0ccf61b7ea4531}{cancelamento} ()
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classReserva_a7d6a55cda46a28d62af5870c98cbc3d5}{get\+Preco} ()
+\begin{DoxyCompactList}\small\item\em Gets the price. \end{DoxyCompactList}\item 
+void \hyperlink{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}{set\+Preco} (int novo\+Preco)
+\begin{DoxyCompactList}\small\item\em Sets the preco. \end{DoxyCompactList}\item 
+\hyperlink{classTime}{Time} \hyperlink{classReserva_a187007ee30ffdc2372739708901b6fc7}{get\+Data} ()
+\begin{DoxyCompactList}\small\item\em Gets the date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for reserva. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Reserva@{Reserva}!Reserva@{Reserva}}
+\index{Reserva@{Reserva}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{Reserva(std\+::string nome\+\_\+fornecedor, Oferta $\ast$oferta, std\+::string nome\+\_\+cliente, Cliente $\ast$cliente, unsigned int preco, bool cancelada=false)}{Reserva(std::string nome_fornecedor, Oferta *oferta, std::string nome_cliente, Cliente *cliente, unsigned int preco, bool cancelada=false)}}]{\setlength{\rightskip}{0pt plus 5cm}Reserva\+::\+Reserva (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nome\+\_\+fornecedor, }
+\item[{{\bf Oferta} $\ast$}]{oferta, }
+\item[{std\+::string}]{nome\+\_\+cliente, }
+\item[{{\bf Cliente} $\ast$}]{cliente, }
+\item[{unsigned int}]{preco, }
+\item[{bool}]{cancelada = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{classReserva_a96145a1381e9a9e5bb2091bb17e1d496}{}\label{classReserva_a96145a1381e9a9e5bb2091bb17e1d496}
+
+
+Construct the \hyperlink{classReserva}{Reserva} Objet. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nome\+\_\+fornecedor} & The name of the supplier \\
+\hline
+ & {\em oferta} & A pointer to the offer \\
+\hline
+\mbox{\tt in}  & {\em nome\+\_\+cliente} & The name of the client \\
+\hline
+ & {\em cliente} & A pointer to the client \\
+\hline
+\mbox{\tt in}  & {\em preco} & The price of the reservation \\
+\hline
+\mbox{\tt in}  & {\em cancelada} & If the reservation was canceled \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+457                                                                                                            
+                              :
+458         nome\_fornecedor(nome\_fornecedor), oferta(oferta), nome\_cliente(nome\_cliente),cliente(cliente),preco
+      (preco), cancelada(cancelada) \{
+459     this->data = \hyperlink{classRealTime}{RealTime}();
+460 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Reserva@{Reserva}!cancelamento@{cancelamento}}
+\index{cancelamento@{cancelamento}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{cancelamento()}{cancelamento()}}]{\setlength{\rightskip}{0pt plus 5cm}void Reserva\+::cancelamento (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_a05435b60142460ad2b0ccf61b7ea4531}{}\label{classReserva_a05435b60142460ad2b0ccf61b7ea4531}
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyCode}
+539 \{ cancelada = \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{Reserva@{Reserva}!get\+Cliente@{get\+Cliente}}
+\index{get\+Cliente@{get\+Cliente}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{get\+Cliente()}{getCliente()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cliente}$\ast$ Reserva\+::get\+Cliente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}{}\label{classReserva_a3b8ef1c42c35aabcc2bdde4767b4bace}
+
+
+Gets the cliente. 
+
+\begin{DoxyReturn}{Returns}
+The cliente. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+527 \{ \textcolor{keywordflow}{return} this->cliente; \}
+\end{DoxyCode}
+\index{Reserva@{Reserva}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{get\+Data()}{getData()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} Reserva\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_a187007ee30ffdc2372739708901b6fc7}{}\label{classReserva_a187007ee30ffdc2372739708901b6fc7}
+
+
+Gets the date. 
+
+\begin{DoxyReturn}{Returns}
+The date 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+560 \{\textcolor{keywordflow}{return} data;\}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classReserva_a187007ee30ffdc2372739708901b6fc7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Reserva@{Reserva}!get\+Nome\+Cliente@{get\+Nome\+Cliente}}
+\index{get\+Nome\+Cliente@{get\+Nome\+Cliente}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{get\+Nome\+Cliente()}{getNomeCliente()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Reserva\+::get\+Nome\+Cliente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_a87b0465c8e9d2291d5dddd48fce24c38}{}\label{classReserva_a87b0465c8e9d2291d5dddd48fce24c38}
+
+
+Gets the name of the client. 
+
+\begin{DoxyReturn}{Returns}
+The nome of cliente. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+505 \{ \textcolor{keywordflow}{return} this->nome\_cliente; \};
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classReserva_a87b0465c8e9d2291d5dddd48fce24c38_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Reserva@{Reserva}!get\+Nome\+Fornecedor@{get\+Nome\+Fornecedor}}
+\index{get\+Nome\+Fornecedor@{get\+Nome\+Fornecedor}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{get\+Nome\+Fornecedor()}{getNomeFornecedor()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Reserva\+::get\+Nome\+Fornecedor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_ad54ef5f67fa096e711d2ab526db30bf3}{}\label{classReserva_ad54ef5f67fa096e711d2ab526db30bf3}
+
+
+Gets the name of the offer. 
+
+\begin{DoxyReturn}{Returns}
+The nome of oferta. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+512 \{ \textcolor{keywordflow}{return} this->nome\_fornecedor; \};
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classReserva_ad54ef5f67fa096e711d2ab526db30bf3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Reserva@{Reserva}!get\+Oferta@{get\+Oferta}}
+\index{get\+Oferta@{get\+Oferta}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{get\+Oferta()}{getOferta()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Oferta}$\ast$ Reserva\+::get\+Oferta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_ac7fb69d14f442f58961bd337267bd92d}{}\label{classReserva_ac7fb69d14f442f58961bd337267bd92d}
+
+
+Determines if the reservation was cancelled. 
+
+\begin{DoxyReturn}{Returns}
+True if cancelled, False otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+520 \{ \textcolor{keywordflow}{return} this-> oferta; \}
+\end{DoxyCode}
+\index{Reserva@{Reserva}!get\+Preco@{get\+Preco}}
+\index{get\+Preco@{get\+Preco}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{get\+Preco()}{getPreco()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Reserva\+::get\+Preco (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_a7d6a55cda46a28d62af5870c98cbc3d5}{}\label{classReserva_a7d6a55cda46a28d62af5870c98cbc3d5}
+
+
+Gets the price. 
+
+\begin{DoxyReturn}{Returns}
+The price 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+546 \{\textcolor{keywordflow}{return} this->preco;\};
+\end{DoxyCode}
+\index{Reserva@{Reserva}!is\+Cancelada@{is\+Cancelada}}
+\index{is\+Cancelada@{is\+Cancelada}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{is\+Cancelada()}{isCancelada()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Reserva\+::is\+Cancelada (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}{}\label{classReserva_a1fb3e7e1dfce5960dc888ac9929f014f}
+
+
+Determines if cancelada. 
+
+\begin{DoxyReturn}{Returns}
+True if cancelada, False otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+534 \{\textcolor{keywordflow}{return} this->cancelada;\};
+\end{DoxyCode}
+\index{Reserva@{Reserva}!set\+Preco@{set\+Preco}}
+\index{set\+Preco@{set\+Preco}!Reserva@{Reserva}}
+\subsubsection[{\texorpdfstring{set\+Preco(int novo\+Preco)}{setPreco(int novoPreco)}}]{\setlength{\rightskip}{0pt plus 5cm}void Reserva\+::set\+Preco (
+\begin{DoxyParamCaption}
+\item[{int}]{novo\+Preco}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}{}\label{classReserva_ac2d3c756eb1abc03f0661cc97e1600e6}
+
+
+Sets the preco. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em novo\+Preco} & The new price \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+553 \{ preco = novoPreco; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8h}{cruise.\+h}\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8cpp}{cruise.\+cpp}\end{DoxyCompactItemize}

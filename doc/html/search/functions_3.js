@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['deleteclientes',['deleteClientes',['../classEmpresa.html#a52b9f4d94c2a05704d74854ed4dd1590',1,'Empresa']]],
+  ['deletefornecedores',['deleteFornecedores',['../classEmpresa.html#ab8b7dda77caceec58e464c16b7e45f7c',1,'Empresa']]],
+  ['deleteofertas',['deleteOfertas',['../classFornecedor.html#a55df81a932be74bc25122639c64ab5a0',1,'Fornecedor']]],
+  ['deletereservas',['deleteReservas',['../classEmpresa.html#a079c008b006f56faac3c1016fe770e8c',1,'Empresa']]],
+  ['desativacliente',['desativaCliente',['../classEmpresa.html#a4c8205b2c4aad43f46172966aaed30b7',1,'Empresa']]],
+  ['diferencadias',['diferencaDias',['../classTime.html#a346c1dbc706dfd41e4a15b16577e4265',1,'Time']]],
+  ['diminuilotacao',['diminuiLotacao',['../classOferta.html#a15e6c1e4f49243136eb5ca1d46925a77',1,'Oferta']]],
+  ['displayclientes',['displayClientes',['../classEmpresa.html#a28e04d59daa7206bec6055249ce17410',1,'Empresa']]],
+  ['displayclientesinativos',['displayClientesInativos',['../classEmpresa.html#ac7ea4de24979f6623ffe8fbd3d0eeb24',1,'Empresa']]],
+  ['displayfornecedores',['displayFornecedores',['../classEmpresa.html#a55c3756c01b45b41ad03f4e4f3e4dcac',1,'Empresa']]],
+  ['displayfornecedorescomofertas',['displayFornecedorescomOfertas',['../classEmpresa.html#aa47e9a64800a41180b7f374b73a1f32b',1,'Empresa']]],
+  ['displayofertas',['displayOfertas',['../classFornecedor.html#a858875f921d2eebb652c4b7628f95c71',1,'Fornecedor']]],
+  ['displayofertasemordem',['displayOfertasemOrdem',['../classEmpresa.html#acd458614a3cca3f432b54212a2e72584',1,'Empresa']]],
+  ['displayreservas',['displayReservas',['../classEmpresa.html#a8c89e6053eaccf0e1938a4f2ab0bfdc4',1,'Empresa']]],
+  ['displaytodasasofertasdeumfornecedor',['displayTodasAsOfertasdeUmFornecedor',['../classEmpresa.html#a73543b5ca1d9dd8e99e75d9167839471',1,'Empresa']]],
+  ['displaytodasasreservasdeumcliente',['displayTodasAsReservasdeUmCliente',['../classEmpresa.html#a259bb6b172011429c6e24feb0285e66b',1,'Empresa']]],
+  ['displaytodasasreservasdeumfornecedor',['displayTodasAsReservasdeUmFornecedor',['../classEmpresa.html#af197726a3dc20739aac877ac4c090f6e',1,'Empresa']]],
+  ['displaytodososclientesdeumaoferta',['displayTodosOsClientesdeumaOferta',['../classEmpresa.html#a641c2eb827b39ab79919187645ff71a9',1,'Empresa']]]
+];

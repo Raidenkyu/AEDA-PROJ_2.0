@@ -1,0 +1,318 @@
+\hypertarget{classFatura}{}\section{Fatura Class Reference}
+\label{classFatura}\index{Fatura@{Fatura}}
+
+
+Class for fatura.  
+
+
+
+
+{\ttfamily \#include $<$cruise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFatura_a1f07f69dca302332c03e605c91df8c90}{Fatura} (\hyperlink{classReserva}{Reserva} $\ast$r)
+\item 
+\hyperlink{classReserva}{Reserva} $\ast$ \hyperlink{classFatura_aec7c7eb1220972655cd5318cae9a8b58}{get\+Reserva} ()
+\begin{DoxyCompactList}\small\item\em Gets the reserva. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{get\+Nome\+Cliente} () const 
+\begin{DoxyCompactList}\small\item\em Gets the nome cliente. \end{DoxyCompactList}\item 
+\hyperlink{classTime}{Time} \hyperlink{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}{get\+Data} () const 
+\begin{DoxyCompactList}\small\item\em Gets the data. \end{DoxyCompactList}\item 
+\hyperlink{classTime}{Time} \hyperlink{classFatura_a8eb6e932de3351b6fca24e58397b02c6}{get\+Data} ()
+\begin{DoxyCompactList}\small\item\em Gets the data. \end{DoxyCompactList}\item 
+string \hyperlink{classFatura_a45efe8240f7ffc339ed1a34b2f928465}{get\+Fornecedor} ()
+\begin{DoxyCompactList}\small\item\em Gets the fornecedor. \end{DoxyCompactList}\item 
+bool \hyperlink{classFatura_adb4cd8ad6992c102ba6f92c5f6a2fbee}{operator$<$} (const \hyperlink{classFatura}{Fatura} \&f1) const 
+\begin{DoxyCompactList}\small\item\em \{ operator\+\_\+description \} \end{DoxyCompactList}\item 
+bool \hyperlink{classFatura_a337e1169c75de3089dcf3e16ee179aa3}{operator==} (const \hyperlink{classFatura}{Fatura} \&f1) const 
+\begin{DoxyCompactList}\small\item\em \{ operator\+\_\+description \} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for fatura. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Fatura@{Fatura}!Fatura@{Fatura}}
+\index{Fatura@{Fatura}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{Fatura(\+Reserva $\ast$r)}{Fatura(Reserva *r)}}]{\setlength{\rightskip}{0pt plus 5cm}Fatura\+::\+Fatura (
+\begin{DoxyParamCaption}
+\item[{{\bf Reserva} $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\hypertarget{classFatura_a1f07f69dca302332c03e605c91df8c90}{}\label{classFatura_a1f07f69dca302332c03e605c91df8c90}
+
+\begin{DoxyCode}
+642 : reserva(r) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Fatura@{Fatura}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{get\+Data() const }{getData() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} Fatura\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}{}\label{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}
+
+
+Gets the data. 
+
+\begin{DoxyReturn}{Returns}
+The data. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+657                           \{
+658     \textcolor{keywordflow}{return} this->reserva->\hyperlink{classReserva_a187007ee30ffdc2372739708901b6fc7}{getData}();
+659 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classFatura_af7d5b6d4f800887742a7bb1adbfecc65_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classFatura_af7d5b6d4f800887742a7bb1adbfecc65_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Fatura@{Fatura}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{get\+Data()}{getData()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} Fatura\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFatura_a8eb6e932de3351b6fca24e58397b02c6}{}\label{classFatura_a8eb6e932de3351b6fca24e58397b02c6}
+
+
+Gets the data. 
+
+\begin{DoxyReturn}{Returns}
+The data. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+661                      \{
+662     \textcolor{keywordflow}{return} this->reserva->\hyperlink{classReserva_a187007ee30ffdc2372739708901b6fc7}{getData}();
+663 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classFatura_a8eb6e932de3351b6fca24e58397b02c6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Fatura@{Fatura}!get\+Fornecedor@{get\+Fornecedor}}
+\index{get\+Fornecedor@{get\+Fornecedor}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{get\+Fornecedor()}{getFornecedor()}}]{\setlength{\rightskip}{0pt plus 5cm}string Fatura\+::get\+Fornecedor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFatura_a45efe8240f7ffc339ed1a34b2f928465}{}\label{classFatura_a45efe8240f7ffc339ed1a34b2f928465}
+
+
+Gets the fornecedor. 
+
+\begin{DoxyReturn}{Returns}
+The fornecedor. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+673                              \{
+674     \textcolor{keywordflow}{return} this->reserva->\hyperlink{classReserva_ad54ef5f67fa096e711d2ab526db30bf3}{getNomeFornecedor}();
+675 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFatura_a45efe8240f7ffc339ed1a34b2f928465_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classFatura_a45efe8240f7ffc339ed1a34b2f928465_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Fatura@{Fatura}!get\+Nome\+Cliente@{get\+Nome\+Cliente}}
+\index{get\+Nome\+Cliente@{get\+Nome\+Cliente}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{get\+Nome\+Cliente() const }{getNomeCliente() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Fatura\+::get\+Nome\+Cliente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFatura_aa16421065127ac0fd15740b80dd1893b}{}\label{classFatura_aa16421065127ac0fd15740b80dd1893b}
+
+
+Gets the nome cliente. 
+
+\begin{DoxyReturn}{Returns}
+The nome cliente. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+653                                    \{
+654     \textcolor{keywordflow}{return} this->reserva->\hyperlink{classReserva_a87b0465c8e9d2291d5dddd48fce24c38}{getNomeCliente}();
+655 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFatura_aa16421065127ac0fd15740b80dd1893b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFatura_aa16421065127ac0fd15740b80dd1893b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Fatura@{Fatura}!get\+Reserva@{get\+Reserva}}
+\index{get\+Reserva@{get\+Reserva}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{get\+Reserva()}{getReserva()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Reserva} $\ast$ Fatura\+::get\+Reserva (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFatura_aec7c7eb1220972655cd5318cae9a8b58}{}\label{classFatura_aec7c7eb1220972655cd5318cae9a8b58}
+
+
+Gets the reserva. 
+
+\begin{DoxyReturn}{Returns}
+The reserva. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+649                              \{
+650     \textcolor{keywordflow}{return} reserva;
+651 \}
+\end{DoxyCode}
+\index{Fatura@{Fatura}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{operator$<$(const Fatura \&f1) const }{operator<(const Fatura &f1) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Fatura\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Fatura} \&}]{f1}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFatura_adb4cd8ad6992c102ba6f92c5f6a2fbee}{}\label{classFatura_adb4cd8ad6992c102ba6f92c5f6a2fbee}
+
+
+\{ operator\+\_\+description \} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em f1} & The f 1\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+666                                              \{
+667     \textcolor{keywordflow}{if} (this->\hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{getNomeCliente}() != f1.\hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{getNomeCliente}()) \{
+668         \textcolor{keywordflow}{return} this->\hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{getNomeCliente}() < f1.\hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{getNomeCliente}();
+669     \}
+670     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} this->\hyperlink{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}{getData}() < f1.\hyperlink{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}{getData}();
+671 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFatura_adb4cd8ad6992c102ba6f92c5f6a2fbee_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Fatura@{Fatura}!operator==@{operator==}}
+\index{operator==@{operator==}!Fatura@{Fatura}}
+\subsubsection[{\texorpdfstring{operator==(const Fatura \&f1) const }{operator==(const Fatura &f1) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Fatura\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Fatura} \&}]{f1}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFatura_a337e1169c75de3089dcf3e16ee179aa3}{}\label{classFatura_a337e1169c75de3089dcf3e16ee179aa3}
+
+
+\{ operator\+\_\+description \} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em f1} & The f 1\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+677                                               \{
+678     \textcolor{keywordflow}{return} (this->\hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{getNomeCliente}() == f1.\hyperlink{classFatura_aa16421065127ac0fd15740b80dd1893b}{getNomeCliente}()) && (this->
+      \hyperlink{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}{getData}() == f1.\hyperlink{classFatura_af7d5b6d4f800887742a7bb1adbfecc65}{getData}());
+679 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFatura_a337e1169c75de3089dcf3e16ee179aa3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8h}{cruise.\+h}\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8cpp}{cruise.\+cpp}\end{DoxyCompactItemize}

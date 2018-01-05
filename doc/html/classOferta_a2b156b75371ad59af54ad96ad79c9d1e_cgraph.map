@@ -1,0 +1,7 @@
+<map id="Oferta::getData" name="Oferta::getData">
+<area shape="rect" id="node2" href="$classTime.html#ade4d01d38041bb86a2e1ded9fd3cd28e" title="Gets the year. " alt="" coords="175,5,279,32"/>
+<area shape="rect" id="node3" href="$classTime.html#a22fd86b14d3b067cf1447fd9ca5caf6f" title="Gets the month. " alt="" coords="170,56,283,83"/>
+<area shape="rect" id="node4" href="$classTime.html#abdccc37217b520155a67a1d732014f1a" title="Gets the day. " alt="" coords="176,107,277,133"/>
+<area shape="rect" id="node5" href="$classTime.html#ac38ba7bbc9876d7d75c6fb16ba7ac453" title="Gets the hours. " alt="" coords="171,157,283,184"/>
+<area shape="rect" id="node6" href="$classTime.html#a800d91da444cd295a329925c45942359" title="Gets the minutes. " alt="" coords="165,208,288,235"/>
+</map>

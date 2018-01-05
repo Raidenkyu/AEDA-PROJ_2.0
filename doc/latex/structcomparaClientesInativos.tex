@@ -1,0 +1,68 @@
+\hypertarget{structcomparaClientesInativos}{}\section{compara\+Clientes\+Inativos Struct Reference}
+\label{structcomparaClientesInativos}\index{compara\+Clientes\+Inativos@{compara\+Clientes\+Inativos}}
+
+
+Comparison criteria in the hash table.  
+
+
+
+
+{\ttfamily \#include $<$cruise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structcomparaClientesInativos_a8f260b392f56aa5f619fcd2c3a871fb4}{operator()} (const \hyperlink{classClienteInativo}{Cliente\+Inativo} \&c) const 
+\item 
+bool \hyperlink{structcomparaClientesInativos_aae4b963001183c30c0aab8b597e3c61d}{operator()} (const \hyperlink{classClienteInativo}{Cliente\+Inativo} \&c1, const \hyperlink{classClienteInativo}{Cliente\+Inativo} \&c2) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Comparison criteria in the hash table. 
+
+\subsection{Member Function Documentation}
+\index{compara\+Clientes\+Inativos@{compara\+Clientes\+Inativos}!operator()@{operator()}}
+\index{operator()@{operator()}!compara\+Clientes\+Inativos@{compara\+Clientes\+Inativos}}
+\subsubsection[{\texorpdfstring{operator()(const Cliente\+Inativo \&c) const }{operator()(const ClienteInativo &c) const }}]{\setlength{\rightskip}{0pt plus 5cm}int compara\+Clientes\+Inativos\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf Cliente\+Inativo} \&}]{c}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structcomparaClientesInativos_a8f260b392f56aa5f619fcd2c3a871fb4}{}\label{structcomparaClientesInativos_a8f260b392f56aa5f619fcd2c3a871fb4}
+
+\begin{DoxyCode}
+579                                                     \{
+580         \textcolor{keywordflow}{return} 0;
+581     \}
+\end{DoxyCode}
+\index{compara\+Clientes\+Inativos@{compara\+Clientes\+Inativos}!operator()@{operator()}}
+\index{operator()@{operator()}!compara\+Clientes\+Inativos@{compara\+Clientes\+Inativos}}
+\subsubsection[{\texorpdfstring{operator()(const Cliente\+Inativo \&c1, const Cliente\+Inativo \&c2) const }{operator()(const ClienteInativo &c1, const ClienteInativo &c2) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool compara\+Clientes\+Inativos\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf Cliente\+Inativo} \&}]{c1, }
+\item[{const {\bf Cliente\+Inativo} \&}]{c2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structcomparaClientesInativos_aae4b963001183c30c0aab8b597e3c61d}{}\label{structcomparaClientesInativos_aae4b963001183c30c0aab8b597e3c61d}
+
+\begin{DoxyCode}
+582                                                                                  \{
+583         \textcolor{keywordflow}{return} c1.\hyperlink{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a}{getNome}() < c2.\hyperlink{classClienteInativo_a0d29faf815a74d59a7f3e4028d5aad2a}{getNome}();
+584     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcomparaClientesInativos_aae4b963001183c30c0aab8b597e3c61d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Documentos/\+Projetos/\+Porto-\/rivers-\/cruise-\/manager/src/\hyperlink{cruise_8h}{cruise.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,18 @@
+<map id="BinarySearch" name="BinarySearch">
+<area shape="rect" id="node2" href="$classEmpresa.html#a52b9f4d94c2a05704d74854ed4dd1590" title="removes a Client " alt="" coords="202,5,367,32"/>
+<area shape="rect" id="node3" href="$classEmpresa.html#a372599c8aee20690517cc3ae6c8e1ca7" title="displays the interface to add Clients " alt="" coords="199,57,370,98"/>
+<area shape="rect" id="node4" href="$classEmpresa.html#a430c00a63ef70338de3b4b7c096ea194" title="displays the interface to add Registred Clients " alt="" coords="199,122,370,163"/>
+<area shape="rect" id="node5" href="$classEmpresa.html#a9b938f2436e95e68afce6cc04f2100bc" title="Modifies a cliente. " alt="" coords="199,188,371,215"/>
+<area shape="rect" id="node6" href="$classEmpresa.html#ab9af9446d6d2c206b4b3e18e1bcb6475" title="Removes a cliente. " alt="" coords="201,239,368,265"/>
+<area shape="rect" id="node7" href="$classEmpresa.html#a259bb6b172011429c6e24feb0285e66b" title="Lists all the reservations made by one client. " alt="" coords="162,290,407,331"/>
+<area shape="rect" id="node8" href="$classEmpresa.html#af20261a3f95a5dd0c4a5a796d9a3d442" title="displays the interface to add suppliers " alt="" coords="187,356,382,383"/>
+<area shape="rect" id="node9" href="$classEmpresa.html#aa0470e1fd4f41615a230fc8048b8b321" title="Modifies a supplier. " alt="" coords="187,407,383,433"/>
+<area shape="rect" id="node10" href="$classEmpresa.html#af197726a3dc20739aac877ac4c090f6e" title="Lists all the reservations with offers of one supplier. " alt="" coords="162,458,407,499"/>
+<area shape="rect" id="node11" href="$classEmpresa.html#a73543b5ca1d9dd8e99e75d9167839471" title="Lists all the offers of one Supplier. " alt="" coords="169,523,401,565"/>
+<area shape="rect" id="node12" href="$classEmpresa.html#a42953bdbb2fb39173ad6f38892fc122b" title="displays the interface to add reservations " alt="" coords="195,589,374,616"/>
+<area shape="rect" id="node13" href="$classEmpresa.html#ae74f80c120a14f0591d04fe7603e6905" title="displays the interface to modify reservations " alt="" coords="195,640,375,667"/>
+<area shape="rect" id="node14" href="$classEmpresa.html#a641c2eb827b39ab79919187645ff71a9" title="Lists all the clients that reserved a certain offer. " alt="" coords="153,691,416,733"/>
+<area shape="rect" id="node15" href="$classEmpresa.html#ae244a8ae3afb85eb5e9e5febce8b8728" title="displays the interface to adds offers " alt="" coords="201,757,368,784"/>
+<area shape="rect" id="node16" href="$classEmpresa.html#ac8948065c65d5c02cb30103118f502d4" title="displays the interface to modify offers " alt="" coords="201,808,368,835"/>
+<area shape="rect" id="node17" href="$classEmpresa.html#a5b5c42d733ccee37f932db5db8aec243" title="displays the interface to remove offers " alt="" coords="204,859,365,885"/>
+</map>

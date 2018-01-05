@@ -1,0 +1,12 @@
+<map id="Empresa::listaFaturas" name="Empresa::listaFaturas">
+<area shape="rect" id="node2" href="$classBSTItrIn.html#a6f9a43217862c263a9bf15b9a08b889a" title="BSTItrIn::isAtEnd" alt="" coords="222,5,347,32"/>
+<area shape="rect" id="node3" href="$classBSTItrIn.html#ac7ac215c1247bd25fc1fdb8053826a32" title="BSTItrIn::retrieve" alt="" coords="223,56,346,83"/>
+<area shape="rect" id="node4" href="$classFatura.html#aa16421065127ac0fd15740b80dd1893b" title="Gets the nome cliente. " alt="" coords="204,107,365,133"/>
+<area shape="rect" id="node6" href="$classFatura.html#a45efe8240f7ffc339ed1a34b2f928465" title="Gets the fornecedor. " alt="" coords="209,157,360,184"/>
+<area shape="rect" id="node8" href="$classFatura.html#af7d5b6d4f800887742a7bb1adbfecc65" title="Gets the data. " alt="" coords="228,208,341,235"/>
+<area shape="rect" id="node10" href="$classTime.html#a79d96e150ff808580fdf43932897130d" title="prints the time " alt="" coords="228,259,341,285"/>
+<area shape="rect" id="node11" href="$classBSTItrIn.html#ac772d3ebbac748c5f8cf9bc659f2e32c" title="BSTItrIn::advance" alt="" coords="221,309,349,336"/>
+<area shape="rect" id="node5" href="$classReserva.html#a87b0465c8e9d2291d5dddd48fce24c38" title="Gets the name of the client. " alt="" coords="425,107,599,133"/>
+<area shape="rect" id="node7" href="$classReserva.html#ad54ef5f67fa096e711d2ab526db30bf3" title="Gets the name of the offer. " alt="" coords="413,157,611,184"/>
+<area shape="rect" id="node9" href="$classReserva.html#a187007ee30ffdc2372739708901b6fc7" title="Gets the date. " alt="" coords="449,208,575,235"/>
+</map>

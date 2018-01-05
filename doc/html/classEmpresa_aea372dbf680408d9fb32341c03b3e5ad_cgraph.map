@@ -1,0 +1,8 @@
+<map id="Empresa::atualizaInatividade" name="Empresa::atualizaInatividade">
+<area shape="rect" id="node2" href="$classOferta.html#a2b156b75371ad59af54ad96ad79c9d1e" title="Gets the date in string format. " alt="" coords="244,107,356,133"/>
+<area shape="rect" id="node3" href="$classTime.html#ade4d01d38041bb86a2e1ded9fd3cd28e" title="Gets the year. " alt="" coords="413,5,517,32"/>
+<area shape="rect" id="node4" href="$classTime.html#a22fd86b14d3b067cf1447fd9ca5caf6f" title="Gets the month. " alt="" coords="409,56,522,83"/>
+<area shape="rect" id="node5" href="$classTime.html#abdccc37217b520155a67a1d732014f1a" title="Gets the day. " alt="" coords="415,107,516,133"/>
+<area shape="rect" id="node6" href="$classTime.html#ac38ba7bbc9876d7d75c6fb16ba7ac453" title="Gets the hours. " alt="" coords="409,157,521,184"/>
+<area shape="rect" id="node7" href="$classTime.html#a800d91da444cd295a329925c45942359" title="Gets the minutes. " alt="" coords="404,208,527,235"/>
+</map>
