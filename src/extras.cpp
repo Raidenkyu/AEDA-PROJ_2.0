@@ -103,7 +103,7 @@ bool Time::operator<( Time  t2){
 int Time::diferencaDias() {
 	RealTime rt;
 	int dias = 0;
-	int realano = rt.getYear() - 100;
+	int realano = rt.getYear() - 100; // correção de um erro que estava a dar que apresentava o ano do rt como sendo 100 anos mais que o rt verdadeiro
 
 	//se ano e m�s forem iguais
 	if ((realano == getYear()) && (rt.getMonth() == getMonth()))
