@@ -396,6 +396,9 @@ void Empresa::displayTodasAsReservasdeUmCliente() {
 				<< "Cancelada: " << (_reservas.at(i)->isCancelada() ? "sim" : "nao") << endl << endl;
 		}
 	}
+	cin.get();
+	cin.get();
+	return;
 
 
 }
@@ -762,6 +765,9 @@ void Empresa::displayTodasAsReservasdeUmFornecedor() {
 		cout << "+----------------------------------------------------------+\n";
 	}
 
+
+	cin.get();
+	cin.get();
 	return;
 
 
@@ -790,7 +796,9 @@ void Empresa::displayTodasAsOfertasdeUmFornecedor() {
 	cout << "+----------------------------------------------------------+\n";
 
 	_fornecedores[index]->displayOfertas();
-
+	
+	cin.get();
+	cin.get();
 	return;
 
 
@@ -1197,7 +1205,7 @@ void Empresa::removeReservas() {
 
 void Empresa::cancelaReservas() {
 	titulo();
-	int novoPreco;
+	int novoPreco, diferencadias;
 	bool nfound = true;
 
 	cout << "+----------------------------------------------------------+\n";
@@ -1225,14 +1233,15 @@ void Empresa::cancelaReservas() {
 	{
 		if (_reservas.at(i)->getOferta()->getNome() == reservaremoveOferta && _reservas.at(i)->getCliente()->getNome() == reservaremoveCliente)
 		{
+			diferencadias = _reservas.at(i)->getOferta()->getDataMesmo().diferencaDias();
 			nfound = false;
-			if (_reservas.at(i)->getOferta()->getDataMesmo().diferencaDias() >= 7)
+			if (diferencadias >= 7)
 			{
 				_reservas.at(i)->cancelamento();
 				_reservas.at(i)->setPreco(0);
 				break;
 			}
-			else if (_reservas.at(i)->getOferta()->getDataMesmo().diferencaDias() >= 2)
+			else if (diferencadias >= 2)
 			{
 				_reservas.at(i)->cancelamento();
 				novoPreco = _reservas.at(i)->getPreco() / 2;
