@@ -108,7 +108,7 @@ int Time::diferencaDias() {
 	if ((rt.getYear() == getYear()) && (rt.getMonth() == getMonth()))
 		dias = this->getDay() - rt.getDay();
 
-	//se ano for igual mas m�s for diferente
+	//se ano for igual mas mes for diferente
 	else if ((rt.getYear() == getYear()) && (rt.getMonth() != getMonth()))
 	{
 		if (getMonth() - rt.getMonth() == 1)
@@ -144,7 +144,11 @@ int Time::diferencaDias() {
 			}
 		}
 		else
+		{
 			dias = 50;
+			return dias;
+		}
+		
 	}
 	else if (!(rt.getYear() == getYear()))
 	{

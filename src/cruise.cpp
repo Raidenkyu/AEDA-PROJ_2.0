@@ -198,6 +198,7 @@ void Empresa::load(){
 	Fornecedor * f;
 	Oferta * o = NULL;
 	Reserva * r;
+	Fatura * l;
 	Time * t;
 	Time * t2;
 	vector<Oferta> ofertas;
@@ -324,6 +325,9 @@ void Empresa::load(){
 			}
 			r = new Reserva(s1, o, s2, c, num1, cancelada);
 			this->addReservas(*r);
+			l = new Fatura(r);
+			this->addFaturas(*l);
+			
 		}
 	}
 	else{
