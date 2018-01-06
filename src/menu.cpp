@@ -731,7 +731,7 @@ void Empresa::displayTodasAsReservasdeUmFornecedor() {
 	displayFornecedores();
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual e o nome do fornecedor?                                |\n";
+	cout << "| Qual e o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX, '\n');
@@ -783,7 +783,7 @@ void Empresa::displayTodasAsOfertasdeUmFornecedor() {
 	displayFornecedores();
 
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Qual e o nome do fornecedor?                                |\n";
+	cout << "| Qual e o nome do fornecedor?                             |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	cin.ignore(INT_MAX, '\n');
@@ -793,7 +793,7 @@ void Empresa::displayTodasAsOfertasdeUmFornecedor() {
 	int index = BinarySearch(_fornecedores, nome_fornecedor);
 	if (index == -1) { throw ObjetoInexistente<Fornecedor>(nome_fornecedor); }
 	cout << "+----------------------------------------------------------+\n";
-	cout << "| Estas sao todas as reservas efetuadas pelo fornecedor:      |\n";
+	cout << "| Estas sao todas as reservas efetuadas pelo fornecedor:   |\n";
 	cout << "+----------------------------------------------------------+\n";
 
 	_fornecedores[index]->displayOfertas();

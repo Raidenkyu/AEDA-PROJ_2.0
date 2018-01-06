@@ -335,7 +335,7 @@ void Empresa::load(){
 		}
 	}
 	else{
-		cout << "Erro: O programa nao conseguiu abrir o ficheiro das reservas" << endl;
+		cout << "O programa falhou a abrir o ficheiro com a informacao das reservas" << endl;
 	}
 	this->sort();
 
